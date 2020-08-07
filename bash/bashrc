@@ -1,0 +1,23 @@
+export PATH="/usr/local/sbin:$PATH"
+
+# Below is a bad example of PS1:
+#PS1="\e[1;3;37m\s\e[m\e[1;37m:\e[m\e[1;33m\w\e[m \e[1;32m\u\e[m\e[1;37m\$\e[m "
+
+# Better enclose non-printable sequences in \[ and \[. \e is the same as \033.
+PS1="\[\033[01;32m\]\u\[\033[00m\]\[\033[01;37m\]@\[\033[00m\]\[\033[01;03;37m\]\h\[\033[00m\]\[\033[01;37m\]:\[\033[00m\]\[\033[01;33m\]\w\[\033[00m\] \[\033[01;37m\]\$\[\033[00m\] "
+export PS1
+
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
+
+alias la="ls -A"
+alias l="ls -CF"
+alias ll="ls -ltAh"
+alias cafe="caffeinate -disu &"
+alias bup="brew update && brew upgrade"
+alias lacie="smartctl -a disk3 | grep Temperature"
+alias yd="youtube-dl"
+alias ssh_aws_gbai_london0="ssh -i "~/.ssh/aws_gbai_london0.pem" ubuntu@ec2-18-133-61-29.eu-west-2.compute.amazonaws.com"
+
+eval $(thefuck --alias)
+export PATH="/usr/local/opt/jpeg-turbo/bin:$PATH"
