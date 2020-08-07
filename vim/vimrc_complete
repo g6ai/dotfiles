@@ -1,0 +1,146 @@
+" G. Bai's complete .vimrc
+
+let mapleader=";"
+
+" Vundle
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+" alternatively, pass a path where Vundle should install plugins
+"call vundle#begin('~/some/path/here')
+
+" let Vundle manage Vundle, required
+Plugin 'VundleVim/Vundle.vim'
+
+" The following are examples of different formats supported.
+" Keep Plugin commands between vundle#begin/end.
+" plugin on GitHub repo
+Plugin 'tpope/vim-fugitive'
+" plugin from http://vim-scripts.org/vim/scripts.html
+" Plugin 'L9'
+" Git plugin not hosted on GitHub
+"Plugin 'git://git.wincent.com/command-t.git'
+" git repos on your local machine (i.e. when working on your own plugin)
+" Plugin 'file:///home/gmarik/path/to/plugin'
+" The sparkup vim script is in a subdirectory of this repo called vim.
+" Pass the path to set the runtimepath properly.
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+" Install L9 and avoid a Naming conflict if you've already installed a
+" different version somewhere else.
+" Plugin 'ascenator/L9', {'name': 'newL9'}
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'morhetz/gruvbox'
+Plugin 'scrooloose/nerdtree'
+Plugin 'Xuyuanp/nerdtree-git-plugin'
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+"
+" Brief help
+" :PluginList       - lists configured plugins
+" :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
+" :PluginSearch foo - searches for foo; append `!` to refresh local cache
+" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+"
+" see :h vundle for more details or wiki for FAQ
+" Put your non-Plugin stuff after this line
+
+set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
+
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+
+syntax enable
+let g:gruvbox_contrast_dark='hard'
+colorscheme gruvbox
+
+set wildmenu
+
+set splitbelow splitright
+
+" Always show statusline
+set laststatus=2
+
+" Show current cursor position
+set ruler
+
+" Show line number
+set nu rnu
+
+" Highlight current line/column
+"set cursorline
+"set cursorcolumn
+
+" Highlight search result
+set hlsearch
+
+" Syntax highlight
+syntax enable
+
+" Allow replacing default syntax highlight with customed ones
+syntax on
+
+filetype indent on
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set softtabstop=4 
+
+" vim-indent-guides option"
+let g:indent_guides_enable_on_vim_startup=1
+let g:indent_guides_auto_colors = 1
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
+"autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
+let g:indent_guides_start_level=2
+let g:indent_guides_guide_size=1
+nmap <silent> <leader>i <Plug>IndentGuidesToggle
+
+set foldmethod=indent
+set foldmethod=syntax
+set nofoldenable
+set background=dark
+
+let g:airline_powerline_fonts = 1
+let NERDTreeShowHidden=1
+let NERDTreeMinimalUI = 1
+
+command! NT NERDTreeToggle | AirlineRefresh
+nmap nt :NT<CR>
+
+autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+
+" If more than one window and previous buffer was NERDTree, go back to it.
+autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+
+command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh 
+command! NA %s/^[^\t]*\t// | set number | noh 
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+command! BD bp | bd #
+nnoremap <leader>d :BD<CR>
+"nnoremap <leader>d :bp<cr>:bd #<cr>
+
+command! BDD bp! | bd! #
+nnoremap <leader>D :BDD<CR>
+
+" Move to next buffer
+nmap <leader>l :bn<CR>
+nmap <leader>L :bn!<CR>
+
+" Move to previous buffer
+nmap <leader>h :bp<CR>
+nmap <leader>H :bp!<CR>
