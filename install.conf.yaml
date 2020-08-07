@@ -9,3 +9,7 @@
     ~/.bash_profile: bash/bash_profile
     ~/.vimrc: vim/vimrc_minimal
     #~/.vimrc: vim/vimrc_complete
+    ~/.gvimrc: vim/gvimrc
+
+- shell:
+  - [git submodule update --init --recursive, Installing submodules]
