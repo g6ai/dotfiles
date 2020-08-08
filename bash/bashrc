@@ -13,11 +13,5 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias la="ls -A"
 alias l="ls -CF"
 alias ll="ls -ltAh"
-alias cafe="caffeinate -disu &"
-alias bup="brew update && brew upgrade"
-alias lacie="smartctl -a disk3 | grep Temperature"
-alias yd="youtube-dl"
-alias ssh_aws_gbai_london0="ssh -i "~/.ssh/aws_gbai_london0.pem" ubuntu@ec2-18-133-61-29.eu-west-2.compute.amazonaws.com"
 
-eval $(thefuck --alias)
-export PATH="/usr/local/opt/jpeg-turbo/bin:$PATH"
+source ~/scripts/bashrc_private
