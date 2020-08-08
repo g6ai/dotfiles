@@ -7,8 +7,12 @@
 - link:
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
-    ~/.vimrc: vim/vimrc_minimal
-    #~/.vimrc: vim/vimrc_complete
+    ~/.vimrc:
+      if: '[ `uname` = Linux ]'
+      path: vim/vimrc_minimal
+    ~/.vimrc:
+      if: '[ `uname` = Darwin ]'
+      path: vim/vimrc_complete
     ~/.gvimrc: vim/gvimrc
 
 - shell:
