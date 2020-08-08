@@ -8,11 +8,8 @@
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
     ~/.vimrc:
-      if: [[ `uname` = "Linux" && `free -mt | tail -1 | awk '$2 < 3600 {print "lt3600"}'` = "lt3600" ]]
+      if: '[ `uname` = Linux ]'
       path: vim/vimrc_minimal
-    ~/.vimrc:
-      if: [[ `uname` = "Linux" && `free -mt | tail -1 | awk '$2 > 3600 {print "gt3600"}'` = "gt3600" ]]
-      path: vim/vimrc_complete
     ~/.vimrc:
       if: '[ `uname` = Darwin ]'
       path: vim/vimrc_complete
