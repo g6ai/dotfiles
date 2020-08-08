@@ -55,9 +55,9 @@ elseif system_name =~ "Linux"
     let mem_size= system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MiB
     if mem_size > 3600
         let mem_output = "gt3600"
+    else
+        let mem_output = "lt3600"
     endif 
-else
-    let mem_output = "lt3600"
 endif
 
 if mem_output == "gt3600"
