@@ -13,5 +13,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 alias la="ls -A"
 alias l="ls -CF"
 alias ll="ls -ltAh"
+alias vi="vim"
 
 source ~/scripts/bashrc_private
