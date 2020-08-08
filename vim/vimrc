@@ -56,6 +56,8 @@ elseif system_name =~ "Linux"
     if mem_size > 3600
         let mem_output = "gt3600"
     endif 
+else
+    let mem_output = "lt3600"
 endif
 
 if mem_output == "gt3600"
