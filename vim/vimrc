@@ -92,6 +92,7 @@ if mem_output == "gt3600"
   Plugin 'morhetz/gruvbox'
   Plugin 'scrooloose/nerdtree'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
+  Plugin 'edkolev/tmuxline.vim'
 
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
