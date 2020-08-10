@@ -18,3 +18,6 @@ alias vi="vim"
 if [[ "$(uname)" == "Darwin" ]]; then
     source ~/scripts/bashrc_private
 fi
+
+# To make terminal color compatible with tmux:
+export TERM=screen-256color
