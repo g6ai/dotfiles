@@ -18,6 +18,9 @@ set hlsearch " Highlight search result
 syntax enable
 colorscheme slate
 
+" Show tabline
+set showtabline=2
+
 " Tab settings
 filetype indent on
 autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
@@ -133,8 +136,9 @@ if mem_output == "gt3600"
 
   " Airline settings
   let g:airline#extensions#tabline#enabled = 1
-  let g:airline#extensions#tabline#left_sep = ' '
-  let g:airline#extensions#tabline#left_alt_sep = '|'
+  " Enable next two lines to define straight tabs
+  "let g:airline#extensions#tabline#left_sep = ' '
+  "let g:airline#extensions#tabline#left_alt_sep = '|'
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
   " tmuxline.vim settings
