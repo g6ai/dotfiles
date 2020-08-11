@@ -92,8 +92,7 @@ if mem_output == "gt3600"
   Plugin 'morhetz/gruvbox'
   Plugin 'scrooloose/nerdtree'
   Plugin 'Xuyuanp/nerdtree-git-plugin'
-  Plugin 'edkolev/tmuxline.vim'
-
+  Plugin 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
   filetype plugin indent on    " required
@@ -137,4 +136,10 @@ if mem_output == "gt3600"
   let g:airline#extensions#tabline#left_sep = ' '
   let g:airline#extensions#tabline#left_alt_sep = '|'
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+
+  " tmuxline.vim settings
+  " Run :Tmuxline then :TmuxlineSnapshot! [file] (usually need this ! to
+  " override)
+  let g:airline#extensions#tmuxline#enabled = 1
+  let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline.snapshot"
 endif
