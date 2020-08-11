@@ -7,6 +7,8 @@
 - link:
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
+    ~/.tmux.conf: tmux/tmux.conf
+    ~/.tmuxline.snapshot: tmux/tmuxline.snapshot
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
 
