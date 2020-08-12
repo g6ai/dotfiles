@@ -151,8 +151,10 @@ if mem_output == "gt3600"
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
   " tmuxline.vim settings
-  " Run :Tmuxline then :TmuxlineSnapshot! [file] (usually need this ! to
-  " override)
+  " Run :Tmuxline then :TmuxlineSnapshot! [file]
+  " (usually need this '!' to override)
+  command! TS Tmuxline | TmuxlineSnapshot! ~/.tmuxline.snapshot
+  nmap ts :TS<CR>
   let g:airline#extensions#tmuxline#enabled = 0
   let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline.snapshot"
   let g:tmuxline_preset = {
