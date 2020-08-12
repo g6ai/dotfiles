@@ -15,8 +15,9 @@ alias l="ls -CF"
 alias ll="ls -ltAh"
 alias vi="vim"
 
-if [[ "$(uname)" == "Darwin" ]]; then
-    source ~/scripts/bashrc_private
+BASHRC_LOCAL=~/.bashrc_local
+if [[ -f "$BASHRC_LOCAL" ]]; then
+    source $BASHRC_LOCAL
 fi
 
 # To make terminal color compatible with tmux:
