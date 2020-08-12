@@ -1,5 +1,3 @@
-export PATH="/usr/local/sbin:$PATH"
-
 unset PROMPT_COMMAND
 # Below is a bad example of PS1:
 #PS1="\e[1;3;37m\s\e[m\e[1;37m:\e[m\e[1;33m\w\e[m \e[1;32m\u\e[m\e[1;37m\$\e[m "
@@ -7,24 +5,24 @@ unset PROMPT_COMMAND
 PS1="\[\033[01;32m\]\u\[\033[00m\]\[\033[01;37m\]@\[\033[00m\]\[\033[01;03;37m\]\h\[\033[00m\]\[\033[01;37m\]:\[\033[00m\]\[\033[01;33m\]\w\[\033[00m\] \[\033[01;37m\]\$\[\033[00m\] "
 export PS1
 
-export CLICOLOR=1
-export LSCOLORS=GxFxCxDxBxegedabagaced
-
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -ltAh'
 alias vi='vim'
 
+# Terminal color settings
+export CLICOLOR=1
+export LSCOLORS=GxFxCxDxBxegedabagaced
 if [[ "$(uname)" == "Darwin" ]]; then
     alias ls='ls -G'
 elif [[ "$(uname)" == "Linux" ]]; then
     alias ls='ls --color'
 fi
+# To make terminal color compatible with tmux:
+export TERM=screen-256color
 
+# Source local settings
 BASHRC_LOCAL=~/.bashrc_local
 if [[ -f "$BASHRC_LOCAL" ]]; then
     source $BASHRC_LOCAL
 fi
-
-# To make terminal color compatible with tmux:
-export TERM=screen-256color
