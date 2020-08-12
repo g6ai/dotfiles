@@ -42,6 +42,12 @@ nmap <leader>L :bn!<CR>
 nmap <leader>h :bp<CR>
 nmap <leader>H :bp!<CR>
 
+" Window shortcuts
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-h> <C-w>h
+nnoremap <C-l> <C-w>l
+
 " Line number from 0 shortcuts. NE: ein; NA: aus
 command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
 command! NA %s/^[^\t]*\t// | set number | noh
