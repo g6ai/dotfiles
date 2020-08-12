@@ -10,11 +10,16 @@ export PS1
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
-alias ls="ls --color"
-alias la="ls -A"
-alias l="ls -CF"
-alias ll="ls -ltAh"
-alias vi="vim"
+alias la='ls -A'
+alias l='ls -CF'
+alias ll='ls -ltAh'
+alias vi='vim'
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    alias ls='ls -G'
+elif [[ "$(uname)" == "Linux" ]]; then
+    alias ls='ls --color'
+fi
 
 BASHRC_LOCAL=~/.bashrc_local
 if [[ -f "$BASHRC_LOCAL" ]]; then
