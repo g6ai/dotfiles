@@ -62,7 +62,7 @@ let system_name = system('uname')
 if system_name =~ "Darwin"
   let flag = "good"
 elseif system_name =~ "Linux"
-  let mem_size = system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MiB
+  let mem_size = system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MB
   if mem_size > 3600
     let flag = "good"
   else
@@ -141,7 +141,6 @@ if flag == "good"
   nmap <silent> <leader>i <Plug>IndentGuidesToggle
 
   " NERDTree settings
-  let g:airline_powerline_fonts = 1
   let NERDTreeShowHidden = 1
   let NERDTreeMinimalUI = 1
   command! NT NERDTreeToggle | AirlineRefresh
