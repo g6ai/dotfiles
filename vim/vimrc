@@ -10,6 +10,7 @@ set splitbelow splitright " Split new window below and right
 set laststatus=2 " Always show status line
 set ruler " Show current cursor position
 set nu rnu " Switch on relative numbering
+set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set wildmenu " Enable a menu at the bottom with tab-key compeletion
 set hlsearch " Highlight search result
@@ -59,17 +60,22 @@ command! NA %s/^[^\t]*\t// | set number | noh
 " Check if memory size is large enough to use plugins
 let system_name = system('uname')
 if system_name =~ "Darwin"
-  let mem_output = "gt3600"
+  let flag = "good"
 elseif system_name =~ "Linux"
   let mem_size = system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MiB
   if mem_size > 3600
-    let mem_output = "gt3600"
+    let flag = "good"
   else
-    let mem_output = "lt3600"
+    let flag = "nogood"
   endif
 endif
 
-if mem_output == "gt3600"
+" Windows also works
+if has('win32')
+  let flag = "good"
+endif
+
+if flag == "good"
   " Vundle
 
   filetype off " required
@@ -145,6 +151,7 @@ if mem_output == "gt3600"
   autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
   " Airline settings
+  let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   " Enable next two lines to define straight tabs
   "let g:airline#extensions#tabline#left_sep = ' '
