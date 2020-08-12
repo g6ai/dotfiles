@@ -13,6 +13,7 @@ set nu rnu " Switch on relative numbering
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set wildmenu " Enable a menu at the bottom with tab-key compeletion
 set hlsearch " Highlight search result
+set mouse=a " Enable use of mouse for all modes
 
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
