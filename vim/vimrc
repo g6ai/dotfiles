@@ -9,10 +9,13 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 set splitbelow splitright " Split new window below and right
 set laststatus=2 " Always show status line
 set ruler " Show current cursor position
-set nu rnu " Switch on relative line number
+set nu rnu " Switch on relative numbering
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
-set wildmenu
+set wildmenu " Enable a menu at the bottom with tab-key compeletion
 set hlsearch " Highlight search result
+
+" Toggle relative numbering
+nnoremap <C-n> :set rnu!<CR>
 
 " Syntax highlighting
 syntax enable
