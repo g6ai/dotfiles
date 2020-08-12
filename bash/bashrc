@@ -10,6 +10,7 @@ export PS1
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 
+alias ls="ls --color"
 alias la="ls -A"
 alias l="ls -CF"
 alias ll="ls -ltAh"
