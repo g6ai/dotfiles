@@ -10,4 +10,4 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
 
 ## Deploy on Windows
 * To run Dotbot on Windows, open a git bash shell with admin privilege. See [Fix links not successfully setup in Git Bash with Git for Windows](https://github.com/anishathalye/dotbot/wiki/Troubleshooting#fix-links-not-successfully-setup-in-git-bash-with-git-for-windows) for more steps.
-* gVim runs okay on Windows. For command line vim, use cmd or powershell; git bash does not work, as it does not support `has()`.
+* gVim runs okay on Windows. For command line Vim, use cmd or powershell; git bash does not work, as it does not support `has()`.
