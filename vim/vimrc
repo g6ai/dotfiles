@@ -22,8 +22,9 @@ nnoremap <C-n> :set rnu!<CR>
 " UI
 syntax enable
 colorscheme slate
-highlight Normal ctermfg=248 ctermbg=234
-highlight StatusLine ctermfg=227
+highlight Normal ctermbg=234
+highlight StatusLine ctermfg=143
+highlight StatusLineNC ctermfg=243
 
 " Show tabline
 set showtabline=2
