@@ -19,9 +19,11 @@ set mouse=a " Enable use of mouse for all modes
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
 
-" Syntax highlighting
+" UI
 syntax enable
 colorscheme slate
+highlight Normal ctermfg=248 ctermbg=234
+highlight StatusLine ctermfg=227
 
 " Show tabline
 set showtabline=2
