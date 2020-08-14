@@ -19,12 +19,15 @@ set mouse=a " Enable use of mouse for all modes
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
 
-" UI
+" Color scheme
 syntax enable
 colorscheme slate
-highlight Normal ctermbg=234
-highlight StatusLine ctermfg=143
+highlight Normal ctermbg=235
+highlight StatusLine ctermfg=253
 highlight StatusLineNC ctermfg=243
+highlight Tabline ctermbg=239
+highlight TablineFill ctermfg=243
+highlight VertSplit ctermfg=235 ctermbg=243
 
 " Show tabline
 set showtabline=2
