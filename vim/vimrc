@@ -8,11 +8,12 @@ autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 set splitbelow splitright " Split new window below and right
 set laststatus=2 " Always show status line
+set wildmenu " Enable a menu at the bottom with tab-key compeletion
+set showtabline=2 " Show tabline
 set ruler " Show current cursor position
 set nu rnu " Switch on relative numbering
 set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
-set wildmenu " Enable a menu at the bottom with tab-key compeletion
 set hlsearch " Highlight search result
 set mouse=a " Enable use of mouse for all modes
 
@@ -28,9 +29,6 @@ highlight StatusLineNC ctermfg=243
 highlight Tabline ctermbg=239
 highlight TablineFill ctermfg=243
 highlight VertSplit ctermfg=235 ctermbg=243
-
-" Show tabline
-set showtabline=2
 
 " Tab settings
 filetype indent on
@@ -81,6 +79,7 @@ if has('win32')
   let flag = "good"
 endif
 
+" Plugin settings
 if flag == "good"
   " Vundle
 
