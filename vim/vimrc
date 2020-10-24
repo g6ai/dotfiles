@@ -180,5 +180,5 @@ if flag == "good"
 
   " vimtex settings
   let g:tex_flavor = 'latex'
-  let g:vimtex_compiler_latexmk_engines = {'xelatex': '-xelatex'}
+  let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
 endif
