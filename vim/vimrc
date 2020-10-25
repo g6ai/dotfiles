@@ -30,7 +30,7 @@ highlight Tabline ctermbg=239
 highlight TablineFill ctermfg=243
 highlight VertSplit ctermfg=235 ctermbg=243
 
-" Tab settings
+" Tab
 filetype indent on
 autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType sh setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
@@ -79,7 +79,7 @@ if has('win32')
   let flag = "good"
 endif
 
-" Plugin settings
+" Plugin
 if flag == "good"
   " Vundle
 
@@ -137,11 +137,11 @@ if flag == "good"
   " see :h vundle for more details or wiki for FAQ
   " Put your non-Plugin stuff after this line
 
-  " gruvbox highlighting
+  " gruvbox
   let g:gruvbox_contrast_dark = 'hard'
   colorscheme gruvbox
 
-  " vim-indent-guides option"
+  " vim-indent-guides
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_auto_colors = 1
   "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
@@ -150,7 +150,7 @@ if flag == "good"
   let g:indent_guides_guide_size = 1
   nmap <silent> <leader>i <Plug>IndentGuidesToggle
 
-  " NERDTree settings
+  " NERDTree
   let NERDTreeShowHidden = 1
   let NERDTreeMinimalUI = 1
   command! NT NERDTreeToggle | AirlineRefresh
@@ -159,7 +159,7 @@ if flag == "good"
   " If more than one window and previous buffer was NERDTree, go back to it.
   autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
-  " Airline settings
+  " Airline
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   " Enable next two lines to define straight tabs
@@ -167,7 +167,7 @@ if flag == "good"
   "let g:airline#extensions#tabline#left_alt_sep = '|'
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 
-  " tmuxline.vim settings
+  " tmuxline.vim
   " Run :Tmuxline then :TmuxlineSnapshot! [file]
   " (usually need this '!' to override)
   command! TS Tmuxline | TmuxlineSnapshot! ~/.tmuxline.snapshot
@@ -182,7 +182,7 @@ if flag == "good"
     \'y'    : '%R',
     \'z'    : '#H'}
 
-  " vimtex settings
+  " vimtex
   let g:tex_flavor = 'latex'
   let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
 
