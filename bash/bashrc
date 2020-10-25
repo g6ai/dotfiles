@@ -10,7 +10,7 @@ alias l='ls -CF'
 alias ll='ls -ltAh'
 alias vi='vim'
 
-# Terminal color settings
+# Terminal color
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 if [[ "$(uname)" == "Darwin" ]]; then
