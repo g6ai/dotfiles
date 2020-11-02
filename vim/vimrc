@@ -16,6 +16,7 @@ set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set hlsearch " Highlight search result
 set mouse=a " Enable use of mouse for all modes
+set expandtab " Always use space instead of tab
 
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
@@ -35,6 +36,7 @@ filetype indent on
 autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType sh setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+autocmd FileType tex setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Buffer shortcuts
 " Close the current buffer and move to the previous one
@@ -185,6 +187,7 @@ if flag == "good"
   " vimtex
   let g:tex_flavor = 'latex'
   let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
+  let g:vimtex_view_method = 'skim'
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
