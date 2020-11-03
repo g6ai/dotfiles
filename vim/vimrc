@@ -40,7 +40,10 @@ autocmd FileType tex setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Clipboard
 if has('clipboard')
-  set clipboard=unnamed,unnamedplus,autoselect
+  set clipboard=unnamed
+  if has('unnamedplus')
+    set clipboard+=unnamedplus
+  endif
   noremap <Leader>y "*y
   noremap <Leader>p "*p
   noremap <Leader>Y "+y
