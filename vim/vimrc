@@ -16,7 +16,6 @@ set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set hlsearch " Highlight search result
 set mouse=a " Enable use of mouse for all modes
-set expandtab " Always use space instead of tab
 
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
@@ -33,6 +32,7 @@ highlight VertSplit ctermfg=235 ctermbg=243
 
 " Tab
 filetype indent on
+set expandtab " Always use space instead of tab
 autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType sh setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
