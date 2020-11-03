@@ -39,7 +39,9 @@ autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Clipboard
-set clipboard=unnamed
+if has('clipboard')
+  set clipboard=unnamed,unnamedplus,autoselect
+endif
 
 " Buffer shortcuts
 " Close the current buffer and move to the previous one
