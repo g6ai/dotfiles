@@ -38,6 +38,9 @@ autocmd FileType sh setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
+" Clipboard
+set clipboard=unnamed
+
 " Buffer shortcuts
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
