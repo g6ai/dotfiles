@@ -50,6 +50,10 @@ if has('clipboard')
   endif
 endif
 
+" Paste toggle
+nnoremap <C-p> :set invpaste paste?<CR>
+set pastetoggle=<C-p>
+
 " Buffer shortcuts
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
