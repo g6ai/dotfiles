@@ -2,6 +2,7 @@
 
 let mapleader = ";" " Change mapleader
 set nocompatible " Get out of vi compatible mode
+let system_name = system('uname')
 
 " Auto source .vimrc after saving
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -39,15 +40,14 @@ autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Clipboard
-if has('clipboard')
+if system_name =~ "Darwin"
   set clipboard=unnamed
   noremap <Leader>y "*y
   noremap <Leader>p "*p
-  if has('unnamedplus')
-    set clipboard+=unnamedplus
-    noremap <Leader>Y "+y
-    noremap <Leader>P "+p
-  endif
+elseif system_name =~ "Linux"
+  set clipboard=unnamedplus
+  noremap <Leader>y "+y
+  noremap <Leader>p "+p
 endif
 
 " Paste toggle
@@ -80,7 +80,6 @@ command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
 command! NA %s/^[^\t]*\t// | set number | noh
 
 " Check if memory size is large enough to use plugins
-let system_name = system('uname')
 if system_name =~ "Darwin"
   let flag = "good"
 elseif system_name =~ "Linux"
