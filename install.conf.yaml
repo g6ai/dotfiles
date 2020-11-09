@@ -8,6 +8,7 @@
     ~/.bashrc: bash/bashrc
     ~/.bash_profile: bash/bash_profile
     ~/.tmux.conf: tmux/tmux.conf
+    ~/.update_display.sh: tmux/update_display.sh
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
 
