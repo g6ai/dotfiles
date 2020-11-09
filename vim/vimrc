@@ -46,8 +46,8 @@ if system_name =~ "Darwin"
   noremap <Leader>p "*p
 elseif system_name =~ "Linux"
   set clipboard=unnamedplus
-  noremap <Leader>y :!xclip -filter -selection clipboard > /dev/null
-  noremap <Leader>p :r!xclip -out -selection clipboard > /dev/null
+  noremap <Leader>y "+y
+  noremap <Leader>p "+p
 endif
 
 " Paste toggle
