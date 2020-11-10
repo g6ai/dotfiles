@@ -206,4 +206,5 @@ if flag == "good"
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
+  let vim_markdown_preview_hotkey = '<C-m>'
 endif
