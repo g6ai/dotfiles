@@ -5,6 +5,8 @@ unset PROMPT_COMMAND
 PS1="\[\033[01;32m\]\u\[\033[00m\]\[\033[01;37m\]@\[\033[00m\]\[\033[01;03;37m\]\h\[\033[00m\]\[\033[01;37m\]:\[\033[00m\]\[\033[01;33m\]\w\[\033[00m\] \[\033[01;37m\]\$\[\033[00m\] "
 export PS1
 
+export EDITOR=/usr/bin/vim
+
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -ltAh'
