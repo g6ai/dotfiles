@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+sudo touch /etc/motd
 sudo tee -a /etc/motd > /dev/null << EOF
  ██████╗        ██████╗  █████╗ ██╗
 ██╔════╝        ██╔══██╗██╔══██╗██║
