@@ -6,3 +6,4 @@ elseif system_name =~ "Linux"
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ h18
 elseif has('win32')
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h18
+endif
