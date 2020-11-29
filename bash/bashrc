@@ -10,6 +10,9 @@ export EDITOR=/usr/bin/vim
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -ltAh'
+alias pd='pushd'
+alias pdw='pushd .'
+alias po='popd'
 alias vi='vim'
 
 # Terminal color
