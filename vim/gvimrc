@@ -3,7 +3,7 @@ let system_name = system('uname')
 if system_name =~ "Darwin"
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h20
 elseif system_name =~ "Linux"
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 18
+  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 16
 elseif has('win32')
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h18
 endif
