@@ -20,7 +20,7 @@ alias pd='pushd'
 alias pdw='pushd .'
 alias po='popd'
 alias vi='vim'
-alias man='LESS=+Gg man'
+#alias man='LESS=+Gg man'
 
 # Terminal color
 export CLICOLOR=1
@@ -33,7 +33,7 @@ fi
 # To make terminal color compatible with tmux:
 export TERM=screen-256color
 # less color
-export LESS=-R
+export LESS=-R+Gg
 export LESS_TERMCAP_mb=$'\E[01;31m'     # begin blink
 export LESS_TERMCAP_md=$'\E[01;33m'     # begin bold
 export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
