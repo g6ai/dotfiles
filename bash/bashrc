@@ -20,6 +20,7 @@ alias pd='pushd'
 alias pdw='pushd .'
 alias po='popd'
 alias vi='vim'
+alias man='LESS=+Gg man'
 
 # Terminal color
 export CLICOLOR=1
