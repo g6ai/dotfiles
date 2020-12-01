@@ -139,6 +139,7 @@ if flag == "good"
   Plugin 'godlygeek/tabular'
   Plugin 'plasticboy/vim-markdown'
   Plugin 'JamshedVesuna/vim-markdown-preview'
+  Plugin 'neoclide/coc.nvim'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
   filetype plugin indent on    " required
