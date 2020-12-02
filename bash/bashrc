@@ -25,7 +25,13 @@ alias vi='vim'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 if [[ "$(uname)" == "Darwin" ]]; then
-    alias ls='ls -G'
+    # If using native BSD utils
+    #alias ls='ls -G'
+    # If installed "coreutils" with homebrew,
+    # and added
+    # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+    # to ~/.bashrc_local per advice after installation
+    alias ls='ls --color'
 elif [[ "$(uname)" == "Linux" ]]; then
     alias ls='ls --color'
 fi
