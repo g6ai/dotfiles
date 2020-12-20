@@ -21,7 +21,6 @@ set mouse=a " Enable use of mouse for all modes
 
 " Spell
 set spelllang=en_gb,cjk
-set spellfile=~/.vim/spell/en_gb.utf-8.add
 
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
