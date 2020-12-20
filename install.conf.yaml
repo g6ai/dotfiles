@@ -11,6 +11,9 @@
     ~/.update_display.sh: tmux/update_display.sh
     ~/.vimrc: vim/vimrc
     ~/.gvimrc: vim/gvimrc
+    ~/.vim/spell:
+      create: true
+      path: vim/spell
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]

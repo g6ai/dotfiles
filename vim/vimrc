@@ -1,8 +1,9 @@
 " G. Bai's .vimrc
 
 let mapleader = ";" " Change mapleader
+let maplocalleader = ";" " Change local mapleader
 set nocompatible " Get out of vi compatible mode
-let system_name = system('uname')
+let system_name = system('uname') " Researve for later use
 
 " Auto source .vimrc after saving
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
@@ -17,6 +18,10 @@ set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set hlsearch " Highlight search result
 set mouse=a " Enable use of mouse for all modes
+
+" Spell
+set spelllang=en_gb,cjk
+set spellfile=~/.vim/spell/en_gb.utf-8.add
 
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
@@ -57,16 +62,16 @@ set pastetoggle=<C-p>
 " Buffer shortcuts
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
-command! BD bp | bd #
-nnoremap <leader>d :BD<CR>
+"command! BD bp | bd #
+"nnoremap <leader>d :BD<CR>
 "nnoremap <leader>d :bp<cr>:bd #<cr>
-command! BDD bp! | bd! #
-nnoremap <leader>D :BDD<CR>
+command! BD bp! | bd! #
+nnoremap <leader>D :BD<CR>
 " Move to next buffer
-nmap <leader>l :bn<CR>
+"nmap <leader>l :bn<CR>
 nmap <leader>L :bn!<CR>
 " Move to previous buffer
-nmap <leader>h :bp<CR>
+"nmap <leader>h :bp<CR>
 nmap <leader>H :bp!<CR>
 
 " Window shortcuts
@@ -204,6 +209,7 @@ if flag == "good"
   let g:tex_flavor = 'latex'
   let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
   let g:vimtex_view_method = 'skim'
+  let g:vimtex_mappings_enabled = 1
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
