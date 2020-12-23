@@ -21,6 +21,8 @@ set mouse=a " Enable use of mouse for all modes
 
 " Spell
 set spelllang=en_gb,cjk
+autocmd FileType tex setlocal spell
+let g:tex_comment_nospell = 1 " For vimtex use g:vimtex_syntax_nospell_comments
 
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
@@ -209,6 +211,14 @@ if flag == "good"
   let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
   let g:vimtex_view_method = 'skim'
   let g:vimtex_mappings_enabled = 1
+  let g:vimtex_syntax_nospell_comments = 1
+  let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
+  let g:vimtex_grammar_vlty.shell_options =
+          \   ' --multi-language'
+  let g:vimtex_grammar_textidote = {
+          \ 'jar': '~/textidote.jar',
+          \ 'args': '--check en',
+          \}
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
