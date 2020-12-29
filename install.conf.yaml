@@ -14,6 +14,7 @@
     ~/.vim/spell:
       create: true
       path: vim/spell
+    ~/.aria2/aria2.conf: aria2/aria2.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
