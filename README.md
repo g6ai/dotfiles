@@ -4,7 +4,7 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
 ## Features
 ### Bash
 * `.bashrc` configures terminal color for *Linux* and *macOS* respectively.
-* `motd` folder has a bash script to personalise motd, which does not depend on **Dotbot**.
+* `motd` folder has a bash script to personalise motd, which does not depend on `Dotbot`.
 
 ### Vim
 * `.vimrc` works for *Linux*, *macOS* and *Windows*! It checks if system is good enough to enable plugins.
@@ -16,7 +16,7 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
 * `.tmux.conf` sources [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
   * For *macOS*, `pbcopy` is used. `pbcopy` is installed on *macOS* by default.
   * For *Linux*, `xclip` is used. `xclip` needs to be installed. Within an SSH session, primary and/or clipboard content on the remote server can be sent to local machine by X11 forwarding.
-* `.update_display.sh` updates environment variable **$DISPLAY** when tmux sessions are re-attached. This is especially useful when attaching tmux session over SSH X session, as Vim clipboard refers to $DISPLAY variable when forwarding clipboard content through X11.
+* `.update_display.sh` updates environment variable `$DISPLAY` when tmux sessions are re-attached. This is especially useful when attaching tmux session over SSH X session, as Vim clipboard refers to `$DISPLAY` when forwarding clipboard content through X11.
 
 ### Other config
 * `aria2` folder includes config file for aria2. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
