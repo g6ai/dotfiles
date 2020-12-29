@@ -146,6 +146,8 @@ if flag == "good"
   Plugin 'plasticboy/vim-markdown'
   Plugin 'JamshedVesuna/vim-markdown-preview'
   Plugin 'neoclide/coc.nvim'
+  Plugin 'SirVer/ultisnips'
+  Plugin 'honza/vim-snippets'
   " All of your Plugins must be added before the following line
   call vundle#end()            " required
   filetype plugin indent on    " required
@@ -223,4 +225,9 @@ if flag == "good"
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
   let vim_markdown_preview_hotkey = '<C-m>'
+
+  " UltiSnips
+  let g:UltiSnipsExpandTrigger="<tab>"
+  let g:UltiSnipsJumpForwardTrigger="<c-b>"
+  let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 endif
