@@ -15,6 +15,11 @@
       create: true
       path: vim/spell
     ~/.aria2/aria2.conf: aria2/aria2.conf
+    ~/.config/mpv/mpv.conf: mpv/mpv.conf
+    ~/.config/mpv/input.conf: mpv/input.conf
+    ~/.config/mpv/script-opts/osc.conf:
+      create: true
+      path: mpv/script-opts/osc.conf
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
