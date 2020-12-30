@@ -30,3 +30,6 @@
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
+  -
+    command: ./motd/append_motd
+    description: Append motd if doesn't exist
