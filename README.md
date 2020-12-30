@@ -21,7 +21,7 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
 ### Other config
 These configuration files may have versions for different OS, and is deployed per OS thanks to Dotbot's `if` parameter in `link` command.
 * `aria2` folder includes config file for aria2. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
-* `mpv` folder includes config files for mpv. It is tuned for my macOS machine, but also works for other OS. See [mpv documentation](https://mpv.io/manual/master/) for more options.
+* `mpv` folder includes config files for mpv. See [mpv documentation](https://mpv.io/manual/master/) for more options.
 
 ## Deploy on Windows
 * To run Dotbot on Windows, open a git bash shell with admin privilege. See [Fix links not successfully setup in Git Bash with Git for Windows](https://github.com/anishathalye/dotbot/wiki/Troubleshooting#fix-links-not-successfully-setup-in-git-bash-with-git-for-windows) for more steps.
