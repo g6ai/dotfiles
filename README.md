@@ -4,7 +4,7 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
 ## Features
 ### Bash
 * `.bashrc` configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of `less` pager.
-* `motd` folder has a bash script to personalise motd, which does not depend on Dotbot.
+* `motd` folder has a bash script to personalise motd, which is run by Dotbot.
 
 ### Vim
 * `.vimrc` works for *Linux*, *macOS* and *Windows*! It checks if system is good enough to enable plugins.
