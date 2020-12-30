@@ -14,6 +14,9 @@
     ~/.vim/spell:
       create: true
       path: vim/spell
+    ~/.vim/UltiSnips:
+      create: true
+      path: vim/UltiSnips
     ~/.aria2/aria2.conf:
       create: true
       path: aria2/aria2_macos.conf
