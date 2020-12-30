@@ -14,9 +14,15 @@
     ~/.vim/spell:
       create: true
       path: vim/spell
-    ~/.aria2/aria2.conf: aria2/aria2.conf
-    ~/.config/mpv/mpv.conf: mpv/mpv.conf
-    ~/.config/mpv/input.conf: mpv/input.conf
+    ~/.aria2/aria2.conf:
+      create: true
+      path: aria2/aria2.conf
+    ~/.config/mpv/mpv.conf:
+      create: true
+      path: mpv/mpv.conf
+    ~/.config/mpv/input.conf:
+      create: true
+      path: mpv/input.conf
     ~/.config/mpv/script-opts/osc.conf:
       create: true
       path: mpv/script-opts/osc.conf
