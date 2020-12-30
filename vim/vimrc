@@ -3,7 +3,7 @@
 let mapleader = ";" " Change mapleader
 let maplocalleader = ";" " Change local mapleader
 set nocompatible " Get out of vi compatible mode
-let system_name = system('uname') " Researve for later use
+let system_name = system('uname') " Reserve for later
 
 " Auto source .vimrc after saving
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
