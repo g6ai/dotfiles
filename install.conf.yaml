@@ -20,13 +20,16 @@
       if: '[ $(uname) = Darwin ]'
     ~/.config/mpv/mpv.conf:
       create: true
-      path: mpv/mpv.conf
+      path: mpv/mpv_macos/mpv.conf
+      if: '[ $(uname) = Darwin ]'
     ~/.config/mpv/input.conf:
       create: true
-      path: mpv/input.conf
+      path: mpv/mpv_macos/input.conf
+      if: '[ $(uname) = Darwin ]'
     ~/.config/mpv/script-opts/osc.conf:
       create: true
-      path: mpv/script-opts/osc.conf
+      path: mpv/mpv_macos/script-opts/osc.conf
+      if: '[ $(uname) = Darwin ]'
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
