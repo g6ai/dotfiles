@@ -16,7 +16,8 @@
       path: vim/spell
     ~/.aria2/aria2.conf:
       create: true
-      path: aria2/aria2.conf
+      path: aria2/aria2_macos.conf
+      if: '[ $(uname) = Darwin ]'
     ~/.config/mpv/mpv.conf:
       create: true
       path: mpv/mpv.conf
