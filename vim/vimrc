@@ -226,6 +226,13 @@ if flag == "good"
   let vim_markdown_preview_github = 1 " if using grip
   let vim_markdown_preview_hotkey = '<C-m>'
 
+  " coc.nvim
+  " Remap <cr> to make sure it confirms completion when popup menu is visible
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " Use <Tab> and <S-Tab> to navigate the completion list
+  inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
   " UltiSnips
   let g:UltiSnipsExpandTrigger="<tab>"
   let g:UltiSnipsJumpForwardTrigger="<tab>"
