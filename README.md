@@ -11,6 +11,7 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
   * *macOS* and *Windows* are good, as they usually have large memory for desktop environment.
   * For *Linux*, it only enables plugins if computer has memory larger than 3600 MB.
   * For clipboard enabled Vim installation, within an SSH session, primary and/or clipboard content on the remote server can be sent to local machine by X11 forwarding.
+  * `pyenv` is supported.
 
 ### tmux
 * `.tmux.conf` sources [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
