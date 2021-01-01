@@ -85,6 +85,11 @@ nnoremap <C-l> <C-w>l
 command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
 command! NA %s/^[^\t]*\t// | set number | noh
 
+if system_name =~ "Darwin" && has("python3_dynamic")
+  set pythonthreehome=$HOME/.pyenv/versions/3.8.6
+  set pythonthreedll=$HOME/.pyenv/versions/3.8.6/lib/libpython3.8.dylib
+endif
+
 " Check if memory size is large enough to use plugins
 if system_name =~ "Darwin"
   let flag = "good"
