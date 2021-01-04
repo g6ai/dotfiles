@@ -1,6 +1,8 @@
 # Dotfiles
 My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstrap dotfiles. See [install.conf.yaml](https://github.com/g6ai/dotfiles/blob/master/install.conf.yaml) for my Dotbot configuration.
 
+![screenshot](https://i.imgur.com/EthXz25.png)
+
 ## Features
 ### Bash
 * `.bashrc` configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of `less` pager.
