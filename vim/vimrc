@@ -126,8 +126,7 @@ if flag == "good"
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
   Plug 'lervag/vimtex'
-  " tabular plugin must come before vim-markdown
-  Plug 'godlygeek/tabular'
+  Plug 'godlygeek/tabular' " tabular plugin must come before vim-markdown
   Plug 'plasticboy/vim-markdown'
   Plug 'JamshedVesuna/vim-markdown-preview'
   Plug 'neoclide/coc.nvim'
