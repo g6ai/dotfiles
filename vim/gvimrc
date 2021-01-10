@@ -1,7 +1,8 @@
 let system_name = system('uname')
 
 if system_name =~ "Darwin"
-  set guifont=DejaVu\ Sans\ Mono\ for\ Powerline:h20
+  set guifont=Hack\ Nerd\ Font:h20
+  let g:Lf_ShowDevIcons = 1
 elseif system_name =~ "Linux"
   set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 16
 elseif has('win32')
