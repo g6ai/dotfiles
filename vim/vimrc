@@ -13,7 +13,7 @@ set laststatus=2 " Always show status line
 set wildmenu " Enable a menu at the bottom with tab-key compeletion
 set showtabline=2 " Show tabline
 set ruler " Show current cursor position
-set nu rnu " Switch on relative numbering
+set nu " Switch on numbering
 set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set hlsearch " Highlight search result
