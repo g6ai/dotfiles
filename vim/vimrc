@@ -133,6 +133,7 @@ if flag == "good"
   Plug 'SirVer/ultisnips'
   Plug 'honza/vim-snippets'
   Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' }
+  Plug 'psliwka/vim-smoothie'
   call plug#end()
 
   " gruvbox
