@@ -6,6 +6,7 @@
 .LSOverride
 
 # Icon must end with two \r
+# Enter two ^M in source file
 Icon
 
 # Thumbnails
