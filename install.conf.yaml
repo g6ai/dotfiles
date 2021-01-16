@@ -21,6 +21,10 @@
       create: true
       path: git/git_macos/gitignore_global
       if: '[ $(uname) = Darwin ]'
+    ~/.gitignore_global:
+      create: true
+      path: git/git_linux/gitignore_global
+      if: '[ $(uname) = Linux ]'
     ~/.aria2/aria2.conf:
       create: true
       path: aria2/aria2_macos.conf
@@ -50,3 +54,7 @@
   -
     command: if [ $(uname) = Darwin ]; then git config --global core.autocrlf input; fi
     description: Configure Git to ensure line endings in files you checkout are correct for macOS
+
+  -
+    command: if [ $(uname) = Linux ]; then git config --global core.autocrlf input; fi
+    description: Configure Git to ensure line endings in files you checkout are correct for Linux
