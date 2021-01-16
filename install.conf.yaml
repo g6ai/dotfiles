@@ -50,11 +50,9 @@
   -
     command: git config --global core.excludesfile ~/.gitignore_global
     description: Configure global ignored files
-
   -
     command: if [ $(uname) = Darwin ]; then git config --global core.autocrlf input; fi
     description: Configure Git to ensure line endings in files you checkout are correct for macOS
-
   -
     command: if [ $(uname) = Linux ]; then git config --global core.autocrlf input; fi
     description: Configure Git to ensure line endings in files you checkout are correct for Linux
