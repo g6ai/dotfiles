@@ -17,6 +17,7 @@
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
+    ~/.gitignore_global: git/gitignore_global
     ~/.aria2/aria2.conf:
       create: true
       path: aria2/aria2_macos.conf
@@ -39,3 +40,5 @@
   -
     command: ./motd/append_motd
     description: Append motd if doesn't exist
+  -
+    command: git config --global core.excludesfile ~/.gitignore_global
