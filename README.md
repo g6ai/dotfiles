@@ -21,6 +21,10 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
   * For *Linux*, `xclip` is used. `xclip` needs to be installed. Within an SSH session, primary and/or clipboard content on the remote server can be sent to local machine by X11 forwarding.
 * `.update_display.sh` updates environment variable `$DISPLAY` when tmux sessions are re-attached. This is especially useful when attaching tmux session over SSH X session, as Vim clipboard refers to `$DISPLAY` when forwarding clipboard content through X11.
 
+### git
+
+Global `.gitignore` files per OS. [GitHub’s collection of `.gitignore` file templates](https://github.com/github/gitignore) are used.
+
 ### Other config
 These configuration files may have versions for different OS, and is deployed per OS thanks to Dotbot's `if` parameter in `link` command.
 * `aria2` folder includes config file for aria2. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
