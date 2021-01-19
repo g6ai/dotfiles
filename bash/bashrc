@@ -13,6 +13,9 @@ export PS1
 
 export EDITOR=/usr/bin/vim
 
+# Use vi editing mode
+set -o vi
+
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -ltAh'
