@@ -22,6 +22,11 @@ set mouse=a " Enable use of mouse for all modes
 set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
 
+" Time out
+set ttimeout
+set ttimeoutlen=100
+set timeoutlen=1000
+
 " Cursor
 if system_name =~ "Darwin"
   let &t_SI.="\e[5 q" " SI = INSERT mode
