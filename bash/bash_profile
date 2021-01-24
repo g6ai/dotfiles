@@ -1,1 +1,2 @@
 source ~/.bashrc
+bind -f ~/.inputrc

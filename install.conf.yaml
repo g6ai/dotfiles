@@ -6,6 +6,7 @@
 
 - link:
     ~/.bashrc: bash/bashrc
+    ~/.inputrc: bash/inputrc
     ~/.bash_profile: bash/bash_profile
     ~/.tmux.conf: tmux/tmux.conf
     ~/.update_display.sh: tmux/update_display.sh
