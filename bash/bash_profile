@@ -1,2 +1,5 @@
 source ~/.bashrc
-bind -f ~/.inputrc
+
+if [[ "$(uname)" == "Darwin" ]]; then
+    bind -f ~/.inputrc
+fi
