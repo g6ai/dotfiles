@@ -22,6 +22,27 @@ set mouse=a " Enable use of mouse for all modes
 set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
 
+" Cursor
+if system_name =~ "Darwin"
+  let &t_SI.="\e[5 q" " SI = INSERT mode
+	let &t_SR.="\e[4 q" " SR = REPLACE mode
+	let &t_EI.="\e[1 q" " EI = NORMAL mode (ELSE)
+  " To make sure Vim use normal mode cursor when started
+  silent !echo -ne "\e[1 q"
+  " If shell cursor is not configured in ~/.inputrc
+  " Uncomment next line to reset cursor when Vim exits:
+  " autocmd VimLeave * silent !echo -ne "\033]112\007"
+  " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
+
+	" Cursor settings:
+	" 1 -> blinking block
+	" 2 -> solid block 
+	" 3 -> blinking underscore
+	" 4 -> solid underscore
+	" 5 -> blinking vertical bar
+	" 6 -> solid vertical bar
+endif
+
 " Spell
 set spelllang=en_gb,cjk
 autocmd FileType tex setlocal spell
