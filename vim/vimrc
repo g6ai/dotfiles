@@ -28,10 +28,11 @@ set ttimeoutlen=100
 set timeoutlen=1000
 
 " Cursor
-if system_name =~ "Darwin"
-  let &t_SI = "\e[5 q" " SI = INSERT mode
-	let &t_SR = "\e[4 q" " SR = REPLACE mode
-	let &t_EI = "\e[1 q" " EI = NORMAL mode (ELSE)
+" Works if $TERM is set to "screen-256color" in ~/.bashrc
+if &term =~ "screen-256color"
+  let &t_SI .= "\e[5 q" " SI = INSERT mode
+	let &t_SR .= "\e[4 q" " SR = REPLACE mode
+	let &t_EI .= "\e[1 q" " EI = NORMAL mode (ELSE)
   " To make sure Vim use normal mode cursor when started
   silent !echo -ne "\e[1 q"
   " If shell cursor is not configured in ~/.inputrc
