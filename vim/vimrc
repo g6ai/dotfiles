@@ -36,25 +36,21 @@ if &term =~ "screen-256color"
     let &t_SI .= "\ePtmux;\e\e[5 q\e\\"
     let &t_SR .= "\ePtmux;\e\e[4 q\e\\"
     let &t_EI .= "\ePtmux;\e\e[1 q\e\\"
-    " initialize cursor shape/color on startup
-    " silent !echo approach doesn't seem to work for tmux
-    augroup ResetCursorShape
-      au!
-      "autocmd VimEnter * startinsert | stopinsert
-      autocmd VimEnter * normal! :startinsert :stopinsert
-      "autocmd VimEnter * :normal :startinsert :stopinsert
-    augroup END
   else
     let &t_SI .= "\e[5 q" " SI = INSERT mode
     let &t_SR .= "\e[4 q" " SR = REPLACE mode
     let &t_EI .= "\e[1 q" " EI = NORMAL mode (ELSE)
-    " To make sure Vim use normal mode cursor on startup
-    silent !echo -ne "\e[1 q"
-    " If shell cursor is not configured in ~/.inputrc
-    " Uncomment next line to reset cursor when Vim exits:
-    " autocmd VimLeave * silent !echo -ne "\033]112\007"
-    " use \003]12;gray\007 for gnome-terminal and rxvt up to version 9.21
   endif
+  " Initialize cursor shape/color on startup
+  " silent !echo approach breaks cursor position when Vim exits
+  augroup ResetCursorShape
+    au!
+    "autocmd VimEnter * startinsert | stopinsert
+    autocmd VimEnter * normal! :startinsert :stopinsert
+    "autocmd VimEnter * :normal :startinsert :stopinsert
+  augroup END
+  " Reset cursor when Vim exits:
+  autocmd VimLeave * silent !echo -ne "\e[5 q"
 endif
 
 " Spell
