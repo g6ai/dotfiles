@@ -23,6 +23,7 @@ else
     export INPUTRC=~/.tmux.inputrc
 fi
 
+alias sudo='sudo '
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -ltAh'
