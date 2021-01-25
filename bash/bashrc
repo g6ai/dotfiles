@@ -16,6 +16,13 @@ export EDITOR=/usr/bin/vim
 # Use vi editing mode
 set -o vi
 
+if [[ '' = "$TMUX" ]]
+then
+    export INPUTRC=~/.inputrc
+else
+    export INPUTRC=~/.tmux.inputrc
+fi
+
 alias la='ls -A'
 alias l='ls -CF'
 alias ll='ls -ltAh'
