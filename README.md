@@ -3,7 +3,7 @@ My dotfiles. [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstr
 
 ![screenshot](https://i.imgur.com/EthXz25.png)
 
-See [wiki](https://github.com/g6ai/dotfiles/wiki) for some useful info.
+Read [wiki](https://github.com/g6ai/dotfiles/wiki) for some useful info.
 
 ## Features
 ### Bash
