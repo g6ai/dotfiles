@@ -11,7 +11,9 @@ PS1="\
 \[\033[01;37m\]\$\[\033[00m\] "
 export PS1
 
-#export EDITOR=/usr/bin/vim
+if [[ "$(uname)" == "Linux" ]]; then
+    export EDITOR=/usr/bin/vim
+fi
 
 # Use vi editing mode
 set -o vi
