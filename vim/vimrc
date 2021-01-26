@@ -28,30 +28,27 @@ set ttimeoutlen=100
 set timeoutlen=1000
 
 " Cursor
-" Works if $TERM is set to "screen-256color" in ~/.bashrc
-if &term =~ "screen-256color"
-  if exists("$TMUX")
-    " tmux will only forward escape sequences to the terminal
-    " if surrounded by a DCS escape sequence
-    let &t_SI .= "\ePtmux;\e\e[5 q\e\\"
-    let &t_SR .= "\ePtmux;\e\e[4 q\e\\"
-    let &t_EI .= "\ePtmux;\e\e[1 q\e\\"
-  else
-    let &t_SI .= "\e[5 q" " SI = INSERT mode
-    let &t_SR .= "\e[4 q" " SR = REPLACE mode
-    let &t_EI .= "\e[1 q" " EI = NORMAL mode (ELSE)
-  endif
-  " Initialize cursor shape/color on startup
-  " silent !echo approach breaks cursor position when Vim exits
-  augroup ResetCursorShape
-    au!
-    "autocmd VimEnter * startinsert | stopinsert
-    autocmd VimEnter * normal! :startinsert :stopinsert
-    "autocmd VimEnter * :normal :startinsert :stopinsert
-  augroup END
-  " Reset cursor when Vim exits:
-  autocmd VimLeave * silent !echo -ne "\e[5 q"
+if exists("$TMUX")
+  " tmux will only forward escape sequences to the terminal
+  " if surrounded by a DCS escape sequence
+  let &t_SI .= "\ePtmux;\e\e[5 q\e\\"
+  let &t_SR .= "\ePtmux;\e\e[4 q\e\\"
+  let &t_EI .= "\ePtmux;\e\e[1 q\e\\"
+else
+  let &t_SI .= "\e[5 q" " SI = INSERT mode
+  let &t_SR .= "\e[4 q" " SR = REPLACE mode
+  let &t_EI .= "\e[1 q" " EI = NORMAL mode (ELSE)
 endif
+" Initialize cursor shape/color on startup
+" silent !echo approach breaks cursor position when Vim exits
+augroup ResetCursorShape
+  au!
+  "autocmd VimEnter * startinsert | stopinsert
+  autocmd VimEnter * normal! :startinsert :stopinsert
+  "autocmd VimEnter * :normal :startinsert :stopinsert
+augroup END
+" Reset cursor when Vim exits:
+autocmd VimLeave * silent !echo -ne "\e[5 q"
 
 " Spell
 set spelllang=en_gb,cjk
