@@ -68,12 +68,12 @@ highlight Tabline ctermbg=239
 highlight TablineFill ctermfg=243
 highlight VertSplit ctermfg=235 ctermbg=243
 
-" Prevent wrong bg colour during rapid scrolling
+" Prevent wrong bg color during rapid scrolling
 if (&term =~ '^xterm' && &t_Co == 256)
   set t_ut= | set ttyscroll=1
 endif
 
-" Tab
+" Indentation and tab
 filetype indent on
 set expandtab " Always use space instead of tab
 autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
