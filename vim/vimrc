@@ -96,7 +96,11 @@ endif
 nnoremap <C-p> :set invpaste paste?<CR>
 set pastetoggle=<C-p>
 
-" Buffer shortcuts
+" Buffer
+" Close the current buffer and move to the previous one
+" This replicates the idea of closing a tab
+nnoremap <leader>d :bp! \| bd #<CR>
+" A function to skip QuickFix buffer
 function! BSkipQuickFix(command)
   let start_buffer = bufnr('%')
   execute a:command
@@ -104,20 +108,9 @@ function! BSkipQuickFix(command)
     execute a:command
   endwhile
 endfunction
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-"command! BD bp | bd #
-"nnoremap <leader>d :BD<CR>
-"nnoremap <leader>d :bp<cr>:bd #<cr>
-command! BD bp! | bd #
-nnoremap <leader>D :BD<CR>
 " Move to next buffer
-"nmap <leader>l :bn<CR>
-"nmap <leader>L :bn!<CR>
 nnoremap <Tab> :call BSkipQuickFix("bn!")<CR>
 " Move to previous buffer
-"nmap <leader>h :bp<CR>
-"nmap <leader>H :bp!<CR>
 nnoremap <S-Tab> :call BSkipQuickFix("bp!")<CR>
 
 " Window shortcuts
