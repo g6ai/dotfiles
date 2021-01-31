@@ -46,6 +46,7 @@ augroup ResetCursorShape
   "autocmd VimEnter * startinsert | stopinsert
   autocmd VimEnter * normal! :startinsert :stopinsert
   "autocmd VimEnter * :normal :startinsert :stopinsert
+  autocmd VimEnter * redraw!
 augroup END
 " Reset cursor when Vim exits:
 autocmd VimLeave * silent !echo -ne "\e[5 q"
