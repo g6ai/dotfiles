@@ -1,13 +1,13 @@
 snippet vo2 "VO2"
-VO\textsubscript{2}
+VO\\textsubscript{2}
 endsnippet
 
 snippet "\s(\\\S+\{\S+\})pdfs" "PDF string" rA
- \texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
+ \\texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
 endsnippet
 
 snippet sio2 "SiO2"
-SiO\textsubscript{2}
+SiO\\textsubscript{2}
 endsnippet
 
 snippet temav "TEMAV"
@@ -19,41 +19,41 @@ germanium(IV) ethoxide
 endsnippet
 
 snippet h2o "H2O"
-H\textsubscript{2}O
+H\\textsubscript{2}O
 endsnippet
 
 snippet "\s([-|+]?[0-9]*\.?[0-9]*)siu" "siunitx" rA
- \SI{`!p snip.rv = match.group(1)`}{\\$1}$0
+ \\SI{`!p snip.rv = match.group(1)`}{\\$1}$0
 endsnippet
 
 snippet "\s([-|+]?[0-9]*\.?[0-9]*)degc" "degree Celsius" rA
- \SI{`!p snip.rv = match.group(1)`}{\degreeCelsius}$0
+ \\SI{`!p snip.rv = match.group(1)`}{\\degreeCelsius}$0
 endsnippet
 
 snippet o2 "O2"
-O\textsubscript{2}
+O\\textsubscript{2}
 endsnippet
 
 snippet etal "et al."
-\textit{et al.}
+\\textit{et al.}
 endsnippet
 
 snippet cm-1 "cm-1"
-cm\textsuperscript{-1}
+cm\\textsuperscript{-1}
 endsnippet
 
 snippet m1p "M1 phase"
-\textit{M\textsubscript{1}}
+\\textit{M\\textsubscript{1}}
 endsnippet
 
 snippet p21c "P21/c space group"
-\textit{P}2\textsubscript{1}/\textit{c}
+\\textit{P}2\\textsubscript{1}/\\textit{c}
 endsnippet
 
 snippet p42mnm "P42/mnm space group"
-\textit{P}4\textsubscript{2}/\textit{mnm}
+\\textit{P}4\\textsubscript{2}/\\textit{mnm}
 endsnippet
 
 snippet tmit "transition temperature"
-$T_{\textit{MIT}}$
+$T_{\\textit{MIT}}$
 endsnippet
