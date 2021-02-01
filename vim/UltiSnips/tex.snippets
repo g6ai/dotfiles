@@ -57,3 +57,10 @@ endsnippet
 snippet tmit "transition temperature"
 $T_{\\textit{MIT}}$
 endsnippet
+
+# Below are re-written honza snippets
+
+# To replace cite
+snippet "([\s|~])ct" "cite" r
+`!p snip.rv = match.group(1)`\\cite[$1]{$2}$0
+endsnippet
