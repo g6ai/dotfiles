@@ -30,16 +30,16 @@ snippet "\s([-|+]?[0-9]*\.?[0-9]*)degc" "degree Celsius" rA
  \\SI{`!p snip.rv = match.group(1)`}{\\degreeCelsius}$0
 endsnippet
 
+snippet "\s([-|+]?[0-9]*\.?[0-9]*)cm-1" "cm^{-1}" rA
+ \\SI{`!p snip.rv = match.group(1)`}{cm^{-1}}$0
+endsnippet
+
 snippet o2 "O2"
 O\\textsubscript{2}
 endsnippet
 
 snippet etal "et al."
 \\textit{et al.}
-endsnippet
-
-snippet cm-1 "cm-1"
-cm\\textsuperscript{-1}
 endsnippet
 
 snippet m1p "M1 phase"
