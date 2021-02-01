@@ -2,8 +2,8 @@ snippet vo2 "VO2"
 VO\textsubscript{2}
 endsnippet
 
-snippet vo2pdf "VO2 PDF string"
-\texorpdfstring{VO\textsubscript{2}}{}
+snippet "\s(\\\S+\{\S+\})pdfs" "PDF string" rA
+ \texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
 endsnippet
 
 snippet sio2 "SiO2"
@@ -22,8 +22,12 @@ snippet h2o "H2O"
 H\textsubscript{2}O
 endsnippet
 
-snippet degc "degree Celsius"
-\textdegree{}C
+snippet "\s([-|+]?[0-9]*\.?[0-9]*)siu" "siunitx" rA
+ \SI{`!p snip.rv = match.group(1)`}{\\$1}$0
+endsnippet
+
+snippet "\s([-|+]?[0-9]*\.?[0-9]*)degc" "degree Celsius" rA
+ \SI{`!p snip.rv = match.group(1)`}{\degreeCelsius}$0
 endsnippet
 
 snippet o2 "O2"
@@ -48,4 +52,8 @@ endsnippet
 
 snippet p42mnm "P42/mnm space group"
 \textit{P}4\textsubscript{2}/\textit{mnm}
+endsnippet
+
+snippet tmit "transition temperature"
+$T_{\textit{MIT}}$
 endsnippet
