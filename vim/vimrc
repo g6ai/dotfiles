@@ -40,7 +40,7 @@ augroup ResetCursorShape
   autocmd VimEnter * redraw!
 augroup END
 " Reset cursor when Vim exits:
-autocmd VimLeave * silent !echo -ne "\1\e[5 q\2"
+autocmd VimLeave * silent !echo -ne "\e[5 q"
 
 " Spell
 set spelllang=en_gb,cjk
