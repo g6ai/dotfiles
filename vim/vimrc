@@ -41,18 +41,13 @@ else
 endif
 " Initialize cursor shape/color on startup
 " silent !echo approach breaks cursor position when Vim exits
-augroup OnVimEnter
+augroup ResetCursorShape
   au!
   "autocmd VimEnter * startinsert | stopinsert
-  "autocmd VimEnter * normal! :startinsert :stopinsert
+  autocmd VimEnter * normal! :startinsert :stopinsert
   "autocmd VimEnter * :normal :startinsert :stopinsert
-  "autocmd VimEnter * redraw!
-  autocmd VimEnter * call ResetCursorShape()
+  autocmd VimEnter * redraw!
 augroup END
-function ResetCursorShape()
-  normal! :startinsert :stopinsert
-  redraw!
-endfunction
 " Reset cursor when Vim exits:
 autocmd VimLeave * silent !echo -ne "\e[5 q"
 
