@@ -91,7 +91,7 @@ set pastetoggle=<C-p>
 " Buffer
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
-nnoremap <leader>td :bp! \| bd #<CR>
+nnoremap <leader>bd :bp! \| bd #<CR>
 " A function to skip QuickFix buffer
 function! BSkipQuickFix(command)
   let start_buffer = bufnr('%')
@@ -101,9 +101,9 @@ function! BSkipQuickFix(command)
   endwhile
 endfunction
 " Move to next buffer
-nnoremap <leader>tn :call BSkipQuickFix("bn!")<CR>
+nnoremap <leader>bn :call BSkipQuickFix("bn!")<CR>
 " Move to previous buffer
-nnoremap <leader>tp :call BSkipQuickFix("bp!")<CR>
+nnoremap <leader>bp :call BSkipQuickFix("bp!")<CR>
 
 " Window shortcuts
 nnoremap <C-j> <C-w>j
