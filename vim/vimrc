@@ -243,6 +243,7 @@ if flag == "good"
 
   " LeaderF
   let g:Lf_ShortcutF = "<leader>ff"
+  noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
   let g:Lf_WindowPosition = 'popup'
   let g:Lf_PreviewInPopup = 1
   let g:Lf_ShowDevIcons = 0
