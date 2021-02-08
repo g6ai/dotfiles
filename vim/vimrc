@@ -8,6 +8,10 @@ let system_name = system('uname') " Reserve for later
 " Auto source .vimrc after saving
 autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
+" Load local .vimrc files
+set exrc
+set secure
+
 set splitbelow splitright " Split new window below and right
 set laststatus=2 " Always show status line
 set wildmenu " Enable a menu at the bottom with tab-key compeletion
