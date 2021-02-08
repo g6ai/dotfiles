@@ -236,8 +236,8 @@ if flag == "good"
   let vim_markdown_preview_hotkey = '<C-m>'
 
   " coc.nvim
-  " Remap <cr> to make sure it confirms completion when popup menu is visible
-  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+  " Remap <CR> to make sure it confirms completion when popup menu is visible
+  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
   " UltiSnips
   let g:UltiSnipsExpandTrigger="<tab>"
@@ -247,13 +247,13 @@ if flag == "good"
 
   " LeaderF
   let g:Lf_ShortcutF = "<leader>ff"
-  noremap <leader>fb :<C-U><C-R>=printf("Leaderf buffer %s", "")<CR><CR>
+  noremap <leader>fb :<C-u><C-r>=printf("Leaderf buffer %s", "")<CR><CR>
   let g:Lf_WindowPosition = 'popup'
   let g:Lf_PreviewInPopup = 1
   let g:Lf_ShowDevIcons = 0
 
   " Leaderf-snippet
-  inoremap <C-s> <C-\><C-o>:Leaderf snippet<cr>
+  inoremap <C-s> <C-\><C-o>:Leaderf snippet<CR>
   let g:Lf_PreviewResult = get(g:, 'Lf_PreviewResult', {})
   let g:Lf_PreviewResult.snippet = 1
 endif
