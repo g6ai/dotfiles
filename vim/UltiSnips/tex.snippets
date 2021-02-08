@@ -8,7 +8,7 @@ endsnippet
 
 # Generic
 
-snippet "\s([-|+]?[0-9]*\.?[0-9]*)si" "siunitx" rA
+snippet "\s([-|+]?[0-9]+\.?[0-9]*)si" "siunitx" rA
  \\SI{`!p snip.rv = match.group(1)`}{\\$1}$0
 endsnippet
 
@@ -18,11 +18,11 @@ endsnippet
 
 # Specific units
 
-snippet "\s([-|+]?[0-9]*\.?[0-9]*)degc" "degree Celsius" rA
+snippet "\s([-|+]?[0-9]+\.?[0-9]*)degc" "degree Celsius" rA
  \\SI{`!p snip.rv = match.group(1)`}{\\degreeCelsius}$0
 endsnippet
 
-snippet "\s([-|+]?[0-9]*\.?[0-9]*)cm-1" "cm^{-1}" rA
+snippet "\s([-|+]?[0-9]+\.?[0-9]*)cm-1" "cm^{-1}" rA
  \\SI{`!p snip.rv = match.group(1)`}{cm^{-1}}$0
 endsnippet
 
