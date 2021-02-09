@@ -43,7 +43,7 @@ endsnippet
 
 # My PhD work
 
-snippet "(\s|\()vo2" "VO2" r
+snippet "(^|\s|\(|{)vo2" "VO2" r
 `!p snip.rv = match.group(1)`VO\\textsubscript{2}
 endsnippet
 
@@ -69,6 +69,10 @@ endsnippet
 
 snippet "(\s|\()m1p" "M1 phase" r
 `!p snip.rv = match.group(1)`\\textit{M\\textsubscript{1}}
+endsnippet
+
+snippet "(\s|\()rp" "R phase" r
+`!p snip.rv = match.group(1)`\\textit{R}
 endsnippet
 
 snippet p21c "P21/c space group"
