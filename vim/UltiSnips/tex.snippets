@@ -41,14 +41,10 @@ snippet etal "et al."
 \\textit{et al.}
 endsnippet
 
-# My PhD work
+# My PhD work, mhchem package used
 
 snippet "(^|\s|\(|{)vo2" "VO2" r
-`!p snip.rv = match.group(1)`VO\\textsubscript{2}
-endsnippet
-
-snippet sio2 "SiO2"
-SiO\\textsubscript{2}
+`!p snip.rv = match.group(1)`\\ce{VO_2}
 endsnippet
 
 snippet temav "TEMAV"
@@ -57,14 +53,6 @@ endsnippet
 
 snippet teoge "Ge ethoxide"
 germanium(IV) ethoxide
-endsnippet
-
-snippet h2o "H2O"
-H\\textsubscript{2}O
-endsnippet
-
-snippet o2 "O2"
-O\\textsubscript{2}
 endsnippet
 
 snippet "(\s|\()m1p" "M1 phase" r
