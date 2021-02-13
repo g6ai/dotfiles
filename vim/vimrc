@@ -47,7 +47,7 @@ augroup END
 autocmd VimLeave * silent !echo -ne "\e[5 q"
 
 " Spell
-set spelllang=en_gb,cjk
+set spelllang=en_gb
 autocmd FileType tex setlocal spell
 let g:tex_comment_nospell = 1 " For vimtex use g:vimtex_syntax_nospell_comments
 
