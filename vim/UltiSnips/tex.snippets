@@ -37,8 +37,12 @@ endsnippet
 
 # Generic writing
 
-snippet etal "et al."
-\\textit{et al.}
+snippet "(^|\s)etal" "et al." rA
+`!p snip.rv = match.group(1)`\\textit{et al.}
+endsnippet
+
+snippet "(^|\s)via" "via" rA
+`!p snip.rv = match.group(1)`\\textit{via}
 endsnippet
 
 # My PhD work, mhchem package used
