@@ -25,6 +25,7 @@ set incsearch " See cursor move when typing
 set mouse=a " Enable use of mouse for all modes
 set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
+set maxmempattern=2000000 " Avoid E363
 
 " Time out
 set ttimeout
