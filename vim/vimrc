@@ -176,7 +176,9 @@ if flag == "good"
 
   " gruvbox
   let g:gruvbox_contrast_dark = 'hard'
+  colorscheme gruvbox
 
+  " MacBackground()
   function! MacBackground(...)
     let s:new_bg = "dark"
     if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
@@ -195,7 +197,6 @@ if flag == "good"
       colorscheme github
     endif
   endfunction
-
   if system_name =~ "Darwin"
     call MacBackground()
     call timer_start(3000, "MacBackground", {"repeat": -1})
