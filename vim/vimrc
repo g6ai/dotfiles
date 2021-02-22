@@ -65,6 +65,22 @@ highlight Tabline ctermbg=239
 highlight TablineFill ctermfg=243
 highlight VertSplit ctermfg=235 ctermbg=243
 
+function! MacBackground(...)
+  let s:new_bg = "dark"
+  if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
+    let s:new_bg = "dark"
+  else
+    let s:new_bg = "light"
+  endif
+  if &background !=? s:new_bg
+    let &background = s:new_bg
+  endif
+endfunction
+if system_name =~ "Darwin"
+  call MacBackground()
+  call timer_start(3000, "MacBackground", {"repeat": -1})
+endif
+
 " Prevent wrong bg color during rapid scrolling
 if (&term =~ '^xterm' && &t_Co == 256)
   set t_ut= | set ttyscroll=1
