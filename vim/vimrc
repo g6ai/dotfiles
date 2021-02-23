@@ -3,7 +3,7 @@
 let mapleader = ";" " Change mapleader
 let maplocalleader = ";" " Change local mapleader
 set nocompatible " Get out of vi compatible mode
-let system_name = system('uname') " Reserve for later
+let system_name = substitute(system('uname'), '\n', '', '') " Reserve for later
 
 
 " Load local .vimrc files
@@ -78,11 +78,11 @@ autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 
 " Clipboard
-if system_name =~ "Darwin"
+if system_name ==# "Darwin"
   set clipboard=unnamed
   noremap <Leader>y "*y
   noremap <Leader>p "*p
-elseif system_name =~ "Linux"
+elseif system_name ==# "Linux"
   set clipboard=unnamedplus
   noremap <Leader>y "+y
   noremap <Leader>p "+p
@@ -119,15 +119,15 @@ nnoremap <C-l> <C-w>l
 command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
 command! NA %s/^[^\t]*\t// | set number | noh
 
-if system_name =~ "Darwin" && has("python3_dynamic")
+if system_name ==# "Darwin" && has("python3_dynamic")
   set pythonthreehome=$HOME/.pyenv/versions/3.8.6
   set pythonthreedll=$HOME/.pyenv/versions/3.8.6/lib/libpython3.8.dylib
 endif
 
 " Check if memory size is large enough to use plugins
-if system_name =~ "Darwin"
+if system_name ==# "Darwin"
   let flag = "good"
-elseif system_name =~ "Linux"
+elseif system_name ==# "Linux"
   let mem_size = system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MB
   if mem_size > 3600
     let flag = "good"
@@ -223,7 +223,7 @@ elseif flag == "good"
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
   endfunction
-  if system_name =~ "Darwin"
+  if system_name ==# "Darwin"
     call MacBackground()
     autocmd OSAppearanceChanged * call MacGUIBackground()
   endif
