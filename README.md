@@ -1,7 +1,9 @@
 # Dotfiles
-My dotfiles. Some of my considerations are explained in [wiki](https://github.com/g6ai/dotfiles/wiki).
+My dotfiles. Some of my considerations are explained in [Wiki](https://github.com/g6ai/dotfiles/wiki).
 
-![screenshot](https://i.imgur.com/EthXz25.png)
+![dark mode](https://github.com/gbai/dotfiles/wiki/screenshots/dark.png)
+
+![light mode](https://github.com/gbai/dotfiles/wiki/screenshots/light.png)
 
 ## Features
 
