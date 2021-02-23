@@ -1,9 +1,9 @@
 # Dotfiles
 My dotfiles. Some of my considerations are explained in [Wiki](https://github.com/g6ai/dotfiles/wiki).
 
-![dark mode](https://github.com/gbai/dotfiles/wiki/screenshots/dark.png)
+![dark mode](https://github.com/g6ai/dotfiles/wiki/screenshots/dark.png)
 
-![light mode](https://github.com/gbai/dotfiles/wiki/screenshots/light.png)
+![light mode](https://github.com/g6ai/dotfiles/wiki/screenshots/light.png)
 
 ## Features
 
