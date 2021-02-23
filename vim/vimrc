@@ -12,7 +12,7 @@ set secure
 
 set splitbelow splitright " Split new window below and right
 set laststatus=2 " Always show status line
-set wildmenu " Enable a menu at the bottom with tab-key compeletion
+set wildmenu " Enable a menu at the bottom with tab-key completion
 set showtabline=2 " Show tabline
 set ruler " Show current cursor position
 set nu " Switch on numbering
