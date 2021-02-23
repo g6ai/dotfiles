@@ -208,9 +208,6 @@ elseif flag == "good"
       let g:airline_theme = "github"
     endif
   endfunction
-  if system_name =~ "Darwin"
-    call MacBackground()
-  endif
 
   " MacGUIBackground(): change MacVim gVim color scheme automatically
   function! MacGUIBackground()
@@ -226,7 +223,10 @@ elseif flag == "good"
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
   endfunction
-  autocmd OSAppearanceChanged * call MacGUIBackground()
+  if system_name =~ "Darwin"
+    call MacBackground()
+    autocmd OSAppearanceChanged * call MacGUIBackground()
+  endif
 
   " vim-indent-guides
   let g:indent_guides_enable_on_vim_startup = 1
