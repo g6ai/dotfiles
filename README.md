@@ -3,7 +3,7 @@ My dotfiles. Some of my considerations are explained in [Wiki](https://github.co
 
 ![dark mode](https://github.com/g6ai/dotfiles/wiki/screenshots/dark.png)
 
-![light mode](https://github.com/g6ai/dotfiles/wiki/screenshots/light.png)
+More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 ## Features
 
