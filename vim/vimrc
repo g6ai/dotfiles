@@ -181,6 +181,21 @@ elseif flag == "good"
   let g:gruvbox_contrast_dark = 'hard'
   colorscheme gruvbox
 
+  " ToggleBackground(): Toggle color scheme
+  function! ToggleBackgound()
+    if &background == "dark"
+      set background=light
+      colorscheme github
+      let g:airline_theme = "github"
+    elseif &background == "light"
+      set background=dark
+      colorscheme gruvbox
+      let g:airline_theme = "gruvbox"
+    endif
+    call airline#extensions#tabline#buffers#invalidate()
+    AirlineRefresh
+  endfunction
+
   " MacBackground(): Set MacVim color scheme
   function! MacBackground()
     if system("defaults read -g AppleInterfaceStyle") =~ "^Dark"
@@ -196,21 +211,6 @@ elseif flag == "good"
   if system_name =~ "Darwin"
     call MacBackground()
   endif
-
-  " ToggleMacBackground(): Toggle MacVim color scheme
-  function! ToggleMacBackgound()
-    if &background == "dark"
-      set background=light
-      colorscheme github
-      let g:airline_theme = "github"
-    elseif &background == "light"
-      set background=dark
-      colorscheme gruvbox
-      let g:airline_theme = "gruvbox"
-    endif
-    call airline#extensions#tabline#buffers#invalidate()
-    AirlineRefresh
-  endfunction
 
   " MacGUIBackground(): change MacVim gVim color scheme automatically
   function! MacGUIBackground()
