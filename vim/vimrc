@@ -162,7 +162,7 @@ elseif flag == "good"
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'morhetz/gruvbox'
   Plug 'cormacrelf/vim-colors-github'
-  Plug 'scrooloose/nerdtree'
+  Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
   Plug 'lervag/vimtex'
@@ -250,7 +250,7 @@ elseif flag == "good"
   " If more than one window and previous buffer was NERDTree, go back to it.
   autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
 
-  " Airline
+  " vim-airline
   let g:airline_powerline_fonts = 1
   let g:airline#extensions#tabline#enabled = 1
   " Enable next two lines to define straight tabs
