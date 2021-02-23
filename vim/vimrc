@@ -5,8 +5,6 @@ let maplocalleader = ";" " Change local mapleader
 set nocompatible " Get out of vi compatible mode
 let system_name = system('uname') " Reserve for later
 
-" Auto source .vimrc after saving
-autocmd BufWritePost $MYVIMRC source $MYVIMRC
 
 " Load local .vimrc files
 set exrc
@@ -143,8 +141,13 @@ if has('win32')
   let flag = "good"
 endif
 
-" Plugin
-if flag == "good"
+if flag == "nogood"
+  " Auto source .vimrc after saving
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+elseif flag == "good"
+  " Auto source .vimrc after saving
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC | call airline#extensions#tabline#buffers#invalidate() | AirlineRefresh
+
   " vim-plug
   if empty(glob('~/.vim/autoload/plug.vim'))
     silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
@@ -178,29 +181,52 @@ if flag == "good"
   let g:gruvbox_contrast_dark = 'hard'
   colorscheme gruvbox
 
-  " MacBackground()
-  function! MacBackground(...)
-    let s:new_bg = "dark"
-    if system("defaults read -g AppleInterfaceStyle") =~ '^Dark'
-      let s:new_bg = "dark"
-      let s:new_cs = "d"
-    else
-      let s:new_bg = "light"
-      let s:new_cs = "l"
-    endif
-    if &background !=? s:new_bg
-      let &background = s:new_bg
-    endif
-    if s:new_cs =~ "d"
+  " MacBackground(): Set MacVim color scheme
+  function! MacBackground()
+    if system("defaults read -g AppleInterfaceStyle") =~ "^Dark"
+      set background=dark
       colorscheme gruvbox
-    elseif s:new_cs =~ "l"
+      let g:airline_theme = "gruvbox"
+    else
+      set background=light
       colorscheme github
+      let g:airline_theme = "github"
     endif
   endfunction
   if system_name =~ "Darwin"
     call MacBackground()
-    call timer_start(3000, "MacBackground", {"repeat": -1})
   endif
+
+  " ToggleMacBackground(): Toggle MacVim color scheme
+  function! ToggleMacBackgound()
+    if &background == "dark"
+      set background=light
+      colorscheme github
+      let g:airline_theme = "github"
+    elseif &background == "light"
+      set background=dark
+      colorscheme gruvbox
+      let g:airline_theme = "gruvbox"
+    endif
+    call airline#extensions#tabline#buffers#invalidate()
+    AirlineRefresh
+  endfunction
+
+  " MacGUIBackground(): change MacVim gVim color scheme automatically
+  function! MacGUIBackground()
+    if v:os_appearance == 1
+      set background=dark
+      colorscheme gruvbox
+      let g:airline_theme = "gruvbox"
+    else
+      set background=light
+      colorscheme github
+      let g:airline_theme = "github"
+    endif
+    call airline#extensions#tabline#buffers#invalidate()
+    AirlineRefresh
+  endfunction
+  autocmd OSAppearanceChanged * call MacGUIBackground()
 
   " vim-indent-guides
   let g:indent_guides_enable_on_vim_startup = 1
@@ -214,7 +240,8 @@ if flag == "good"
   " NERDTree
   let NERDTreeShowHidden = 1
   let NERDTreeMinimalUI = 1
-  command! NT NERDTreeToggle | AirlineRefresh
+  command! NT NERDTreeToggle
+  "command! NT NERDTreeToggle | AirlineRefresh
   nmap nt :NT<CR>
   autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
   " If more than one window and previous buffer was NERDTree, go back to it.
