@@ -223,6 +223,7 @@ elseif flag == "good"
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
   endfunction
+
   if system_name ==# "Darwin"
     call MacBackground()
     autocmd OSAppearanceChanged * call MacGUIBackground()
