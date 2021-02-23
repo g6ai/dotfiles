@@ -182,7 +182,7 @@ elseif flag == "good"
   colorscheme gruvbox
 
   " ToggleBackground(): Toggle color scheme
-  function! ToggleBackgound()
+  function! ToggleBackground()
     if &background == "dark"
       set background=light
       colorscheme github
@@ -195,6 +195,8 @@ elseif flag == "good"
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
   endfunction
+
+  nmap tb :call ToggleBackground()<CR>
 
   " MacBackground(): Set MacVim color scheme
   function! MacBackground()
