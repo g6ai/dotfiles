@@ -1,7 +1,7 @@
 " G. Bai's .vimrc
 
-let mapleader = ";" " Change mapleader
-let maplocalleader = ";" " Change local mapleader
+let mapleader = ";"
+let maplocalleader = ";"
 set nocompatible " Get out of vi compatible mode
 let system_name = substitute(system('uname'), '\n', '', '') " Reserve for later
 
