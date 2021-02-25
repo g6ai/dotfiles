@@ -10,6 +10,16 @@ let system_name = substitute(system('uname'), '\n', '', '') " Reserve for later
 set exrc
 set secure
 
+if !exists("*ReloadConfigs")
+  function ReloadConfigs()
+    :source ~/.vimrc
+    if has("gui_running")
+      :source ~/.gvimrc
+    endif
+  endfunction
+  command! Recfg call ReloadConfigs()
+endif
+
 set splitbelow splitright " Split new window below and right
 set laststatus=2 " Always show status line
 set wildmenu " Enable a menu at the bottom with tab-key completion
