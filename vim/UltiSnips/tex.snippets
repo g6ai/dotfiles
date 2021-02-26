@@ -34,16 +34,26 @@ snippet "\s([-|+]?[0-9]+\.?[0-9]*)cm-1" "cm^{-1}" rA
  \\SI{`!p snip.rv = match.group(1)`}{cm^{-1}}$0
 endsnippet
 
+## mhchem snippets
+
+snippet "\\ce" "mhchem" rA
+\\ce{$1}$0
+endsnippet
+
 ## Re-written honza snippets
 
 # To replace cite
 snippet "([\s|~])ct" "cite" r
-`!p snip.rv = match.group(1)`\\cite[$1]{$2}$0
+`!p snip.rv = match.group(1)`\\cite[]{$1}$0
 endsnippet
 
 ## Glossary
 
 # Generic writing
+
+snippet "(^|\s)eg" "e.g." rA
+`!p snip.rv = match.group(1)`\\textit{e.g.}
+endsnippet
 
 snippet "(^|\s)etal" "et al." rA
 `!p snip.rv = match.group(1)`\\textit{et al.}
