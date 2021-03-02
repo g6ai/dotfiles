@@ -17,7 +17,7 @@ if !exists("*ReloadConfigs")
       :source ~/.gvimrc
     endif
   endfunction
-  command! Recfg call ReloadConfigs()
+  command! RC call ReloadConfigs()
 endif
 
 set splitbelow splitright " Split new window below and right
