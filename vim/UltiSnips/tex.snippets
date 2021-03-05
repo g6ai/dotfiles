@@ -4,6 +4,10 @@ snippet "(\S*\\\S+\{\S+\}\S*)pdfs" "PDF string" rA
 \\texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
 endsnippet
 
+snippet equation "reference to an equation"
+Equation~\\ref{eq:${1}}$0
+endsnippet
+
 ## siunitx snippets
 
 # Generic
