@@ -1,14 +1,14 @@
 ## TeX life easier
 
-snippet "\s(\S*\\\S+\{\S+\}\S*)pdfs" "PDF string" rA
- \\texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
+snippet "(\S*\\\S+\{\S+\}\S*)pdfs" "PDF string" rA
+\\texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
 endsnippet
 
 ## siunitx snippets
 
 # Generic
 
-snippet "([-|+]?[0-9]+\.?[0-9]*)si" "siunitx" rA
+snippet "[^to]([-|+]?[0-9]+\.?[0-9]*)si" "siunitx" rA
 \\SI{`!p snip.rv = match.group(1)`}{\\$1}$0
 endsnippet
 
@@ -16,7 +16,7 @@ snippet "([-|+]?[0-9]+\.?[0-9]*)to([-|+]?[0-9]+\.?[0-9]*)si" "siunitx range" rA
 \\SIrange{`!p snip.rv = match.group(1)`}{`!p snip.rv = match.group(2)`}{\\$1}$0
 endsnippet
 
-snippet "([-|+]?[0-9]*\.?[0-9]*\([0-9]+\)|e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*\([0-9]+\)e-?[0-9]+)si" "siunitx scientific" rA
+snippet "[^to]([-|+]?[0-9]*\.?[0-9]*\([0-9]+\)|e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*\([0-9]+\)e-?[0-9]+)si" "siunitx scientific" rA
 \\SI[separate-uncertainty=true]{`!p snip.rv = match.group(1)`}{\\$1}$0
 endsnippet
 
