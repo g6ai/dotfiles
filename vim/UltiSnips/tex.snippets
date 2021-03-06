@@ -1,11 +1,26 @@
 ## TeX life easier
 
 snippet "(\S*\\\S+\{\S+\}\S*)pdfs" "PDF string" rA
-\\texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
+\texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
 endsnippet
 
 snippet equation "reference to an equation"
-Equation~\\ref{eq:${1}}$0
+Equation~\ref{eq:${1}}$0
+endsnippet
+
+snippet figs "figures environment"
+\begin{figure}[htpb]
+    \centering
+    \begin{subfigure}[b]{0.3\textwidth}
+    \begin{center}
+        \includegraphics[width=\textwidth]{}
+    \end{center}
+    \caption{DC Sputtering}
+    \label{fig:}
+    \end{subfigure}
+    \caption{Name}%
+    \label{fig:}
+\end{figure}
 endsnippet
 
 ## siunitx snippets
@@ -13,42 +28,42 @@ endsnippet
 # Generic
 
 snippet "[^to]([-|+]?[0-9]+\.?[0-9]*)si" "siunitx" rA
-\\SI{`!p snip.rv = match.group(1)`}{\\$1}$0
+\SI{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
 snippet "([-|+]?[0-9]+\.?[0-9]*)to([-|+]?[0-9]+\.?[0-9]*)si" "siunitx range" rA
-\\SIrange{`!p snip.rv = match.group(1)`}{`!p snip.rv = match.group(2)`}{\\$1}$0
+\SIrange{`!p snip.rv = match.group(1)`}{`!p snip.rv = match.group(2)`}{$1}$0
 endsnippet
 
 snippet "[^to]([-|+]?[0-9]*\.?[0-9]*\([0-9]+\)|e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*\([0-9]+\)e-?[0-9]+)si" "siunitx scientific" rA
-\\SI[separate-uncertainty=true]{`!p snip.rv = match.group(1)`}{\\$1}$0
+\SI[separate-uncertainty=true]{`!p snip.rv = match.group(1)`}{$1}$0
 endsnippet
 
 snippet "([-|+]?[0-9]*\.?[0-9]*\([0-9]+\)|e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*\([0-9]+\)e-?[0-9]+)to([-|+]?[0-9]*\.?[0-9]*\([0-9]+\)|e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*e-?[0-9]+|[-|+]?[0-9]*\.?[0-9]*\([0-9]+\)e-?[0-9]+)si" "siunitx scientific range" rA
-\\SIrange[separate-uncertainty=true]{`!p snip.rv = match.group(1)`}{`!p snip.rv = match.group(2)`}{\\$1}$0
+\SIrange[separate-uncertainty=true]{`!p snip.rv = match.group(1)`}{`!p snip.rv = match.group(2)`}{$1}$0
 endsnippet
 
 # Specific units
 
 snippet "([-|+]?[0-9]+\.?[0-9]*)degc" "degree Celsius" rA
-\\SI{`!p snip.rv = match.group(1)`}{\\degreeCelsius}$0
+\SI{`!p snip.rv = match.group(1)`}{\degreeCelsius}$0
 endsnippet
 
-snippet "([-|+]?[0-9]+\.?[0-9]*)cm-1" "cm^{-1}" rA
-\\SI{`!p snip.rv = match.group(1)`}{cm^{-1}}$0
+snippet "([-|+]?[0-9]+\.?[0-9]*)cm-1" "cm-1" rA
+\SI{`!p snip.rv = match.group(1)`}{\per\cm}$0
 endsnippet
 
 ## mhchem snippets
 
 snippet "\\ce" "mhchem" rA
-\\ce{$1}$0
+\ce{$1}$0
 endsnippet
 
 ## Re-written honza snippets
 
 # To replace cite
 snippet "([\s|~])ct" "cite" r
-`!p snip.rv = match.group(1)`\\cite[]{$1}$0
+`!p snip.rv = match.group(1)`\cite[]{$1}$0
 endsnippet
 
 ## Glossary
@@ -56,29 +71,29 @@ endsnippet
 # Generic writing
 
 snippet "(^|\s)etc" "etc." rA
-`!p snip.rv = match.group(1)`\\textit{etc.}
+`!p snip.rv = match.group(1)`\textit{etc.}
 endsnippet
 
 snippet "(^|\s)eg" "e.g." rA
-`!p snip.rv = match.group(1)`\\textit{e.g.}
+`!p snip.rv = match.group(1)`\textit{e.g.}
 endsnippet
 
 snippet "(^|\s)etal" "et al." rA
-`!p snip.rv = match.group(1)`\\textit{et al.}
+`!p snip.rv = match.group(1)`\textit{et al.}
 endsnippet
 
 snippet "(^|\s)via" "via" rA
-`!p snip.rv = match.group(1)`\\textit{via}
+`!p snip.rv = match.group(1)`\textit{via}
 endsnippet
 
 snippet "(^|\s)vs" "vs." rA
-`!p snip.rv = match.group(1)`\\textit{vs.}
+`!p snip.rv = match.group(1)`\textit{vs.}
 endsnippet
 
 # My PhD work, mhchem package used
 
 snippet "(^|\s|\(|{)vo2" "VO2" r
-`!p snip.rv = match.group(1)`\\ce{VO2}
+`!p snip.rv = match.group(1)`\ce{VO2}
 endsnippet
 
 snippet temav "TEMAV"
@@ -90,21 +105,21 @@ germanium(IV) ethoxide
 endsnippet
 
 snippet "(\s|\()m1p" "M1 phase" r
-`!p snip.rv = match.group(1)`\\textit{M\\textsubscript{1}}
+`!p snip.rv = match.group(1)`\textit{M\textsubscript{1}}
 endsnippet
 
 snippet "(\s|\()rp" "R phase" r
-`!p snip.rv = match.group(1)`\\textit{R}
+`!p snip.rv = match.group(1)`\textit{R}
 endsnippet
 
 snippet p21c "P21/c space group"
-\\textit{P}2\\textsubscript{1}/\\textit{c}
+\textit{P}2\textsubscript{1}/\textit{c}
 endsnippet
 
 snippet p42mnm "P42/mnm space group"
-\\textit{P}4\\textsubscript{2}/\\textit{mnm}
+\textit{P}4\textsubscript{2}/\textit{mnm}
 endsnippet
 
 snippet tc "MIT temperature"
-$T_{\\textit{c}}$
+$T_{\textit{c}}$
 endsnippet
