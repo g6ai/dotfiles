@@ -1,11 +1,9 @@
+priority 1
+
 ## TeX life easier
 
 snippet "(\S*\\\S+\{\S+\}\S*)pdfs" "PDF string" rA
 \texorpdfstring{`!p snip.rv = match.group(1)`}{}$0
-endsnippet
-
-snippet equation "reference to an equation"
-Equation~\ref{eq:${1}}$0
 endsnippet
 
 snippet figs "figures environment"
@@ -21,6 +19,10 @@ snippet figs "figures environment"
     \caption{Name}%
     \label{fig:}
 \end{figure}
+endsnippet
+
+snippet equation "reference to an equation"
+Equation~\ref{eq:${1}}$0
 endsnippet
 
 ## siunitx snippets
@@ -62,8 +64,20 @@ endsnippet
 ## Re-written honza snippets
 
 # To replace cite
-snippet "([\s|~])ct" "cite" r
+snippet "([\s|~])c" "cite" r
 `!p snip.rv = match.group(1)`\cite[]{$1}$0
+endsnippet
+
+snippet figure "reference to a figure"
+Figure~\ref{fig:${1}}$0
+endsnippet
+
+snippet table "reference to a table"
+Table~\ref{tab:${1}}$0
+endsnippet
+
+snippet section "reference to a section"
+Section~\ref{sec:${1}}$0
 endsnippet
 
 ## Glossary
