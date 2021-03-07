@@ -271,7 +271,6 @@ elseif flag == "good"
   "let g:airline#extensions#tabline#left_sep = ' '
   "let g:airline#extensions#tabline#left_alt_sep = '|'
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-  let g:airline#extensions#vimtex#main = "/"
 
   " tmuxline.vim
   " Run :Tmuxline then :TmuxlineSnapshot! [file]
@@ -301,6 +300,7 @@ elseif flag == "good"
           \ 'jar': '~/textidote.jar',
           \ 'args': '--check en',
           \}
+  let g:airline#extensions#vimtex#main = "/"
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
