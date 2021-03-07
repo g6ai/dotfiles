@@ -5,7 +5,6 @@ let maplocalleader = ";"
 "set nocompatible " Get out of vi compatible mode
 let system_name = substitute(system('uname'), '\n', '', '') " Reserve for later
 
-
 " Load local .vimrc files
 set exrc
 set secure
