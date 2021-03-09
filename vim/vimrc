@@ -313,10 +313,11 @@ elseif flag == "good"
   let g:airline_section_warning = '%{airline#util#prepend(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
   " UltiSnips
-  let g:UltiSnipsExpandTrigger="<tab>"
-  let g:UltiSnipsJumpForwardTrigger="<tab>"
-  let g:UltiSnipsJumpBackwardTrigger="<s-tab>"
-  let g:UltiSnipsEditSplit="vertical"
+  let g:UltiSnipsExpandTrigger = "<tab>"
+  let g:UltiSnipsJumpForwardTrigger = "<tab>"
+  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
+  "let g:UltiSnipsEditSplit = "vertical"
+  let g:UltiSnipsEnableSnipMate = 0
 
   " LeaderF
   let g:Lf_ShortcutF = "<leader>ff"
