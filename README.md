@@ -1,7 +1,7 @@
 # Dotfiles
 My dotfiles. Some of my considerations are explained in [Wiki](https://github.com/g6ai/dotfiles/wiki).
 
-![](https://github.com/g6ai/dotfiles/wiki/screenshots/light.png)
+![](https://github.com/g6ai/dotfiles/wiki/screenshots/dark.png)
 
 More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
