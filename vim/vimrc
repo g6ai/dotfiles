@@ -245,7 +245,7 @@ elseif flag == "good"
     autocmd OSAppearanceChanged * call MacGUIBackground()
   endif
 
-  " vim-indent-guides
+  " Indent Guides
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_auto_colors = 1
   "autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
@@ -326,7 +326,7 @@ elseif flag == "good"
   let g:Lf_PreviewInPopup = 1
   let g:Lf_ShowDevIcons = 0
 
-  " Leaderf-snippet
+  " LeaderF-snippet
   inoremap <C-s> <C-\><C-o>:Leaderf snippet<CR>
   let g:Lf_PreviewResult = get(g:, 'Lf_PreviewResult', {})
   let g:Lf_PreviewResult.snippet = 1
