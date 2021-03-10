@@ -214,7 +214,7 @@ elseif flag == "good"
 
   nmap tb :call ToggleBackground()<CR>
 
-  " MacBackground(): Set MacVim color scheme
+  " MacBackground(): Set color scheme for macOS
   function! MacBackground()
     if system("defaults read -g AppleInterfaceStyle") =~ "^Dark"
       set background=dark
@@ -243,8 +243,12 @@ elseif flag == "good"
   endfunction
 
   if system_name ==# "Darwin"
-    call MacBackground()
-    autocmd OSAppearanceChanged * call MacGUIBackground()
+    if !has('nvim')
+      call MacBackground()
+      autocmd OSAppearanceChanged * call MacGUIBackground()
+    else
+      call MacBackground()
+    endif
   endif
 
   " Indent Guides
