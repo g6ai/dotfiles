@@ -2,7 +2,9 @@
 
 let mapleader = ";"
 let maplocalleader = ";"
-"set nocompatible " Get out of vi compatible mode
+if has('win32')
+  set nocompatible " Get out of vi compatible mode
+endif
 let system_name = substitute(system('uname'), '\n', '', '') " Reserve for later
 
 " Load local .vimrc files
