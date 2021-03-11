@@ -14,7 +14,7 @@ set secure
 if !exists("*ReloadConfigs")
   function ReloadConfigs()
     :source ~/.vimrc
-    if has("gui_running")
+    if has('gui_running')
       if !has('gui_vimr')
         :source ~/.gvimrc
       endif
@@ -125,7 +125,7 @@ nnoremap <leader>bn :call BSkipQuickFix("bn!")<CR>
 " Move to previous buffer
 nnoremap <leader>bp :call BSkipQuickFix("bp!")<CR>
 " Neovim
-if has("nvim")
+if has('nvim')
   autocmd BufEnter * :cd %:p:h
 endif
 
@@ -147,7 +147,7 @@ command! NA %s/^[^\t]*\t// | set number | noh
 if system_name ==# "Darwin"
   if has('nvim')
     let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
-  elseif has("python3_dynamic")
+  elseif has('python3_dynamic')
     set pythonthreehome=$HOME/.pyenv/versions/3.8.6
     set pythonthreedll=$HOME/.pyenv/versions/3.8.6/lib/libpython3.8.dylib
   endif
