@@ -220,6 +220,10 @@ elseif flag == "good"
     endif
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
+    if has('gui_vimr')
+      VimRToggleTools
+      VimRToggleTools
+    endif
   endfunction
 
   nmap tb :call ToggleBackground()<CR>
