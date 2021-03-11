@@ -25,6 +25,9 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
   * For clipboard enabled Vim installation, within an SSH session, primary and/or clipboard content on the remote server can be sent to local machine by X11 forwarding.
   * `pyenv` is supported.
 
+### Neovim
+* The `init.vim` uses the versatile configs in `.vimrc`.
+
 ### tmux
 * `.tmux.conf` sources [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
   * For *macOS*, `pbcopy` is used. `pbcopy` is installed on *macOS* by default.
