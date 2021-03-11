@@ -15,7 +15,9 @@ if !exists("*ReloadConfigs")
   function ReloadConfigs()
     :source ~/.vimrc
     if has("gui_running")
-      :source ~/.gvimrc
+      if !has('gui_vimr')
+        :source ~/.gvimrc
+      endif
     endif
   endfunction
   command! RC call ReloadConfigs()
