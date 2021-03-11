@@ -121,6 +121,10 @@ endfunction
 nnoremap <leader>bn :call BSkipQuickFix("bn!")<CR>
 " Move to previous buffer
 nnoremap <leader>bp :call BSkipQuickFix("bp!")<CR>
+" Neovim
+if has("nvim")
+  autocmd BufEnter * :cd %:p:h
+endif
 
 " Window shortcuts
 nnoremap <C-j> <C-w>j
