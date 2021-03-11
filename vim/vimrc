@@ -17,6 +17,8 @@ if !exists("*ReloadConfigs")
     if has('gui_running')
       if !has('gui_vimr')
         :source ~/.gvimrc
+      else
+        :source ~/.config/nvim/ginit.vim
       endif
     endif
   endfunction
