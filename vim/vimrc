@@ -33,6 +33,9 @@ set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set hlsearch " Highlight search result
 set incsearch " See cursor move when typing
+if has('nvim')
+  set inccommand=nosplit
+endif
 set mouse=a " Enable use of mouse for all modes
 set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
