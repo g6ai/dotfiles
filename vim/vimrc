@@ -329,6 +329,9 @@ elseif flag == "good"
           \ 'args': '--check en',
           \}
   let g:airline#extensions#vimtex#main = "/"
+  if has('nvim')
+    g:vimtex_compiler_progname = 'nvr'
+  endif
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
