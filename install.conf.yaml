@@ -12,9 +12,9 @@
     ~/.tmux.inputrc: tmux/tmux.inputrc
     ~/.update_display.sh: tmux/update_display.sh
     ~/.vimrc: vim/vimrc
-    ~/.config/init.vim: vim/nvim/init.vim
+    ~/.config/nvim/init.vim: vim/nvim/init.vim
     ~/.gvimrc: vim/gvimrc
-    ~/.config/ginit.vim: vim/nvim/ginit.vim
+    ~/.config/nvim/ginit.vim: vim/nvim/ginit.vim
     ~/.vim/spell:
       create: true
       path: vim/spell
