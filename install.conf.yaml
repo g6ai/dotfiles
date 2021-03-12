@@ -21,9 +21,6 @@
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
-    ~/.config/nvim/UltiSnips:
-      create: true
-      path: vim/UltiSnips
     ~/.gitignore_global:
       create: true
       path: git/git_macos/gitignore_global
