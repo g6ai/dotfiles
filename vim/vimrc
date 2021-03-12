@@ -42,6 +42,7 @@ set mouse=a " Enable use of mouse for all modes
 set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
 set maxmempattern=2000000 " Avoid E363
+set autochdir " For Neovim
 
 " Time out
 set ttimeout
@@ -126,10 +127,6 @@ endfunction
 nnoremap <leader>bn :call BSkipQuickFix("bn!")<CR>
 " Move to previous buffer
 nnoremap <leader>bp :call BSkipQuickFix("bp!")<CR>
-" Neovim
-if has('nvim')
-  autocmd BufEnter * :cd %:p:h
-endif
 
 " Window shortcuts
 nnoremap <C-j> <C-w>j
