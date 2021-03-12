@@ -209,6 +209,7 @@ elseif flag == "good"
   Plug 'Yggdroot/LeaderF', {'do': ':LeaderfInstallCExtension'}
   Plug 'psliwka/vim-smoothie'
   Plug 'skywind3000/Leaderf-snippet'
+  Plug 'mhinz/vim-startify'
   call plug#end()
 
   " gruvbox
@@ -329,9 +330,9 @@ elseif flag == "good"
           \ 'args': '--check en',
           \}
   let g:airline#extensions#vimtex#main = "/"
-  if has('nvim')
-    g:vimtex_compiler_progname = 'nvr'
-  endif
+  "if has('nvim')
+  "  g:vimtex_compiler_progname = 'nvr'
+  "endif
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
