@@ -5,9 +5,11 @@
 - clean: ['~']
 
 - link:
+    ~/.profile: profile
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
     ~/.bash_profile: bash/bash_profile
+    ~/.zshrc: zsh/zshrc
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux.inputrc: tmux/tmux.inputrc
     ~/.update_display.sh: tmux/update_display.sh

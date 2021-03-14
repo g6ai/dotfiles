@@ -1,3 +1,5 @@
+source ~/.profile
+
 unset PROMPT_COMMAND
 # Below is a bad example of PS1:
 #PS1="\e[1;3;37m\s\e[m\e[1;37m:\e[m\e[1;33m\w\e[m \e[1;32m\u\e[m\e[1;37m\$\e[m "
@@ -11,10 +13,6 @@ PS1="\
 \[\033[01;37m\]\$\[\033[00m\] "
 export PS1
 
-if [[ "$(uname)" == "Linux" ]]; then
-    export EDITOR=/usr/bin/vim
-fi
-
 # Use vi editing mode
 set -o vi
 
@@ -24,15 +22,6 @@ then
 else
     export INPUTRC=~/.tmux.inputrc
 fi
-
-alias sudo='sudo '
-alias la='ls -A'
-alias l='ls -CF'
-alias ll='ls -ltAh'
-alias pd='pushd'
-alias pdw='pushd .'
-alias po='popd'
-alias vi='vim'
 
 # Terminal color
 export CLICOLOR=1
@@ -59,9 +48,3 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[01;04;32m'     # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 # and so on
-
-# Source local settings
-BASHRC_LOCAL=~/.bashrc_local
-if [[ -f "$BASHRC_LOCAL" ]]; then
-    source $BASHRC_LOCAL
-fi
