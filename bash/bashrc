@@ -1,3 +1,4 @@
+# Load common settings
 source ~/.profile
 
 unset PROMPT_COMMAND
