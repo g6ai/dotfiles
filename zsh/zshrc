@@ -7,6 +7,7 @@ plugins=(git pyenv zsh-autosuggestions zsh-syntax-highlighting thefuck vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
+# Put plugins config after this line
 # zsh-autosuggestions
 bindkey '^ ' autosuggest-accept
 
