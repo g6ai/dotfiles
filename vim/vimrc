@@ -50,6 +50,9 @@ set ttimeoutlen=100
 set timeoutlen=1000
 
 " Cursor
+if has('nvim')
+  set guicursor=n-c-v:block-blinkon100,i-ci:ver30-blinkon100
+endif
 if $TERM_PROGRAM ==# 'iTerm.app'
   let &t_SI = "\<Esc>]50;CursorShape=1\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2\x7"
@@ -76,9 +79,6 @@ else
   augroup END
   " Reset cursor when Vim exits:
   autocmd VimLeave * silent !echo -ne "\e[5 q"
-endif
-if has('nvim')
-  set guicursor=a:blinkon100
 endif
 
 " Spell
