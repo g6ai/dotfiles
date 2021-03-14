@@ -18,6 +18,9 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 * `.bashrc` configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of `less` pager.
 * `motd` folder has a Bash script to personalise motd, which is run by Dotbot.
 
+### Zsh
+* `.zshrc` uses common settings from Bash, while utilising oh-my-zsh for fancy features.
+
 ### Vim
 * `.vimrc` works for *Linux*, *macOS* and *Windows*! It checks if system is good enough to enable plugins.
   * *macOS* and *Windows* are good, as they usually have large memory for desktop environment.
