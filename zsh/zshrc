@@ -1,12 +1,15 @@
-[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
-
-export ZSH="/Users/gbai/.oh-my-zsh"
+### start of oh-my-zsh ###
+export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="gallois"
 
 plugins=(git pyenv zsh-autosuggestions zsh-syntax-highlighting thefuck)
 
 source $ZSH/oh-my-zsh.sh
+
+### end of oh-my-zsh ###
+
+[[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
 
 # Change cursor shape for different vi modes.
 function zle-keymap-select {
