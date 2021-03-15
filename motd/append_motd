@@ -1,9 +1,9 @@
 #!/usr/bin/env bash
 
 if [[ ! -f /etc/motd ]]; then
-    if [[ $EUID -eq 0 ]]; then
-        touch /etc/motd
-        tee -a /etc/motd > /dev/null << EOF
+  if [[ $EUID -eq 0 ]]; then
+    touch /etc/motd
+    tee -a /etc/motd > /dev/null << EOF
  ██████╗        ██████╗  █████╗ ██╗
 ██╔════╝        ██╔══██╗██╔══██╗██║
 ██║  ███╗       ██████╔╝███████║██║
@@ -11,9 +11,9 @@ if [[ ! -f /etc/motd ]]; then
 ╚██████╔╝██╗    ██████╔╝██║  ██║██║
  ╚═════╝ ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝
 EOF
-    else
-        sudo touch /etc/motd
-        sudo tee -a /etc/motd > /dev/null << EOF
+  else
+    sudo touch /etc/motd
+    sudo tee -a /etc/motd > /dev/null << EOF
  ██████╗        ██████╗  █████╗ ██╗
 ██╔════╝        ██╔══██╗██╔══██╗██║
 ██║  ███╗       ██████╔╝███████║██║
@@ -21,5 +21,5 @@ EOF
 ╚██████╔╝██╗    ██████╔╝██║  ██║██║
  ╚═════╝ ╚═╝    ╚═════╝ ╚═╝  ╚═╝╚═╝
 EOF
-    fi
+  fi
 fi

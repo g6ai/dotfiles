@@ -19,7 +19,7 @@ set -o vi
 
 if [[ '' = "$TMUX" ]]
 then
-    export INPUTRC=~/.inputrc
+  export INPUTRC=~/.inputrc
 else
-    export INPUTRC=~/.tmux.inputrc
+  export INPUTRC=~/.tmux.inputrc
 fi

@@ -1,5 +1,5 @@
 if [[ "$(uname)" == "Linux" ]]; then
-    export EDITOR=/usr/bin/vim
+  export EDITOR=/usr/bin/vim
 fi
 
 alias sudo='sudo '
@@ -15,15 +15,15 @@ alias vi='vim'
 export CLICOLOR=1
 export LSCOLORS=GxFxCxDxBxegedabagaced
 if [[ "$(uname)" == "Darwin" ]]; then
-    # If using native BSD utils
-    #alias ls='ls -G'
-    # If installed "coreutils" with homebrew,
-    # and added
-    # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-    # to ~/.bashrc_local per advice after installation
-    alias ls='ls --color'
+  # If using native BSD utils
+  #alias ls='ls -G'
+  # If installed "coreutils" with homebrew,
+  # and added
+  # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  # to ~/.bashrc_local per advice after installation
+  alias ls='ls --color'
 elif [[ "$(uname)" == "Linux" ]]; then
-    alias ls='ls --color'
+  alias ls='ls --color'
 fi
 
 # less color
@@ -40,5 +40,5 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 # Source local settings
 PROFILE_LOCAL=~/.profile_local
 if [[ -f "$PROFILE_LOCAL" ]]; then
-    source $PROFILE_LOCAL
+  source $PROFILE_LOCAL
 fi
