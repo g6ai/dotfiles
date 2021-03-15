@@ -14,9 +14,15 @@
     ~/.tmux.inputrc: tmux/tmux.inputrc
     ~/.update_display.sh: tmux/update_display.sh
     ~/.vimrc: vim/vimrc
-    ~/.config/nvim/init.vim: vim/nvim/init.vim
+    ~/.config/nvim/init.vim:
+      create: true
+      path: vim/nvim/init.vim
+      if: '[ ! -z "$(command -v nvim)" ]'
     ~/.gvimrc: vim/gvimrc
-    ~/.config/nvim/ginit.vim: vim/nvim/ginit.vim
+    ~/.config/nvim/ginit.vim:
+      create: true
+      path: vim/nvim/ginit.vim
+      if: '[ ! -z "$(command -v nvim)" ]'
     ~/.vim/spell:
       create: true
       path: vim/spell
