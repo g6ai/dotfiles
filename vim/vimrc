@@ -208,8 +208,7 @@ elseif flag == "good"
 
   call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
-  Plug 'vim-airline/vim-airline'
-  Plug 'vim-airline/vim-airline-themes'
+  Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'morhetz/gruvbox'
   Plug 'cormacrelf/vim-colors-github'
@@ -218,15 +217,16 @@ elseif flag == "good"
   Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
   Plug 'lervag/vimtex'
   Plug 'godlygeek/tabular' " tabular plugin must come before vim-markdown
-  Plug 'plasticboy/vim-markdown'
-  Plug 'JamshedVesuna/vim-markdown-preview'
+  Plug 'plasticboy/vim-markdown' | Plug 'JamshedVesuna/vim-markdown-preview'
   Plug 'neoclide/coc.nvim', Cond(has('nvim'))
-  Plug 'SirVer/ultisnips'
-  Plug 'honza/vim-snippets'
+  Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   Plug 'Yggdroot/LeaderF', {'do': ':LeaderfInstallCExtension'}
   Plug 'psliwka/vim-smoothie'
   Plug 'skywind3000/Leaderf-snippet'
   Plug 'mhinz/vim-startify'
+  Plug 'nvim-lua/popup.nvim', Cond(has('nvim'))
+  Plug 'nvim-lua/plenary.nvim', Cond(has('nvim'))
+  Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim'))
   call plug#end()
 
   " gruvbox
