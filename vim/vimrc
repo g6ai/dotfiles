@@ -210,6 +210,7 @@ elseif flag == "good"
   Plug 'tpope/vim-fugitive'
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  Plug 'nathanaelkane/vim-indent-guides'
   Plug 'morhetz/gruvbox'
   Plug 'cormacrelf/vim-colors-github'
   Plug 'preservim/nerdtree'
@@ -226,12 +227,22 @@ elseif flag == "good"
   Plug 'psliwka/vim-smoothie'
   Plug 'skywind3000/Leaderf-snippet'
   Plug 'mhinz/vim-startify'
-  Plug 'Yggdroot/indentLine'
   call plug#end()
 
   " gruvbox
   let g:gruvbox_contrast_dark = 'hard'
   colorscheme gruvbox
+
+  " IndentGuides(): Set Indent Guides color
+  function! IndentGuides(background)
+    if a:background == "dark"
+      hi IndentGuidesOdd  guibg=#a9a9a9 ctermbg=darkgrey
+      hi IndentGuidesEven guibg=#808080 ctermbg=grey
+    elseif a:background == "light"
+      hi IndentGuidesOdd  guibg=#808080 ctermbg=grey
+      hi IndentGuidesEven guibg=#a9a9a9 ctermbg=darkgrey
+    endif
+  endfunction
 
   " ToggleBackground(): Toggle color scheme
   function! ToggleBackground()
@@ -239,10 +250,12 @@ elseif flag == "good"
       set background=light
       colorscheme github
       let g:airline_theme = "github"
+      call IndentGuides(&background)
     elseif &background == "light"
       set background=dark
       colorscheme gruvbox
       let g:airline_theme = "gruvbox"
+      call IndentGuides(&background)
     endif
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
@@ -260,10 +273,12 @@ elseif flag == "good"
       set background=dark
       colorscheme gruvbox
       let g:airline_theme = "gruvbox"
+      call IndentGuides(&background)
     else
       set background=light
       colorscheme github
       let g:airline_theme = "github"
+      call IndentGuides(&background)
     endif
   endfunction
 
@@ -273,10 +288,12 @@ elseif flag == "good"
       set background=dark
       colorscheme gruvbox
       let g:airline_theme = "gruvbox"
+      call IndentGuides(&background)
     else
       set background=light
       colorscheme github
       let g:airline_theme = "github"
+      call IndentGuides(&background)
     endif
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
@@ -291,10 +308,20 @@ elseif flag == "good"
     endif
   endif
 
-  "indentLine
-  let g:indentLine_char = '│'
-  let g:indentLine_first_char = '│'
-  let g:indentLine_showFirstIndentLevel = 1
+  " Indent Guides
+  let g:indent_guides_enable_on_vim_startup = 1
+  let g:indent_guides_auto_colors = 0
+  if &background == 'dark'
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=darkgrey  ctermbg=darkgrey
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=lightgrey ctermbg=lightgrey
+  elseif &background == 'light'
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=lightgrey ctermbg=lightgrey
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey  ctermbg=darkgrey
+  endif
+  let g:indent_guides_start_level = 1
+  let g:indent_guides_color_change_percent = 100
+  let g:indent_guides_guide_size = 1
+  nmap <silent> <leader>i <Plug>IndentGuidesToggle
 
   " NERDTree
   let NERDTreeShowHidden = 1
