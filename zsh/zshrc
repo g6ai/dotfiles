@@ -14,6 +14,7 @@ function zvm_after_init() {
 }
 
 # zsh-vi-mode
+ZVM_KEYTIMEOUT=0.05
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ### end of oh-my-zsh ###
