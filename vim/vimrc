@@ -373,6 +373,8 @@ elseif flag == "good"
   "if has('nvim')
   "  g:vimtex_compiler_progname = 'nvr'
   "endif
+  command TexRoot silent exe 'cd' b:vimtex.root
+  nmap <leader>l/ :TexRoot<CR>
   command TexReset silent exe ':VimtexStop' | exe ':VimtexClean' | exe '!rm' b:vimtex.root .. '/*.bbl'
   nmap <leader>ld :TexReset<CR>
 
