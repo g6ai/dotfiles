@@ -58,7 +58,7 @@ else
     let &t_SR = "\<Esc>]50;CursorShape=2;BlinkingCursorEnabled=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0;BlinkingCursorEnabled=1\x7"
     " Initialize cursor shape/color on startup
-    augroup ResetCursorShape
+    augroup reset_iTerm_cursor_shape
     au!
     "autocmd VimEnter * startinsert | stopinsert
     autocmd VimEnter * normal! :startinsert :stopinsert
@@ -70,7 +70,7 @@ else
     let &t_SR .= "\e[3 q" " SR = REPLACE mode
     let &t_EI .= "\e[1 q" " EI = NORMAL mode (ELSE)
     " Initialize cursor shape/color on startup
-    augroup ResetCursorShape
+    augroup reset_cursor_shape
     au!
     "autocmd VimEnter * startinsert | stopinsert
     autocmd VimEnter * normal! :startinsert :stopinsert
