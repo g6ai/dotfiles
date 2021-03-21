@@ -373,6 +373,8 @@ elseif flag == "good"
   "if has('nvim')
   "  g:vimtex_compiler_progname = 'nvr'
   "endif
+  command TexReset silent exe ':VimtexStop' | exe ':VimtexClean' | exe '!rm' b:vimtex.root .. '/*.bbl'
+  nmap <leader>ld :TexReset<CR>
 
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
