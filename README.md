@@ -43,5 +43,6 @@ Global `.gitignore` files per OS. [GitHub’s collection of `.gitignore` file te
 
 ### Other config
 These configuration files may have versions for different OS, and is deployed per OS thanks to Dotbot's `if` parameter in `link` command.
+* `alacritty` folder includes `alacritty.yml` files for different OS.
 * `aria2` folder includes config file for aria2. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
 * `mpv` folder includes config files for mpv. See [mpv documentation](https://mpv.io/manual/master/) for more options.
