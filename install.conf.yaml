@@ -29,30 +29,6 @@
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
-    ~/.gitignore_global:
-      create: true
-      path: git/git_macos/gitignore_global
-      if: '[ $(uname) = Darwin ]'
-    ~/.gitignore_global:
-      create: true
-      path: git/git_linux/gitignore_global
-      if: '[ $(uname) = Linux ]'
-    ~/.aria2/aria2.conf:
-      create: true
-      path: aria2/aria2_macos.conf
-      if: '[ $(uname) = Darwin ]'
-    ~/.config/mpv/mpv.conf:
-      create: true
-      path: mpv/mpv_macos/mpv.conf
-      if: '[ $(uname) = Darwin ]'
-    ~/.config/mpv/input.conf:
-      create: true
-      path: mpv/mpv_macos/input.conf
-      if: '[ $(uname) = Darwin ]'
-    ~/.config/mpv/script-opts/osc.conf:
-      create: true
-      path: mpv/mpv_macos/script-opts/osc.conf
-      if: '[ $(uname) = Darwin ]'
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
@@ -68,3 +44,31 @@
   -
     command: if [ $(uname) = Linux ]; then git config --global core.autocrlf input; fi
     description: Configure Git to ensure line endings in files you checkout are correct for Linux
+
+- defaults:
+    link:
+      if: '[ $(uname) = Darwin ]'
+      relink: true
+
+- link:
+    ~/.gitignore_global: git/gitignore_global_macos
+    ~/.aria2/aria2.conf:
+      create: true
+      path: aria2/aria2_macos.conf
+    ~/.config/mpv/mpv.conf:
+      create: true
+      path: mpv/mpv_macos/mpv.conf
+    ~/.config/mpv/input.conf:
+      create: true
+      path: mpv/mpv_macos/input.conf
+    ~/.config/mpv/script-opts/osc.conf:
+      create: true
+      path: mpv/mpv_macos/script-opts/osc.conf
+
+- defaults:
+    link:
+      if: '[ $(uname) = Linux ]'
+      relink: true
+
+- link:
+    ~/.gitignore_global: git/gitignore_global_linux
