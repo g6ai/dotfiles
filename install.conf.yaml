@@ -52,6 +52,9 @@
 
 - link:
     ~/.gitignore_global: git/gitignore_global_macos
+    ~/.config/alacritty/alacritty.yml:
+      create: true
+      path: alacritty/alacritty_macos.yml
     ~/.aria2/aria2.conf:
       create: true
       path: aria2/aria2_macos.conf
