@@ -47,7 +47,7 @@ set autochdir " For Neovim
 " Time out
 set ttimeout
 set ttimeoutlen=100
-set timeoutlen=1000
+set timeoutlen=100
 
 " Cursor
 if has('nvim')
