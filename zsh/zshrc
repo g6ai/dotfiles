@@ -3,21 +3,27 @@ export ZSH="$HOME/.oh-my-zsh"
 
 ZSH_THEME="powerlevel10k/powerlevel10k"
 
-plugins=(git pyenv zsh-autosuggestions zsh-syntax-highlighting thefuck zsh-vi-mode)
+plugins=(git pyenv zsh-autosuggestions zsh-syntax-highlighting thefuck vi-mode)
 
 source $ZSH/oh-my-zsh.sh
 
 # Put plugins config after this line
 # zsh-autosuggestions
-function zvm_after_init() {
-  zvm_bindkey viins '^@' autosuggest-accept
-}
+#function zvm_after_init() {
+#  zvm_bindkey viins '^@' autosuggest-accept
+#}
+bindkey '^ ' autosuggest-accept 
+
+# vi-mode
+VI_MODE_SET_CURSOR=true
 
 # zsh-vi-mode
-ZVM_KEYTIMEOUT=0.05
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+#ZVM_KEYTIMEOUT=0.05
+#ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+#ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 ### end of oh-my-zsh ###
+
+KEYTIMEOUT=1
 
 # Load common settings
 [[ -e ~/.profile ]] && emulate sh -c 'source ~/.profile'
