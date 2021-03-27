@@ -39,7 +39,9 @@ if has('nvim')
   set inccommand=nosplit
 endif
 set mouse=a " Enable use of mouse for all modes
-set ttymouse=sgr " For Alacritty terminfo
+if !has('nvim')
+  set ttymouse=sgr " For Alacritty terminfo
+endif
 set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
 set maxmempattern=2000000 " Avoid E363
