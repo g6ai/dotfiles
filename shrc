@@ -13,6 +13,7 @@ alias vi='vim'
 
 # Terminal color
 export CLICOLOR=1
+export COLORTERM=truecolor
 export LSCOLORS=GxFxCxDxBxegedabagaced
 if [[ "$(uname)" == "Darwin" ]]; then
   # If using native BSD utils
