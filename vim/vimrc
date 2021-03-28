@@ -48,9 +48,9 @@ set maxmempattern=2000000 " Avoid E363
 set autochdir " For Neovim
 
 " Time out
+set timeoutlen=500
 set ttimeout
 set ttimeoutlen=100
-set timeoutlen=100
 
 " Cursor
 if has('nvim')
