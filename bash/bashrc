@@ -1,5 +1,5 @@
 # Load common settings
-source ~/.profile
+source ~/.shrc
 
 unset PROMPT_COMMAND
 # Below is a bad example of PS1:

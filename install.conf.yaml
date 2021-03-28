@@ -5,7 +5,7 @@
 - clean: ['~']
 
 - link:
-    ~/.profile: profile
+    ~/.shrc: shrc
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
     ~/.bash_profile: bash/bash_profile
