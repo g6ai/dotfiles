@@ -52,6 +52,9 @@
 
 - link:
     ~/.gitignore_global: git/gitignore_global_macos
+    ~/.config/kitty/kitty.conf:
+      create: true
+      path: kitty/kitty_macos.conf
     ~/.config/alacritty/alacritty.yml:
       create: true
       path: alacritty/alacritty_macos.yml
