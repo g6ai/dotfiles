@@ -9,7 +9,11 @@ alias ll='ls -ltAh'
 alias pd='pushd'
 alias pdw='pushd .'
 alias po='popd'
-alias vi='vim'
+if [[ "$(uname)" == "Darwin" ]]; then
+  alias vi='nvim'
+else
+  alias vi='vim'
+fi
 
 # Terminal color
 export CLICOLOR=1
