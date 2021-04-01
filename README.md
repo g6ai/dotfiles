@@ -41,9 +41,12 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 Global `.gitignore` files per OS. [GitHub’s collection of `.gitignore` file templates](https://github.com/github/gitignore) are used.
 
-### Other config
-These configuration files may have versions for different OS, and is deployed per OS thanks to Dotbot's `if` parameter in `link` command.
+### Terminal Emulators
+From my experience, there's no perfect terminal emulator. I have tried **Terminal.app**, **iTerm2**, **kitty** and **Alacritty**. Currently I'm jumping between kitty and Alacritty.
 * `kitty` folder includes the kitty configuration file `kitty.conf` for different OS.
 * `alacritty` folder includes the Alacritty configuration file `alacritty.yml` for different OS.
+
+### Other config
+These configuration files may have versions for different OS, and is deployed per OS thanks to Dotbot's `if` parameter in `link` command.
 * `aria2` folder includes config file for aria2. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
 * `mpv` folder includes config files for mpv. See [mpv documentation](https://mpv.io/manual/master/) for more options.
