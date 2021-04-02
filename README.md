@@ -41,7 +41,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 Global `.gitignore` files per OS. [GitHub’s collection of `.gitignore` file templates](https://github.com/github/gitignore) are used.
 
-### Terminal Emulators
+### Terminal emulators
 From my experience, there's no perfect terminal emulator. I have tried **Terminal.app**, **iTerm2**, **kitty** and **Alacritty**. Currently I'm jumping between kitty and Alacritty.
 * `kitty` folder includes the kitty configuration file `kitty.conf` for different OS.
 * `alacritty` folder includes the Alacritty configuration file `alacritty.yml` for different OS.
