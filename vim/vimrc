@@ -390,6 +390,8 @@ elseif flag == "good"
   inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
   " Insert separator between whitespace warning and coc warning
   let g:airline_section_warning = '%{airline#util#prepend(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+  " kitty config window needs node path to be set
+  " when invoked by cmd+comma
   let g:coc_node_path = '/usr/local/bin/node'
 
   " UltiSnips
