@@ -230,6 +230,7 @@ elseif flag == "good"
   Plug 'nvim-lua/popup.nvim', Cond(has('nvim'))
   Plug 'nvim-lua/plenary.nvim', Cond(has('nvim'))
   Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim'))
+  Plug 'ryanoasis/vim-devicons'
   call plug#end()
 
   " gruvbox
@@ -408,7 +409,7 @@ elseif flag == "good"
   let g:Lf_WindowPosition = 'popup'
   let g:Lf_PreviewInPopup = 1
   let g:Lf_StlSeparator = {'left': "\ue0b0", 'right': "\ue0b2"}
-  let g:Lf_ShowDevIcons = 0
+  let g:Lf_ShowDevIcons = 1
 
   " LeaderF-snippet
   inoremap <C-s> <C-\><C-o>:Leaderf snippet<CR>
