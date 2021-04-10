@@ -1,6 +1,9 @@
 if [[ "$(uname)" == "Linux" ]]; then
   export EDITOR=/usr/bin/vim
+elif [[ "$(uname)" == "Darwin" ]]; then
+  export EDITOR=/usr/local/bin/nvim
 fi
+export VISUAL="$EDITOR"
 
 alias sudo='sudo '
 alias la='ls -A'
