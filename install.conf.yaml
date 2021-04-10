@@ -6,10 +6,12 @@
 
 - link:
     ~/.shrc: shrc
+    ~/.shprofile: shprofile
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
     ~/.bash_profile: bash/bash_profile
     ~/.zshrc: zsh/zshrc
+    ~/.zprofile: zsh/zprofile
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux.inputrc: tmux/tmux.inputrc
     ~/.update_display.sh: tmux/update_display.sh

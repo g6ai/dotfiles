@@ -1,0 +1,1 @@
+[[ -e ~/.shprofile ]] && emulate sh -c 'source ~/.shprofile'

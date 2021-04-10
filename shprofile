@@ -1,0 +1,4 @@
+if [[ "$(uname)" == "Darwin" ]]; then
+  export EDITOR=/usr/local/bin/nvim
+fi
+export VISUAL="$EDITOR"

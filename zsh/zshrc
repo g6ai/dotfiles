@@ -29,7 +29,7 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 KEYTIMEOUT=1
 
 # Load common settings
-[[ -e ~/.shrc ]] && emulate sh -c 'source ~/.shrc'
+source ~/.shrc
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
