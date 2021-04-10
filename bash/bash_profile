@@ -1,6 +1,5 @@
+source ~/.bashrc
+
 if [[ "$(uname)" == "Darwin" ]]; then
-  source ~/.bashrc
   bind -f $INPUTRC
-else
-  source ~/.shprofile
 fi
