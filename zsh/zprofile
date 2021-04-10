@@ -1,1 +1,4 @@
-[[ -e ~/.shprofile ]] && emulate sh -c 'source ~/.shprofile'
+if [[ "$(uname)" == "Darwin" ]]; then
+  export EDITOR=/usr/local/bin/nvim
+fi
+export VISUAL="$EDITOR"

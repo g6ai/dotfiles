@@ -6,7 +6,6 @@
 
 - link:
     ~/.shrc: shrc
-    ~/.shprofile: shprofile
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
     ~/.bash_profile: bash/bash_profile
