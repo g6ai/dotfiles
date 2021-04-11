@@ -265,6 +265,9 @@ elseif flag == "good"
     endif
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
+    if has('nvim')
+      lua package.loaded['colorizer'] = nil; require('colorizer').setup(...); require('colorizer').attach_to_buffer(0)
+    endif
     if has('gui_vimr')
       VimRToggleTools
       VimRToggleTools
