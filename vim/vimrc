@@ -272,6 +272,7 @@ elseif flag == "good"
       VimRToggleTools
       VimRToggleTools
     endif
+    highlight Comment cterm=italic gui=italic
   endfunction
 
   nmap tb :call ToggleBackground()<CR>
@@ -289,6 +290,7 @@ elseif flag == "good"
       let g:airline_theme = "github"
       call IndentGuides(&background)
     endif
+    highlight Comment cterm=italic gui=italic
   endfunction
 
   " MacGUIBackground(): change MacVim gVim color scheme automatically
@@ -306,6 +308,7 @@ elseif flag == "good"
     endif
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
+    highlight Comment cterm=italic gui=italic
   endfunction
 
   if system_name ==# "Darwin"
