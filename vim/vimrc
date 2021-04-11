@@ -242,7 +242,7 @@ elseif flag == "good"
   " IndentGuides(): Set Indent Guides color
   function! IndentGuides(background)
     if a:background == "dark"
-      hi IndentGuidesOdd  guibg=#696969 ctermbg=242 
+      hi IndentGuidesOdd  guibg=#696969 ctermbg=242
       hi IndentGuidesEven guibg=#808080 ctermbg=008
     elseif a:background == "light"
       hi IndentGuidesOdd  guibg=#d3d3d3 ctermbg=252
