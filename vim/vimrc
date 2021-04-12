@@ -242,11 +242,11 @@ elseif flag == "good"
   " IndentGuides(): Set Indent Guides color
   function! IndentGuides(background)
     if a:background == "dark"
-      hi IndentGuidesOdd  ctermbg=242 guibg=#696969
-      hi IndentGuidesEven ctermbg=008 guibg=#808080
+      highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
+      highlight IndentGuidesEven ctermbg=008 guibg=#808080
     elseif a:background == "light"
-      hi IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
-      hi IndentGuidesEven ctermbg=250 guibg=#bebebe
+      highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
+      highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
     endif
   endfunction
 
@@ -324,11 +324,11 @@ elseif flag == "good"
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_auto_colors = 0
   if &background == 'dark'
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=242 guibg=#696969
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=008 guibg=#808080
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=008 guibg=#808080
   elseif &background == 'light'
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven ctermbg=250 guibg=#bebebe
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
+    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
   endif
   let g:indent_guides_start_level = 1
   let g:indent_guides_color_change_percent = 100
