@@ -17,6 +17,7 @@ if [[ "$(uname)" == "Darwin" ]]; then
 else
   alias vi='vim'
 fi
+alias kk='kitty +kitten'
 
 # Terminal color
 export CLICOLOR=1
