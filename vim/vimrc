@@ -116,6 +116,7 @@ autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
 autocmd FileType tex setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+autocmd FileType markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4 
 
 " Clipboard
 if system_name ==# "Darwin"
@@ -393,6 +394,7 @@ elseif flag == "good"
   " vim-markdown-preview
   let vim_markdown_preview_github = 1 " if using grip
   let vim_markdown_preview_hotkey = '<C-m>'
+  let vim_markdown_preview_browser = 'Google Chrome'
 
   " coc.nvim
   " Remap <CR> to make sure it confirms completion when popup menu is visible
