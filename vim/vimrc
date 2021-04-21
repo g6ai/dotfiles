@@ -353,6 +353,11 @@ elseif flag == "good"
   "let g:airline#extensions#tabline#left_sep = ' '
   "let g:airline#extensions#tabline#left_alt_sep = '|'
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+  " Workaround for display problem in kitty SSH session
+  if $TERM == 'xterm-kitty'
+    autocmd VimEnter * call airline#extensions#tabline#buffers#invalidate()
+    autocmd VimEnter * AirlineRefresh
+  endif
 
   " tmuxline.vim
   " Run :Tmuxline then :TmuxlineSnapshot! [file]
