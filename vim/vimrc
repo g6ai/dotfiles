@@ -408,7 +408,11 @@ elseif flag == "good"
   let g:airline_section_warning = '%{airline#util#prepend(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
   " kitty config window needs node path to be set
   " when invoked by cmd+comma
-  let g:coc_node_path = '/usr/local/bin/node'
+  if system_name ==# "Darwin"
+    let g:coc_node_path = '/usr/local/bin/node'
+  elseif system_name ==# "Linux"
+    let g:coc_node_path = '/usr/bin/node'
+  endif
 
   " UltiSnips
   let g:UltiSnipsExpandTrigger = "<tab>"
