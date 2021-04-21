@@ -234,7 +234,6 @@ elseif flag == "good"
   Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim'))
   Plug 'ryanoasis/vim-devicons'
   Plug 'norcalli/nvim-colorizer.lua', Cond(has('nvim'))
-  Plug 'untitled-ai/jupyter_ascending.vim'
   call plug#end()
 
   " gruvbox
