@@ -30,6 +30,9 @@
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
+    ~/.config/jupytext.toml:
+      create: true
+      path: jupytext.toml
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
