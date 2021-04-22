@@ -12,6 +12,7 @@ alias ll='ls -ltAh'
 alias pd='pushd'
 alias pdw='pushd .'
 alias po='popd'
+alias gits='git status'
 alias gitl='git log --all --graph --decorate'
 if [[ "$(uname)" == "Darwin" ]]; then
   alias vi='nvim'
