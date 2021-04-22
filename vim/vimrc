@@ -355,8 +355,12 @@ elseif flag == "good"
   let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
   " Workaround for display problem in kitty SSH session
   if $TERM == 'xterm-kitty'
-    autocmd VimEnter * call airline#extensions#tabline#buffers#invalidate()
-    autocmd VimEnter * AirlineRefresh
+    augroup airline_init_kitty
+      au!
+      autocmd VimEnter * call airline#extensions#tabline#buffers#invalidate()
+      autocmd VimEnter * AirlineRefresh
+      autocmd VimEnter * redraw!
+    augroup END
   endif
 
   " tmuxline.vim
