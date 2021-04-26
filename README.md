@@ -30,6 +30,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 ### Neovim
 * The `init.vim` uses the versatile configs in `.vimrc`.
+* Adopts the mighty [`coc.nvim`](https://github.com/neoclide/coc.nvim). Its config is [`coc-settings.json`](https://github.com/g6ai/dotfiles/blob/master/vim/nvim/coc-settings.json)
 
 ### tmux
 * `.tmux.conf` sources [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
