@@ -419,6 +419,8 @@ elseif flag == "good"
   elseif system_name ==# "Linux"
     let g:coc_node_path = '/usr/bin/node'
   endif
+  " Add `:Format` command to format current buffer.
+  command! -nargs=0 Format :call CocAction('format')
 
   " UltiSnips
   let g:UltiSnipsExpandTrigger = "<tab>"
