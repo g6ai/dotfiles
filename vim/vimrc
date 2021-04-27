@@ -35,21 +35,18 @@ set encoding=utf-8 " Necessary for Windows to display vim-airline properly
 set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set hlsearch " Highlight search result
 set incsearch " See cursor move when typing
-if has('nvim')
-  set shortmess+=S
-endif
-if has('nvim')
-  set inccommand=nosplit " See :substitute command change the document live
-endif
 set mouse=a " Enable use of mouse for all modes
-if !has('nvim')
-  set ttymouse=sgr " For Alacritty terminfo
-endif
 set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
 set maxmempattern=2000000 " Avoid E363
 set autochdir " For Neovim
 set termguicolors " For colorizer.lua
+if has('nvim')
+  set shortmess+=S
+  set inccommand=nosplit " See :substitute command change the document live
+else
+  set ttymouse=sgr " For Alacritty terminfo
+endif
 
 " Time out
 set timeoutlen=500
