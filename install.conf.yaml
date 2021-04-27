@@ -9,7 +9,6 @@
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
     ~/.bash_profile: bash/bash_profile
-    ~/.zshrc: zsh/zshrc
     ~/.zprofile: zsh/zprofile
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux.inputrc: tmux/tmux.inputrc
@@ -59,6 +58,7 @@
 
 - link:
     ~/.gitignore_global: git/gitignore_global_macos
+    ~/.zshrc: zsh/zshrc_macos
     ~/.config/kitty/kitty.conf:
       create: true
       path: kitty/kitty_macos.conf
@@ -85,3 +85,4 @@
 
 - link:
     ~/.gitignore_global: git/gitignore_global_linux
+    ~/.zshrc: zsh/zshrc_linux
