@@ -1,5 +1,5 @@
 if [[ "$(uname)" == "Linux" ]]; then
-  export EDITOR=/usr/bin/vim
+  export EDITOR=/usr/bin/nvim
 elif [[ "$(uname)" == "Darwin" ]]; then
   export EDITOR=/usr/local/bin/nvim
 fi
@@ -17,7 +17,7 @@ alias gitl='git log --all --graph --decorate'
 if [[ "$(uname)" == "Darwin" ]]; then
   alias vi='nvim'
 else
-  alias vi='vim'
+  alias vi='nvim'
 fi
 alias kk='kitty +kitten'
 
