@@ -63,7 +63,7 @@ else
     let &t_EI = "\<Esc>]50;CursorShape=0;BlinkingCursorEnabled=1\x7"
     " Initialize cursor shape/color on startup
     augroup reset_iTerm_cursor_shape
-      au!
+      autocmd!
       "autocmd VimEnter * startinsert | stopinsert
       autocmd VimEnter * normal! :startinsert :stopinsert
       "autocmd VimEnter * :normal :startinsert :stopinsert
@@ -75,7 +75,7 @@ else
     let &t_EI .= "\e[1 q" " EI = NORMAL mode (ELSE)
     " Initialize cursor shape/color on startup
     augroup reset_cursor_shape
-      au!
+      autocmd!
       "autocmd VimEnter * startinsert | stopinsert
       autocmd VimEnter * normal! :startinsert :stopinsert
       "autocmd VimEnter * :normal :startinsert :stopinsert
@@ -158,7 +158,7 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-au FileType qf call AdjustWindowHeight(3, 10)
+autocmd FileType qf call AdjustWindowHeight(3, 10)
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
@@ -359,7 +359,7 @@ elseif flag == "good"
   " Workaround for display problem in kitty SSH session
   if $TERM == 'xterm-kitty'
     augroup airline_init_kitty
-      au!
+      autocmd!
       autocmd VimEnter * call airline#extensions#tabline#buffers#invalidate()
       autocmd VimEnter * AirlineRefresh
       autocmd VimEnter * redraw!
