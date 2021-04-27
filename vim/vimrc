@@ -82,7 +82,10 @@ else
       autocmd VimEnter * redraw!
     augroup END
     " Reset cursor when Vim exits:
-    autocmd VimLeave * silent !echo -ne "\e[5 q"
+    augroup reset_cursor_on_leave
+      autocmd!
+      autocmd VimLeave * silent !echo -ne "\e[5 q"
+    augroup END
   endif
 endif
 
@@ -158,7 +161,10 @@ nnoremap <C-k> <C-w>k
 nnoremap <C-h> <C-w>h
 nnoremap <C-l> <C-w>l
 
-autocmd FileType qf call AdjustWindowHeight(3, 10)
+augroup quickfix_window_height
+  autocmd!
+  autocmd FileType qf call AdjustWindowHeight(3, 10)
+augroup END
 function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
@@ -195,10 +201,16 @@ endif
 
 if flag == "nogood"
   " Auto source .vimrc after saving
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  augroup auto_source_vimrc
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC
+  augroup END
 elseif flag == "good"
-  " Auto source .vimrc after saving
-  autocmd BufWritePost $MYVIMRC source $MYVIMRC | call airline#extensions#tabline#buffers#invalidate() | AirlineRefresh
+  " Auto source .vimrc and refresh vim-airline after saving
+  augroup auto_source_vimrc_refresh_airline
+    autocmd!
+    autocmd BufWritePost $MYVIMRC source $MYVIMRC | call airline#extensions#tabline#buffers#invalidate() | AirlineRefresh
+  augroup END
 
   " vim-plug
   if empty(glob('~/.vim/autoload/plug.vim'))
@@ -318,7 +330,10 @@ elseif flag == "good"
   if system_name ==# "Darwin"
     if !has('nvim')
       call MacBackground()
-      autocmd OSAppearanceChanged * call MacGUIBackground()
+      augroup MacVim_auto_background
+        autocmd!
+        autocmd OSAppearanceChanged * call MacGUIBackground()
+      augroup END
     else
       call MacBackground()
     endif
@@ -328,11 +343,17 @@ elseif flag == "good"
   let g:indent_guides_enable_on_vim_startup = 1
   let g:indent_guides_auto_colors = 0
   if &background == 'dark'
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=008 guibg=#808080
+    augroup dark_indent_guides
+      autocmd!
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=008 guibg=#808080
+    augroup END
   elseif &background == 'light'
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
-    autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
+    augroup light_indent_guides
+      autocmd!
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
+      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
+    augroup END
   endif
   let g:indent_guides_start_level = 1
   let g:indent_guides_color_change_percent = 100
@@ -345,9 +366,12 @@ elseif flag == "good"
   command! NT NERDTreeToggle
   "command! NT NERDTreeToggle | AirlineRefresh
   nmap nt :NT<CR>
-  autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-  " If more than one window and previous buffer was NERDTree, go back to it.
-  autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+  augroup NERDTree_buffer_refresh
+    autocmd!
+    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+    " If more than one window and previous buffer was NERDTree, go back to it.
+    autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+  augroup END
 
   " vim-airline
   let g:airline_powerline_fonts = 1
