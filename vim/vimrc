@@ -36,7 +36,7 @@ set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
 set hlsearch " Highlight search result
 set incsearch " See cursor move when typing
 if has('nvim')
-  set inccommand=nosplit
+  set inccommand=nosplit " See :substitute command change the document live
 endif
 set mouse=a " Enable use of mouse for all modes
 if !has('nvim')
