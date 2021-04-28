@@ -1,3 +1,5 @@
+// vim: set ft=bash:
+
 source ~/.bashrc
 
 if [[ "$(uname)" == "Darwin" ]]; then

@@ -1,3 +1,5 @@
+// vim: set ft=zsh:
+
 if [[ "$(uname)" == "Darwin" ]]; then
   export EDITOR=/usr/local/bin/nvim
   export SHELL=/usr/local/bin/zsh

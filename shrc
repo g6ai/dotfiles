@@ -1,3 +1,5 @@
+// vim: set ft=bash:
+
 if [[ "$(uname)" == "Linux" ]]; then
   export EDITOR=/usr/bin/nvim
 elif [[ "$(uname)" == "Darwin" ]]; then
