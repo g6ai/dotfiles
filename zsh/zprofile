@@ -1,4 +1,4 @@
-// vim: set ft=zsh:
+# vim: set ft=zsh:
 
 if [[ "$(uname)" == "Darwin" ]]; then
   export EDITOR=/usr/local/bin/nvim
