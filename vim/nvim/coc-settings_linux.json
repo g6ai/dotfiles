@@ -1,0 +1,6 @@
+{
+  "python.venvPath": "${env:HOME}/miniforge3/envs",
+  "python.formatting.provider": "black",
+  "python.formatting.blackPath": "~/miniforge3/envs/coc/bin/black",
+  "python.sortImports.path": "~/miniforge3/envs/coc/bin/isort"
+}

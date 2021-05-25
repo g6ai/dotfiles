@@ -194,6 +194,10 @@ if system_name ==# "Darwin"
     set pythonthreehome=$HOME/.pyenv/versions/3.8.6
     set pythonthreedll=$HOME/.pyenv/versions/3.8.6/lib/libpython3.8.dylib
   endif
+elseif system_name ==# "Linux"
+  if has('nvim')
+    let g:python3_host_prog = '$HOME/miniforge3/envs/py3nvim/bin/python'
+  endif
 endif
 
 " Check if memory size is large enough to use plugins

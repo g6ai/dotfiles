@@ -26,9 +26,6 @@
     ~/.vim/spell:
       create: true
       path: vim/spell
-    ~/.config/nvim/coc-settings.json:
-      create: true
-      path: vim/nvim/coc-settings.json
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
@@ -59,6 +56,9 @@
 - link:
     ~/.gitignore_global: git/gitignore_global_macos
     ~/.zshrc: zsh/zshrc_macos
+    ~/.config/nvim/coc-settings.json:
+      create: true
+      path: vim/nvim/coc-settings_macos.json
     ~/.config/kitty/kitty.conf:
       create: true
       path: kitty/kitty_macos.conf
@@ -86,3 +86,6 @@
 - link:
     ~/.gitignore_global: git/gitignore_global_linux
     ~/.zshrc: zsh/zshrc_linux
+    ~/.config/nvim/coc-settings.json:
+      create: true
+      path: vim/nvim/coc-settings_linux.json
