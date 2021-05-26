@@ -51,7 +51,7 @@ export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 # and so on
 
 # Source local settings
-PROFILE_LOCAL=~/.profile_local
-if [[ -f "$PROFILE_LOCAL" ]]; then
-  source $PROFILE_LOCAL
+SHRC_LOCAL=~/.shrc_local
+if [[ -f "$SHRC_LOCAL" ]]; then
+  source $SHRC_LOCAL
 fi

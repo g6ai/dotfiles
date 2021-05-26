@@ -3,8 +3,10 @@
 if [[ "$(uname)" == "Darwin" ]]; then
   export EDITOR=/usr/local/bin/nvim
   export SHELL=/usr/local/bin/zsh
-  export PYENV_ROOT="$HOME/.pyenv"
-  export PATH="$PYENV_ROOT/bin:$PATH"
-  eval "$(pyenv init --path)"
 fi
 export VISUAL="$EDITOR"
+
+PROFILE_LOCAL=~/.profile_local
+if [[ -f "$PROFILE_LOCAL" ]]; then
+  source ~/.profile_local
+fi

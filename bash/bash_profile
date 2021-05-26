@@ -1,5 +1,10 @@
 # vim: set ft=bash:
 
+PROFILE_LOCAL=~/.profile_local
+if [[ -f "$PROFILE_LOCAL" ]]; then
+  source ~/.profile_local
+fi
+
 source ~/.bashrc
 
 if [[ "$(uname)" == "Darwin" ]]; then
