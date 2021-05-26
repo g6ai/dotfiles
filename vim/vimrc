@@ -40,7 +40,9 @@ set linebreak " Wrap lines at characters in 'breakat'
 set display+=lastline " Show last line in the window rather than '@'
 set maxmempattern=2000000 " Avoid E363
 set autochdir " For Neovim
-set termguicolors " For colorizer.lua
+if $TERM_PROGRAM !=# 'Apple_Terminal'
+  set termguicolors " For colorizer.lua
+endif
 if has('nvim')
   set shortmess+=S
   set inccommand=nosplit " See :substitute command change the document live
@@ -489,7 +491,7 @@ elseif flag == "good"
   let g:Lf_PreviewResult.snippet = 1
 
   " colorizer.lua
-  if has('nvim')
+  if $TERM_PROGRAM !=# 'Apple_Terminal' && has('nvim')
     lua require'colorizer'.setup()
   endif
 
