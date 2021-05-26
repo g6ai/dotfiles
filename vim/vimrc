@@ -194,8 +194,8 @@ if system_name ==# "Darwin"
   if has('nvim')
     let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
   elseif has('python3_dynamic')
-    set pythonthreehome=$HOME/.pyenv/versions/3.8.6
-    set pythonthreedll=$HOME/.pyenv/versions/3.8.6/lib/libpython3.8.dylib
+    set pythonthreehome=$HOME/.pyenv/versions/3.8.10
+    set pythonthreedll=$HOME/.pyenv/versions/3.8.10/lib/libpython3.8.dylib
   endif
 elseif system_name ==# "Linux"
   if has('nvim')
