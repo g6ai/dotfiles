@@ -1,4 +1,5 @@
 {
+  "python.analysis.useLibraryCodeForTypes": false,
   "python.venvPath": "${env:HOME}/miniforge3/envs",
   "python.formatting.provider": "black",
   "python.formatting.blackPath": "~/miniforge3/envs/coc/bin/black",
