@@ -192,6 +192,7 @@ command! NA %s/^[^\t]*\t// | set number | noh
 
 if system_name ==# "Darwin"
   if has('nvim')
+    let g:python_host_prog = '$HOME/.pyenv/versions/py2nvim/bin/python'
     let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
   elseif has('python3_dynamic')
     set pythonthreehome=$HOME/.pyenv/versions/3.8.10
