@@ -268,7 +268,7 @@ elseif flag == "good"
   Plug 'mhinz/vim-startify'
   Plug 'nvim-lua/popup.nvim', Cond(has('nvim'))
   Plug 'nvim-lua/plenary.nvim', Cond(has('nvim'))
-  Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim-0.5'))
+  Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim'))
   Plug 'ryanoasis/vim-devicons'
   Plug 'norcalli/nvim-colorizer.lua', Cond(has('nvim'))
   Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
