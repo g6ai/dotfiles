@@ -260,20 +260,20 @@ elseif flag == "good"
   Plug 'lervag/vimtex'
   Plug 'godlygeek/tabular' " tabular plugin must come before vim-markdown
   Plug 'plasticboy/vim-markdown' | Plug 'JamshedVesuna/vim-markdown-preview'
-  Plug 'neoclide/coc.nvim', Cond(has('nvim'))
   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-  Plug 'Yggdroot/LeaderF', {'do': ':LeaderfInstallCExtension'}
   Plug 'psliwka/vim-smoothie'
   Plug 'skywind3000/Leaderf-snippet'
   Plug 'mhinz/vim-startify'
+  Plug 'jdhao/better-escape.vim'
+  Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
+  Plug 'ryanoasis/vim-devicons'
+  Plug 'Yggdroot/LeaderF', Cond(!has('nvim-0.5'), {'do': ':LeaderfInstallCExtension'})
+  Plug 'neoclide/coc.nvim', Cond(has('nvim'))
+  Plug 'norcalli/nvim-colorizer.lua', Cond(has('nvim'))
   Plug 'nvim-lua/popup.nvim', Cond(has('nvim'))
   Plug 'nvim-lua/plenary.nvim', Cond(has('nvim'))
-  Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim-0.5'))
-  Plug 'ryanoasis/vim-devicons'
-  Plug 'norcalli/nvim-colorizer.lua', Cond(has('nvim'))
-  Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
-  Plug 'jdhao/better-escape.vim'
   Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim-0.5'), {'do': ':TSUpdate'})
+  Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim-0.5'))
   call plug#end()
 
   " gruvbox
@@ -481,12 +481,14 @@ elseif flag == "good"
   let g:UltiSnipsEnableSnipMate = 0
 
   " LeaderF
-  let g:Lf_ShortcutF = "<leader>ff"
-  let g:Lf_ShortcutB = "<leader>fb"
-  let g:Lf_WindowPosition = 'popup'
-  let g:Lf_PreviewInPopup = 1
-  let g:Lf_StlSeparator = {'left': "\ue0b0", 'right': "\ue0b2"}
-  let g:Lf_ShowDevIcons = 1
+  if !has('nvim-0.5')
+    let g:Lf_ShortcutF = "<leader>ff"
+    let g:Lf_ShortcutB = "<leader>fb"
+    let g:Lf_WindowPosition = 'popup'
+    let g:Lf_PreviewInPopup = 1
+    let g:Lf_StlSeparator = {'left': "\ue0b0", 'right': "\ue0b2"}
+    let g:Lf_ShowDevIcons = 1
+  endif
 
   " LeaderF-snippet
   inoremap <C-s> <C-\><C-o>:Leaderf snippet<CR>
@@ -517,5 +519,20 @@ elseif flag == "good"
   " nvim-treesitter
   if has('nvim-0.5')
     lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+  endif
+
+  " telescope.nvim
+  if has('nvim-0.5')
+    " Find files using Telescope command-line sugar.
+    nnoremap <leader>ff <cmd>Telescope find_files<cr>
+    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+    nnoremap <leader>fb <cmd>Telescope buffers<cr>
+    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
+
+    " Using lua functions
+    "nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
+    "nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+    "nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+    "nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
   endif
 endif
