@@ -273,6 +273,7 @@ elseif flag == "good"
   Plug 'norcalli/nvim-colorizer.lua', Cond(has('nvim'))
   Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   Plug 'jdhao/better-escape.vim'
+  Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim-0.5'), {'do': ':TSUpdate'})
   call plug#end()
 
   " gruvbox
@@ -512,4 +513,8 @@ elseif flag == "good"
 
   " DoGe
   let g:doge_doc_standard_python = 'numpy'
+
+  " nvim-treesitter
+  if has('nvim-0.5')
+    lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 endif
