@@ -404,7 +404,7 @@ elseif flag == "good"
   let NERDTreeMinimalUI = 1
   command! NT NERDTreeToggle
   "command! NT NERDTreeToggle | AirlineRefresh
-  nmap nt :NT<CR>
+  nmap <leader>nt :NT<CR>
   augroup NERDTree_buffer_refresh
     autocmd!
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
