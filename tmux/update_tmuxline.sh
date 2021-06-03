@@ -8,6 +8,6 @@ do
     tmux send-keys -t ${pane_process[0]} Escape
     tmux send-keys -t ${pane_process[0]} ":Tmuxline airline" Enter
   else
-    tmux source ~/.config/tmux/tmuxline_iceberg.snapshot
+    tmux if-shell "test -f ~/.config/tmux/tmuxline_iceberg.snapshot" "source ~/.config/tmux/tmuxline_iceberg.snapshot" Enter
   fi
 done
