@@ -279,30 +279,53 @@ elseif flag == "good"
 
   " gruvbox
   let g:gruvbox_contrast_dark = 'hard'
+  let g:gruvbox_contrast_light = 'hard'
   colorscheme gruvbox
+
+  function! DarkIndentGuides()
+    "highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
+    "highlight IndentGuidesEven ctermbg=008 guibg=#808080
+    " Below are from gruvbox palette
+    highlight IndentGuidesOdd  ctermbg=239 guibg=#504945 " bg2
+    highlight IndentGuidesEven ctermbg=241 guibg=#665c54 " bg3
+  endfunction
+
+  function! LightIndentGuides()
+    "highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
+    "highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
+    " Below are from gruvbox palette
+    highlight IndentGuidesOdd  ctermbg=228 guibg=#f2e5bc " bg0_s
+    highlight IndentGuidesEven ctermbg=223 guibg=#ebdbb2 " bg1
+  endfunction
+
+  function! DarkColorscheme()
+    set background=dark
+    colorscheme gruvbox
+    let g:airline_theme = "gruvbox"
+  endfunction
+
+  function! LightColorscheme()
+    set background=light
+    colorscheme gruvbox
+    let g:airline_theme = "gruvbox"
+  endfunction
 
   " IndentGuides(): Set Indent Guides color
   function! IndentGuides(background)
     if a:background == "dark"
-      highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
-      highlight IndentGuidesEven ctermbg=008 guibg=#808080
+      call DarkIndentGuides()
     elseif a:background == "light"
-      highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
-      highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
+      call LightIndentGuides()
     endif
   endfunction
 
   " ToggleBackground(): Toggle color scheme
   function! ToggleBackground()
     if &background == "dark"
-      set background=light
-      colorscheme github
-      let g:airline_theme = "github"
+      call LightColorscheme()
       call IndentGuides(&background)
     elseif &background == "light"
-      set background=dark
-      colorscheme gruvbox
-      let g:airline_theme = "gruvbox"
+      call DarkColorscheme()
       call IndentGuides(&background)
     endif
     call airline#extensions#tabline#buffers#invalidate()
@@ -322,14 +345,10 @@ elseif flag == "good"
   " MacBackground(): Set color scheme for macOS
   function! MacBackground()
     if system("defaults read -g AppleInterfaceStyle") =~ "^Dark"
-      set background=dark
-      colorscheme gruvbox
-      let g:airline_theme = "gruvbox"
+      call DarkColorscheme()
       call IndentGuides(&background)
     else
-      set background=light
-      colorscheme github
-      let g:airline_theme = "github"
+      call LightColorscheme()
       call IndentGuides(&background)
     endif
     highlight Comment cterm=italic gui=italic
@@ -338,14 +357,10 @@ elseif flag == "good"
   " MacGUIBackground(): change MacVim gVim color scheme automatically
   function! MacGUIBackground()
     if v:os_appearance == 1
-      set background=dark
-      colorscheme gruvbox
-      let g:airline_theme = "gruvbox"
+      call DarkColorscheme()
       call IndentGuides(&background)
     else
-      set background=light
-      colorscheme github
-      let g:airline_theme = "github"
+      call LightColorscheme()
       call IndentGuides(&background)
     endif
     call airline#extensions#tabline#buffers#invalidate()
@@ -371,14 +386,12 @@ elseif flag == "good"
   if &background == 'dark'
     augroup dark_indent_guides
       autocmd!
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=008 guibg=#808080
+      autocmd VimEnter,Colorscheme * :call DarkIndentGuides()
     augroup END
   elseif &background == 'light'
     augroup light_indent_guides
       autocmd!
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
-      autocmd VimEnter,Colorscheme * :highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
+      autocmd VimEnter,Colorscheme * :call LightIndentGuides()
     augroup END
   endif
   let g:indent_guides_start_level = 1
