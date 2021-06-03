@@ -452,7 +452,7 @@ elseif flag == "good"
     \'z'    : '#H'}
   augroup reset_tmuxline
     autocmd!
-    autocmd VimLeave * !tmux if-shell "test -f ~/.tmuxline.snapshot" "source ~/.tmuxline.snapshot" Enter
+    autocmd VimLeave * !tmux source ~/.config/tmux/tmuxline_iceberg.snapshot
   augroup END
 
   " VimTeX

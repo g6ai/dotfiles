@@ -21,5 +21,5 @@ if [[ '' = "$TMUX" ]]
 then
   export INPUTRC=~/.inputrc
 else
-  export INPUTRC=~/.tmux.inputrc
+  export INPUTRC=~/.config/tmux/tmux.inputrc
 fi
