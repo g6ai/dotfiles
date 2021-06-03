@@ -20,9 +20,6 @@
     ~/.config/tmux/update_tmuxline.sh:
       create: true
       path: tmux/update_tmuxline.sh
-    ~/.config/tmux/tmuxline_iceberg.snapshot:
-      create: true
-      path: tmux/tmuxline_iceberg.snapshot
     ~/.vimrc: vim/vimrc
     ~/.config/nvim/init.vim:
       create: true
