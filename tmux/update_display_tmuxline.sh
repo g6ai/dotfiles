@@ -8,9 +8,13 @@ do
   IFS=' ' read -ra pane_process <<< "$pane_process"
   if [[ "${pane_process[1]}" == "bash" ]]; then
     tmux send-keys -t ${pane_process[0]} "export DISPLAY=$DISPLAY" Enter
+    tmux if-shell "test -f ~/.tmuxline.snapshot" "source ~/.tmuxline.snapshot" Enter
   elif [[ "${pane_process[1]}" == *"vim"* ]]; then
     tmux send-keys -t ${pane_process[0]} Escape
     tmux send-keys -t ${pane_process[0]} ":let \$DISPLAY = \"$DISPLAY\"" Enter
     tmux send-keys -t ${pane_process[0]} ":xrestore" Enter
+    tmux send-keys -t ${pane_process[0]} ":Tmuxline airline" Enter
+  else
+    tmux if-shell "test -f ~/.tmuxline.snapshot" "source ~/.tmuxline.snapshot" Enter
   fi
 done

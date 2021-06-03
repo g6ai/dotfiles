@@ -12,7 +12,8 @@
     ~/.zprofile: zsh/zprofile
     ~/.tmux.conf: tmux/tmux.conf
     ~/.tmux.inputrc: tmux/tmux.inputrc
-    ~/.update_display.sh: tmux/update_display.sh
+    ~/.update_display_tmuxline.sh: tmux/update_display_tmuxline.sh
+    ~/.update_tmuxline.sh: tmux/update_tmuxline.sh
     ~/.vimrc: vim/vimrc
     ~/.config/nvim/init.vim:
       create: true
