@@ -57,15 +57,18 @@ set ttimeoutlen=100
 
 " Cursor
 if has('nvim')
-  au VimEnter,VimResume * set guicursor=n-v-c-sm:block-blinkon100,i-ci-ve:ver25-blinkon100,r-cr-o:hor20-blinkon100
-  au VimLeave,VimSuspend * set guicursor=a:ver25-blinkon100
+  augroup reset_nvim_cursor
+    autocmd!
+    autocmd VimEnter,VimResume * set guicursor=n-v-c-sm:block-blinkon100,i-ci-ve:ver25-blinkon100,r-cr-o:hor20-blinkon100
+    autocmd VimLeave,VimSuspend * set guicursor=a:ver25-blinkon100
+  augroup END
 else
   if $TERM_PROGRAM ==# 'iTerm.app'
     let &t_SI = "\<Esc>]50;CursorShape=1;BlinkingCursorEnabled=1\x7"
     let &t_SR = "\<Esc>]50;CursorShape=2;BlinkingCursorEnabled=1\x7"
     let &t_EI = "\<Esc>]50;CursorShape=0;BlinkingCursorEnabled=1\x7"
     " Initialize cursor shape/color on startup
-    augroup reset_iTerm_cursor_shape
+    augroup reset_iTerm_cursor_on_enter
       autocmd!
       "autocmd VimEnter * startinsert | stopinsert
       autocmd VimEnter * normal! :startinsert :stopinsert
@@ -77,7 +80,7 @@ else
     let &t_SR .= "\e[3 q" " SR = REPLACE mode
     let &t_EI .= "\e[1 q" " EI = NORMAL mode (ELSE)
     " Initialize cursor shape/color on startup
-    augroup reset_cursor_shape
+    augroup reset_cursor_on_enter
       autocmd!
       "autocmd VimEnter * startinsert | stopinsert
       autocmd VimEnter * normal! :startinsert :stopinsert
@@ -94,7 +97,10 @@ endif
 
 " Spell
 set spelllang=en_gb
-autocmd FileType tex setlocal spell
+augroup spell_setting
+  autocmd!
+  autocmd FileType tex setlocal spell
+augroup END
 let g:tex_comment_nospell = 1 " For vimtex use g:vimtex_syntax_nospell_comments
 
 " Toggle relative numbering
@@ -118,14 +124,17 @@ endif
 " Indentation and tab
 filetype indent on
 set expandtab " Always use space instead of tab
-autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType zsh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType tex setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
-autocmd FileType json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
-autocmd FileType yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+augroup tab_setting
+  autocmd!
+  autocmd FileType vim setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType sh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType zsh setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType python setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType tex setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType markdown setlocal expandtab tabstop=4 shiftwidth=4 softtabstop=4
+  autocmd FileType json setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+  autocmd FileType yaml setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2
+augroup END
 
 " Clipboard
 if system_name ==# "Darwin"
