@@ -2,7 +2,7 @@
 
 pane_current_command=$(tmux display -p -F "#{pane_current_command}")
 
-if [[ "$pane_current_command" == *"vim"* ]]; then
+if [[ "$pane_current_command" == *[V,v]im* ]]; then
   tmux send-keys Escape
   tmux send-keys ":Tmuxline airline" Enter
 else
