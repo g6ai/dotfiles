@@ -42,6 +42,8 @@ set maxmempattern=2000000 " Avoid E363
 set autochdir " For Neovim
 if $TERM_PROGRAM !=# 'Apple_Terminal'
   set termguicolors " For colorizer.lua
+  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 endif
 if has('nvim')
   set shortmess+=S
