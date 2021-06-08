@@ -6,5 +6,5 @@ if [[ "$pane_current_command" == *"vim"* ]]; then
   tmux send-keys Escape
   tmux send-keys ":Tmuxline airline" Enter
 else
-  tmux if-shell "test -f ~/.config/tmux/tmuxline.snapshot" "source ~/.config/tmux/tmuxline.snapshot" Enter
+  tmux if-shell "[[ -f ~/.config/tmux/tmuxline.snapshot ]]" "source ~/.config/tmux/tmuxline.snapshot" Enter
 fi
