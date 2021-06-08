@@ -51,6 +51,7 @@ if has('nvim')
 else
   set ttymouse=sgr " For Alacritty terminfo
 endif
+set noeb vb t_vb= " Use visualbell instead of beep sound, also avoid change in tmuxline
 
 " Time out
 set timeoutlen=500
