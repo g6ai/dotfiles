@@ -11,7 +11,10 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 [Dotbot](https://github.com/anishathalye/dotbot) is used to bootstrap dotfiles.
 
-* Deploy by `git clone https://github.com/g6ai/dotfiles && cd dotfiles && ./install`.
+* Deploy by one-liner:
+    ```console
+    git clone https://github.com/g6ai/dotfiles && cd dotfiles && ./install
+    ```
 * See [install.conf.yaml](https://github.com/g6ai/dotfiles/blob/master/install.conf.yaml) for my Dotbot configuration.
 
 ### Bash
