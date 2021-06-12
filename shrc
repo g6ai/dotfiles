@@ -1,9 +1,17 @@
 # vim: set ft=bash:
 
 if [[ "$(uname)" == "Linux" ]]; then
-  export EDITOR=/usr/bin/nvim
+  if [[ ! -z "$(command -v nvim)" ]]; then
+    export EDITOR=/usr/bin/nvim
+  else
+    export EDITOR=/usr/bin/vim
+  fi
 elif [[ "$(uname)" == "Darwin" ]]; then
-  export EDITOR=/usr/local/bin/nvim
+  if [[ ! -z "$(command -v nvim)" ]]; then
+    export EDITOR=/usr/local/bin/nvim
+  else
+    export EDITOR=/usr/local/bin/vim
+  fi
 fi
 export VISUAL="$EDITOR"
 
@@ -16,10 +24,10 @@ alias pdw='pushd .'
 alias po='popd'
 alias gits='git status'
 alias gitl='git log --all --graph --decorate'
-if [[ "$(uname)" == "Darwin" ]]; then
+if [[ ! -z "$(command -v nvim)" ]]; then
   alias vi='nvim'
 else
-  alias vi='nvim'
+  alias vi='vim'
 fi
 alias kk='kitty +kitten'
 
