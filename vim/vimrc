@@ -124,6 +124,13 @@ if (&term =~ '^xterm' && &t_Co == 256)
   set t_ut= | set ttyscroll=1
 endif
 
+augroup highlighting_fix
+  autocmd!
+  " fix vim script user command syntax highlighting
+  " (should be unnecessary when https://github.com/vim/vim/issues/6587 is fixed)
+  autocmd Syntax vim syn match vimUsrCmd '^\s*\zs\u\%(\w*\)\@>(\@!'
+augroup END
+
 " Indentation and tab
 filetype indent on
 set expandtab " Always use space instead of tab
