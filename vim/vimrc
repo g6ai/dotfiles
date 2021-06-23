@@ -293,6 +293,7 @@ elseif flag == "good"
   Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim-0.5'), {'do': ':TSUpdate'})
   Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim-0.5'))
   Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim')) " For telescope.nvim
+  Plug 'tmsvg/pear-tree'
   call plug#end()
 
   " gruvbox
