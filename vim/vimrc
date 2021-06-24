@@ -301,6 +301,7 @@ elseif flag == "good"
   Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim-0.5'))
   Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim')) " For telescope.nvim
   Plug 'tmsvg/pear-tree'
+  Plug 'Rykka/riv.vim'
   call plug#end()
 
   " gruvbox
