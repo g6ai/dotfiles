@@ -48,7 +48,6 @@ elif [[ "$(uname)" == "Linux" ]]; then
 fi
 
 # less color
-export LESS=-R+Gg
 export LESS_TERMCAP_mb=$'\E[01;31m'    # begin blink
 export LESS_TERMCAP_md=$'\E[01;33m'    # begin bold
 export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
@@ -57,6 +56,9 @@ export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
 export LESS_TERMCAP_us=$'\E[01;04;32m' # begin underline
 export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
 # and so on
+
+# man
+export MANPAGER='less -s -M +Gg'
 
 # Source local settings
 SHRC_LOCAL=~/.shrc_local
