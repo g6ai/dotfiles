@@ -4,7 +4,10 @@ if [[ "$(uname)" == "Linux" ]]; then
   if ! command -v nvim &> /dev/null; then
     export EDITOR=/usr/bin/vim
   else
-    export EDITOR=/usr/bin/nvim
+    # If Neovim is installed with package manager:
+    #export EDITOR=/usr/bin/nvim
+    # If Neovim is installed from source:
+    export EDITOR=/usr/local/bin/nvim
   fi
 elif [[ "$(uname)" == "Darwin" ]]; then
   if ! command -v nvim &> /dev/null; then
