@@ -84,6 +84,12 @@
     ~/.config/mpv/script-opts/osc.conf:
       create: true
       path: mpv/mpv_macos/script-opts/osc.conf
+    ~/.doom.d/init.el:
+      create: true
+      path: emacs/doom_macos/init.el
+    ~/.doom.d/config.el:
+      create: true
+      path: emacs/doom_macos/config.el
 
 - defaults:
     link:
