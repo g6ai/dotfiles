@@ -7,6 +7,7 @@ tmux list-panes -s -F "#{session_name}:#{window_index}.#{pane_index} #{pane_curr
     do
       IFS=' ' read -ra pane_fields <<< "$pane_line"
       if [[ "${pane_fields[1]}" == *sh && "${pane_fields[1]}" != ssh ]]; then
+        tmux if-shell "[[ -f ~/.config/tmux/tmuxline.snapshot ]]" "source ~/.config/tmux/tmuxline.snapshot" Enter
         tmux send-keys -t ${pane_fields[0]} "export DISPLAY=$DISPLAY" Enter
       elif [[ "${pane_fields[1]}" == *[V,v]im* ]]; then
         tmux send-keys -t ${pane_fields[0]} Escape
@@ -14,5 +15,3 @@ tmux list-panes -s -F "#{session_name}:#{window_index}.#{pane_index} #{pane_curr
         #tmux send-keys -t ${pane_fields[0]} ":xrestore" Enter
       fi
     done
-
-tmux run-shell ~/.config/tmux/update_tmuxline.sh

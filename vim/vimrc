@@ -484,6 +484,12 @@ elseif flag == "good"
     autocmd!
     autocmd VimLeave * !tmux if-shell "test -f ~/.config/tmux/tmuxline.snapshot" "source ~/.config/tmux/tmuxline.snapshot" Enter
   augroup END
+  augroup update_tmuxline
+    autocmd!
+    if exists('$TMUX')
+      autocmd FocusGained * Tmuxline airline
+    endif
+  augroup END
 
   " VimTeX
   let g:tex_flavor = 'latex'
