@@ -278,7 +278,7 @@ elseif flag == "good"
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'morhetz/gruvbox'
-  Plug 'cormacrelf/vim-colors-github'
+  "Plug 'cormacrelf/vim-colors-github'
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
