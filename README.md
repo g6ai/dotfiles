@@ -38,6 +38,10 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
   * [`nvim-treesitter`](https://github.com/nvim-treesitter/nvim-treesitter), provides beautiful code highlighting and more.
   * [`telescope.nvim`](https://github.com/nvim-telescope/telescope.nvim), next generation fuzzy finder.
 
+### Doom Emacs
+
+* Configs for org-journal, to cooperate with beorg.
+
 ### tmux
 * `.tmux.conf` sources [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
   * For *macOS*, `pbcopy` is used. `pbcopy` is installed on *macOS* by default.
