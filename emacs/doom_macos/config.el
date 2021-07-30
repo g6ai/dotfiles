@@ -60,7 +60,9 @@
 (setq initial-frame-alist '((left . 0.5) (top . 0.5) (width . 96) (height . 36)))
 
 ;; directory
-(setq directory-abbrev-alist '(("^/Users/gbai/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org" . "/Users/gbai/org/beorg")))
+(setq directory-abbrev-alist
+      '(("^/Users/gbai/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org" . "/Users/gbai/org/beorg")
+        ("^/Users/gbai/Documents/GitHub/org-node" . "/Users/gbai/org/org-node")))
 
 ;; indentation
 (add-hook! 'org-mode-hook (electric-indent-local-mode -1))
