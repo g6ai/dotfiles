@@ -59,6 +59,11 @@
 ;;(setq ns-use-native-fullscreen t)
 (setq initial-frame-alist '((left . 0.5) (top . 0.5) (width . 96) (height . 36)))
 
+;; Auto-Saving
+(add-hook 'evil-insert-state-exit-hook
+          (lambda ()
+            (call-interactively #'save-buffer)))
+
 ;; directory
 (setq directory-abbrev-alist
       '(("^/Users/gbai/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org" . "/Users/gbai/org/beorg")
