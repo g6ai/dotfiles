@@ -91,5 +91,14 @@
   (customize-set-variable 'org-journal-time-format "TODO %R ")
   ;;(customize-set-variable 'org-journal-time-prefix "** ")
   ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-  (customize-set-variable 'org-journal-file-header "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+  ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+  (defun org-journal-file-header-func (time)
+    "Custom function to create journal header."
+    (concat
+      (pcase org-journal-file-type
+        (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+        (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+        (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+        (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+  (setq org-journal-file-header 'org-journal-file-header-func)
   (customize-set-variable 'org-journal-enable-agenda-integration t))
