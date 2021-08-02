@@ -69,17 +69,18 @@
       '(("^/Users/gbai/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org" . "/Users/gbai/org/beorg")
         ("^/Users/gbai/Documents/GitHub/org-node" . "/Users/gbai/org/org-node")))
 
-;; indentation
-(add-hook! 'org-mode-hook (electric-indent-local-mode -1))
+(after! org
 
 ;; TODO
 (setq org-log-done 'time)
 
-;; org-agenda
-(setq org-agenda-directory org-directory)
+  ;; TODO
+  (setq org-log-done 'time)
 
-;; org-journal
-(after! org-journal
+  ;; org-agenda
+  (setq org-agenda-directory org-directory)
+
+  ;; org-journal
   (customize-set-variable 'org-journal-dir (concat org-directory "beorg/"))
   ;;(customize-set-variable 'org-journal-file-format "%Y%m%dW%V.org")
   (customize-set-variable 'org-journal-file-format "%Y%m.org")
