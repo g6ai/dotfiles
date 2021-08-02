@@ -71,8 +71,8 @@
 
 (after! org
 
-;; TODO
-(setq org-log-done 'time)
+  ;; indentation
+  (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
 
   ;; TODO
   (setq org-log-done 'time)
