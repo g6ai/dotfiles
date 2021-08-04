@@ -8,7 +8,6 @@
     ~/.shrc: shrc
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
-    ~/.bash_profile: bash/bash_profile
     ~/.zprofile: zsh/zprofile
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/tmux/tmux.inputrc:
@@ -48,6 +47,9 @@
     ~/.config/jupytext.toml:
       create: true
       path: jupytext.toml
+    ~/.config/pycodestyle:
+      create: true
+      path: pycodestyle
 
 - shell:
   - [git submodule update --init --recursive, Installing submodules]
