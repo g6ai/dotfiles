@@ -1,0 +1,12 @@
+{
+    "formatR": {
+        "indent": 4
+    },
+    
+    "preferences": {
+        "default_formatter": {
+            "python": "black",
+            "r": "formatR"
+        }
+    }
+}

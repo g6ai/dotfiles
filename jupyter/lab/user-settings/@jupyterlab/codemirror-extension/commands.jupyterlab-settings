@@ -1,0 +1,11 @@
+{
+    // CodeMirror
+    // @jupyterlab/codemirror-extension:commands
+    // Text editor settings for all CodeMirror editors.
+    // ************************************************
+
+    // Theme
+    // CSS file defining the corresponding
+    // .cm-s-[name] styles is loaded
+    "theme": "jupyter"
+}

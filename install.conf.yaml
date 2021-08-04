@@ -36,6 +36,15 @@
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
+    ~/.jupyter/jupyter_server_config.json:
+      create: true
+      path: jupyter/jupyter_server_config.json
+    ~/.jupyter/jupyter_server_config.py:
+      create: true
+      path: jupyter/jupyter_server_config.py
+    ~/.jupyter/lab/user-settings:
+      create: true
+      path: jupyter/lab/user-settings
     ~/.config/jupytext.toml:
       create: true
       path: jupytext.toml
