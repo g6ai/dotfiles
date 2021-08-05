@@ -8,6 +8,7 @@
     ~/.shrc: shrc
     ~/.bashrc: bash/bashrc
     ~/.inputrc: bash/inputrc
+    ~/.bash_profile: bash/bash_profile
     ~/.zprofile: zsh/zprofile
     ~/.tmux.conf: tmux/tmux.conf
     ~/.config/tmux/tmux.inputrc:
