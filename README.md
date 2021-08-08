@@ -46,8 +46,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 * `.tmux.conf` sources [tmuxline.vim](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
   * For *macOS*, `pbcopy` is used. `pbcopy` is installed on *macOS* by default.
   * For *Linux*, `xclip` is used. `xclip` needs to be installed. Within an SSH session, primary and/or clipboard content on the remote server can be sent to local machine by X11 forwarding.
-* `update_display_tmuxline.sh` updates environment variable `$DISPLAY` and tmuxline when tmux sessions are re-attached. This is especially useful when attaching tmux session over SSH X session, as Vim clipboard refers to `$DISPLAY` when forwarding clipboard content through X11. See this [commit](https://github.com/g6ai/dotfiles/commit/e10c00477d2c8b451e935b597a747706c19e02c3) for updating tmuxline in Vim sessions.
-* `update_tmuxline.sh` updates tmuxline when changing tmux sessions and the focus on tmux panes. This script does not deal with Vim session, as it is updated by the `update_tmuxline` augroup in [vimrc](https://github.com/g6ai/dotfiles/blob/master/vim/vimrc).
+* Helper scripts `update_display_tmuxline.sh` and `update_tmuxline.sh` update environment variable `$DISPLAY` and tmuxline for various scenarios.
 
 ### Git
 
