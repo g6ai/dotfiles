@@ -11,7 +11,7 @@ tmux list-panes -s -F "#{session_name}:#{window_index}.#{pane_index} #{pane_curr
         tmux send-keys -t ${pane_fields[0]} "export DISPLAY=$DISPLAY" Enter
       elif [[ "${pane_fields[1]}" == *[V,v]im* ]]; then
         tmux send-keys -t ${pane_fields[0]} Escape
-        tmux send-keys -t ${pane_fields[0]} ":Tmuxline airline" Enter
+        tmux send-keys -t ${pane_fields[0]} ":call UpdateTmuxlineByMode()" Enter
         tmux send-keys -t ${pane_fields[0]} ":let \$DISPLAY = \"$DISPLAY\"" Enter
         #tmux send-keys -t ${pane_fields[0]} ":xrestore" Enter
       fi

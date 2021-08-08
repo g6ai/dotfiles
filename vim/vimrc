@@ -488,7 +488,37 @@ elseif flag == "good"
   augroup update_tmuxline
     autocmd!
     if exists('$TMUX')
-      autocmd FocusGained * Tmuxline airline
+      function! UpdateTmuxlineByMode()
+        let current_mode = mode()
+        if current_mode ==# 'i'
+          Tmuxline airline_insert
+        elseif current_mode ==# 'v'
+          Tmuxline airline_visual
+        elseif current_mode ==# 'V'
+          Tmuxline airline_visual
+        elseif current_mode ==# 'CTRL-V'
+          Tmuxline airline_visual
+        else
+          Tmuxline airline
+        endif
+      endfunction
+      function! UpdateTmuxlineVisualEnter()
+        set updatetime=0
+        call UpdateTmuxlineByMode()
+        return ''
+      endfunction
+      function! UpdateTmuxlineVisualLeave()
+        set updatetime=4000
+        call UpdateTmuxlineByMode()
+      endfunction
+      autocmd FocusGained * call UpdateTmuxlineByMode()
+      autocmd InsertEnter * Tmuxline airline_insert
+      autocmd InsertLeave * Tmuxline airline
+      vnoremap <silent> <expr> <SID>UpdateTmuxlineVisualEnter UpdateTmuxlineVisualEnter()
+      nnoremap <silent> <script> v v<SID>UpdateTmuxlineVisualEnter<left><right>
+      nnoremap <silent> <script> V V<SID>UpdateTmuxlineVisualEnter<left><right>
+      nnoremap <silent> <script> <C-v> <C-v><SID>UpdateTmuxlineVisualEnter<left><right>
+      autocmd CursorHold * call UpdateTmuxlineVisualLeave()
     endif
   augroup END
 
