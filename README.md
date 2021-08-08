@@ -59,5 +59,6 @@ From my experience, there's no perfect terminal emulator. I have tried **Termina
 
 ### Other config
 These configuration files may have versions for different OS, and is deployed per OS thanks to Dotbot's `if` parameter in `link` command.
+* `jupyter` folder includes config files for JupyterLab. See [config file and command line options of Jupyter Server](https://jupyter-server.readthedocs.io/en/latest/other/full-config.html) for details.
 * `aria2` folder includes config file for aria2. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
 * `mpv` folder includes config files for mpv. See [mpv documentation](https://mpv.io/manual/master/) for more options.
