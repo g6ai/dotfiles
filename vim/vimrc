@@ -496,7 +496,7 @@ elseif flag == "good"
           Tmuxline airline_visual
         elseif current_mode ==# 'V'
           Tmuxline airline_visual
-        elseif current_mode ==# 'CTRL-V'
+        elseif current_mode ==# "\<C-V>"
           Tmuxline airline_visual
         else
           Tmuxline airline
