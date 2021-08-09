@@ -505,7 +505,7 @@ elseif flag == "good"
       function! UpdateTmuxlineVisualEnter()
         set updatetime=0
         call UpdateTmuxlineByMode()
-        return ''
+        return 'lh'
       endfunction
       function! UpdateTmuxlineVisualLeave()
         set updatetime=4000
@@ -515,9 +515,9 @@ elseif flag == "good"
       autocmd InsertEnter * Tmuxline airline_insert
       autocmd InsertLeave * Tmuxline airline
       vnoremap <silent> <expr> <SID>UpdateTmuxlineVisualEnter UpdateTmuxlineVisualEnter()
-      nnoremap <silent> <script> v v<SID>UpdateTmuxlineVisualEnter<left><right>
-      nnoremap <silent> <script> V V<SID>UpdateTmuxlineVisualEnter<left><right>
-      nnoremap <silent> <script> <C-v> <C-v><SID>UpdateTmuxlineVisualEnter<left><right>
+      nnoremap <silent> <script> v v<SID>UpdateTmuxlineVisualEnter
+      nnoremap <silent> <script> V V<SID>UpdateTmuxlineVisualEnter
+      nnoremap <silent> <script> <C-v> <C-v><SID>UpdateTmuxlineVisualEnter
       autocmd CursorHold * call UpdateTmuxlineVisualLeave()
     endif
   augroup END
