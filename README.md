@@ -1,4 +1,7 @@
 # Dotfiles
+
+![Latest commit](https://img.shields.io/github/last-commit/g6ai/dotfiles?style=flat-square)
+
 My dotfiles. Some of my considerations are explained in [Wiki](https://github.com/g6ai/dotfiles/wiki).
 
 ![](https://github.com/g6ai/dotfiles/wiki/screenshots/complex.png)
