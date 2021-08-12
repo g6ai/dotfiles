@@ -6,7 +6,7 @@
 
 My dotfiles. Some of my considerations are explained in [Wiki](https://github.com/g6ai/dotfiles/wiki).
 
-[Deployment](https://github.com/g6ai/dotfiles#deploy-with-ease) • [Bash](https://github.com/g6ai/dotfiles#bash) • [Zsh](https://github.com/g6ai/dotfiles#zsh) • [Vim](https://github.com/g6ai/dotfiles#vim) • [Neovim](https://github.com/g6ai/dotfiles#neovim) • [Doom Emacs](https://github.com/g6ai/dotfiles#doom-emacs) • [tmux](https://github.com/g6ai/dotfiles#tmux) • [Git](https://github.com/g6ai/dotfiles#git) • [Terminal emulators](https://github.com/g6ai/dotfiles#terminal-emulators) • [Other config](https://github.com/g6ai/dotfiles#other-config)
+[Deployment](#deploy-with-ease) • [Bash](#bash) • [Zsh](#zsh) • [Vim](#vim) • [Neovim](#neovim) • [Doom Emacs](#doom-emacs) • [tmux](#tmux) • [Git](#git) • [Terminal emulators](#terminal-emulators) • [Other config](#other-config)
 
 ![](https://github.com/g6ai/dotfiles/wiki/screenshots/complex.png)
 
@@ -49,7 +49,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 ### Doom Emacs
 
-* Configs for *org-journal*, to cooperate with *beorg*.
+* Configs for [*org-journal*](https://github.com/bastibe/org-journal), to cooperate with [*beorg*](https://beorgapp.com/manual/).
 
 ### tmux
 * [`.tmux.conf`](https://github.com/g6ai/dotfiles/blob/master/tmux/tmux.conf) sources [*tmuxline.vim*](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
