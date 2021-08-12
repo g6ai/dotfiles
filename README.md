@@ -42,7 +42,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 ### Neovim
 * The [`init.vim`](https://github.com/g6ai/dotfiles/blob/master/vim/nvim/init.vim) uses the versatile configs in [`.vimrc`](https://github.com/g6ai/dotfiles/blob/master/vim/vimrc).
-* Adopts the mighty [*coc.nvim*](https://github.com/neoclide/coc.nvim). Its config is [`coc-settings.json`](https://github.com/g6ai/dotfiles/blob/master/vim/nvim/coc-settings.json).
+* Adopts the mighty [*coc.nvim*](https://github.com/neoclide/coc.nvim). Its config is `coc-settings.json`.
 * Some experimetal features in *Neovim* 0.5+ are also embraced:
   * [*nvim-treesitter*](https://github.com/nvim-treesitter/nvim-treesitter), provides beautiful code highlighting and more.
   * [*telescope.nvim*](https://github.com/nvim-telescope/telescope.nvim), next generation fuzzy finder.
