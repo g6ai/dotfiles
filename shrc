@@ -33,6 +33,7 @@ else
   alias vi='vim'
 fi
 alias kk='kitty +kitten'
+alias magit='emacsclient -n -e "(magit-status)"'
 
 # Terminal color
 export CLICOLOR=1
