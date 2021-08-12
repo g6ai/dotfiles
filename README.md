@@ -49,7 +49,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 ### Doom Emacs
 
-* Configs for *org-journal*, to cooperate with *beorg*.
+* Configs for [*org-journal*](https://github.com/bastibe/org-journal), to cooperate with [*beorg*](https://beorgapp.com/manual/).
 
 ### tmux
 * [`.tmux.conf`](https://github.com/g6ai/dotfiles/blob/master/tmux/tmux.conf) sources [*tmuxline.vim*](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
