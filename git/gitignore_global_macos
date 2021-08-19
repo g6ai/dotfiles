@@ -50,6 +50,9 @@ tags
 # Persistent undo
 [._]*.un~
 
+# spellfile binaries
+*.add.spl
+
 ### Python
 
 # pyenv
