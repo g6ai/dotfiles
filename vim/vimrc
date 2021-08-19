@@ -104,7 +104,6 @@ augroup spell_setting
   autocmd!
   autocmd FileType tex setlocal spell
 augroup END
-let g:tex_comment_nospell = 1 " For vimtex use g:vimtex_syntax_nospell_comments
 
 " Toggle relative numbering
 nnoremap <C-n> :set rnu!<CR>
@@ -252,6 +251,7 @@ if flag == "nogood"
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
   augroup END
+  let g:tex_comment_nospell = 1 " For vimtex use g:vimtex_syntax_nospell_comments
 elseif flag == "good"
   " Auto source .vimrc and refresh vim-airline after saving
   augroup auto_source_vimrc_refresh_airline
