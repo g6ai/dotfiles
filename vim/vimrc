@@ -531,6 +531,12 @@ elseif flag == "good"
   let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
   let g:vimtex_view_method = 'skim'
   let g:vimtex_mappings_enabled = 1
+  let g:vimtex_syntax_nospell_commands = [
+        \ 'ce',
+        \ 'centering',
+        \ 'zref',
+        \ 'qty',
+        \]
   let g:vimtex_syntax_nospell_comments = 1
   let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
   let g:vimtex_grammar_vlty.shell_options =
