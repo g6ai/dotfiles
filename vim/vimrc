@@ -442,6 +442,7 @@ elseif flag == "good"
     autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
     " If more than one window and previous buffer was NERDTree, go back to it.
     autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
+    let g:plug_window = 'noautocmd vertical topleft new'
   augroup END
 
   " vim-airline
