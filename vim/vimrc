@@ -479,12 +479,12 @@ elseif flag == "good"
   let g:airline#extensions#tmuxline#enabled = 1
   "let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline.snapshot"
   let g:tmuxline_preset = {
-    \'a'    : '#S',
-    \'win'  : '#I #W',
-    \'cwin' : '#I #W',
-    \'x'    : '%d-%b',
-    \'y'    : '%R',
-    \'z'    : '#H'}
+        \'a'    : '#S',
+        \'win'  : '#I #W',
+        \'cwin' : '#I #W',
+        \'x'    : '%d-%b',
+        \'y'    : '%R',
+        \'z'    : '#H'}
   augroup reset_tmuxline
     autocmd!
     autocmd VimLeave * !tmux if-shell "test -f ~/.config/tmux/tmuxline.snapshot" "source ~/.config/tmux/tmuxline.snapshot" Enter
@@ -540,11 +540,11 @@ elseif flag == "good"
   let g:vimtex_syntax_nospell_comments = 1
   let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
   let g:vimtex_grammar_vlty.shell_options =
-          \   ' --multi-language'
+        \ ' --multi-language'
   let g:vimtex_grammar_textidote = {
-          \ 'jar': '~/textidote.jar',
-          \ 'args': '--check en',
-          \}
+        \ 'jar': '~/textidote.jar',
+        \ 'args': '--check en',
+        \}
   let g:airline#extensions#vimtex#main = "/"
   "if has('nvim')
   "  g:vimtex_compiler_progname = 'nvr'
