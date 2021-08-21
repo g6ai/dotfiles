@@ -2,7 +2,20 @@
 
 let mapleader = " "
 let maplocalleader = " "
-if has('win32')
+
+if has('nvim')
+  lua vim.g["system_name"] = vim.loop.os_uname().sysname
+else
+  if has('win32')
+    let g:system_name = "Windows_NT"
+  elseif has('macunix')
+    let g:system_name = "Darwin"
+  else
+    let g:system_name = "Linux"
+  endif
+endif
+
+if g:system_name ==# "Windows_NT"
   set nocompatible " Get out of vi compatible mode
 endif
 
@@ -151,11 +164,11 @@ augroup tab_setting
 augroup END
 
 " Clipboard
-if has('macunix')
+if g:system_name ==# "Darwin"
   set clipboard=unnamed
   noremap <Leader>y "*y
   noremap <Leader>p "*p
-elseif has('linux')
+elseif g:system_name ==# "Linux"
   set clipboard=unnamedplus
   noremap <Leader>y "+y
   noremap <Leader>p "+p
@@ -214,7 +227,7 @@ endfunction
 command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
 command! NA %s/^[^\t]*\t// | set number | noh
 
-if has('macunix')
+if g:system_name ==# "Darwin"
   if has('nvim')
     let g:python_host_prog = '$HOME/.pyenv/versions/py2nvim/bin/python'
     let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
@@ -226,16 +239,16 @@ if has('macunix')
     py3 1+2
     pyx 1+2
   endif
-elseif has('linux')
+elseif g:system_name ==# "Linux"
   if has('nvim')
     let g:python3_host_prog = '$HOME/miniforge3/envs/py3nvim/bin/python'
   endif
 endif
 
 " Check if memory size is large enough to use plugins
-if has('macunix')
+if g:system_name ==# "Darwin"
   let flag = "good"
-elseif has('linux')
+elseif g:system_name ==# "Linux"
   let mem_size = system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MB
   if mem_size > 3600
     let flag = "good"
@@ -245,7 +258,7 @@ elseif has('linux')
 endif
 
 " Windows also works
-if has('win32')
+if g:system_name ==# "Windows_NT"
   let flag = "good"
 endif
 
@@ -400,7 +413,7 @@ elseif flag == "good"
     highlight Comment cterm=italic gui=italic
   endfunction
 
-  if has('macunix')
+  if g:system_name ==# "Darwin"
     if !has('nvim')
       call MacBackground()
       augroup MacVim_auto_background
@@ -565,9 +578,9 @@ elseif flag == "good"
   inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
   " kitty config window needs node path to be set
   " when invoked by cmd+comma
-  if has('macunix')
+  if g:system_name ==# "Darwin"
     let g:coc_node_path = '/usr/local/bin/node'
-  elseif has('linux')
+  elseif g:system_name ==# "Linux"
     let g:coc_node_path = '/usr/bin/node'
   endif
   " Add `:Format` command to format current buffer.
