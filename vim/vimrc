@@ -5,7 +5,6 @@ let maplocalleader = " "
 if has('win32')
   set nocompatible " Get out of vi compatible mode
 endif
-let system_name = substitute(system('uname'), '\n', '', '') " Reserve for later
 
 " Load local .vimrc files
 set exrc
@@ -152,11 +151,11 @@ augroup tab_setting
 augroup END
 
 " Clipboard
-if system_name ==# "Darwin"
+if has('macunix')
   set clipboard=unnamed
   noremap <Leader>y "*y
   noremap <Leader>p "*p
-elseif system_name ==# "Linux"
+elseif has('linux')
   set clipboard=unnamedplus
   noremap <Leader>y "+y
   noremap <Leader>p "+p
@@ -215,7 +214,7 @@ endfunction
 command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
 command! NA %s/^[^\t]*\t// | set number | noh
 
-if system_name ==# "Darwin"
+if has('macunix')
   if has('nvim')
     let g:python_host_prog = '$HOME/.pyenv/versions/py2nvim/bin/python'
     let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
@@ -227,16 +226,16 @@ if system_name ==# "Darwin"
     py3 1+2
     pyx 1+2
   endif
-elseif system_name ==# "Linux"
+elseif has('linux')
   if has('nvim')
     let g:python3_host_prog = '$HOME/miniforge3/envs/py3nvim/bin/python'
   endif
 endif
 
 " Check if memory size is large enough to use plugins
-if system_name ==# "Darwin"
+if has('macunix')
   let flag = "good"
-elseif system_name ==# "Linux"
+elseif has('linux')
   let mem_size = system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MB
   if mem_size > 3600
     let flag = "good"
@@ -401,7 +400,7 @@ elseif flag == "good"
     highlight Comment cterm=italic gui=italic
   endfunction
 
-  if system_name ==# "Darwin"
+  if has('macunix')
     if !has('nvim')
       call MacBackground()
       augroup MacVim_auto_background
@@ -566,9 +565,9 @@ elseif flag == "good"
   inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
   " kitty config window needs node path to be set
   " when invoked by cmd+comma
-  if system_name ==# "Darwin"
+  if has('macunix')
     let g:coc_node_path = '/usr/local/bin/node'
-  elseif system_name ==# "Linux"
+  elseif has('linux')
     let g:coc_node_path = '/usr/bin/node'
   endif
   " Add `:Format` command to format current buffer.
