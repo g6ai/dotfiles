@@ -17,7 +17,7 @@ source $ZSH/oh-my-zsh.sh
 # Put plugins config after this line
 # zsh-autosuggestions
 function zvm_after_init() {
-  zvm_bindkey viins '^@' autosuggest-accept
+  zvm_bindkey viins '^[[Z' autosuggest-accept
 }
 
 # zsh-vi-mode
