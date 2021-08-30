@@ -51,8 +51,8 @@ elif [[ "$(uname)" == "Linux" ]]; then
   alias ls='ls --color'
 fi
 
-# If $LESS is unset, Git sets it to FRX. I don't want X.
-export LESS='FR'
+# If $LESS is unset, Git sets it to FRX. I don't want F or X.
+export LESS='R'
 
 # less color
 export LESS_TERMCAP_mb=$'\E[01;31m'    # begin blink
