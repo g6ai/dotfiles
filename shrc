@@ -24,8 +24,8 @@ alias ll='ls -ltAh'
 alias pd='pushd'
 alias pdw='pushd .'
 alias po='popd'
-alias gits='git status'
-alias gitl='git log --all --graph --decorate'
+alias gst='git status'
+alias glg='git log --all --graph --decorate'
 if command -v nvim &> /dev/null; then
   alias vi='nvim'
 else
