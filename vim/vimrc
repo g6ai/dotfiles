@@ -320,6 +320,7 @@ elseif flag == "good"
   Plug 'Rykka/riv.vim'
   Plug 'rhysd/committia.vim'
   Plug 'kevinhwang91/nvim-hlslens', Cond(has('nvim-0.5'))
+  Plug 'kevinhwang91/nvim-bqf', Cond(has('nvim-0.5'))
   call plug#end()
 
   " gruvbox
