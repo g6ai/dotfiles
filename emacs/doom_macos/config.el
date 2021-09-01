@@ -101,4 +101,5 @@
         (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
         (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
   (setq org-journal-file-header 'org-journal-file-header-func)
-  (customize-set-variable 'org-journal-enable-agenda-integration t))
+  (customize-set-variable 'org-journal-enable-agenda-integration t)
+)
