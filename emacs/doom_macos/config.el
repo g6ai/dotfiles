@@ -108,6 +108,10 @@
         \\usepackage[version=4]{mhchem}")
   (setq org-highlight-latex-and-related '(latex script entities))
 
+  ;; misc
+  (map! :leader
+        "b g" #'org-mark-ring-goto)
+
   ;; org-agenda
   (setq org-agenda-directory org-directory)
 
