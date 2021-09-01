@@ -140,4 +140,42 @@
 
   ;; org-roam
   (setq org-roam-directory (concat org-directory "beorg/"))
+  ;; fix org-roam-node-insert in Evil
+  (defun my:is-end-of-line ()
+    (let* ((pos (current-column))
+           (end-pos (save-excursion
+                      (evil-end-of-line)
+                      (current-column))))
+      (eq pos end-pos)))
+  (defun my:compare-with-end-of-word ()
+    (let* ((pos (current-column))
+           (end-pos (save-excursion
+                      (evil-backward-word-begin)
+                      (evil-forward-word-end)
+                      (current-column))))
+      (- pos end-pos)))
+  (defun my:point-is-space ()
+    (char-equal ?\s (char-after)))
+  (defun my:insert-after (func)
+    (interactive)
+    (let ((relative-loc (my:compare-with-end-of-word)))
+      (cond ((my:is-end-of-line)
+             (end-of-line)
+             (call-interactively func))
+            ((eq 0 relative-loc)
+             (evil-forward-char)
+             (call-interactively func))
+            ((and (> 0 relative-loc) (not (my:point-is-space)))
+             (evil-forward-word-end)
+             (if (my:is-end-of-line)
+                 (end-of-line)
+               (evil-forward-char))
+             (call-interactively func))
+            (t
+             (call-interactively func)))))
+  (defun my:org-roam-node-insert ()
+    (interactive)
+    (my:insert-after 'org-roam-node-insert))
+  (map! :leader
+        "n r i" #'my:org-roam-node-insert)
 )
