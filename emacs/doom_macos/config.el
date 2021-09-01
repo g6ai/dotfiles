@@ -77,34 +77,7 @@
   ;; TODO
   (setq org-log-done 'time)
 
-  ;; org-agenda
-  (setq org-agenda-directory org-directory)
-
-  ;; org-journal
-  (customize-set-variable 'org-journal-dir (concat org-directory "beorg/"))
-  ;;(customize-set-variable 'org-journal-file-format "%Y%m%dW%V.org")
-  (customize-set-variable 'org-journal-file-format "%Y%m.org")
-  (customize-set-variable 'org-extend-today-until 05)
-  (customize-set-variable 'org-journal-file-type 'monthly)
-  (customize-set-variable 'org-journal-date-format "%A, %d %B %Y")
-  ;;(customize-set-variable 'org-journal-date-prefix "* ")
-  (customize-set-variable 'org-journal-time-format "TODO %R ")
-  ;;(customize-set-variable 'org-journal-time-prefix "** ")
-  ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-  ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Monthly Journal\n#+STARTUP: folded")
-  (defun org-journal-file-header-func (time)
-    "Custom function to create journal header."
-    (concat
-      (pcase org-journal-file-type
-        (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
-        (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-        (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
-        (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
-  (setq org-journal-file-header 'org-journal-file-header-func)
-  (customize-set-variable 'org-journal-enable-agenda-integration t)
-
-  ;; org-roam
-  (setq org-roam-directory (concat org-directory "beorg/"))
+  ;; LaTeX
   (setq org-latex-create-formula-image-program 'dvisvgm)
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.75))
   (setq org-format-latex-header "\\documentclass{article}
@@ -134,4 +107,33 @@
         \\DeclareSIUnit\\cycle{cycle}
         \\usepackage[version=4]{mhchem}")
   (setq org-highlight-latex-and-related '(latex script entities))
+
+  ;; org-agenda
+  (setq org-agenda-directory org-directory)
+
+  ;; org-journal
+  (customize-set-variable 'org-journal-dir (concat org-directory "beorg/"))
+  ;;(customize-set-variable 'org-journal-file-format "%Y%m%dW%V.org")
+  (customize-set-variable 'org-journal-file-format "%Y%m.org")
+  (customize-set-variable 'org-extend-today-until 05)
+  (customize-set-variable 'org-journal-file-type 'monthly)
+  (customize-set-variable 'org-journal-date-format "%A, %d %B %Y")
+  ;;(customize-set-variable 'org-journal-date-prefix "* ")
+  (customize-set-variable 'org-journal-time-format "TODO %R ")
+  ;;(customize-set-variable 'org-journal-time-prefix "** ")
+  ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+  ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+  (defun org-journal-file-header-func (time)
+    "Custom function to create journal header."
+    (concat
+      (pcase org-journal-file-type
+        (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+        (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+        (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+        (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+  (setq org-journal-file-header 'org-journal-file-header-func)
+  (customize-set-variable 'org-journal-enable-agenda-integration t)
+
+  ;; org-roam
+  (setq org-roam-directory (concat org-directory "beorg/"))
 )
