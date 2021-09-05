@@ -70,6 +70,8 @@
         ("^/Users/gbai/Documents/GitHub/org-node" . "/Users/gbai/org/org-node")))
 
 (after! org
+  ;; Auto-Saving
+  (add-hook 'org-trigger-hook 'save-buffer)
 
   ;; indentation
   (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
