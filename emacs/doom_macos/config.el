@@ -89,6 +89,18 @@
   ;; indentation
   (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
 
+  ;; pretty
+  ;; org-superstar
+  ;; headline-bullets-list: ◉ ◎ ◈ ◇
+  (setq org-superstar-headline-bullets-list '(9673 9678 9672 9671))
+  ;; headline-bullets-list: ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷
+  ;;(setq org-superstar-headline-bullets-list '(9776 9777 9778 9779 9780 9781 9782 9783))
+  ;; item-bullet-alist: (?- . ?⁃) (?+ . ?‣) (?* . ?•)
+  (setq org-superstar-item-bullet-alist
+        '((?- . 8259)
+          (?+ . 8227)
+          (?* . 8226)))
+
   ;; TODO
   (setq org-log-done 'time)
 
