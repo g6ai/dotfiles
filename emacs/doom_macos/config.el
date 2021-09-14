@@ -58,6 +58,9 @@
 ;;(add-to-list 'initial-frame-alist '(fullscreen . fullboth))
 ;;(setq ns-use-native-fullscreen t)
 (setq initial-frame-alist '((left . 0.5) (top . 0.5) (width . 96) (height . 36)))
+;; Default fringe-mode value in Doom is 4, too small for fringe indicators.
+(after! git-gutter-fringe
+  (fringe-mode 8))
 
 ;; Auto-Saving
 (add-hook 'evil-insert-state-exit-hook
