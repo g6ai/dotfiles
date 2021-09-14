@@ -74,7 +74,17 @@
 
 (after! org
   ;; Auto-Saving
-  (add-hook 'org-trigger-hook 'save-buffer)
+  ;;(add-hook 'org-trigger-hook 'save-buffer)
+  (defun org-save-when-done (trigger-plist)
+    (let ((type (plist-get trigger-plist :type))
+          (pos (plist-get trigger-plist :position))
+          (from (plist-get trigger-plist :from))
+          (to (plist-get trigger-plist :to)))
+      (when (equal type 'todo-state-change)
+        (when (and (member from org-not-done-keywords)
+                   (member to org-done-keywords))
+          (save-buffer)))))
+  (add-hook 'org-trigger-hook 'org-save-when-done)
 
   ;; indentation
   (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
