@@ -204,5 +204,5 @@
     (interactive)
     (my:insert-after 'org-roam-node-insert))
   (map! :leader
-        "n r i" #'my:org-roam-node-insert)
-)
+        "n r i" #'my:org-roam-node-insert))
+
