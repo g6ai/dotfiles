@@ -96,10 +96,9 @@
   ;; headline-bullets-list: ☰ ☱ ☲ ☳ ☴ ☵ ☶ ☷
   ;;(setq org-superstar-headline-bullets-list '(9776 9777 9778 9779 9780 9781 9782 9783))
   ;; item-bullet-alist: (?- . ?⁃) (?+ . ?‣) (?* . ?•)
-  (setq org-superstar-item-bullet-alist
-        '((?- . 8259)
-          (?+ . 8227)
-          (?* . 8226)))
+  (setq org-superstar-item-bullet-alist '((?- . 8259)
+                                          (?+ . 8227)
+                                          (?* . 8226)))
 
   ;; TODO
   (setq org-log-done 'time)
@@ -108,31 +107,31 @@
   (setq org-latex-create-formula-image-program 'dvisvgm)
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.75))
   (setq org-format-latex-header "\\documentclass{article}
-        \\usepackage[usenames]{color}
-        \[PACKAGES]
-        \[DEFAULT-PACKAGES]
-        \\pagestyle{empty}             % do not remove
-        % The settings below are copied from fullpage.sty
-        \\setlength{\\textwidth}{\\paperwidth}
-        \\addtolength{\\textwidth}{-3cm}
-        \\setlength{\\oddsidemargin}{1.5cm}
-        \\addtolength{\\oddsidemargin}{-2.54cm}
-        \\setlength{\\evensidemargin}{\\oddsidemargin}
-        \\setlength{\\textheight}{\\paperheight}
-        \\addtolength{\\textheight}{-\\headheight}
-        \\addtolength{\\textheight}{-\\headsep}
-        \\addtolength{\\textheight}{-\\footskip}
-        \\addtolength{\\textheight}{-3cm}
-        \\setlength{\\topmargin}{1.5cm}
-        \\addtolength{\\topmargin}{-2.54cm}
-        % My settings
-        \\usepackage{siunitx}
-        \\sisetup{separate-uncertainty}
-        \\DeclareSIUnit\\angstrom{Å}
-        \\DeclareSIUnit\\bar{bar}
-        \\DeclareSIUnit\\torr{Torr}
-        \\DeclareSIUnit\\cycle{cycle}
-        \\usepackage[version=4]{mhchem}")
+\\usepackage[usenames]{color}
+\[PACKAGES]
+\[DEFAULT-PACKAGES]
+\\pagestyle{empty}             % do not remove
+% The settings below are copied from fullpage.sty
+\\setlength{\\textwidth}{\\paperwidth}
+\\addtolength{\\textwidth}{-3cm}
+\\setlength{\\oddsidemargin}{1.5cm}
+\\addtolength{\\oddsidemargin}{-2.54cm}
+\\setlength{\\evensidemargin}{\\oddsidemargin}
+\\setlength{\\textheight}{\\paperheight}
+\\addtolength{\\textheight}{-\\headheight}
+\\addtolength{\\textheight}{-\\headsep}
+\\addtolength{\\textheight}{-\\footskip}
+\\addtolength{\\textheight}{-3cm}
+\\setlength{\\topmargin}{1.5cm}
+\\addtolength{\\topmargin}{-2.54cm}
+% My settings
+\\usepackage{siunitx}
+\\sisetup{separate-uncertainty}
+\\DeclareSIUnit\\angstrom{Å}
+\\DeclareSIUnit\\bar{bar}
+\\DeclareSIUnit\\torr{Torr}
+\\DeclareSIUnit\\cycle{cycle}
+\\usepackage[version=4]{mhchem}")
   (setq org-highlight-latex-and-related '(latex script entities))
 
   ;; misc
@@ -157,11 +156,11 @@
   (defun org-journal-file-header-func (time)
     "Custom function to create journal header."
     (concat
-      (pcase org-journal-file-type
-        (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
-        (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-        (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
-        (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+     (pcase org-journal-file-type
+       (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+       (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+       (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+       (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
   (setq org-journal-file-header 'org-journal-file-header-func)
   (customize-set-variable 'org-journal-enable-agenda-integration t)
 
