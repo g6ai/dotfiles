@@ -23,12 +23,12 @@
     ~/.vimrc: vim/vimrc
     ~/.config/nvim/init.vim:
       create: true
-      path: vim/nvim/init.vim
+      path: nvim/init.vim
       if: '[ ! -z "$(command -v nvim)" ]'
     ~/.gvimrc: vim/gvimrc
     ~/.config/nvim/ginit.vim:
       create: true
-      path: vim/nvim/ginit.vim
+      path: nvim/ginit.vim
       if: '[ ! -z "$(command -v nvim)" ]'
     ~/.vim/spell:
       create: true
@@ -77,7 +77,7 @@
     ~/.zshrc: zsh/zshrc_macos
     ~/.config/nvim/coc-settings.json:
       create: true
-      path: vim/nvim/coc-settings_macos.json
+      path: nvim/coc-settings_macos.json
     ~/.config/kitty/kitty.conf:
       create: true
       path: kitty/kitty_macos.conf
@@ -113,4 +113,4 @@
     ~/.zshrc: zsh/zshrc_linux
     ~/.config/nvim/coc-settings.json:
       create: true
-      path: vim/nvim/coc-settings_linux.json
+      path: nvim/coc-settings_linux.json
