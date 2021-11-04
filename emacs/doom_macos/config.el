@@ -221,4 +221,5 @@
     (my:insert-after 'org-roam-node-insert))
   (map! :leader
         "n r i" #'my:org-roam-node-insert))
+  (setq +org-roam-open-buffer-on-find-file nil)
 
