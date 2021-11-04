@@ -71,7 +71,7 @@
 (after! git-gutter-fringe
   (fringe-mode 8))
 
-;; Auto-Saving
+;; auto-saving
 (add-hook 'evil-insert-state-exit-hook
           (lambda ()
             (call-interactively #'save-buffer)))
@@ -81,8 +81,9 @@
       '(("^/Users/gbai/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org" . "/Users/gbai/org/beorg")
         ("^/Users/gbai/Documents/GitHub/org-node" . "/Users/gbai/org/org-node")))
 
+;; Org-mode
 (after! org
-  ;; Auto-Saving
+  ;; auto-saving
   ;;(add-hook 'org-trigger-hook 'save-buffer)
   (defun org-save-when-done (trigger-plist)
     (let ((type (plist-get trigger-plist :type))
@@ -147,7 +148,7 @@
   (map! :leader
         "b g" #'org-mark-ring-goto)
 
-  ;; org-agenda
+  ;; agenda
   (setq org-agenda-directory org-directory)
 
   ;; org-journal
@@ -173,7 +174,7 @@
   (setq org-journal-file-header 'org-journal-file-header-func)
   (customize-set-variable 'org-journal-enable-agenda-integration t)
 
-  ;; org-roam
+  ;; Org-roam
   (setq org-roam-directory (concat org-directory "beorg/"))
   ;; fix org-roam-node-insert in Evil
   (defun my:is-end-of-line ()
