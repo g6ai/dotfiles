@@ -98,6 +98,8 @@
                    (member to org-done-keywords))
           (save-buffer)))))
   (add-hook 'org-trigger-hook 'org-save-when-done)
+  ;; With auto-saving enabled, do not delete trailing spaces on saving.
+  (add-hook 'org-mode-hook (lambda () (ws-butler-mode -1)))
 
   ;; indentation
   (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
