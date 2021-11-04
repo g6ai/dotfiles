@@ -152,6 +152,8 @@
   ;; misc
   (map! :leader
         "b g" #'org-mark-ring-goto)
+  (map! :leader
+        "\\" #'org-toggle-pretty-entities)
 
   ;; agenda
   (setq org-agenda-directory org-directory)
