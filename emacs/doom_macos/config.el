@@ -81,6 +81,9 @@
       '(("^/Users/gbai/Library/Mobile Documents/iCloud~com~appsonthemove~beorg/Documents/org" . "/Users/gbai/org/beorg")
         ("^/Users/gbai/Documents/GitHub/org-node" . "/Users/gbai/org/org-node")))
 
+;; Magit
+(setq magit-ediff-dwim-show-on-hunks t)
+
 ;; Org-mode
 (after! org
   ;; auto-saving
