@@ -39,6 +39,9 @@
     ~/.vim/after:
       create: true
       path: vim/after
+    ~/.vim/plugin:
+      create: true
+      path: vim/plugin
     ~/.jupyter/jupyter_server_config.json:
       create: true
       path: jupyter/jupyter_server_config.json

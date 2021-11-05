@@ -235,29 +235,29 @@ endif
 
 " Check if memory size is large enough to use plugins
 if g:system_name ==# "Darwin"
-  let flag = "good"
+  let g:flag = "good"
 elseif g:system_name ==# "Linux"
   let mem_size = system("free -mt | tail -1 | awk '{print $2}'") " Get memory size in MB
   if mem_size > 3600
-    let flag = "good"
+    let g:flag = "good"
   else
-    let flag = "nogood"
+    let g:flag = "nogood"
   endif
 endif
 
 " Windows also works
 if g:system_name ==# "Windows_NT"
-  let flag = "good"
+  let g:flag = "good"
 endif
 
-if flag == "nogood"
+if g:flag == "nogood"
   " Auto source .vimrc after saving
   augroup auto_source_vimrc
     autocmd!
     autocmd BufWritePost $MYVIMRC source $MYVIMRC
   augroup END
   let g:tex_comment_nospell = 1 " For vimtex use g:vimtex_syntax_nospell_comments
-elseif flag == "good"
+elseif g:flag == "good"
   " Auto source .vimrc and refresh vim-airline after saving
   augroup auto_source_vimrc_refresh_airline
     autocmd!
@@ -283,7 +283,6 @@ elseif flag == "good"
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'morhetz/gruvbox'
-  "Plug 'cormacrelf/vim-colors-github'
   Plug 'preservim/nerdtree'
   Plug 'Xuyuanp/nerdtree-git-plugin'
   Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
@@ -310,332 +309,4 @@ elseif flag == "good"
   Plug 'kevinhwang91/nvim-hlslens', Cond(has('nvim-0.5'))
   Plug 'kevinhwang91/nvim-bqf', Cond(has('nvim-0.5'))
   call plug#end()
-
-  " gruvbox
-  let g:gruvbox_contrast_dark = 'hard'
-  let g:gruvbox_contrast_light = 'hard'
-  colorscheme gruvbox
-
-  function! DarkIndentGuides()
-    "highlight IndentGuidesOdd  ctermbg=242 guibg=#696969
-    "highlight IndentGuidesEven ctermbg=008 guibg=#808080
-    " Below are from gruvbox palette
-    highlight IndentGuidesOdd  ctermbg=239 guibg=#504945 " bg2
-    highlight IndentGuidesEven ctermbg=241 guibg=#665c54 " bg3
-  endfunction
-
-  function! LightIndentGuides()
-    "highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
-    "highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
-    " Below are from gruvbox palette
-    highlight IndentGuidesOdd  ctermbg=228 guibg=#f2e5bc " bg0_s
-    highlight IndentGuidesEven ctermbg=223 guibg=#ebdbb2 " bg1
-  endfunction
-
-  function! DarkColorscheme()
-    set background=dark
-    colorscheme gruvbox
-    let g:airline_theme = "gruvbox"
-  endfunction
-
-  function! LightColorscheme()
-    set background=light
-    colorscheme gruvbox
-    let g:airline_theme = "gruvbox"
-  endfunction
-
-  " IndentGuides(): Set Indent Guides color
-  function! IndentGuides(background)
-    if a:background == "dark"
-      call DarkIndentGuides()
-    elseif a:background == "light"
-      call LightIndentGuides()
-    endif
-  endfunction
-
-  " ToggleBackground(): Toggle color scheme
-  function! ToggleBackground()
-    if &background == "dark"
-      call LightColorscheme()
-      call IndentGuides(&background)
-    elseif &background == "light"
-      call DarkColorscheme()
-      call IndentGuides(&background)
-    endif
-    call airline#extensions#tabline#buffers#invalidate()
-    AirlineRefresh
-    if has('nvim')
-      lua package.loaded['colorizer'] = nil; require('colorizer').setup(...); require('colorizer').attach_to_buffer(0)
-    endif
-    if has('gui_vimr')
-      VimRToggleTools
-      VimRToggleTools
-    endif
-    highlight Comment cterm=italic gui=italic
-  endfunction
-
-  nmap tb :call ToggleBackground()<CR>
-
-  " MacBackground(): Set color scheme for macOS
-  function! MacBackground()
-    if system("defaults read -g AppleInterfaceStyle") =~ "^Dark"
-      call DarkColorscheme()
-      call IndentGuides(&background)
-    else
-      call LightColorscheme()
-      call IndentGuides(&background)
-    endif
-    highlight Comment cterm=italic gui=italic
-  endfunction
-
-  " MacGUIBackground(): change MacVim gVim color scheme automatically
-  function! MacGUIBackground()
-    if v:os_appearance == 1
-      call DarkColorscheme()
-      call IndentGuides(&background)
-    else
-      call LightColorscheme()
-      call IndentGuides(&background)
-    endif
-    call airline#extensions#tabline#buffers#invalidate()
-    AirlineRefresh
-    highlight Comment cterm=italic gui=italic
-  endfunction
-
-  if g:system_name ==# "Darwin"
-    if !has('nvim')
-      call MacBackground()
-      augroup MacVim_auto_background
-        autocmd!
-        autocmd OSAppearanceChanged * call MacGUIBackground()
-      augroup END
-    else
-      call MacBackground()
-    endif
-  endif
-
-  " Indent Guides
-  let g:indent_guides_enable_on_vim_startup = 1
-  let g:indent_guides_auto_colors = 0
-  if &background == 'dark'
-    augroup dark_indent_guides
-      autocmd!
-      autocmd VimEnter,Colorscheme * :call DarkIndentGuides()
-    augroup END
-  elseif &background == 'light'
-    augroup light_indent_guides
-      autocmd!
-      autocmd VimEnter,Colorscheme * :call LightIndentGuides()
-    augroup END
-  endif
-  let g:indent_guides_start_level = 1
-  let g:indent_guides_color_change_percent = 100
-  let g:indent_guides_guide_size = 1
-  nmap <silent> <leader>i <Plug>IndentGuidesToggle
-
-  " NERDTree
-  let NERDTreeShowHidden = 1
-  let NERDTreeMinimalUI = 1
-  command! NT NERDTreeToggle
-  "command! NT NERDTreeToggle | AirlineRefresh
-  nmap <leader>nt :NT<CR>
-  augroup NERDTree_buffer_refresh
-    autocmd!
-    autocmd BufEnter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-    " If more than one window and previous buffer was NERDTree, go back to it.
-    autocmd BufEnter * if bufname('#') =~# "^NERD_tree_" && winnr('$') > 1 | b# | endif
-    let g:plug_window = 'noautocmd vertical topleft new'
-  augroup END
-
-  " vim-airline
-  let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 1
-  " Enable next two lines to define straight tabs
-  "let g:airline#extensions#tabline#left_sep = ' '
-  "let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
-  " Insert separator between whitespace warning and coc warning
-  if has('nvim-0.5')
-    let g:airline_section_warning = '%{airline#util#prepend(airline#extensions#nvimlsp#get_warning(),0)}%{airline#util#prepend(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
-  else
-    let g:airline_section_warning = '%{airline#util#prepend(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
-  endif
-
-  " Workaround for display problem in kitty SSH session
-  if $TERM == 'xterm-kitty'
-    augroup airline_init_kitty
-      autocmd!
-      autocmd VimEnter * call airline#extensions#tabline#buffers#invalidate()
-      autocmd VimEnter * AirlineRefresh
-      autocmd VimEnter * redraw!
-    augroup END
-  endif
-
-  " tmuxline.vim
-  " Run :Tmuxline then :TmuxlineSnapshot! [file]
-  " (usually need this '!' to override)
-  function! TmuxlineThemeSnapshot(theme)
-    execute "Tmuxline ". a:theme
-    TmuxlineSnapshot! ~/.config/tmux/tmuxline.snapshot
-  endfunction
-  command! -nargs=1 TTS call TmuxlineThemeSnapshot(<f-args>)
-  let g:airline#extensions#tmuxline#enabled = 1
-  "let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline.snapshot"
-  let g:tmuxline_preset = {
-        \'a'    : '#S',
-        \'win'  : '#I #W',
-        \'cwin' : '#I #W',
-        \'x'    : '%d-%b',
-        \'y'    : '%R',
-        \'z'    : '#H'}
-  augroup reset_tmuxline
-    autocmd!
-    autocmd VimLeave * !tmux if-shell "test -f ~/.config/tmux/tmuxline.snapshot" "source ~/.config/tmux/tmuxline.snapshot" Enter
-  augroup END
-  augroup update_tmuxline
-    autocmd!
-    if exists('$TMUX')
-      function! UpdateTmuxlineByMode()
-        let current_mode = mode()
-        if current_mode ==# 'i'
-          Tmuxline airline_insert
-        elseif current_mode ==# 'v'
-          Tmuxline airline_visual
-        elseif current_mode ==# 'V'
-          Tmuxline airline_visual
-        elseif current_mode ==# "\<C-V>"
-          Tmuxline airline_visual
-        else
-          Tmuxline airline
-        endif
-      endfunction
-      function! UpdateTmuxlineVisualEnter()
-        set updatetime=0
-        call UpdateTmuxlineByMode()
-        return 'lh'
-      endfunction
-      function! UpdateTmuxlineVisualLeave()
-        set updatetime=4000
-        call UpdateTmuxlineByMode()
-      endfunction
-      autocmd FocusGained * call UpdateTmuxlineByMode()
-      autocmd InsertEnter * Tmuxline airline_insert
-      autocmd InsertLeave * Tmuxline airline
-      vnoremap <silent> <expr> <SID>UpdateTmuxlineVisualEnter UpdateTmuxlineVisualEnter()
-      nnoremap <silent> <script> v v<SID>UpdateTmuxlineVisualEnter
-      nnoremap <silent> <script> V V<SID>UpdateTmuxlineVisualEnter
-      nnoremap <silent> <script> <C-v> <C-v><SID>UpdateTmuxlineVisualEnter
-      autocmd CursorHold * call UpdateTmuxlineVisualLeave()
-    endif
-  augroup END
-
-  " VimTeX
-  let g:tex_flavor = 'latex'
-  let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
-  let g:vimtex_view_method = 'skim'
-  let g:vimtex_mappings_enabled = 1
-  let g:vimtex_syntax_nospell_commands = [
-        \ 'ce',
-        \ 'centering',
-        \ 'zref',
-        \ 'qty',
-        \]
-  let g:vimtex_syntax_nospell_comments = 1
-  let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
-  let g:vimtex_grammar_vlty.shell_options =
-        \ ' --multi-language'
-  let g:vimtex_grammar_textidote = {
-        \ 'jar': '~/textidote.jar',
-        \ 'args': '--check en',
-        \}
-  let g:airline#extensions#vimtex#main = "/"
-  "if has('nvim')
-  "  g:vimtex_compiler_progname = 'nvr'
-  "endif
-  command TexRoot silent exe 'cd' b:vimtex.root
-  nmap <leader>l/ :TexRoot<CR>
-  command TexReset silent exe ':VimtexStop' | exe ':VimtexClean' | exe '!rm' b:vimtex.root .. '/*.bbl'
-  nmap <leader>ld :TexReset<CR>
-
-  " vim-markdown-preview
-  let vim_markdown_preview_github = 1 " if using grip
-  let vim_markdown_preview_hotkey = '<C-m>'
-  let vim_markdown_preview_browser = 'Google Chrome'
-
-  " coc.nvim
-  " Remap <CR> to make sure it confirms completion when popup menu is visible
-  inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
-  " kitty config window needs node path to be set
-  " when invoked by cmd+comma
-  if g:system_name ==# "Darwin"
-    let g:coc_node_path = '/usr/local/bin/node'
-  elseif g:system_name ==# "Linux"
-    let g:coc_node_path = '/usr/bin/node'
-  endif
-  " Add `:Format` command to format current buffer.
-  command! -nargs=0 Format :call CocAction('format')
-
-  " UltiSnips
-  let g:UltiSnipsExpandTrigger = "<tab>"
-  let g:UltiSnipsJumpForwardTrigger = "<tab>"
-  let g:UltiSnipsJumpBackwardTrigger = "<s-tab>"
-  let g:UltiSnipsSnippetStorageDirectoryForUltiSnipsEdit = '~/.vim/Ultisnips' " For Neovim rtp
-  "let g:UltiSnipsEditSplit = "vertical"
-  let g:UltiSnipsEnableSnipMate = 0
-
-  " LeaderF
-  if !has('nvim-0.5')
-    let g:Lf_ShortcutF = "<leader>ff"
-    let g:Lf_ShortcutB = "<leader>fb"
-    let g:Lf_WindowPosition = 'popup'
-    let g:Lf_PreviewInPopup = 1
-    let g:Lf_StlSeparator = {'left': "\ue0b0", 'right': "\ue0b2"}
-    let g:Lf_ShowDevIcons = 1
-  endif
-
-  " LeaderF-snippet
-  inoremap <C-s> <C-\><C-o>:Leaderf snippet<CR>
-  let g:Lf_PreviewResult = get(g:, 'Lf_PreviewResult', {})
-  let g:Lf_PreviewResult.snippet = 1
-
-  " colorizer.lua
-  if $TERM_PROGRAM !=# 'Apple_Terminal' && has('nvim')
-    lua require'colorizer'.setup()
-  endif
-
-  " vim-anzu
-  " mapping
-  " nmap n <Plug>(anzu-n-with-echo)
-  " nmap N <Plug>(anzu-N-with-echo)
-  "nmap * <Plug>(anzu-star-with-echo)
-  "nmap # <Plug>(anzu-sharp-with-echo)
-  " clear status
-  "nmap <Esc><Esc> <Plug>(anzu-clear-search-status)
-  " if start anzu-mode key mapping
-  " anzu-mode is anzu(12/51) in screen
-  "nmap n <Plug>(anzu-mode-n)
-  "nmap N <Plug>(anzu-mode-N)
-
-  " DoGe
-  let g:doge_doc_standard_python = 'numpy'
-
-  " nvim-treesitter
-  if has('nvim-0.5')
-    lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
-  endif
-
-  " telescope.nvim
-  if has('nvim-0.5')
-    " Find files using Telescope command-line sugar.
-    nnoremap <leader>ff <cmd>Telescope find_files<cr>
-    nnoremap <leader>fg <cmd>Telescope live_grep<cr>
-    nnoremap <leader>fb <cmd>Telescope buffers<cr>
-    nnoremap <leader>fh <cmd>Telescope help_tags<cr>
-
-    " Using lua functions
-    "nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files()<cr>
-    "nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
-    "nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
-    "nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
-  endif
 endif
