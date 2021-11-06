@@ -139,6 +139,6 @@ snippet p42mnm "P42/mnm space group"
 \textit{P}4\textsubscript{2}/\textit{mnm}
 endsnippet
 
-snippet tc "critical temperature"
-$T_{\textit{c}}$
+snippet "(^|\s|\(|{)tc" "critical temperature" r
+`!p snip.rv = match.group(1)`$T_{\textit{c}}$
 endsnippet
