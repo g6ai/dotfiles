@@ -225,6 +225,8 @@ function! AdjustWindowHeight(minheight, maxheight)
   exe max([min([line("$"), a:maxheight]), a:minheight]) . "wincmd _"
 endfunction
 
+nnoremap <leader>hc :helpclose<CR>
+
 " Line number from 0 shortcuts. NE: ein; NA: aus
 command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
 command! NA %s/^[^\t]*\t// | set number | noh
