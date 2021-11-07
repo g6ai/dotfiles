@@ -20,12 +20,12 @@
     ~/.config/tmux/update_tmuxline.sh:
       create: true
       path: tmux/update_tmuxline.sh
-    ~/.vimrc: vim/vimrc
+    ~/.vim/vimrc: vim/vimrc
     ~/.config/nvim/init.vim:
       create: true
       path: nvim/init.vim
       if: '[ ! -z "$(command -v nvim)" ]'
-    ~/.gvimrc: vim/gvimrc
+    ~/.vim/gvimrc: vim/gvimrc
     ~/.config/nvim/ginit.vim:
       create: true
       path: nvim/ginit.vim
