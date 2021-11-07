@@ -36,6 +36,9 @@
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
+    ~/.vim/after:
+      create: true
+      path: vim/after
     ~/.jupyter/jupyter_server_config.json:
       create: true
       path: jupyter/jupyter_server_config.json
