@@ -42,6 +42,9 @@
     ~/.vim/plugin:
       create: true
       path: vim/plugin
+    ~/.vim/autoload/theme.vim:
+      create: true
+      path: vim/autoload/theme.vim
     ~/.jupyter/jupyter_server_config.json:
       create: true
       path: jupyter/jupyter_server_config.json
