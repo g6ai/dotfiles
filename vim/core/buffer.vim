@@ -1,3 +1,5 @@
+set hidden
+
 " Close the current buffer and move to the previous one
 " This replicates the idea of closing a tab
 nnoremap <leader>bd :bp! \| bd #<CR>
