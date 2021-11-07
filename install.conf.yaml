@@ -36,6 +36,9 @@
     ~/.vim/UltiSnips:
       create: true
       path: vim/UltiSnips
+    ~/.vim/core:
+      create: true
+      path: vim/core
     ~/.vim/after:
       create: true
       path: vim/after
