@@ -37,39 +37,6 @@ if !exists("*ReloadConfigs")
   command! RC call ReloadConfigs()
 endif
 
-set splitbelow splitright " Split new window below and right
-set laststatus=2 " Always show status line
-set wildmenu " Enable a menu at the bottom with tab-key completion
-set showtabline=2 " Show tabline
-set ruler " Show current cursor position
-set nu " Switch on numbering
-set encoding=utf-8 " Necessary for Windows to display vim-airline properly
-set fileencodings=ucs-bom,utf-8,utf-16,gbk,big5,gb18030,latin1
-set hlsearch " Highlight search result
-set incsearch " See cursor move when typing
-set mouse=a " Enable use of mouse for all modes
-set linebreak " Wrap lines at characters in 'breakat'
-set display+=lastline " Show last line in the window rather than '@'
-set maxmempattern=2000000 " Avoid E363
-set autochdir " For Neovim
-if $TERM_PROGRAM !=# 'Apple_Terminal'
-  set termguicolors " For colorizer.lua
-  let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-  let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
-endif
-if has('nvim')
-  set shortmess+=S
-  set inccommand=nosplit " See :substitute command change the document live
-else
-  set ttymouse=sgr " For Alacritty terminfo
-endif
-set noeb vb t_vb= " Use visualbell instead of beep sound, also avoid change in tmuxline
-
-" Time out
-set timeoutlen=500
-set ttimeout
-set ttimeoutlen=100
-
 " Cursor
 if has('nvim')
   augroup reset_nvim_cursor
@@ -122,9 +89,6 @@ augroup spellfiles
   autocmd BufNewFile,BufRead *.tex setlocal spellfile+=~/.vim/spell/tex.utf-8.add
 augroup END
 
-" Toggle relative numbering
-nnoremap <C-n> :set rnu!<CR>
-
 " Color scheme
 syntax enable
 colorscheme slate
@@ -146,10 +110,6 @@ augroup highlighting_fix
   " (should be unnecessary when https://github.com/vim/vim/issues/6587 is fixed)
   autocmd Syntax vim syn match vimUsrCmd '^\s*\zs\u\%(\w*\)\@>(\@!'
 augroup END
-
-" Indentation and tab
-filetype indent on
-set expandtab " Always use space instead of tab
 
 " Clipboard
 if g:system_name ==# "Darwin"
@@ -215,10 +175,6 @@ endfunction
 
 nnoremap <leader>hc :helpclose<CR>
 
-" Line number from 0 shortcuts. NE: ein; NA: aus
-command! NE set nonumber | %s/^/\=line('.')-1."\t"/ | noh
-command! NA %s/^[^\t]*\t// | set number | noh
-
 if g:system_name ==# "Darwin"
   if has('nvim')
     let g:python_host_prog = '$HOME/.pyenv/versions/py2nvim/bin/python'
@@ -270,6 +226,7 @@ elseif g:flag == "good"
 endif
 
 let g:config_files = [
+      \ 'misc.vim',
       \ 'plug.vim',
       \ 'theme.vim',
       \ ]
