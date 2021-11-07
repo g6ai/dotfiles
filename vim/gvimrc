@@ -1,6 +1,4 @@
-let system_name = system('uname')
-
-if system_name =~ "Darwin"
+if g:system_name =~ "Darwin"
   set guifont=JetBrainsMono\ Nerd\ Font:h20
   let g:Lf_ShowDevIcons = 1
   let g:airline#extensions#tabline#left_sep = ''
