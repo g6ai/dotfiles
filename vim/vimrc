@@ -79,9 +79,10 @@ let g:config_files = [
       \ 'window.vim',
       \ 'python.vim',
       \ 'plug.vim',
+      \ 'gruvbox.vim',
       \ 'theme.vim',
       \ ]
-" 'theme.vim' must come after 'plug.vim'
+" Strict loading order: 'plug.vim' -> 'gruvbox.vim' -> 'theme.vim'
 
 for s:fname in g:config_files
   execute printf('source ~/.vim/core/%s', s:fname)

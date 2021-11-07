@@ -1,6 +1,4 @@
 if g:flag == "good"
-  "colorscheme gruvbox
-
   if g:system_name ==# "Darwin"
     if !has('nvim')
       call theme#MacBackground()
