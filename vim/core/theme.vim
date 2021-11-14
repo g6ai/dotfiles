@@ -9,5 +9,8 @@ if g:flag == "good"
     else
       call theme#MacBackground()
     endif
+  else
+    call theme#Colorscheme(&background)
   endif
+  nmap tb :call theme#ToggleBackground()<CR>
 endif

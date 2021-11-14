@@ -18,32 +18,31 @@ if g:flag == "good"
   function! theme#DarkColorscheme()
     set background=dark
     colorscheme gruvbox
+    call theme#DarkIndentGuides()
     let g:airline_theme = "gruvbox"
   endfunction
 
   function! theme#LightColorscheme()
     set background=light
     colorscheme gruvbox
+    call theme#LightIndentGuides()
     let g:airline_theme = "gruvbox"
   endfunction
 
-  " IndentGuides(): Set Indent Guides color
-  function! theme#IndentGuides(background)
+  function! theme#Colorscheme(background)
     if a:background == "dark"
-      call theme#DarkIndentGuides()
+      call theme#DarkColorscheme()
     elseif a:background == "light"
-      call theme#LightIndentGuides()
+      call theme#LightColorscheme()
     endif
   endfunction
 
-  " ToggleBackground(): Toggle color scheme
+  " ToggleBackground(): Toggle colour scheme
   function! theme#ToggleBackground()
     if &background == "dark"
-      call theme#LightColorscheme()
-      call theme#IndentGuides(&background)
+      call theme#Colorscheme("light")
     elseif &background == "light"
-      call theme#DarkColorscheme()
-      call theme#IndentGuides(&background)
+      call theme#Colorscheme("dark")
     endif
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
@@ -57,28 +56,22 @@ if g:flag == "good"
     highlight Comment cterm=italic gui=italic
   endfunction
 
-  nmap tb :call theme#ToggleBackground()<CR>
-
-  " MacBackground(): Set color scheme for macOS
+  " MacBackground(): Set colour scheme for macOS
   function! theme#MacBackground()
     if system("defaults read -g AppleInterfaceStyle") =~ "^Dark"
-      call theme#DarkColorscheme()
-      call theme#IndentGuides(&background)
+      call theme#Colorscheme("dark")
     else
-      call theme#LightColorscheme()
-      call theme#IndentGuides(&background)
+      call theme#Colorscheme("light")
     endif
     highlight Comment cterm=italic gui=italic
   endfunction
 
-  " MacGUIBackground(): change MacVim gVim color scheme automatically
+  " MacGUIBackground(): change MacVim gVim colour scheme automatically
   function! theme#MacGUIBackground()
     if v:os_appearance == 1
-      call theme#DarkColorscheme()
-      call theme#IndentGuides(&background)
+      call theme#Colorscheme("dark")
     else
-      call theme#LightColorscheme()
-      call theme#IndentGuides(&background)
+      call theme#Colorscheme("light")
     endif
     call airline#extensions#tabline#buffers#invalidate()
     AirlineRefresh
