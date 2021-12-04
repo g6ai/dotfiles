@@ -25,10 +25,10 @@ set secure
 
 if !exists("*ReloadConfigs")
   function ReloadConfigs()
-    :source ~/.vimrc
+    :source ~/.vim/vimrc
     if has('gui_running')
       if !has('gui_vimr')
-        :source ~/.gvimrc
+        :source ~/.vim/gvimrc
       else
         :source ~/.config/nvim/ginit.vim
       endif
