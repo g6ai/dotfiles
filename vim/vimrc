@@ -136,7 +136,7 @@ highlight TablineFill ctermfg=243
 highlight VertSplit ctermfg=235 ctermbg=243
 
 " Prevent wrong bg color during rapid scrolling
-if (&term =~ '^xterm' && &t_Co == 256)
+if (!has('nvim') && &term =~ '^xterm' && &t_Co == 256)
   set t_ut= | set ttyscroll=1
 endif
 
