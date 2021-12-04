@@ -43,5 +43,6 @@ if g:flag == "good"
   Plug 'rhysd/committia.vim'
   Plug 'kevinhwang91/nvim-hlslens', Cond(has('nvim-0.5'))
   Plug 'kevinhwang91/nvim-bqf', Cond(has('nvim-0.5'))
+  Plug 'dstein64/vim-startuptime'
   call plug#end()
 endif
