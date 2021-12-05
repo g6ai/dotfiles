@@ -10,7 +10,7 @@ if g:flag == "good"
   " vim-plug conditional activation
   function! Cond(cond, ...)
     let opts = get(a:000, 0, {})
-    return a:cond ? opts : extend(opts, {'on': [], 'for': []})
+    return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
   endfunction
 
   call plug#begin('~/.vim/plugged')
@@ -25,17 +25,16 @@ if g:flag == "good"
   Plug 'plasticboy/vim-markdown' | Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   Plug 'psliwka/vim-smoothie'
-  Plug 'skywind3000/Leaderf-snippet'
   Plug 'mhinz/vim-startify'
   Plug 'jdhao/better-escape.vim'
   Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   Plug 'ryanoasis/vim-devicons'
-  Plug 'Yggdroot/LeaderF', Cond(!has('nvim-0.5'), {'do': ':LeaderfInstallCExtension'})
+  Plug 'Yggdroot/LeaderF', Cond(!has('nvim-0.5'), { 'do': ':LeaderfInstallCExtension' }) | Plug 'skywind3000/Leaderf-snippet'
   Plug 'neoclide/coc.nvim', Cond(has('nvim'))
   Plug 'norcalli/nvim-colorizer.lua', Cond(has('nvim'))
   Plug 'nvim-lua/popup.nvim', Cond(has('nvim'))
   Plug 'nvim-lua/plenary.nvim', Cond(has('nvim'))
-  Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim-0.5'), {'do': ':TSUpdate'})
+  Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim-0.5'), { 'do': ':TSUpdate' })
   Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim-0.5'))
   Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim')) " For telescope.nvim
   Plug 'rhysd/committia.vim'
