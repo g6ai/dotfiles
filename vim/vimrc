@@ -37,28 +37,6 @@ if !exists("*ReloadConfigs")
   command! RC call ReloadConfigs()
 endif
 
-" Color scheme
-syntax enable
-colorscheme slate
-highlight Normal ctermbg=235
-highlight StatusLine ctermfg=253
-highlight StatusLineNC ctermfg=243
-highlight Tabline ctermbg=239
-highlight TablineFill ctermfg=243
-highlight VertSplit ctermfg=235 ctermbg=243
-
-" Prevent wrong bg color during rapid scrolling
-if (!has('nvim') && &term =~ '^xterm' && &t_Co == 256)
-  set t_ut= | set ttyscroll=1
-endif
-
-augroup highlighting_fix
-  autocmd!
-  " fix vim script user command syntax highlighting
-  " (should be unnecessary when https://github.com/vim/vim/issues/6587 is fixed)
-  autocmd Syntax vim syn match vimUsrCmd '^\s*\zs\u\%(\w*\)\@>(\@!'
-augroup END
-
 " Clipboard
 if g:system_name ==# "Darwin"
   set clipboard=unnamed
@@ -177,6 +155,7 @@ let g:config_files = [
       \ 'misc.vim',
       \ 'cursor.vim',
       \ 'spell.vim',
+      \ 'colour.vim',
       \ 'plug.vim',
       \ 'theme.vim',
       \ ]
