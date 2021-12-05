@@ -18,8 +18,7 @@ if g:flag == "good"
   Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
   Plug 'nathanaelkane/vim-indent-guides'
   Plug 'morhetz/gruvbox'
-  Plug 'preservim/nerdtree'
-  Plug 'Xuyuanp/nerdtree-git-plugin'
+  Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
   Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
   Plug 'lervag/vimtex'
   Plug 'godlygeek/tabular' " tabular plugin must come before vim-markdown
