@@ -22,7 +22,7 @@ if g:flag == "good"
   Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
   Plug 'lervag/vimtex'
   Plug 'godlygeek/tabular' " tabular plugin must come before vim-markdown
-  Plug 'plasticboy/vim-markdown' | Plug 'JamshedVesuna/vim-markdown-preview'
+  Plug 'plasticboy/vim-markdown' | Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   Plug 'psliwka/vim-smoothie'
   Plug 'skywind3000/Leaderf-snippet'
