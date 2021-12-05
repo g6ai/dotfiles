@@ -39,7 +39,6 @@ if g:flag == "good"
   Plug 'nvim-treesitter/nvim-treesitter', Cond(has('nvim-0.5'), {'do': ':TSUpdate'})
   Plug 'nvim-telescope/telescope.nvim', Cond(has('nvim-0.5'))
   Plug 'kyazdani42/nvim-web-devicons', Cond(has('nvim')) " For telescope.nvim
-  Plug 'Rykka/riv.vim'
   Plug 'rhysd/committia.vim'
   Plug 'kevinhwang91/nvim-hlslens', Cond(has('nvim-0.5'))
   Plug 'kevinhwang91/nvim-bqf', Cond(has('nvim-0.5'))
