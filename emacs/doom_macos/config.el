@@ -114,6 +114,9 @@
   ;; indentation
   (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
 
+  ;; plain lists
+  (setq org-list-demote-modify-bullet '(("-" . "+") ("+" . "*") ("*" . "-")))
+
   ;; pretty
   ;; org-superstar
   ;; headline-bullets-list: ◉ ◎ ◈ ◇
