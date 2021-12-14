@@ -28,14 +28,24 @@
 ;; `load-theme' function. This is the default:
 ;; Emacs Mac from Homebrew
 ;;(setq doom-theme 'doom-one-light)
+(defun mac-appearance-change-hook ()
+  (let ((appearance (plist-get (mac-application-state) :appearance)))
+    (cond ((equal appearance "NSAppearanceNameAqua")
+           (load-theme 'doom-one-light t)
+           (disable-theme 'doom-vibrant))
+          ((equal appearance "NSAppearanceNameDarkAqua")
+           (load-theme 'doom-vibrant t)
+           (disable-theme 'doom-one-light)))))
+(add-hook 'after-init-hook 'mac-appearance-change-hook)
+(add-hook 'mac-effective-appearance-change-hook 'mac-appearance-change-hook)
 ;; Emacs Plus from Homebrew
-(defun my/apply-theme (appearance)
-  "Load theme, taking current system APPEARANCE into consideration."
-  (mapc #'disable-theme custom-enabled-themes)
-  (pcase appearance
-    ('light (load-theme 'doom-one-light t))
-    ('dark (load-theme 'doom-vibrant t))))
-(add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
+;; (defun my/apply-theme (appearance)
+;;   "Load theme, taking current system APPEARANCE into consideration."
+;;   (mapc #'disable-theme custom-enabled-themes)
+;;   (pcase appearance
+;;     ('light (load-theme 'doom-one-light t))
+;;     ('dark (load-theme 'doom-vibrant t))))
+;; (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
