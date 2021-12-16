@@ -26,7 +26,7 @@ if g:flag == "good"
   Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
   Plug 'psliwka/vim-smoothie'
   Plug 'mhinz/vim-startify'
-  Plug 'jdhao/better-escape.vim'
+  Plug 'max397574/better-escape.nvim'
   Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
   Plug 'ryanoasis/vim-devicons'
   Plug 'Yggdroot/LeaderF', Cond(!has('nvim-0.5'), { 'do': ':LeaderfInstallCExtension' }) | Plug 'skywind3000/Leaderf-snippet'
