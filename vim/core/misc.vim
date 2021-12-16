@@ -8,7 +8,7 @@ set laststatus=2
 set wildmenu
 
 " Show tabline
-set showtabline=2
+"set showtabline=2
 
 " Show current cursor position
 set ruler

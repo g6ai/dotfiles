@@ -1,10 +1,10 @@
 if g:flag == "good"
   let g:airline_powerline_fonts = 1
-  let g:airline#extensions#tabline#enabled = 1
+  "let g:airline#extensions#tabline#enabled = 1
   " Enable next two lines to define straight tabs
   "let g:airline#extensions#tabline#left_sep = ' '
   "let g:airline#extensions#tabline#left_alt_sep = '|'
-  let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
+  "let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
   " Insert separator between whitespace warning and coc warning
 
   if has('nvim-0.5')
