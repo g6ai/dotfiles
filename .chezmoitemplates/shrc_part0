@@ -1,0 +1,67 @@
+if [[ "$(uname)" == "Linux" ]]; then
+  if ! command -v nvim &> /dev/null; then
+    export EDITOR=/usr/bin/vim
+  else
+    # If Neovim is installed with package manager:
+    export EDITOR=/usr/bin/nvim
+    # If Neovim is installed from source:
+    #export EDITOR=/usr/local/bin/nvim
+  fi
+elif [[ "$(uname)" == "Darwin" ]]; then
+  #if ! command -v nvim &> /dev/null; then
+  #  export EDITOR=/usr/local/bin/vim
+  #else
+  #  export EDITOR=/usr/local/bin/nvim
+  #fi
+  export EDITOR=$HOME/nvim-osx64/bin/nvim
+fi
+export VISUAL="$EDITOR"
+
+alias sudo='sudo '
+alias la='ls -A'
+alias ll='ls -ltAh'
+alias pd='pushd'
+alias pdw='pushd .'
+alias po='popd'
+alias gst='git status'
+alias glg='git log --all --graph --decorate'
+alias gc='git commit'
+if command -v nvim &> /dev/null; then
+  alias vi='nvim'
+else
+  alias vi='vim'
+fi
+alias kk='kitty +kitten'
+alias magit='emacsclient -n -e "(magit-status)"'
+
+# Terminal color
+export CLICOLOR=1
+export COLORTERM=truecolor
+export LSCOLORS=GxFxCxDxBxegedabagaced
+if [[ "$(uname)" == "Darwin" ]]; then
+  # If using native BSD utils
+  #alias ls='ls -G'
+  # If installed "coreutils" with homebrew,
+  # and added
+  # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  # to ~/.bashrc_local per advice after installation
+  alias ls='ls --color'
+elif [[ "$(uname)" == "Linux" ]]; then
+  alias ls='ls --color'
+fi
+
+# If $LESS is unset, Git sets it to FRX. I don't want F or X.
+export LESS='R'
+
+# less color
+export LESS_TERMCAP_mb=$'\E[01;31m'    # begin blink
+export LESS_TERMCAP_md=$'\E[01;33m'    # begin bold
+export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
+export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
+export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
+export LESS_TERMCAP_us=$'\E[01;04;32m' # begin underline
+export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+# and so on
+
+# man
+export MANPAGER='less -s -M +Gg'

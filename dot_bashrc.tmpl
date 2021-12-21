@@ -1,0 +1,5 @@
+{{ template "shrc_part0" -}}
+{{ if eq .chezmoi.os "darwin" }}
+{{   template "shrc_part1_darwin" }}
+{{ end -}}
+{{ template "bashrc_part1" -}}

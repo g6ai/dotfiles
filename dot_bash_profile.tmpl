@@ -1,0 +1,13 @@
+{{ if eq .chezmoi.os "darwin" -}}
+{{   template "profile_part1_darwin" }}
+{{ end -}}
+
+{{ template "shrc_part0" -}}
+{{ if eq .chezmoi.os "darwin" }}
+{{   template "shrc_part1_darwin" }}
+{{ end -}}
+{{ template "bashrc_part1" -}}
+
+{{ if eq .chezmoi.os "darwin" }}
+bind -f $INPUTRC
+{{ end -}}

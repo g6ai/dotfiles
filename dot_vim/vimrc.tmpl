@@ -1,0 +1,78 @@
+" G. Bai's .vimrc
+
+let mapleader = " "
+let maplocalleader = " "
+
+{{ if eq .chezmoi.os "windows" -}}
+set nocompatible " Get out of vi compatible mode
+
+{{ else -}}
+{{ end -}}
+
+" Load local .vimrc files
+set exrc
+set secure
+
+if !exists("*ReloadConfigs")
+  function ReloadConfigs()
+    :source ~/.vim/vimrc
+    if has('gui_running')
+      if !has('gui_vimr')
+        :source ~/.vim/gvimrc
+      else
+        :source ~/.config/nvim/ginit.vim
+      endif
+    endif
+  endfunction
+  command! RC call ReloadConfigs()
+endif
+
+packadd chezmoi.vim
+
+{{ if eq .vim_flag "good" -}}
+" Auto source .vimrc and refresh vim-airline after saving
+augroup auto_source_vimrc_refresh_airline
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC | call airline#extensions#tabline#buffers#invalidate() | AirlineRefresh
+augroup END
+
+let g:config_files = [
+      \ 'misc.vim',
+      \ 'cursor.vim',
+      \ 'spell.vim',
+      \ 'colour.vim',
+      \ 'clipboard.vim',
+      \ 'buffer.vim',
+      \ 'window.vim',
+      \ 'python.vim',
+      \ 'plug.vim',
+      \ 'gruvbox.vim',
+      \ 'theme.vim',
+      \ ]
+" Strict loading order: 'plug.vim' -> 'gruvbox.vim' -> 'theme.vim'
+
+{{ else -}}
+" Auto source .vimrc after saving
+augroup auto_source_vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+let g:tex_comment_nospell = 1 " For vimtex use g:vimtex_syntax_nospell_comments
+
+let g:config_files = [
+      \ 'misc.vim',
+      \ 'cursor.vim',
+      \ 'spell.vim',
+      \ 'colour.vim',
+      \ 'clipboard.vim',
+      \ 'buffer.vim',
+      \ 'window.vim',
+      \ 'python.vim',
+      \ ]
+
+{{ end -}}
+
+for s:fname in g:config_files
+  execute printf('source ~/.vim/core/%s', s:fname)
+endfor

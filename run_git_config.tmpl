@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+git config --global core.excludesfile ~/.gitignore_global
+
+{{ if eq .chezmoi.os "darwin" -}}
+git config --global core.autocrlf input
+{{ else if eq .chezmoi.os "linux" -}}
+git config --global core.autocrlf input
+{{ end -}}

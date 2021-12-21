@@ -1,0 +1,3 @@
+{{ if ne .vim_flag "good" }}
+plugin/**
+{{ end }}

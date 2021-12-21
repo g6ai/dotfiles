@@ -1,0 +1,12 @@
+README.md
+
+{{ if ne .chezmoi.os "darwin" }}
+private_dot_config/kitty/kitty.conf
+private_dot_config/alacritty/alacritty.yml
+dot_aria2/aria2.conf
+private_dot_config/mpv/mpv.conf
+private_dot_config/mpv/input.conf
+private_dot_config/mpv/script-opts/osc.conf
+dot_doom.d/init.el
+dot_doom.d/config.el
+{{ end }}

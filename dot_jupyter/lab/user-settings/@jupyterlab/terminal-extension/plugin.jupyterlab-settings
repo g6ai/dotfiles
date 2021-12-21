@@ -1,0 +1,10 @@
+{
+    // Terminal
+    // @jupyterlab/terminal-extension:plugin
+    // Terminal settings.
+    // *************************************
+
+    // Theme
+    // The theme for the terminal.
+    "theme": "dark"
+}
