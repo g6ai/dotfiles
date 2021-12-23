@@ -9,7 +9,6 @@ Plug 'godlygeek/tabular' " tabular plugin must come before vim-markdown
 Plug 'plasticboy/vim-markdown' | Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 Plug 'psliwka/vim-smoothie'
-Plug 'mhinz/vim-startify'
 Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/committia.vim'
