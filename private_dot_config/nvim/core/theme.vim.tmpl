@@ -1,9 +1,5 @@
 {{ if eq .chezmoi.os "darwin" -}}
 call theme#MacBackground()
-augroup MacVim_auto_background
-  autocmd!
-  autocmd OSAppearanceChanged * call theme#MacGUIBackground()
-augroup END
 {{ else -}}
 call theme#Colorscheme(&background)
 {{ end -}}

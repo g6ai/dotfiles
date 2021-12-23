@@ -6,7 +6,7 @@ let g:airline_powerline_fonts = 1
 "let g:airline#extensions#tabline#formatter = 'unique_tail_improved'
 " Insert separator between whitespace warning and coc warning
 
-let g:airline_section_warning = '%{airline#util#prepend(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
+let g:airline_section_warning = '%{airline#util#prepend(airline#extensions#nvimlsp#get_warning(),0)}%{airline#util#prepend(airline#extensions#whitespace#check(),0)}%{airline#util#wrap(airline#extensions#coc#get_warning(),0)}'
 
 " Workaround for display problem in kitty SSH session
 if $TERM == 'xterm-kitty'

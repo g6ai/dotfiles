@@ -1,0 +1,18 @@
+" vim-plug
+" Automatic installation
+"let data_dir = has('nvim') ? stdpath('data') . '/site' : '~/.vim'
+"if empty(glob(data_dir . '/autoload/plug.vim'))
+"  silent execute '!curl -fLo '.data_dir.'/autoload/plug.vim --create-dirs  https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
+"  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+"endif
+
+" vim-plug conditional activation
+function! Cond(cond, ...)
+  let opts = get(a:000, 0, {})
+  return a:cond ? opts : extend(opts, { 'on': [], 'for': [] })
+endfunction
+
+call plug#begin('~/.config/nvim/plugged')
+{{ template "vim/core/plug_list_common.vim" }}
+{{ template "vim/core/plug_list_nvim.vim" -}}
+call plug#end()

@@ -7,11 +7,6 @@ highlight Tabline ctermbg=239
 highlight TablineFill ctermfg=243
 highlight VertSplit ctermfg=235 ctermbg=243
 
-" Prevent wrong bg colour during rapid scrolling
-if (!has('nvim') && &term =~ '^xterm' && &t_Co == 256)
-  set t_ut= | set ttyscroll=1
-endif
-
 augroup highlighting_fix
   autocmd!
   " fix vim script user command syntax highlighting

@@ -1,0 +1,14 @@
+{{ if eq .chezmoi.os "darwin" -}}
+if !has('nvim')
+  call theme#MacBackground()
+  augroup MacVim_auto_background
+    autocmd!
+    autocmd OSAppearanceChanged * call theme#MacGUIBackground()
+  augroup END
+else
+  call theme#MacBackground()
+endif
+{{ else -}}
+call theme#Colorscheme(&background)
+{{ end -}}
+nmap tb :call theme#ToggleBackground()<CR>

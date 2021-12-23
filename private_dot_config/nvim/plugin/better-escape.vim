@@ -1,5 +1,4 @@
-if has('nvim')
-  lua << EOF
+lua << EOF
 require("better_escape").setup {
   mapping = {"jk"}, -- a table with mappings to use
   timeout = vim.o.timeoutlen, -- the time in which the keys must be hit in ms. Use option timeoutlen by default
@@ -11,4 +10,3 @@ require("better_escape").setup {
   -- end,
 }
 EOF
-endif
