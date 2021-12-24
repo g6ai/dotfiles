@@ -1,3 +1,5 @@
 {{- $vim_flag := promptString "System good for N/Vim complete config?" "good" -}}
 [data]
     vim_flag = {{ $vim_flag | quote }}
+[edit]
+    hardlink = false
