@@ -2,7 +2,6 @@ alias cafe="caffeinate -disu &"
 alias bup="brew update && brew upgrade"
 alias lacie="smartctl -a disk3 | grep Temperature"
 alias yd="youtube-dl"
-alias vi="$HOME/nvim-osx64/bin/nvim"
 alias cm="chezmoi"
 
 export PATH="/usr/local/sbin:$PATH"
