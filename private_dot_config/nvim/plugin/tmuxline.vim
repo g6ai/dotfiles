@@ -8,7 +8,6 @@ endfunction
 
 command! -nargs=1 TTS call TmuxlineThemeSnapshot(<f-args>)
 
-let g:airline#extensions#tmuxline#enabled = 1
 "let airline#extensions#tmuxline#snapshot_file = "~/.tmuxline.snapshot"
 
 let g:tmuxline_preset = {
@@ -29,17 +28,17 @@ augroup update_tmuxline
   if exists('$TMUX')
     function! UpdateTmuxlineByMode()
       let current_mode = mode()
-      if current_mode ==# 'i'
-        Tmuxline airline_insert
-      elseif current_mode ==# 'v'
-        Tmuxline airline_visual
-      elseif current_mode ==# 'V'
-        Tmuxline airline_visual
-      elseif current_mode ==# "\<C-V>"
-        Tmuxline airline_visual
-      else
-        Tmuxline airline
-      endif
+      "if current_mode ==# 'i'
+      "  Tmuxline airline_insert
+      "elseif current_mode ==# 'v'
+      "  Tmuxline airline_visual
+      "elseif current_mode ==# 'V'
+      "  Tmuxline airline_visual
+      "elseif current_mode ==# "\<C-V>"
+      "  Tmuxline airline_visual
+      "else
+      "  Tmuxline airline
+      "endif
     endfunction
     function! UpdateTmuxlineVisualEnter()
       set updatetime=0
@@ -51,8 +50,8 @@ augroup update_tmuxline
       call UpdateTmuxlineByMode()
     endfunction
     autocmd FocusGained * call UpdateTmuxlineByMode()
-    autocmd InsertEnter * Tmuxline airline_insert
-    autocmd InsertLeave * Tmuxline airline
+    "autocmd InsertEnter * Tmuxline airline_insert
+    "autocmd InsertLeave * Tmuxline airline
     vnoremap <silent> <expr> <SID>UpdateTmuxlineVisualEnter UpdateTmuxlineVisualEnter()
     nnoremap <silent> <script> v v<SID>UpdateTmuxlineVisualEnter
     nnoremap <silent> <script> V V<SID>UpdateTmuxlineVisualEnter

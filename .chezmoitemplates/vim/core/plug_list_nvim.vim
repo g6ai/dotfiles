@@ -4,7 +4,8 @@ Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-telescope/telescope.nvim'
-Plug 'kyazdani42/nvim-web-devicons' " For telescope.nvim
+Plug 'nvim-lualine/lualine.nvim'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'kevinhwang91/nvim-bqf'

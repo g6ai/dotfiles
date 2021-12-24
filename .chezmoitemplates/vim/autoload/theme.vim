@@ -18,14 +18,14 @@ function! theme#DarkColorscheme()
   set background=dark
   colorscheme gruvbox
   call theme#DarkIndentGuides()
-  let g:airline_theme = "gruvbox"
+  "let g:airline_theme = "gruvbox"
 endfunction
 
 function! theme#LightColorscheme()
   set background=light
   colorscheme gruvbox
   call theme#LightIndentGuides()
-  let g:airline_theme = "gruvbox"
+  "let g:airline_theme = "gruvbox"
 endfunction
 
 function! theme#Colorscheme(background)
@@ -43,8 +43,8 @@ function! theme#ToggleBackground()
   elseif &background == "light"
     call theme#Colorscheme("dark")
   endif
-  call airline#extensions#tabline#buffers#invalidate()
-  AirlineRefresh
+  "call airline#extensions#tabline#buffers#invalidate()
+  "AirlineRefresh
   if has('nvim')
     lua package.loaded['colorizer'] = nil; require('colorizer').setup(...); require('colorizer').attach_to_buffer(0)
   endif
@@ -72,7 +72,7 @@ function! theme#MacGUIBackground()
   else
     call theme#Colorscheme("light")
   endif
-  call airline#extensions#tabline#buffers#invalidate()
-  AirlineRefresh
+  "call airline#extensions#tabline#buffers#invalidate()
+  "AirlineRefresh
   highlight Comment cterm=italic gui=italic
 endfunction

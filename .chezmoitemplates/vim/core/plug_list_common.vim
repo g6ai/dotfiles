@@ -1,5 +1,4 @@
 Plug 'tpope/vim-fugitive' | Plug 'rbong/vim-flog'
-Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'morhetz/gruvbox'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
