@@ -18,13 +18,12 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 ### Deploy with ease
 
-[*Dotbot*](https://github.com/anishathalye/dotbot) is used to bootstrap dotfiles.
+[*chezmoi*](https://www.chezmoi.io/) is used to bootstrap dotfiles.
 
 * Deploy with shell one-liner:
     ```sh
-    git clone https://github.com/g6ai/dotfiles && cd dotfiles && ./install
+    sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply g6ai
     ```
-* See [`install.conf.yaml`](https://github.com/g6ai/dotfiles/blob/master/install.conf.yaml) for my *Dotbot* configuration.
 
 ### Bash
 * [`.shrc`](https://github.com/g6ai/dotfiles/blob/master/shrc) configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of *less* pager. It is then sourced by [`.bashrc`](https://github.com/g6ai/dotfiles/blob/master/bash/bashrc).
