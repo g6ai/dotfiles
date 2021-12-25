@@ -1,7 +1,0 @@
-{
-  "python.analysis.useLibraryCodeForTypes": false,
-  "python.venvPath": "${env:HOME}/.pyenv/versions",
-  "python.formatting.provider": "black",
-  "python.formatting.blackPath": "~/.pyenv/versions/coc/bin/black",
-  "python.sortImports.path": "~/.pyenv/versions/coc/bin/isort"
-}
