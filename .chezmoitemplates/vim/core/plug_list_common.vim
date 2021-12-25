@@ -1,6 +1,6 @@
 Plug 'tpope/vim-fugitive' | Plug 'rbong/vim-flog'
 Plug 'nathanaelkane/vim-indent-guides'
-Plug 'morhetz/gruvbox'
+Plug 'sainnhe/gruvbox-material'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
 Plug 'lervag/vimtex'

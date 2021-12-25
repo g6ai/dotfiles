@@ -16,14 +16,14 @@ endfunction
 
 function! theme#DarkColorscheme()
   set background=dark
-  colorscheme gruvbox
+  colorscheme gruvbox-material
   call theme#DarkIndentGuides()
   "let g:airline_theme = "gruvbox"
 endfunction
 
 function! theme#LightColorscheme()
   set background=light
-  colorscheme gruvbox
+  colorscheme gruvbox-material
   call theme#LightIndentGuides()
   "let g:airline_theme = "gruvbox"
 endfunction
@@ -52,7 +52,7 @@ function! theme#ToggleBackground()
     VimRToggleTools
     VimRToggleTools
   endif
-  highlight Comment cterm=italic gui=italic
+  "highlight Comment cterm=italic gui=italic
 endfunction
 
 " MacBackground(): Set colour scheme for macOS
@@ -62,7 +62,7 @@ function! theme#MacBackground()
   else
     call theme#Colorscheme("light")
   endif
-  highlight Comment cterm=italic gui=italic
+  "highlight Comment cterm=italic gui=italic
 endfunction
 
 " MacGUIBackground(): change MacVim gVim colour scheme automatically
@@ -74,5 +74,5 @@ function! theme#MacGUIBackground()
   endif
   "call airline#extensions#tabline#buffers#invalidate()
   "AirlineRefresh
-  highlight Comment cterm=italic gui=italic
+  "highlight Comment cterm=italic gui=italic
 endfunction

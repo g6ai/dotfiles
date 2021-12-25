@@ -14,7 +14,7 @@ let g:config_files = [
       \ 'window.vim',
       \ 'python.vim',
       \ 'plug.vim',
-      \ 'gruvbox.vim',
+      \ 'gruvbox-material.vim',
       \ 'theme.vim',
       \ ]
 " Strict loading order: 'plug.vim' -> 'gruvbox.vim' -> 'theme.vim'
