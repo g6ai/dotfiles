@@ -6,6 +6,16 @@ set nocompatible " Get out of vi compatible mode
 {{ else -}}
 {{ end -}}
 
+if !exists("*ReloadConfigs")
+  function ReloadConfigs()
+    :source ~/.config/nvim/init.vim
+    if has('gui_running')
+      :source ~/.config/nvim/ginit.vim
+    endif
+  endfunction
+  command! RC call ReloadConfigs()
+endif
+
 {{ if eq .vim_flag "good" -}}
 {{   template "vim/init/plug_good.vim" }}
 {{ else -}}
