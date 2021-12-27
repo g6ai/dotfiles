@@ -5,34 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-### start of oh-my-zsh ###
-export ZSH="$HOME/.oh-my-zsh"
-
-ZSH_THEME="powerlevel10k/powerlevel10k"
-
-{{ if eq .chezmoi.os "darwin" -}}
-plugins=(git pyenv zsh-autosuggestions zsh-syntax-highlighting thefuck zsh-vi-mode)
-
-{{ else if eq .chezmoi.os "linux" -}}
-plugins=(git pyenv zsh-autosuggestions zsh-syntax-highlighting zsh-vi-mode)
-
-{{ end -}}
-
-source $ZSH/oh-my-zsh.sh
-
-# Put plugins config after this line
-# zsh-autosuggestions
-function zvm_after_init() {
-  zvm_bindkey viins '^[[Z' autosuggest-accept
-}
-
-# zsh-vi-mode
-ZVM_KEYTIMEOUT=0.05
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-### end of oh-my-zsh ###
-
-KEYTIMEOUT=1
+{{ template "zshrc_zim.zsh" -}}
 
 # Load common settings
 {{ template "shrc_part0.sh" }}
