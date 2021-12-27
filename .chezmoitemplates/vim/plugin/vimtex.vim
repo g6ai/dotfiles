@@ -2,11 +2,11 @@ let g:tex_flavor = 'latex'
 let g:vimtex_compiler_latexmk_engines = {'_': '-xelatex'}
 let g:vimtex_view_method = 'skim'
 let g:vimtex_mappings_enabled = 1
-let g:vimtex_syntax_nospell_commands = [
-      \ 'ce',
-      \ 'centering',
-      \ 'zref',
-      \ 'qty',
+let g:vimtex_syntax_custom_cmds = [
+      \ {'name': 'ce', 'argspell': 0},
+      \ {'name': 'centering', 'argspell': 0},
+      \ {'name': 'zref', 'argspell': 0},
+      \ {'name': 'qty', 'argspell': 0},
       \]
 let g:vimtex_syntax_nospell_comments = 1
 let g:vimtex_grammar_vlty = {'lt_command': 'languagetool'}
