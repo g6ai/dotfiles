@@ -7,5 +7,5 @@ export SHELL=/usr/local/bin/zsh
 export VISUAL="$EDITOR"
 
 {{ if eq .chezmoi.os "darwin" -}}
-{{   template "profile_part1_darwin" -}}
+{{   template "profile_part1_darwin.sh" -}}
 {{ end -}}

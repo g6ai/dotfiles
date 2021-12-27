@@ -1,5 +1,5 @@
-{{ template "shrc_part0" -}}
+{{ template "shrc_part0.sh" -}}
 {{ if eq .chezmoi.os "darwin" }}
-{{   template "shrc_part1_darwin" }}
+{{   template "shrc_part1_darwin.sh" }}
 {{ end -}}
-{{ template "bashrc_part1" -}}
+{{ template "bashrc_part1.sh" -}}

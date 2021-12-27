@@ -35,9 +35,9 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 KEYTIMEOUT=1
 
 # Load common settings
-{{ template "shrc_part0" }}
+{{ template "shrc_part0.sh" }}
 {{ if eq .chezmoi.os "darwin" -}}
-{{   template "shrc_part1_darwin" }}
+{{   template "shrc_part1_darwin.sh" }}
 {{ end -}}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
