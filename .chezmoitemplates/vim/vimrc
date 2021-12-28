@@ -38,7 +38,9 @@ let g:config_files = [
       \ 'clipboard.vim',
       \ 'buffer.vim',
       \ 'window.vim',
+{{   if ne .os "linux" -}}
       \ 'python.vim',
+{{   end -}}
       \ 'plug.vim',
       \ 'gruvbox-material.vim',
       \ 'theme.vim',
@@ -56,7 +58,9 @@ let g:config_files = [
       \ 'clipboard.vim',
       \ 'buffer.vim',
       \ 'window.vim',
+{{   if ne .os "linux" -}}
       \ 'python.vim',
+{{   end -}}
       \ ]
 
 {{ end -}}
