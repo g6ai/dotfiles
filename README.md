@@ -27,16 +27,16 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 * Uses [`text/template`](https://pkg.go.dev/text/template) syntax from Go extended with [text template functions from `sprig`](http://masterminds.github.io/sprig/).
 
-    I've created a typical template snippet. *E.g.*, [`clipboard.vim.tmpl`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/nvim/core/clipboard.vim.tmpl), residing in [`private_dot_config/nvim/core`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/nvim/core):
+    For instance, here is a typical snippet in my dotfiles, [`clipboard.vim.tmpl`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/nvim/core/clipboard.vim.tmpl), residing in [`private_dot_config/nvim/core`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/nvim/core):
     ```go
     {{ $x := splitList "_" .chezmoi.sourceFile -}}
     {{ $y := last $x | dir | dir -}}
     {{ $rtp := list "~/." $y | join "" -}}
     {{ template "vim/core/clipboard.vim" dict "rtp" $rtp "os" .chezmoi.os -}}
     ```
-    It passes variables `rtp` and `os` to the [`clipboard.vim`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/core/clipboard.vim) template residing in [`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates) so the latter can generate different configs in the [*destination directory*](https://www.chezmoi.io/docs/reference/#concepts) per OS (macOS or Linux) and Vim variants (Vim or Neovim).
+    It passes variables `rtp` and `os` to the [`clipboard.vim`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/core/clipboard.vim) template in [`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates) so the latter can generate different config files per *Vim* variants (*Vim* or *Neovim*) and OS (*Linux* or *macOS*).
 
-    Such snippets are extensively used in these dotfiles to manage config files of different environments in one place ([`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates)), keeping the resource-demanding logical operations at the deployment step rather than the runtime.
+    Such snippets are extensively used in these dotfiles to manage some config files of different environments in one place ([`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates)), keeping the resource-demanding logical operations at the deployment step rather than the runtime.
 
 ### Bash
 * [`shrc.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/shrc.sh) template configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of *less* pager. It is then sourced by [`bashrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/bashrc) template.
