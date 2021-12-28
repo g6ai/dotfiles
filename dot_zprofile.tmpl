@@ -7,5 +7,5 @@ export SHELL=/run/current-system/sw/bin/zsh
 export VISUAL="$EDITOR"
 
 {{ if eq .chezmoi.os "darwin" -}}
-{{   template "profile_part1_darwin.sh" -}}
+eval "$(pyenv init --path)"
 {{ end -}}

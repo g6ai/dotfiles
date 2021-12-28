@@ -8,10 +8,7 @@ fi
 {{ template "zshrc_zim.zsh" -}}
 
 # Load common settings
-{{ template "shrc_part0.sh" }}
-{{ if eq .chezmoi.os "darwin" -}}
-{{   template "shrc_part1_darwin.sh" }}
-{{ end -}}
+{{ template "shrc.sh" dict "os" .chezmoi.os -}}
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
