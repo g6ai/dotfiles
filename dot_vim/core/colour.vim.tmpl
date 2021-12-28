@@ -1,5 +1,4 @@
-{{ template "vim/core/colour.vim" }}
-" Prevent wrong bg colour during rapid scrolling
-if (&term =~ '^xterm' && &t_Co == 256)
-  set t_ut= | set ttyscroll=1
-endif
+{{ $x := splitList "_" .chezmoi.sourceFile -}}
+{{ $y := last $x | dir | dir -}}
+{{ $rtp := list "~/." $y | join "" -}}
+{{ template "vim/core/colour.vim" dict "rtp" $rtp -}}

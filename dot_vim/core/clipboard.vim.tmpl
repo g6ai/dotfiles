@@ -1,15 +1,4 @@
-{{ if eq .chezmoi.os "darwin" -}}
-set clipboard=unnamed
-noremap <Leader>y "*y
-noremap <Leader>p "*p
-
-{{ else if eq .chezmoi.os "linux" -}}
-set clipboard=unnamedplus
-noremap <Leader>y "+y
-noremap <Leader>p "+p
-
-{{ end -}}
-
-" Paste toggling
-nnoremap <C-p> :set invpaste paste?<CR>
-set pastetoggle=<C-p>
+{{ $x := splitList "_" .chezmoi.sourceFile -}}
+{{ $y := last $x | dir | dir -}}
+{{ $rtp := list "~/." $y | join "" -}}
+{{ template "vim/core/clipboard.vim" dict "rtp" $rtp "os" .chezmoi.os -}}

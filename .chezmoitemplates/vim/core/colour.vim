@@ -13,3 +13,10 @@ augroup highlighting_fix
   " (should be unnecessary when https://github.com/vim/vim/issues/6587 is fixed)
   autocmd Syntax vim syn match vimUsrCmd '^\s*\zs\u\%(\w*\)\@>(\@!'
 augroup END
+
+{{ if eq .rtp "~/.vim" -}}
+" Prevent wrong bg colour during rapid scrolling
+if (&term =~ '^xterm' && &t_Co == 256)
+  set t_ut= | set ttyscroll=1
+endif
+{{ end }}

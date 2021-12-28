@@ -1,3 +1,4 @@
+{{ if eq .rtp "~/.vim" -}}
 if $TERM_PROGRAM ==# 'iTerm.app'
   let &t_SI = "\<Esc>]50;CursorShape=1;BlinkingCursorEnabled=1\x7"
   let &t_SR = "\<Esc>]50;CursorShape=2;BlinkingCursorEnabled=1\x7"
@@ -28,3 +29,10 @@ augroup reset_cursor_on_leave
   autocmd!
   autocmd VimLeave * silent !echo -ne "\033[5 q"
 augroup END
+{{ else if eq .rtp "~/.config/nvim" -}}
+augroup reset_nvim_cursor
+  autocmd!
+  autocmd VimEnter,VimResume * set guicursor=n-v-c-sm:block-blinkon100,i-ci-ve:ver25-blinkon100,r-cr-o:hor20-blinkon100
+  autocmd VimLeave,VimSuspend * set guicursor=a:ver25-blinkon100
+augroup END
+{{ end -}}

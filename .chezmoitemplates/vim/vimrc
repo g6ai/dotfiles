@@ -1,0 +1,66 @@
+let mapleader = " "
+let maplocalleader = " "
+
+" Load local .vimrc files
+set exrc
+set secure
+
+packadd chezmoi.vim
+
+{{ if eq .os "windows" -}}
+set nocompatible " Get out of vi compatible mode
+
+{{ else -}}
+{{ end -}}
+
+if !exists("*ReloadConfigs")
+  function ReloadConfigs()
+{{ list "    :source " .rtp "/vimrc" | join "" }}
+    if has('gui_running')
+{{ list "      :source " .rtp "/gvimrc" | join "" }}
+    endif
+  endfunction
+  command! RC call ReloadConfigs()
+endif
+
+" Auto source $MYVIMRC after saving
+augroup auto_source_vimrc
+  autocmd!
+  autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+{{ if eq .vim_flag "good" -}}
+let g:config_files = [
+      \ 'misc.vim',
+      \ 'cursor.vim',
+      \ 'spell.vim',
+      \ 'colour.vim',
+      \ 'clipboard.vim',
+      \ 'buffer.vim',
+      \ 'window.vim',
+      \ 'python.vim',
+      \ 'plug.vim',
+      \ 'gruvbox-material.vim',
+      \ 'theme.vim',
+      \ ]
+" Strict loading order: 'plug.vim' -> 'gruvbox.vim' -> 'theme.vim'
+
+{{ else -}}
+let g:tex_comment_nospell = 1 " For VimTeX use g:vimtex_syntax_nospell_comments
+
+let g:config_files = [
+      \ 'misc.vim',
+      \ 'cursor.vim',
+      \ 'spell.vim',
+      \ 'colour.vim',
+      \ 'clipboard.vim',
+      \ 'buffer.vim',
+      \ 'window.vim',
+      \ 'python.vim',
+      \ ]
+
+{{ end -}}
+
+for s:fname in g:config_files
+{{ list "  execute printf('source " .rtp "/core/%s', s:fname)" | join "" }}
+endfor

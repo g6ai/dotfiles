@@ -1,4 +1,4 @@
 {{ $x := splitList "_" .chezmoi.sourceFile -}}
 {{ $y := last $x | dir | dir -}}
 {{ $rtp := list "~/." $y | join "" -}}
-{{ template "vim/core/python.vim" dict "rtp" $rtp "os" .chezmoi.os -}}
+{{   template "vim/plugin/ultisnips.vim" dict "rtp" $rtp -}}

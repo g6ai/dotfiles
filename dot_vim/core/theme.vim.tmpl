@@ -1,10 +1,4 @@
-{{ if eq .chezmoi.os "darwin" -}}
-call theme#MacBackground()
-augroup MacVim_auto_background
-  autocmd!
-  autocmd OSAppearanceChanged * call theme#MacGUIBackground()
-augroup END
-{{ else -}}
-call theme#Colorscheme(&background)
-{{ end -}}
-nmap tb :call theme#ToggleBackground()<CR>
+{{ $x := splitList "_" .chezmoi.sourceFile -}}
+{{ $y := last $x | dir | dir -}}
+{{ $rtp := list "~/." $y | join "" -}}
+{{ template "vim/core/theme.vim" dict "rtp" $rtp "os" .chezmoi.os -}}

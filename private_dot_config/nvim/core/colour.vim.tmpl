@@ -1,1 +1,4 @@
-{{ template "vim/core/colour.vim" -}}
+{{ $x := splitList "_" .chezmoi.sourceFile -}}
+{{ $y := last $x | dir | dir -}}
+{{ $rtp := list "~/." $y | join "" -}}
+{{ template "vim/core/colour.vim" dict "rtp" $rtp -}}

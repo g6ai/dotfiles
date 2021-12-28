@@ -1,27 +1,5 @@
-{{ template "vim/init/common.vim" -}}
-
-{{ if eq .chezmoi.os "windows" -}}
-set nocompatible " Get out of vi compatible mode
-
-{{ else -}}
-{{ end -}}
-
-if !exists("*ReloadConfigs")
-  function ReloadConfigs()
-    :source ~/.vim/vimrc
-    if has('gui_running')
-      :source ~/.vim/gvimrc
-    endif
-  endfunction
-  command! RC call ReloadConfigs()
-endif
-
-{{ if eq .vim_flag "good" -}}
-{{   template "vim/init/plug_good.vim" }}
-{{ else -}}
-{{   template "vim/init/plug_nogood.vim" }}
-{{ end -}}
-
-for s:fname in g:config_files
-  execute printf('source ~/.vim/core/%s', s:fname)
-endfor
+{{ $x := splitList "_" .chezmoi.sourceFile -}}
+{{ $y := last $x | dir -}}
+{{ $rtp := list "~/." $y | join "" -}}
+{{ $vim_flag := .vim_flag -}}
+{{ template "vim/vimrc" dict "rtp" $rtp "os" .chezmoi.os "vim_flag" $vim_flag -}}

@@ -1,7 +1,4 @@
-{{ if eq .chezmoi.os "darwin" -}}
-let g:python_host_prog = '$HOME/.pyenv/versions/py2nvim/bin/python'
-let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
-{{ else if .chezmoi.os "linux" -}}
-let g:python3_host_prog = '$HOME/miniforge3/envs/py3nvim/bin/python'
-endif
-{{ end -}}
+{{ $x := splitList "_" .chezmoi.sourceFile -}}
+{{ $y := last $x | dir | dir -}}
+{{ $rtp := list "~/." $y | join "" -}}
+{{ template "vim/core/python.vim" dict "rtp" $rtp "os" .chezmoi.os -}}

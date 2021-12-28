@@ -1,5 +1,5 @@
 set spelllang=en_gb
-set spellfile=~/.vim/spell/en.utf-8.add
+{{ list "set spellfile=" .rtp "/spell/en.utf-8.add" | join ""}}
 
 augroup spell_setting
   autocmd!
@@ -8,5 +8,5 @@ augroup END
 
 augroup spellfiles
   autocmd!
-  autocmd BufNewFile,BufRead *.tex setlocal spellfile+=~/.vim/spell/tex.utf-8.add
+{{ list "  autocmd BufNewFile,BufRead *.tex setlocal spellfile+=" .rtp "/spell/tex.utf-8.add" | join "" }}
 augroup END
