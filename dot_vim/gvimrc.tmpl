@@ -1,10 +1,10 @@
 {{ if eq .chezmoi.os "darwin" -}}
 set guifont=jetbrainsmono\ nerd\ font:h20
 let g:Lf_ShowDevIcons = 1
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
+"let g:airline#extensions#tabline#left_sep = ''
+"let g:airline#extensions#tabline#left_alt_sep = ''
+"let g:airline#extensions#tabline#right_sep = ''
+"let g:airline#extensions#tabline#right_alt_sep = ''
 {{ else if eq .chezmoi.os "linux" -}}
 set guifont=DejaVu\ Sans\ Mono\ for\ Powerline\ 16
 {{ else if eq .chezmoi.os "windows" -}}
