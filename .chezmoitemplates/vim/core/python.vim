@@ -13,7 +13,7 @@ endif
 {{   if eq .os "darwin" -}}
 let g:python_host_prog = '$HOME/.pyenv/versions/py2nvim/bin/python'
 let g:python3_host_prog = '$HOME/.pyenv/versions/py3nvim/bin/python'
-{{   else if .os "linux" -}}
+{{   else if eq .os "linux" -}}
 let g:python3_host_prog = '$HOME/miniforge3/envs/py3nvim/bin/python'
 endif
 {{   end -}}
