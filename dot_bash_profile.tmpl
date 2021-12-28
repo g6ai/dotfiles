@@ -3,5 +3,6 @@
 {{ if eq .chezmoi.os "darwin" }}
 bind -f $INPUTRC
 
-eval "$(pyenv init --path)"
 {{ end -}}
+
+{{ template "profile.sh" dict "os" .chezmoi.os -}}
