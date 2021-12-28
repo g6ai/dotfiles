@@ -92,4 +92,7 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 
 export PATH="/Library/TeX/texbin:$PATH"
 
+{{ else if eq .os "linux" -}}
+alias cm="$HOME/bin/chezmoi"
+
 {{ end -}}
