@@ -33,7 +33,7 @@ Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } | Plug 'skywind30
 {{ else if eq .rtp "~/.config/nvim" -}}
 " Neovim-specific:
 Plug 'max397574/better-escape.nvim'
-Plug 'neoclide/coc.nvim'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
