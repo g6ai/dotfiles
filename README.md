@@ -16,7 +16,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
 ## Features
 
-### Deploy with ease
+### Deploy with ease and efficiency
 
 [*chezmoi*](https://www.chezmoi.io/) is used to bootstrap dotfiles.
 
@@ -25,22 +25,33 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
     sh -c "$(curl -fsLS git.io/chezmoi)" -- init --apply g6ai
     ```
 
+* Uses [`text/template`](https://pkg.go.dev/text/template) syntax from Go extended with [text template functions from `sprig`](http://masterminds.github.io/sprig/).
+
+    I've created a typical template snippet. *E.g.*, [`clipboard.vim.tmpl`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/nvim/core/clipboard.vim.tmpl), residing in [`private_dot_config/nvim/core`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/nvim/core):
+    ```go
+    {{ $x := splitList "_" .chezmoi.sourceFile -}}
+    {{ $y := last $x | dir | dir -}}
+    {{ $rtp := list "~/." $y | join "" -}}
+    {{ template "vim/core/clipboard.vim" dict "rtp" $rtp "os" .chezmoi.os -}}
+    ```
+    It passes variables `rtp` and `os` to the [`clipboard.vim`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/core/clipboard.vim) template residing in [`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates) so the latter can generate different configs in the [*destination directory*](https://www.chezmoi.io/docs/reference/#concepts) per OS (macOS or Linux) and Vim variants (Vim or Neovim).
+
+    Such snippets are extensively used in these dotfiles to manage config files of different environments in one place ([`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates)), keeping the resource-demanding logical operations at the deployment step rather than the runtime.
+
 ### Bash
-* [`.shrc`](https://github.com/g6ai/dotfiles/blob/master/shrc) configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of *less* pager. It is then sourced by [`.bashrc`](https://github.com/g6ai/dotfiles/blob/master/bash/bashrc).
-* [`motd`](https://github.com/g6ai/dotfiles/tree/master/motd) folder has a Bash script to personalise motd, which is run by *Dotbot*.
+* [`shrc.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/shrc.sh) template configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of *less* pager. It is then sourced by [`bashrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/bashrc) template.
+* [`run_append_motd`](https://github.com/g6ai/dotfiles/blob/main/run_append_motd) is a Bash script to personalise motd, which is run by *chezmoi*.
 
 ### Zsh
-* [`zsh`](https://github.com/g6ai/dotfiles/tree/master/zsh) folder contains common settings from Bash, while utilising *oh-my-zsh* for fancy features.
+* [`dot_zshrc.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_zshrc.tmpl) template contains common settings from Bash, while utilising [*Zim*](https://zimfw.sh/) for fancy features.
 
 ### Vim
-* [`.vimrc`](https://github.com/g6ai/dotfiles/blob/master/vim/vimrc) works for *Linux*, *macOS* and *Windows*! It checks if system is good enough to enable plugins.
-  * *macOS* and *Windows* are good, as they usually have large memory for desktop environment.
-  * For *Linux*, it only enables plugins if computer has memory larger than 3600 MB.
+* [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template works for *Linux*, *macOS* and *Windows*! You can set if your system is good enough to enable plugins on *chezmoi* deployment.
   * For clipboard enabled *Vim* installation, within an *SSH* session, primary and/or clipboard content on the remote server can be sent to local machine by *X11* forwarding.
   * *pyenv* is supported.
 
 ### Neovim
-* The [`init.vim`](https://github.com/g6ai/dotfiles/blob/master/vim/nvim/init.vim) uses the versatile configs in [`.vimrc`](https://github.com/g6ai/dotfiles/blob/master/vim/vimrc).
+* The [`init.vim.tmpl`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/nvim/init.vim.tmpl) template uses the versatile configs in [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template.
 * Adopts the mighty [*coc.nvim*](https://github.com/neoclide/coc.nvim). Its config is `coc-settings.json`.
 * Some experimetal features in *Neovim* 0.5+ are also embraced:
   * [*nvim-treesitter*](https://github.com/nvim-treesitter/nvim-treesitter), provides beautiful code highlighting and more.
@@ -51,22 +62,22 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 * Configs for [*org-journal*](https://github.com/bastibe/org-journal) and [*Org-roam*](https://github.com/org-roam/org-roam), to cooperate with [*beorg*](https://beorgapp.com/manual/).
 
 ### tmux
-* [`.tmux.conf`](https://github.com/g6ai/dotfiles/blob/master/tmux/tmux.conf) sources [*tmuxline.vim*](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
+* [`dot_tmux.conf`](https://github.com/g6ai/dotfiles/blob/main/dot_tmux.conf) sources [*tmuxline.vim*](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
   * For *macOS*, *pbcopy* is used. *pbcopy* is installed on *macOS* by default.
   * For *Linux*, *xclip* is used. *xclip* needs to be installed. Within an *SSH* session, primary and/or clipboard content on the remote server can be sent to local machine by *X11* forwarding.
-* Helper scripts [`update_display_tmuxline.sh`](https://github.com/g6ai/dotfiles/blob/master/tmux/update_display_tmuxline.sh) and [`update_tmuxline.sh`](https://github.com/g6ai/dotfiles/blob/master/tmux/update_tmuxline.sh) update environment variable `$DISPLAY` and tmuxline for various scenarios.
+* Helper scripts [`executable_update_display_tmuxline.sh`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/tmux/executable_update_display_tmuxline.sh) and [`executable_update_tmuxline.sh`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/tmux/executable_update_tmuxline.sh) update environment variable `$DISPLAY` and tmuxline for various scenarios.
 
 ### Git
 
-Global `.gitignore` [files](https://github.com/g6ai/dotfiles/tree/master/git) per OS. [GitHub’s collection of `.gitignore` file templates](https://github.com/github/gitignore) are used.
+Global [`dot_gitignore_global.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_gitignore_global.tmpl) per OS template. [GitHub’s collection of `.gitignore` file templates](https://github.com/github/gitignore) are used.
 
 ### Terminal emulators
 From my experience, there's no perfect terminal emulator. I have tried *Terminal.app*, *iTerm2*, *kitty* and *Alacritty*. Currently I'm using *kitty*.
-* [`kitty`](https://github.com/g6ai/dotfiles/tree/master/kitty) folder includes the *kitty* configuration file `kitty.conf` for different OS.
-* [`alacritty`](https://github.com/g6ai/dotfiles/tree/master/alacritty) folder includes the *Alacritty* configuration file `alacritty.yml` for different OS.
+* [`kitty`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/kitty) folder includes the *kitty* configuration file `kitty.conf` for different OS.
+* [`alacritty`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/alacritty) folder includes the *Alacritty* configuration file `alacritty.yml` for different OS.
 
 ### Other config
 These configuration files may have versions for different OS, and is deployed per-OS thanks to *Dotbot*'s *if* parameter in *link* command.
-* [`jupyter`](https://github.com/g6ai/dotfiles/tree/master/jupyter) folder includes config files for *JupyterLab*. See [config file and command line options of Jupyter Server](https://jupyter-server.readthedocs.io/en/latest/other/full-config.html) for details.
-* [`aria2`](https://github.com/g6ai/dotfiles/tree/master/aria2) folder includes config file for *aria2*. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
-* [`mpv`](https://github.com/g6ai/dotfiles/tree/master/mpv) folder includes config files for *mpv*. See [mpv documentation](https://mpv.io/manual/master/) for more options.
+* *JupyterLab* configs. See [config file and command line options of Jupyter Server](https://jupyter-server.readthedocs.io/en/latest/other/full-config.html) for details.
+* [`dot_aria2`](https://github.com/g6ai/dotfiles/tree/main/dot_aria2) folder includes config file for *aria2*. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
+* [`mpv`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/mpv) folder includes config files for *mpv*. See [mpv documentation](https://mpv.io/manual/master/) for more options.
