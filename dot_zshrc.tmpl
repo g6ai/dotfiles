@@ -5,7 +5,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-{{ template "zshrc_zim.zsh" -}}
+{{ template "zim.zsh" -}}
 
 # Load common settings
 {{ template "shrc.sh" dict "os" .chezmoi.os -}}
