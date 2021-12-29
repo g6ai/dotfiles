@@ -37,7 +37,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
     ```
     It passes variables `rtp`, `os` and `vim_flag` to a common [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template in [`.chezmoitemplates/vim`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates/vim) so the latter can generate different config per *Vim* variants (*Vim* or *Neovim*), OS (*Linux* or *macOS*) and other user-defined variables.
 
-    Such snippets are extensively used in these dotfiles to manage config files of different environments in one place ([`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates)), keeping the resource-demanding logical operations at the deployment step rather than the runtime.
+    Such snippets are extensively used in these dotfiles to manage config files of different environments in one place ([`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates)), keeping the resource-demanding logical operations at the **deployment step** rather than the **runtime**.
 
 ### Bash
 * [`shrc.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/shrc.sh) template configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of *less* pager. It is then sourced by [`bashrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/bashrc) template.
@@ -46,17 +46,15 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 ### Zsh
 * [`dot_zshrc.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_zshrc.tmpl) template contains common settings from Bash, while utilising [*Zim*](https://zimfw.sh/) for fancy features.
 
-### Vim
-* [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template works for *Linux*, *macOS* and *Windows*! You can set if your system is good enough to enable plugins on *chezmoi* deployment.
-  * For clipboard enabled *Vim* installation, within an *SSH* session, primary and/or clipboard content on the remote server can be sent to local machine by *X11* forwarding.
-  * *pyenv* is supported.
-
-### Neovim
-* The [`init.vim.tmpl`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/nvim/init.vim.tmpl) template uses the versatile configs in [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template.
-* Adopts the mighty [*coc.nvim*](https://github.com/neoclide/coc.nvim). Its config is `coc-settings.json`.
-* Some experimetal features in *Neovim* 0.5+ are also embraced:
-  * [*nvim-treesitter*](https://github.com/nvim-treesitter/nvim-treesitter), provides beautiful code highlighting and more.
-  * [*telescope.nvim*](https://github.com/nvim-telescope/telescope.nvim), next generation fuzzy finder.
+### Vim/Neovim
+* The configs are located in the [`.chezmoitemplates/vim`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates/vim) directory. They are then deployed to *Vim* and *Neovim*'s runtime path.
+    * *Vim*'s [`vimrc.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_vim/vimrc.tmpl) template and *Neovim*'s [`init.vim.tmpl`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/nvim/init.vim.tmpl) template use the versatile configs in [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template, which works for *Linux*, *macOS* and *Windows*! You can set if your system is good enough to enable plugins on *chezmoi* deployment.
+    * Most of the `vimrc`'s functionalities are divided and located in [`core`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates/vim/core) directory.
+* Neovim-specific config:
+    * Adopts the mighty [*coc.nvim*](https://github.com/neoclide/coc.nvim). Its config is `coc-settings.json`.
+    * Some experimetal features in *Neovim* 0.5+ are also embraced:
+        * [*nvim-treesitter*](https://github.com/nvim-treesitter/nvim-treesitter), provides beautiful code highlighting and more.
+        * [*telescope.nvim*](https://github.com/nvim-telescope/telescope.nvim), next generation fuzzy finder.
 
 ### Doom Emacs
 
