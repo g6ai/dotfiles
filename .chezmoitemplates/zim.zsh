@@ -30,6 +30,12 @@ setopt HIST_IGNORE_ALL_DUPS
 # Remove path separator from WORDCHARS.
 WORDCHARS=${WORDCHARS//[\/]}
 
+#
+# My config
+#
+
+KEYTIMEOUT=1
+
 # -----------------
 # Zim configuration
 # -----------------
@@ -97,6 +103,18 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
 #typeset -A ZSH_HIGHLIGHT_STYLES
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
+
+#
+# Installed by me
+#
+
+#
+# zsh-vi-mode
+#
+
+ZVM_KEYTIMEOUT=0.05
+ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
+ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 
 # ------------------
 # Initialize modules
