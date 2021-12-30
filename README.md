@@ -35,7 +35,7 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
     {{ $vim_flag := .vim_flag -}}
     {{ template "vim/vimrc" dict "rtp" $rtp "os" .chezmoi.os "vim_flag" $vim_flag -}}
     ```
-    It passes variables `rtp`, `os` and `vim_flag` to a common [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template in [`.chezmoitemplates/vim`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates/vim) so the latter can generate different config per *Vim* variants (*Vim* or *Neovim*), OS (*Linux* or *macOS*) and other user-defined variables.
+    It passes variables `rtp`, `os` and `vim_flag` to a common [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template in [`.chezmoitemplates/vim`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates/vim). This [`vimrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/vim/vimrc) template contains both the actual config details and the logic operations which check the variables it receives on deployment, so it can generate different config per *Vim* variants (*Vim* or *Neovim*), OS (*Linux* or *macOS*) and other user-defined variables.
 
     Such snippets are extensively used in these dotfiles to manage config files of different environments in one place ([`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates)), keeping the resource-demanding logical operations at the **deployment step** rather than the **runtime**.
 
