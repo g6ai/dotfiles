@@ -78,5 +78,6 @@ From my experience, there's no perfect terminal emulator. I have tried *Terminal
 ### Other config
 These configuration files may have versions for different OS, and is deployed per-OS thanks to *Dotbot*'s *if* parameter in *link* command.
 * [`dot_jupyter`](https://github.com/g6ai/dotfiles/tree/main/dot_jupyter) folder includes config files for *JupyterLab* configs. See [config file and command line options of Jupyter Server](https://jupyter-server.readthedocs.io/en/latest/other/full-config.html) for details.
+    * [`jupytext.toml`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/jupytext.toml) is the config file for [Jupytext](https://jupytext.readthedocs.io/en/latest/).
 * [`dot_aria2`](https://github.com/g6ai/dotfiles/tree/main/dot_aria2) folder includes config file for *aria2*. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
 * [`mpv`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/mpv) folder includes config files for *mpv*. See [mpv documentation](https://mpv.io/manual/master/) for more options.
