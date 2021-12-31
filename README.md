@@ -81,5 +81,6 @@ These configuration files may have versions for different OS, and is deployed pe
     * [`jupytext.toml`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/jupytext.toml) is the config file for [*Jupytext*](https://jupytext.readthedocs.io/en/latest/).
 * [`dot_aria2`](https://github.com/g6ai/dotfiles/tree/main/dot_aria2) folder includes config file for *aria2*. See [options section of aria2 documentation](https://aria2.github.io/manual/en/html/aria2c.html#options) for more options.
 * [`mpv`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/mpv) folder includes config files for *mpv*. See [mpv documentation](https://mpv.io/manual/master/) for more options.
-* [`darwin-configuration.nix`](https://github.com/g6ai/dotfiles/blob/main/dot_nixpkgs/darwin-configuration.nix) contains config of the [*Nix*](https://nixos.org/) package manager.
-* [`Brewfile`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/Brewfile) contains config of the [*Homebrew Bundle*](https://github.com/Homebrew/homebrew-bundle) bundler.
+* *macOS* package manager:
+    * [`darwin-configuration.nix`](https://github.com/g6ai/dotfiles/blob/main/dot_nixpkgs/darwin-configuration.nix) contains config of [*nix-darwin*](https://github.com/LnL7/nix-darwin).
+    * [`Brewfile`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/Brewfile) contains config of the [*Homebrew Bundle*](https://github.com/Homebrew/homebrew-bundle) bundler.
