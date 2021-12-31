@@ -3,37 +3,37 @@
 {
   # List packages installed in system profile. To search by name, run:
   # $ nix-env -qaP | grep wget
-  environment.systemPackages =
-    [ pkgs.aria
-      pkgs.asciiquarium
-      pkgs.coreutils
-      pkgs.cowsay
-      pkgs.ffmpeg
-      pkgs.fzf
-      pkgs.git
-      pkgs.gnuplot
-      pkgs.go
-      pkgs.graphviz
-      pkgs.gwyddion
-      pkgs.htop
-      pkgs.irssi
-      pkgs.lolcat
-      pkgs.neovim
-      pkgs.nmap
-      pkgs.octave
-      pkgs.pandoc
-      pkgs.ripgrep
-      pkgs.smartmontools
-      pkgs.thefuck
-      pkgs.tintin
-      pkgs.tldr
-      pkgs.tmux
-      pkgs.toilet
-      pkgs.tree
-      pkgs.wget
-      pkgs.you-get
-      pkgs.youtube-dl
-    ];
+  environment.systemPackages = [
+    pkgs.aria
+    pkgs.asciiquarium
+    pkgs.coreutils
+    pkgs.cowsay
+    pkgs.ffmpeg
+    pkgs.fzf
+    pkgs.git
+    pkgs.gnuplot
+    pkgs.go
+    pkgs.graphviz
+    pkgs.gwyddion
+    pkgs.htop
+    pkgs.irssi
+    pkgs.lolcat
+    pkgs.neovim
+    pkgs.nmap
+    pkgs.octave
+    pkgs.pandoc
+    pkgs.ripgrep
+    pkgs.smartmontools
+    pkgs.thefuck
+    pkgs.tintin
+    pkgs.tldr
+    pkgs.tmux
+    pkgs.toilet
+    pkgs.tree
+    pkgs.wget
+    pkgs.you-get
+    pkgs.youtube-dl
+  ];
 
   # Use a custom configuration.nix location.
   # $ darwin-rebuild switch -I darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix
