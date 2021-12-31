@@ -6,7 +6,7 @@
 
 My dotfiles. Some of my considerations are explained in [Wiki](https://github.com/g6ai/dotfiles/wiki).
 
-[Deployment](#deploy-with-ease) • [Bash](#bash) • [Zsh](#zsh) • [Vim/Neovim](#vimneovim) • [Neovim](#neovim) • [Doom Emacs](#doom-emacs) • [tmux](#tmux) • [Git](#git) • [Terminal emulators](#terminal-emulators) • [Other config](#other-config)
+[Deployment](#deploy-with-ease) • [Bash](#bash) • [Zsh](#zsh) • [Vim/Neovim](#vimneovim) • [Doom Emacs](#doom-emacs) • [tmux](#tmux) • [Git](#git) • [Terminal emulators](#terminal-emulators) • [Other config](#other-config)
 
 ![](https://github.com/g6ai/dotfiles/wiki/screenshots/complex.png)
 
