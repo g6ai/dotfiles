@@ -15,7 +15,7 @@ brew "emacs-mac", args: ["with-natural-title-bar"]
 brew "ext4fuse"
 brew "frpc"
 brew "gnu-sed"
-brew "grip"
+brew "grip" # required by vim-markdown-preview
 brew "languagetool"
 brew "media-info"
 brew "neofetch"
