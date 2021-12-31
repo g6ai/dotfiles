@@ -11,7 +11,7 @@ tap "railwaycat/emacsmacport"
 # 'brew install'
 brew "chezmoi"
 brew "docx2txt"
-brew "emacs-mac"
+brew "emacs-mac", args: ["with-natural-title-bar"]
 brew "ext4fuse"
 brew "frpc"
 brew "gnu-sed"

@@ -33,6 +33,7 @@
     pkgs.wget
     pkgs.you-get
     pkgs.youtube-dl
+    pkgs.zstd # a Python package, required by emacs-mac
   ];
 
   # Use a custom configuration.nix location.
