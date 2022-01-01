@@ -80,6 +80,8 @@ eval "$(pyenv init - --no-rehash)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 export PYENV_HOOK_PATH="$HOME/.config/pyenv.d"
 
+eval "$(pyenv virtualenv-init -)"
+
 export PATH="/usr/local/opt/openjdk/bin:$PATH"
 
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"

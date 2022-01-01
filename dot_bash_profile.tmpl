@@ -6,3 +6,6 @@ bind -f $INPUTRC
 {{ end -}}
 
 {{ template "profile.sh" dict "os" .chezmoi.os -}}
+
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH"
