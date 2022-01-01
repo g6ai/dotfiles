@@ -26,5 +26,5 @@ let g:clipboard = {
 {{ end -}}
 
 " Paste toggling
-nnoremap <C-p> :set invpaste paste?<CR>
-set pastetoggle=<C-p>
+"nnoremap <C-p> :set invpaste paste?<CR>
+"set pastetoggle=<C-p>
