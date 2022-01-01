@@ -24,7 +24,6 @@ alias pdw='pushd .'
 alias po='popd'
 alias gst='git status'
 alias glg='git log --all --graph --decorate'
-alias gc='git commit'
 if command -v nvim &> /dev/null; then
   alias vi='nvim'
 else
