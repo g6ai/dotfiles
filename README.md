@@ -71,7 +71,8 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 Global [`dot_gitignore_global.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_gitignore_global.tmpl) per OS template. [GitHub’s collection of `.gitignore` file templates](https://github.com/github/gitignore) are used.
 
 ### Terminal emulators
-From my experience, there's no perfect terminal emulator. I have tried *Terminal.app*, *iTerm2*, *kitty* and *Alacritty*. Currently I'm using *kitty*.
+From my experience, there's no perfect terminal emulator. I have tried *Terminal.app*, *iTerm2*, *Alacritty*, *kitty* and *WezTerm*. Currently I'm using *WezTerm*.
+* [`wezterm`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/wezterm) folder includes the *WezTerm* configuration file `wezterm.lua`.
 * [`kitty`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/kitty) folder includes the *kitty* configuration file `kitty.conf` for different OS.
 * [`alacritty`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/alacritty) folder includes the *Alacritty* configuration file `alacritty.yml` for different OS.
 
