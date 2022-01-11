@@ -20,6 +20,7 @@
     pkgs.lolcat
     pkgs.neovim
     pkgs.nmap
+    pkgs.nodejs
     pkgs.octave
     pkgs.pandoc
     pkgs.ripgrep

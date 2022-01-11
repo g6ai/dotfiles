@@ -20,7 +20,6 @@ brew "languagetool"
 brew "media-info"
 brew "neofetch"
 brew "nginx", restart_service: true
-brew "node"
 brew "pyenv-virtualenv"
 brew "sphinx-doc"
 brew "switchaudio-osx"
