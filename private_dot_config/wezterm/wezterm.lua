@@ -3,6 +3,8 @@ return {
   font = wezterm.font("JetBrainsMono Nerd Font"),
   font_size = 20.0,
   color_scheme = "Gruvbox Dark",
+  default_cursor_style = "BlinkingBar",
+  cursor_blink_rate = 500,
   force_reverse_video_cursor = true,
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = true,
