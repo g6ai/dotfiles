@@ -13,5 +13,6 @@ return {
     top = 0,
     bottom = 0,
   },
+  window_decorations = "RESIZE",
   native_macos_fullscreen_mode = true
 }
