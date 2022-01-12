@@ -16,5 +16,6 @@ return {
     bottom = 0,
   },
   window_decorations = "RESIZE",
-  native_macos_fullscreen_mode = true
+  native_macos_fullscreen_mode = true,
+  window_background_opacity = 0.95
 }
