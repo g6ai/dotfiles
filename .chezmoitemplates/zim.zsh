@@ -84,12 +84,12 @@ KEYTIMEOUT=1
 
 # Customize the style that the suggestions are shown with.
 # See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
-#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
 # Necessary after installing jeffreytse/zsh-vi-mode
 function zvm_after_init() {
   zvm_bindkey viins '^[[Z' autosuggest-accept
 }
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
 #
 # zsh-syntax-highlighting
