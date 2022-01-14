@@ -84,11 +84,6 @@ KEYTIMEOUT=1
 
 # Customize the style that the suggestions are shown with.
 # See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
-
-# Necessary after installing jeffreytse/zsh-vi-mode
-function zvm_after_init() {
-  zvm_bindkey viins '^[[Z' autosuggest-accept
-}
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
 
 #
@@ -104,9 +99,9 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 #typeset -A ZSH_HIGHLIGHT_STYLES
 #ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
 
-#
-# Installed by me
-#
+# ------
+# Custom
+# ------
 
 #
 # zsh-vi-mode
@@ -115,6 +110,10 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 ZVM_KEYTIMEOUT=0.05
 ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
 ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
+
+function zvm_after_init() {
+  zvm_bindkey viins '^[[Z' autosuggest-accept
+}
 
 # ------------------
 # Initialize modules
