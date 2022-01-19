@@ -45,3 +45,6 @@ Plug 'kevinhwang91/nvim-hlslens'
 Plug 'kevinhwang91/nvim-bqf'
 {{ end -}}
 call plug#end()
+
+" These options won't work in plugin dir
+let g:UltiSnipsEnableSnipMate = 0
