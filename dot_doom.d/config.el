@@ -250,7 +250,11 @@
     (setq org-roam-ui-sync-theme t
           org-roam-ui-follow t
           org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t))
+          org-roam-ui-open-on-start t
+          org-roam-capture-templates '(("d" "default" plain "%?"
+                                        :target (file+head "${slug}.org"
+                                                           "#+title: ${title}\n")
+                                        :unnarrowed t))))
 
   ;; Citar
   (setq! citar-bibliography '("~/Zotero/my_library.bib"))
