@@ -15,8 +15,9 @@ set ruler
 
 " Switch on numbering
 set nu
-" Toggle relative numbering
-nnoremap <C-n> :set rnu!<CR>
+" Relative numbering
+set rnu
+"nnoremap <C-n> :set rnu!<CR>
 
 " Encoding
 set encoding=utf-8 " Necessary for Windows to display vim-airline properly
