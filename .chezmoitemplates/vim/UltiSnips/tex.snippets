@@ -17,6 +17,18 @@ snippet eq "equation environment" b
 \end{equation}
 endsnippet
 
+### Figure
+
+snippet fig "figure environment" b
+\begin{figure}[${1:htpb}]
+	\centering
+	\includegraphics[width=0.${2:8}\textwidth]{${3:name.ext}}
+	\caption{$4}%
+	\label{fig:${3/(\w+)\.\w+/$1/}}
+\end{figure}
+$0
+endsnippet
+
 snippet figs "figures environment" b
 \begin{figure}[${1:htpb}]
 	\centering
@@ -37,20 +49,42 @@ snippet subfig "subfigure environment"
 $0
 endsnippet
 
+### Section
+
+snippet sec "section" b
+\section{$1}%
+\label{sec:${2:${1/(\w+)(\s|-)?/(?2:\L$1\E_:\L$1\E)/g}}}
+$0
+endsnippet
+
+snippet ssec "subsection" b
+\subsection{$1}%
+\label{ssec:${2:${1/(\w+)(\s|-)?/(?2:\L$1\E_:\L$1\E)/g}}}
+$0
+endsnippet
+
+snippet sssec "subsubsection" b
+\subsubsection{$1}%
+\label{sssec:${2:${1/(\w+)(\s|-)?/(?2:\L$1\E_:\L$1\E)/g}}}
+$0
+endsnippet
+
+### Reference
+
 snippet eqr "reference to an equation"
-Equation~\ref{eq:${1}}$0
+Equation~\ref{eq:$1}$0
 endsnippet
 
 snippet figr "reference to a figure"
-Figure~\ref{fig:${1}}$0
+Figure~\ref{fig:$1}$0
 endsnippet
 
 snippet tabr "reference to a table"
-Table~\ref{tab:${1}}$0
+Table~\ref{tab:$1}$0
 endsnippet
 
 snippet secr "reference to a section"
-Section~\ref{${1:${VISUAL:sec:}}}$0
+Section~\ref{${1}sec:$2}$0
 endsnippet
 
 ###### siunitx snippets ######
