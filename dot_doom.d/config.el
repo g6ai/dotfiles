@@ -28,7 +28,7 @@
 ;; `load-theme' function. This is the default:
 ;; Emacs Mac from Homebrew
 ;;(setq doom-theme 'doom-one-light)
-(defun mac-appearance-change-hook ()
+(defun mac-apply-system-appearance ()
   (let ((appearance (plist-get (mac-application-state) :appearance)))
     (cond ((equal appearance "NSAppearanceNameAqua")
            (load-theme 'doom-one-light t)
@@ -36,8 +36,8 @@
           ((equal appearance "NSAppearanceNameDarkAqua")
            (load-theme 'doom-vibrant t)
            (disable-theme 'doom-one-light)))))
-(add-hook 'after-init-hook 'mac-appearance-change-hook)
-(add-hook 'mac-effective-appearance-change-hook 'mac-appearance-change-hook)
+(add-hook 'after-init-hook 'mac-apply-system-appearance)
+(add-hook 'mac-effective-appearance-change-hook 'mac-apply-system-appearance)
 ;; Emacs Plus from Homebrew
 ;; (defun my/apply-theme (appearance)
 ;;   "Load theme, taking current system APPEARANCE into consideration."
