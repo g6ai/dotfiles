@@ -30,6 +30,7 @@ Plug 'dstein64/vim-startuptime'
 {{ if eq .rtp "~/.vim" -}}
 " Vim-specific:
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } | Plug 'skywind3000/Leaderf-snippet'
+Plug 'gelguy/wilder.nvim'
 {{ else if eq .rtp "~/.config/nvim" -}}
 " Neovim-specific:
 Plug 'max397574/better-escape.nvim'
@@ -43,6 +44,12 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'kevinhwang91/nvim-bqf'
+function! UpdateRemotePlugins(...)
+  " Needed to refresh runtime files
+  let &rtp=&rtp
+  UpdateRemotePlugins
+endfunction
+Plug 'gelguy/wilder.nvim', { 'do': function('UpdateRemotePlugins') }
 {{ end -}}
 call plug#end()
 

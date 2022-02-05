@@ -1,0 +1,4 @@
+{{ $x := splitList "_" .chezmoi.sourceFile -}}
+{{ $y := last $x | dir | dir -}}
+{{ $rtp := list "~/." $y | join "" -}}
+{{ template "vim/plugin/wilder.vim" dict "rtp" $rtp -}}
