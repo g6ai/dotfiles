@@ -10,7 +10,7 @@ endfunction
 
 augroup quickfix_window_height
   autocmd!
-  autocmd FileType qf call AdjustWindowHeight(3, 10)
+  autocmd FileType qf call AdjustWindowHeight(1, 3)
 augroup END
 
 nnoremap <leader>hc :helpclose<CR>
