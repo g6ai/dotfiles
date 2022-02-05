@@ -60,7 +60,6 @@ if $TERM_PROGRAM !=# 'Apple_Terminal'
 endif
 
 if has('nvim')
-  set autochdir
   set shortmess+=S
   set inccommand=nosplit " See :substitute command change the document live
 else
