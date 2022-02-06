@@ -9,22 +9,30 @@ function! s:wilder_init() abort
         \ })
 
   call wilder#set_option('renderer', wilder#renderer_mux({
+{{- if eq .rtp "~/.config/nvim" }}
         \ ':': wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
         \   'border': 'rounded',
+{{- else if eq .rtp "~/.vim" }}
+        \ ':': wilder#popupmenu_renderer({
+{{- end }}
         \   'highlights': {
+        \     'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
         \     'border': 'Normal',
+        \     'default': 'Normal',
         \   },
-        \   'highlighter': wilder#basic_highlighter(),
         \   'left': [
         \     ' ', wilder#popupmenu_devicons(),
         \   ],
         \   'right': [
         \     ' ', wilder#popupmenu_scrollbar(),
         \   ],
+        \   'highlighter': wilder#basic_highlighter(),
 {{- if eq .rtp "~/.config/nvim" }}
         \   'pumblend': 20,
-{{- end }}
         \ })),
+{{- else if eq .rtp "~/.vim" }}
+        \ }),
+{{- end }}
         \ '/': wilder#wildmenu_renderer({
         \   'highlighter': wilder#basic_highlighter(),
         \ }),
