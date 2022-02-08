@@ -1,8 +1,7 @@
 set hidden
 
-" Close the current buffer and move to the previous one
-" This replicates the idea of closing a tab
-nnoremap <leader>bd :bp! \| bd #<CR>
+" Delete the current buffer and keep the (splitted) window
+nnoremap <silent> <leader>bd :bprevious! \| bdelete #<CR>
 
 " A function to skip QuickFix buffer
 function! BSkipQuickFix(command)
