@@ -31,6 +31,7 @@ Plug 'dstein64/vim-startuptime'
 " Vim-specific:
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } | Plug 'skywind3000/Leaderf-snippet'
 Plug 'gelguy/wilder.nvim'
+Plug 'jdhao/better-escape.vim'
 {{ else if eq .rtp "~/.config/nvim" -}}
 " Neovim-specific:
 Plug 'max397574/better-escape.nvim'
