@@ -12,14 +12,17 @@ function! s:wilder_init() abort
 {{- if eq .rtp "~/.config/nvim" }}
         \ ':': wilder#popupmenu_renderer(wilder#popupmenu_border_theme({
         \   'border': 'rounded',
-{{- else if eq .rtp "~/.vim" }}
-        \ ':': wilder#popupmenu_renderer({
-{{- end }}
         \   'highlights': {
         \     'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
         \     'border': 'Normal',
         \     'default': 'Normal',
         \   },
+{{- else if eq .rtp "~/.vim" }}
+        \ ':': wilder#popupmenu_renderer({
+        \   'highlights': {
+        \     'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
+        \   },
+{{- end }}
         \   'left': [
         \     ' ', wilder#popupmenu_devicons(),
         \   ],
