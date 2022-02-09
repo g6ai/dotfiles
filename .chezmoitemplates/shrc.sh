@@ -32,6 +32,16 @@ fi
 alias kk='kitty +kitten'
 alias magit='emacsclient -n -e "(magit-status)"'
 
+# Clear screen
+cls () {
+  if [[ "$TERM" == "tmux-256color" && -n "TMUX" ]]; then
+    clear && tmux clear-history 
+  else
+    # This is equivalent to clear && printf '\e[3J'
+    printf '\33c\e[3J'
+  fi
+}
+
 # Terminal color
 export CLICOLOR=1
 export COLORTERM=truecolor
