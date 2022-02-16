@@ -35,7 +35,9 @@
            (disable-theme 'doom-vibrant))
           ((equal appearance "NSAppearanceNameDarkAqua")
            (load-theme 'doom-vibrant t)
-           (disable-theme 'doom-one-light)))))
+           (disable-theme 'doom-one-light))
+          ((equal appearance nil)
+           (custom-set-faces '(mode-line ((t (:background "#282828")))))))))
 (add-hook 'after-init-hook 'mac-apply-system-appearance)
 (add-hook 'mac-effective-appearance-change-hook 'mac-apply-system-appearance)
 ;; Emacs Plus from Homebrew
@@ -80,6 +82,11 @@
 ;; Default fringe-mode value in Doom is 4, too small for fringe indicators.
 (after! git-gutter-fringe
   (fringe-mode 8))
+
+;; tty mouse
+(unless window-system
+  (global-set-key (kbd "<mouse-4>") 'scroll-down-line)
+  (global-set-key (kbd "<mouse-5>") 'scroll-up-line))
 
 ;; auto-saving
 (add-hook 'evil-insert-state-exit-hook
