@@ -37,6 +37,7 @@
            (load-theme 'doom-vibrant t)
            (disable-theme 'doom-one-light))
           ((equal appearance nil)
+           (load-theme 'doom-manegarm t)
            (custom-set-faces '(mode-line ((t (:background "#282828")))))))))
 (add-hook 'after-init-hook 'mac-apply-system-appearance)
 (add-hook 'mac-effective-appearance-change-hook 'mac-apply-system-appearance)
