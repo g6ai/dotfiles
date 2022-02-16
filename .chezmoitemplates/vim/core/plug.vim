@@ -27,6 +27,7 @@ Plug 'kkoomen/vim-doge', { 'do': { -> doge#install() } }
 Plug 'ryanoasis/vim-devicons'
 Plug 'rhysd/committia.vim'
 Plug 'dstein64/vim-startuptime'
+Plug 'Raimondi/delimitMate'
 {{ if eq .rtp "~/.vim" -}}
 " Vim-specific:
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } | Plug 'skywind3000/Leaderf-snippet'
