@@ -148,6 +148,7 @@
 
   ;; TODO
   (setq org-log-done 'time)
+  (setq org-log-into-drawer t)
 
   ;; LaTeX
   (setq org-latex-create-formula-image-program 'dvisvgm)
