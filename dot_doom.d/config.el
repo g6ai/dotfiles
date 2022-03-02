@@ -119,6 +119,16 @@
   ;; With auto-saving enabled, do not delete trailing spaces on saving.
   (add-hook 'org-mode-hook (lambda () (ws-butler-mode -1)))
 
+  ;; M-RET
+  (defun org-meta-return (&optional arg)
+    (interactive "P")
+    (org-check-before-invisible-edit 'insert)
+    (or (run-hook-with-args-until-success 'org-metareturn-hook)
+        (call-interactively (cond (arg #'org-insert-heading)
+                                  ((org-at-table-p) #'org-table-wrap-region)
+                                  ((org-in-item-p) #'+org/insert-item-below)
+                                  (t #'org-insert-heading)))))
+
   ;; indentation
   (add-hook 'org-mode-hook (lambda () (electric-indent-local-mode -1)))
 
