@@ -150,6 +150,9 @@
   (setq org-log-done 'time)
   (setq org-log-into-drawer t)
 
+  ;; org-habit
+  (add-to-list 'org-modules 'org-habit)
+
   ;; LaTeX
   (setq org-latex-create-formula-image-program 'dvisvgm)
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.75))
