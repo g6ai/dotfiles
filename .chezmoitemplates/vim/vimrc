@@ -15,10 +15,14 @@ set nocompatible " Get out of vi compatible mode
 
 if !exists("*ReloadConfigs")
   function ReloadConfigs()
-{{ list "    :source " .rtp "/vimrc" | join "" }}
+{{- if eq .rtp "~/.vim" }}
+    :source ~/.vim/vimrc
     if has('gui_running')
-{{ list "      :source " .rtp "/gvimrc" | join "" }}
+      :source ~/.vim/gvimrc
     endif
+{{- else if eq .rtp "~/.config/nvim" }}
+    :source ~/.config/nvim/init.vim
+{{- end }}
   endfunction
   command! RC call ReloadConfigs()
 endif
