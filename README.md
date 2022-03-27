@@ -29,9 +29,9 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
     For instance, here is a typical snippet in one of my dotfiles, [`init.vim.tmpl`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/nvim/init.vim.tmpl), residing in [`private_dot_config/nvim`](https://github.com/g6ai/dotfiles/tree/main/private_dot_config/nvim):
     ```go
-    {{ $x := splitList "_" .chezmoi.sourceFile -}}
-    {{ $y := last $x | dir -}}
-    {{ $rtp := list "~/." $y | join "" -}}
+    {{ $x := splitList "_" .chezmoi.sourceFile /* private dot config/nvim/init.vim.tmpl */ -}}
+    {{ $y := last $x | dir /* config/nvim */ -}}
+    {{ $rtp := list "~/." $y | join "" /* ~/.config/nvim */ -}}
     {{ $vim_flag := .vim_flag -}}
     {{ template "vim/vimrc" dict "rtp" $rtp "os" .chezmoi.os "vim_flag" $vim_flag -}}
     ```
