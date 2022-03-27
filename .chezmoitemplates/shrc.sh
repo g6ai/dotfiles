@@ -81,6 +81,18 @@ alias lacie="smartctl -a disk3 | grep Temperature"
 alias yd="youtube-dl"
 alias cm="chezmoi"
 
+# Add N/Vim spellfiles and snippets to .chezmoitemplates
+cm_add_vim () {
+  cp ~/.vim/spell/en.utf-8.add ~/.local/share/chezmoi/.chezmoitemplates/vim/spell
+  cp ~/.vim/spell/tex.utf-8.add ~/.local/share/chezmoi/.chezmoitemplates/vim/spell
+  cp ~/.vim/UltiSnips/tex.snippets ~/.local/share/chezmoi/.chezmoitemplates/vim/UltiSnips
+}
+cm_add_nvim () {
+  cp ~/.config/nvim/spell/en.utf-8.add ~/.local/share/chezmoi/.chezmoitemplates/vim/spell
+  cp ~/.config/nvim/spell/tex.utf-8.add ~/.local/share/chezmoi/.chezmoitemplates/vim/spell
+  cp ~/.config/nvim/UltiSnips/tex.snippets ~/.local/share/chezmoi/.chezmoitemplates/vim/UltiSnips
+}
+
 export PATH="/usr/local/sbin:$PATH"
 
 export PATH="/usr/local/opt/jpeg-turbo/bin:$PATH"
