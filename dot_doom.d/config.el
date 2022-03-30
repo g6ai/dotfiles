@@ -53,6 +53,7 @@
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
+(setq org-download-image-dir "images")  ; `org-download-image-dir` defaults to `org-directory'/.attach/
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
@@ -297,3 +298,8 @@
    (my/insert-after 'org-cite-insert))
   (map! :leader
         "m @" #'my/org-cite-insert))
+
+;; org-download
+(after! org-download
+  (setq org-download-method 'directory)
+  (setq org-download-link-format "#+ATTR_ORG: :width 500\n[[download:%s]]\n"))

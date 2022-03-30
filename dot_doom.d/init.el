@@ -63,10 +63,11 @@
        :lang
        emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
-       (org               ; organize your plain life in plain text
+       (org              ; organize your plain life in plain text
         +pretty
         +journal
-        +roam2)
+        +roam2
+        +dragndrop)
        sh                ; she sells {ba,z,fi}sh shells on the C xor
 
        :email
