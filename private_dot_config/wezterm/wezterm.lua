@@ -17,7 +17,7 @@ return {
   },
   window_decorations = "RESIZE",
   native_macos_fullscreen_mode = true,
-  window_background_opacity = 0.95,
+  window_background_opacity = 0.85,
   keys = {
     {key="Enter", mods="ALT", action="DisableDefaultAssignment"},
     {key="f", mods="CTRL|SUPER", action="ToggleFullScreen"},
