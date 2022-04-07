@@ -19,7 +19,6 @@ brew "gnu-sed"
 brew "grip" # required by vim-markdown-preview
 brew "languagetool"
 brew "media-info"
-brew "neofetch"
 brew "nginx", restart_service: true
 brew "pyenv-virtualenv"
 brew "sphinx-doc"

@@ -18,6 +18,7 @@
     pkgs.htop
     pkgs.irssi
     pkgs.lolcat
+    pkgs.neofetch
     pkgs.neovim
     pkgs.nmap
     pkgs.nodejs
