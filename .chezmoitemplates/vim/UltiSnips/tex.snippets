@@ -10,6 +10,10 @@ snippet "([\s|~])ct" "cite" r
 `!p snip.rv = match.group(1)`\cite{$1}$0
 endsnippet
 
+snippet "\\mn" "mynote" rA
+\mynote{$1}$0
+endsnippet
+
 snippet eq "equation environment" b
 \begin{equation}
 	\label{eq:$1}
