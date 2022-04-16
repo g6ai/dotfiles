@@ -259,6 +259,10 @@
   (map! :leader
         "n r i" #'my/org-roam-node-insert)
   (setq +org-roam-open-buffer-on-find-file nil)
+  (setq org-roam-capture-templates '(("d" "default" plain "%?"
+                                      :target (file+head "${slug}.org"
+                                                         "#+title: ${title}\n")
+                                      :unnarrowed t)))
 
   ;; Org-roam-UI
   (use-package! websocket
@@ -274,11 +278,7 @@
     (setq org-roam-ui-sync-theme t
           org-roam-ui-follow t
           org-roam-ui-update-on-save t
-          org-roam-ui-open-on-start t
-          org-roam-capture-templates '(("d" "default" plain "%?"
-                                        :target (file+head "${slug}.org"
-                                                           "#+title: ${title}\n")
-                                        :unnarrowed t))))
+          org-roam-ui-open-on-start t))
 
   ;; Citar
   (setq! citar-bibliography '("~/Zotero/my_library.bib"))
