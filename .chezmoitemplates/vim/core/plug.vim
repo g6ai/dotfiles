@@ -29,14 +29,13 @@ Plug 'rhysd/committia.vim'
 Plug 'dstein64/vim-startuptime'
 Plug 'Raimondi/delimitMate'
 Plug 'machakann/vim-sandwich'
+Plug 'jdhao/better-escape.vim'
 {{ if eq .rtp "~/.vim" -}}
 " Vim-specific:
 Plug 'Yggdroot/LeaderF', { 'do': ':LeaderfInstallCExtension' } | Plug 'skywind3000/Leaderf-snippet'
 Plug 'gelguy/wilder.nvim'
-Plug 'jdhao/better-escape.vim'
 {{ else if eq .rtp "~/.config/nvim" -}}
 " Neovim-specific:
-Plug 'max397574/better-escape.nvim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-lua/popup.nvim'
