@@ -25,3 +25,6 @@ nmap <leader>l/ :TexRoot<CR>
 
 command TexReset silent exe ':VimtexStop' | exe ':VimtexClean' | exe '!rm' b:vimtex.root .. '/*.bbl'
 nmap <leader>ld :TexReset<CR>
+
+" Remap <leader>lt
+nmap <leader>lt :VimtexTocToggle<CR>
