@@ -46,6 +46,7 @@ Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lualine/lualine.nvim'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'kevinhwang91/nvim-bqf'
+Plug 'kevinhwang91/nvim-fFHighlight'
 function! UpdateRemotePlugins(...)
   " Needed to refresh runtime files
   let &rtp=&rtp
