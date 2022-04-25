@@ -16,6 +16,7 @@ endfunction
 Plug 'tpope/vim-fugitive' | Plug 'rbong/vim-flog'
 Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sainnhe/gruvbox-material'
+Plug 'sainnhe/edge'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
 Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
 Plug 'lervag/vimtex'

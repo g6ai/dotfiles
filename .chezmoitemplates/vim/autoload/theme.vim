@@ -7,11 +7,11 @@ function! theme#DarkIndentGuides()
 endfunction
 
 function! theme#LightIndentGuides()
-  "highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
-  "highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
+  highlight IndentGuidesOdd  ctermbg=252 guibg=#d3d3d3
+  highlight IndentGuidesEven ctermbg=250 guibg=#bebebe
   " Below are from gruvbox palette
-  highlight IndentGuidesOdd  ctermbg=228 guibg=#f2e5bc " bg0_s
-  highlight IndentGuidesEven ctermbg=223 guibg=#ebdbb2 " bg1
+  "highlight IndentGuidesOdd  ctermbg=228 guibg=#f2e5bc " bg0_s
+  "highlight IndentGuidesEven ctermbg=223 guibg=#ebdbb2 " bg1
 endfunction
 
 function! theme#DarkColorscheme()
@@ -23,7 +23,7 @@ endfunction
 
 function! theme#LightColorscheme()
   set background=light
-  colorscheme gruvbox-material
+  colorscheme edge
   call theme#LightIndentGuides()
   "let g:airline_theme = "gruvbox"
 endfunction
