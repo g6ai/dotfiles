@@ -113,6 +113,8 @@ ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
 
 function zvm_after_init() {
   zvm_bindkey viins '^[[Z' autosuggest-accept
+  zvm_bindkey viins '^F' forward-word
+  zvm_bindkey viins '^B' backward-word
 }
 
 # ------------------
