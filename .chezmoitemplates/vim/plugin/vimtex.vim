@@ -28,6 +28,7 @@ let g:vimtex_compiler_latexmk = {
       \   '-shell-escape',
       \ ],
       \}
+let g:vimtex_syntax_packages = {'minted': {'load': 2}}
 
 "let g:airline#extensions#vimtex#main = "/"
 "if has('nvim')
