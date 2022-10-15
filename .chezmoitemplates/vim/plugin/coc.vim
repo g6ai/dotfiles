@@ -16,7 +16,7 @@ inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm() : "\<C-g>u\<C
 " kitty config window needs node path to be set
 " when invoked by cmd+comma
 {{ if eq .chezmoi.os "darwin" -}}
-  let g:coc_node_path = '/run/current-system/sw/bin/node'
+  let g:coc_node_path = '/opt/homebrew/bin/node'
 
 {{ else if eq .chezmoi.os "linux" -}}
   let g:coc_node_path = '/usr/bin/node'
