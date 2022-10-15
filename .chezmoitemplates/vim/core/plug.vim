@@ -48,6 +48,7 @@ Plug 'nvim-lualine/lualine.nvim'
 Plug 'kevinhwang91/nvim-hlslens'
 Plug 'kevinhwang91/nvim-bqf'
 Plug 'kevinhwang91/nvim-fFHighlight'
+Plug 'lewis6991/gitsigns.nvim'
 function! UpdateRemotePlugins(...)
   " Needed to refresh runtime files
   let &rtp=&rtp
