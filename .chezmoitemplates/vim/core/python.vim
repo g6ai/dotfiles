@@ -3,10 +3,10 @@
 if has('python3_dynamic')
   "set pythonhome=$HOME/.pyenv/versions/2.7.18
   "set pythondll=$HOME/.pyenv/versions/2.7.18/lib/libpython2.7.dylib
-  "set pythonthreehome=$HOME/.pyenv/versions/3.8.10
-  "set pythonthreedll=$HOME/.pyenv/versions/3.8.10/lib/libpython3.8.dylib
-  py3 1+2
-  pyx 1+2
+  set pythonthreehome=$HOME/.pyenv/versions/3.10.5
+  set pythonthreedll=$HOME/.pyenv/versions/3.10.5/lib/libpython3.10.dylib
+  "py3 1+2
+  "pyx 1+2
 endif
 {{   end -}}
 {{ else if eq .rtp "~/.config/nvim" -}}
