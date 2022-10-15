@@ -20,10 +20,10 @@ let g:tmuxline_preset = {
 
 let g:tmuxline_powerline_separators = 0
 
-augroup reset_tmuxline
-  autocmd!
-  autocmd VimLeave * !tmux if-shell "test -f ~/.config/tmux/tmuxline.snapshot" "source ~/.config/tmux/tmuxline.snapshot" Enter
-augroup END
+"augroup reset_tmuxline
+"  autocmd!
+"  autocmd VimLeave * !tmux if-shell "test -f ~/.config/tmux/tmuxline.snapshot" "source ~/.config/tmux/tmuxline.snapshot" Enter
+"augroup END
 
 "augroup update_tmuxline
 "  autocmd!
