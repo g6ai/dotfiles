@@ -1,8 +1,17 @@
 local wezterm = require 'wezterm';
+
+function scheme_for_appearance(appearance)
+  if appearance:find 'Dark' then
+    return 'GruvboxDark (Gogh)'
+  else
+    return 'PaperColorLight (Gogh)'
+  end
+end
+
 return {
   font = wezterm.font("JetBrainsMono Nerd Font"),
   font_size = 20.0,
-  color_scheme = "Gruvbox Dark",
+  color_scheme = scheme_for_appearance(wezterm.gui.get_appearance()),
   default_cursor_style = "BlinkingBar",
   cursor_blink_rate = 500,
   force_reverse_video_cursor = true,
