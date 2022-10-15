@@ -29,3 +29,6 @@ command! -nargs=0 Format :call CocAction('format')
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
+
+" Install extensions
+let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-sh', '@yaegassy/coc-pylsp', 'coc-vimtex']
