@@ -30,5 +30,6 @@ return {
   keys = {
     {key = "Enter", mods = "ALT", action = "DisableDefaultAssignment"},
     {key = "f", mods = "CTRL|SUPER", action = "ToggleFullScreen"},
+    {key = "q", mods = "CTRL", action = wezterm.action.SendString '\x11'},
   },
 }
