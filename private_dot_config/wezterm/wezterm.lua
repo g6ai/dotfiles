@@ -28,7 +28,7 @@ return {
   native_macos_fullscreen_mode = true,
   window_background_opacity = 0.9,
   keys = {
-    {key="Enter", mods="ALT", action="DisableDefaultAssignment"},
-    {key="f", mods="CTRL|SUPER", action="ToggleFullScreen"},
+    {key = "Enter", mods = "ALT", action = "DisableDefaultAssignment"},
+    {key = "f", mods = "CTRL|SUPER", action = "ToggleFullScreen"},
   },
 }
