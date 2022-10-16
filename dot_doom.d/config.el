@@ -287,6 +287,7 @@
   (setq! citar-templates
          '((main . "${author editor:36}     ${date year issued:4}     ${title:48}")
            (suffix . "          ${=key= id:24}    ${=type=:12}    ${tags keywords:*}")
+           (preview . "${author editor} (${year issued date}) ${title}, ${journal journaltitle publisher container-title collection-title}.\n")
            (note . "${=key=}\n\n${=type=}: =${title}=")))
   (setq! citar-symbols
          `((file ,(all-the-icons-faicon "file-o" :face 'all-the-icons-green :v-adjust -0.1) . " ")
