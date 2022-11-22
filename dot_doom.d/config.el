@@ -232,7 +232,7 @@
   (setq org-agenda-directory org-directory)
 
   ;; org-journal
-  (customize-set-variable 'org-journal-dir (concat org-directory "beorg/"))
+  (customize-set-variable 'org-journal-dir (concat org-directory "beorg/journal/"))
   ;;(customize-set-variable 'org-journal-file-format "%Y%m%dW%V.org")
   (customize-set-variable 'org-journal-file-format "%Y%m.org")
   (customize-set-variable 'org-extend-today-until 05)
