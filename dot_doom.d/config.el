@@ -285,7 +285,7 @@
 
   ;; Citar
   (setq! citar-bibliography '("~/Zotero/my_library.bib"))
-  (setq! citar-notes-paths '("~/org/beorg/"))
+  (setq! citar-notes-paths '("~/org/beorg/citar/"))
   (setq! citar-file-open-function 'org-open-file)
   (setq! citar-templates
          '((main . "${author editor:36}     ${date year issued:4}     ${title:48}")
