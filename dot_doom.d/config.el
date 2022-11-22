@@ -307,3 +307,10 @@
 (after! org-download
   (setq org-download-method 'directory)
   (setq org-download-link-format "#+ATTR_ORG: :width 500\n[[download:%s]]\n"))
+
+;; org-babel
+;; active Babel languages
+(org-babel-do-load-languages
+ 'org-babel-load-languages
+ '((yaml . t)
+   (emacs-lisp . nil)))
