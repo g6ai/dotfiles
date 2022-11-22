@@ -137,6 +137,9 @@
           (t
            (call-interactively func)))))
 
+;; allow hash to be entered
+(bind-keys* ("M-3" . (lambda () (interactive) (insert "#"))))
+
 ;; Org-mode
 (after! org
   ;; auto-saving
