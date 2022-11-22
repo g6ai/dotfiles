@@ -69,6 +69,7 @@
         +roam2
         +dragndrop)
        sh                ; she sells {ba,z,fi}sh shells on the C xor
+       yaml              ; JSON, but readable
 
        :email
 
