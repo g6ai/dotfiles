@@ -18,7 +18,6 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'sainnhe/gruvbox-material'
 Plug 'sainnhe/edge'
 Plug 'preservim/nerdtree', { 'on': 'NERDTreeToggle' } | Plug 'Xuyuanp/nerdtree-git-plugin', { 'on': 'NERDTreeToggle' }
-Plug 'edkolev/tmuxline.vim' " See tmuxline.vim settings section
 Plug 'lervag/vimtex'
 Plug 'godlygeek/tabular' " tabular plugin must come before vim-markdown
 Plug 'plasticboy/vim-markdown' | Plug 'JamshedVesuna/vim-markdown-preview', { 'for': 'markdown' }

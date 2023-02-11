@@ -31,6 +31,9 @@ else
 fi
 alias kk='kitty +kitten'
 alias magit='emacsclient -n -e "(magit-status)"'
+alias ta='tmux attach-session'
+alias tn='tmux new-session -s'
+alias tl='tmux list'
 
 # Clear screen
 cls () {

@@ -1,9 +1,5 @@
 #!/usr/bin/env bash
 
-tmux if-shell "[[ $(defaults read -g AppleInterfaceStyle) = Dark ]]" \
-  "source ~/.config/tmux/tmuxline_dark.snapshot" \
-  "source ~/.config/tmux/tmuxline_light.snapshot"
-
 tmux list-panes -s -F "#{session_name}:#{window_index}.#{pane_index} #{pane_current_command}" \
   | while read pane_line
     do
