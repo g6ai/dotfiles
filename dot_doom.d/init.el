@@ -36,7 +36,7 @@
        (evil +everywhere); come to the dark side, we have cookies
        fold              ; (nigh) universal code folding
        lispy             ; vim for lisp, for people who don't like vim
-       (parinfer +rust)          ; turn lisp into python, sort of
+       ;(parinfer +rust)          ; turn lisp into python, sort of
        snippets          ; my elves. They type so I don't have to
 
        :emacs
@@ -61,7 +61,7 @@
        tty               ; improve the terminal Emacs experience
 
        :lang
-       emacs-lisp        ; drown in parentheses
+       ;emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
         +pretty
