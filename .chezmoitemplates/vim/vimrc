@@ -47,9 +47,10 @@ let g:config_files = [
 {{-   end }}
       \ 'plug.vim',
       \ 'gruvbox-material.vim',
+      \ 'edge.vim',
       \ 'theme.vim',
       \ ]
-" Strict loading order: 'plug.vim' -> 'gruvbox.vim' -> 'theme.vim'
+" Strict loading order: 'plug.vim' -> 'gruvbox-material/edge.vim' -> 'theme.vim'
 
 {{ else -}}
 let g:tex_comment_nospell = 1 " For VimTeX use g:vimtex_syntax_nospell_comments
