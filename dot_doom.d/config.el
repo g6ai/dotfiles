@@ -140,6 +140,9 @@
 ;; allow hash to be entered
 (bind-keys* ("M-3" . (lambda () (interactive) (insert "#"))))
 
+;; disable confirm-kill-emacs
+(setq confirm-kill-emacs nil)
+
 ;; Org-mode
 (after! org
   ;; auto-saving
