@@ -11,3 +11,11 @@ nnoremap <leader>fh <cmd>Telescope help_tags<cr>
 "nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 au Filetype * set indentexpr=nvim_treesitter#indent()
+
+lua << END
+require('telescope').setup({
+  defaults = {
+    winblend = 20,
+  }
+})
+END
