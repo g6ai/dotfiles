@@ -316,4 +316,5 @@
 (org-babel-do-load-languages
  'org-babel-load-languages
  '((yaml . t)
-   (emacs-lisp . nil)))
+   (emacs-lisp . nil)
+   (matlab . t)))
