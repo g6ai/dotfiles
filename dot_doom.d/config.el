@@ -198,31 +198,31 @@
   (setq org-latex-create-formula-image-program 'dvisvgm)
   (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.75))
   (setq org-format-latex-header "\\documentclass{article}
-\\usepackage[usenames]{color}
-\[PACKAGES]
-\[DEFAULT-PACKAGES]
-\\pagestyle{empty}             % do not remove
-% The settings below are copied from fullpage.sty
-\\setlength{\\textwidth}{\\paperwidth}
-\\addtolength{\\textwidth}{-3cm}
-\\setlength{\\oddsidemargin}{1.5cm}
-\\addtolength{\\oddsidemargin}{-2.54cm}
-\\setlength{\\evensidemargin}{\\oddsidemargin}
-\\setlength{\\textheight}{\\paperheight}
-\\addtolength{\\textheight}{-\\headheight}
-\\addtolength{\\textheight}{-\\headsep}
-\\addtolength{\\textheight}{-\\footskip}
-\\addtolength{\\textheight}{-3cm}
-\\setlength{\\topmargin}{1.5cm}
-\\addtolength{\\topmargin}{-2.54cm}
-% My settings
-\\usepackage{siunitx}
-\\sisetup{separate-uncertainty}
-\\DeclareSIUnit\\angstrom{Å}
-\\DeclareSIUnit\\bar{bar}
-\\DeclareSIUnit\\torr{Torr}
-\\DeclareSIUnit\\cycle{cycle}
-\\usepackage[version=4]{mhchem}")
+  \\usepackage[usenames]{color}
+  \[PACKAGES]
+  \[DEFAULT-PACKAGES]
+  \\pagestyle{empty}             % do not remove
+  % The settings below are copied from fullpage.sty
+  \\setlength{\\textwidth}{\\paperwidth}
+  \\addtolength{\\textwidth}{-3cm}
+  \\setlength{\\oddsidemargin}{1.5cm}
+  \\addtolength{\\oddsidemargin}{-2.54cm}
+  \\setlength{\\evensidemargin}{\\oddsidemargin}
+  \\setlength{\\textheight}{\\paperheight}
+  \\addtolength{\\textheight}{-\\headheight}
+  \\addtolength{\\textheight}{-\\headsep}
+  \\addtolength{\\textheight}{-\\footskip}
+  \\addtolength{\\textheight}{-3cm}
+  \\setlength{\\topmargin}{1.5cm}
+  \\addtolength{\\topmargin}{-2.54cm}
+  % My settings
+  \\usepackage{siunitx}
+  \\sisetup{separate-uncertainty}
+  \\DeclareSIUnit\\angstrom{Å}
+  \\DeclareSIUnit\\bar{bar}
+  \\DeclareSIUnit\\torr{Torr}
+  \\DeclareSIUnit\\cycle{cycle}
+  \\usepackage[version=4]{mhchem}")
   (setq org-highlight-latex-and-related '(latex script entities))
 
   ;; misc
@@ -301,8 +301,8 @@
            (link ,(all-the-icons-octicon "link" :face 'all-the-icons-orange :v-adjust 0.01) . " ")))
   (setq! citar-symbol-separator "  ")
   (defun my/org-cite-insert ()
-   (interactive)
-   (my/insert-after 'org-cite-insert))
+    (interactive)
+    (my/insert-after 'org-cite-insert))
   (map! :leader
         "m @" #'my/org-cite-insert))
 
