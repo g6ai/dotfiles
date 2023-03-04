@@ -40,7 +40,6 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-lua/popup.nvim'
 Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-telescope/telescope.nvim'
 Plug 'nvim-lualine/lualine.nvim'
