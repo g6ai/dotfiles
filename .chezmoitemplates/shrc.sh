@@ -9,9 +9,9 @@ if [[ "$(uname)" == "Linux" ]]; then
   fi
 elif [[ "$(uname)" == "Darwin" ]]; then
   if ! command -v nvim &> /dev/null; then
-    export EDITOR=/usr/local/bin/vim
+    export EDITOR=/opt/homebrew/bin/vim
   else
-    export EDITOR=/run/current-system/sw/bin/nvim
+    export EDITOR=/opt/homebrew/bin/nvim
   fi
 fi
 export VISUAL="$EDITOR"
