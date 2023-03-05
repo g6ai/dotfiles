@@ -1,0 +1,18 @@
+{
+  "suggest.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "winblend": 20
+  },
+  "pylsp.builtin.installExtrasArgs": [
+    "rope",
+    "pyflakes",
+    "mccabe",
+    "pycodestyle",
+    "pydocstyle",
+    "flake8",
+    "pylint"
+  ],
+  "pylsp.builtin.enableInstallPylsIsort": true,
+  "pylsp.builtin.enableInstallPythonLspBlack": true
+}
