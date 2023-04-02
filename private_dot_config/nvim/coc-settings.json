@@ -1,4 +1,5 @@
 {
+  "semanticTokens.enable": true,
   "suggest.floatConfig": {
     "border": true,
     "rounded": true,
