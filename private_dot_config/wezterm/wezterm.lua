@@ -27,7 +27,6 @@ return {
   keys = {
     {key = "Enter", mods = "ALT", action = "DisableDefaultAssignment"},
     {key = "f", mods = "CTRL|SUPER", action = "ToggleFullScreen"},
-    {key = "q", mods = "CTRL", action = wezterm.action.SendString '\x11'},
     {key = 'n', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnCommandInNewWindow {cwd = '~'}},
     {key = 't', mods = 'CTRL|SHIFT', action = wezterm.action.SpawnCommandInNewTab {cwd = '~'}},
   },
