@@ -4,15 +4,33 @@
     "rounded": true,
     "winblend": 20
   },
-  "pylsp.builtin.installExtrasArgs": [
-    "rope",
-    "pyflakes",
-    "mccabe",
-    "pycodestyle",
-    "pydocstyle",
-    "flake8",
-    "pylint"
-  ],
-  "pylsp.builtin.enableInstallPylsIsort": true,
-  "pylsp.builtin.enableInstallPythonLspBlack": true
+  "suggest.completionItemKindLabels": {
+    "method": "  ",
+    "function": "  ",
+    "variable": "[]",
+    "field": "  ",
+    "typeParameter": "<>",
+    "constant": "  ",
+    "class": " פּ ",
+    "interface": " 蘒",
+    "struct": "  ",
+    "event": "  ",
+    "operator": "  ",
+    "module": "  ",
+    "property": "  ",
+    "enum": " 練",
+    "reference": "  ",
+    "keyword": "  ",
+    "file": "  ",
+    "folder": " ﱮ ",
+    "color": "  ",
+    "unit": " 塞 ",
+    "snippet": "  ",
+    "text": "  ",
+    "constructor": "  ",
+    "value": "  ",
+    "enumMember": "  "
+  },
+  "pylsp.commandPath": "${env:HOME}/.pyenv/versions/coc/bin/pylsp",
+  "pylsp.plugins.jedi.environment" : "${env:HOME}/.pyenv/versions/coc/bin/python"
 }
