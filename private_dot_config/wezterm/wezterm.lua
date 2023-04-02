@@ -9,7 +9,7 @@ return {
   force_reverse_video_cursor = true,
   use_fancy_tab_bar = false,
   hide_tab_bar_if_only_one_tab = true,
-  --tab_bar_at_bottom = true,
+  tab_bar_at_bottom = true,
   color_scheme = theme.scheme_for_appearance(wezterm.gui.get_appearance()),
   colors = {
     tab_bar = theme.scheme_for_tab_bar(wezterm.gui.get_appearance()),
