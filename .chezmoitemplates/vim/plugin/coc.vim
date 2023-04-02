@@ -35,5 +35,16 @@ command! -nargs=0 Format :call CocAction('format')
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gr <Plug>(coc-references)
 
+" Use K to show documentation in preview window
+nnoremap <silent> K :call ShowDocumentation()<CR>
+
+function! ShowDocumentation()
+  if CocAction('hasProvider', 'hover')
+    call CocActionAsync('doHover')
+  else
+    call feedkeys('K', 'in')
+  endif
+endfunction
+
 " Install extensions
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-sh', '@yaegassy/coc-pylsp', 'coc-vimtex']
