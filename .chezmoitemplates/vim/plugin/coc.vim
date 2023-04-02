@@ -46,5 +46,8 @@ function! ShowDocumentation()
   endif
 endfunction
 
+" Highlight the symbol and its references when holding the cursor
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
 " Install extensions
 let g:coc_global_extensions = ['coc-json', 'coc-vimlsp', 'coc-sh', '@yaegassy/coc-pylsp', 'coc-vimtex']

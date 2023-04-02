@@ -49,6 +49,9 @@ set timeoutlen=500
 set ttimeout
 set ttimeoutlen=100
 
+" 'updatetime'
+set updatetime=100
+
 " Indentation and tab
 filetype indent on
 set expandtab " Always use space instead of tab
