@@ -1,5 +1,10 @@
 {
   "semanticTokens.enable": true,
+  "hover.floatConfig": {
+    "border": true,
+    "rounded": true,
+    "winblend": 20
+  },
   "suggest.floatConfig": {
     "border": true,
     "rounded": true,
