@@ -160,3 +160,48 @@ endsnippet
 snippet "(^|\s|\(|{)tc" "critical temperature" r
 `!p snip.rv = match.group(1)`$T_{\textit{c}}$
 endsnippet
+
+###### Cover letter ######
+
+### Template
+
+snippet cl "cover letter" b
+\documentclass[
+company={$1},
+position={$2}
+]{cl}
+
+\usepackage{cl}
+
+\begin{document}
+
+\begin{letter}{
+	\textbf{${3:company full name}} \\\\
+	${4:first line} \\\\
+	${5:street name} \\\\
+	${6:city name} \\\\
+	${7:postcode}
+}
+
+%\renewcommand{\today}{}
+
+\opening{Dear Recruiting Team,}
+
+${0:main text}
+
+\closing{Yours sincerely,}
+
+\end{letter}
+
+\end{document}
+endsnippet
+
+### Macros
+
+snippet cpn "company" wA
+\company{}
+endsnippet
+
+snippet pst "position" wA
+\position{}
+endsnippet
