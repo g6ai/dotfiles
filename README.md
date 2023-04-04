@@ -65,10 +65,10 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 * Configs for [*org-journal*](https://github.com/bastibe/org-journal) and [*Org-roam*](https://github.com/org-roam/org-roam), to cooperate with [*beorg*](https://beorgapp.com/manual/).
 
 ### tmux
-* [`dot_tmux.conf`](https://github.com/g6ai/dotfiles/blob/main/dot_tmux.conf) sources [*tmuxline.vim*](https://github.com/edkolev/tmuxline.vim) configuration if exists. The configuration defines vi key bindings. Access to system clipboard is supported:
+* [`tmux.conf`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/tmux/tmux.conf) defines *tmux*'s style and key bindings, etc. Access to system clipboard is supported:
   * For *macOS*, *pbcopy* is used. *pbcopy* is installed on *macOS* by default.
   * For *Linux*, *xclip* is used. *xclip* needs to be installed. Within an *SSH* session, primary and/or clipboard content on the remote server can be sent to local machine by *X11* forwarding.
-* Helper scripts [`executable_update_display_tmuxline.sh`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/tmux/executable_update_display_tmuxline.sh) and [`executable_update_tmuxline.sh`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/tmux/executable_update_tmuxline.sh) update environment variable `$DISPLAY` and tmuxline for various scenarios.
+* Helper scripts [`executable_update_display_vim.sh`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/tmux/executable_update_display_vim.sh) and [`executable_update_vim.sh`](https://github.com/g6ai/dotfiles/blob/main/private_dot_config/tmux/executable_update_vim.sh) update environment variable `$DISPLAY` and/or *Vim/Neovim* theme.
 
 ### Git
 
