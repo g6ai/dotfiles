@@ -8,7 +8,11 @@ My dotfiles. Some of my considerations are explained in [Wiki](https://github.co
 
 [Deployment](#deploy-with-ease-and-efficiency) • [Bash](#bash) • [Zsh](#zsh) • [Vim/Neovim](#vimneovim) • [Doom Emacs](#doom-emacs) • [tmux](#tmux) • [Git](#git) • [Terminal emulators](#terminal-emulators) • [Other config](#other-config)
 
-![](https://github.com/g6ai/dotfiles/wiki/screenshots/complex.png)
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="https://github.com/g6ai/dotfiles/wiki/screenshots/dark.png">
+  <source media="(prefers-color-scheme: light)" srcset="https://github.com/g6ai/dotfiles/wiki/screenshots/light.png">
+  <img alt="" src="https://github.com/g6ai/dotfiles/wiki/screenshots/dark.png">
+</picture>
 
 More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
