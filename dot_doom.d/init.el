@@ -35,7 +35,7 @@
        :editor
        (evil +everywhere); come to the dark side, we have cookies
        fold              ; (nigh) universal code folding
-       lispy             ; vim for lisp, for people who don't like vim
+       ;lispy             ; vim for lisp, for people who don't like vim
        ;(parinfer +rust)          ; turn lisp into python, sort of
        snippets          ; my elves. They type so I don't have to
 
