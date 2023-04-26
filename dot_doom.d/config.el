@@ -143,6 +143,13 @@
 ;; disable confirm-kill-emacs
 (setq confirm-kill-emacs nil)
 
+;; change company-complete-selection mappping
+(with-eval-after-load 'evil
+  (with-eval-after-load 'company
+    (define-key company-active-map [return] nil)
+    (define-key company-active-map (kbd "RET") nil)
+    (evil-define-key nil company-active-map (kbd "C-f") #'company-complete-selection)))
+
 ;; Org-mode
 (after! org
   ;; auto-saving
@@ -157,7 +164,7 @@
                    (member to org-done-keywords))
           (save-buffer)))))
   (add-hook 'org-trigger-hook 'org-save-when-done)
-  ;; With auto-saving enabled, do not delete trailing spaces on saving.
+  ;; with auto-saving enabled, do not delete trailing spaces on saving.
   (add-hook 'org-mode-hook (lambda () (ws-butler-mode -1)))
 
   ;; M-RET
