@@ -82,7 +82,7 @@ alias cafe="caffeinate -disu &"
 alias bup="brew update && brew upgrade"
 alias bup_wez="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 alias lacie="smartctl -a disk3 | grep Temperature"
-alias yd="youtube-dl"
+alias yd="noglob ~/scripts/youtube-dl/yd"
 alias cm="chezmoi"
 
 # Add N/Vim spellfiles and snippets to .chezmoitemplates
