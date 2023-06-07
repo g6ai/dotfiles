@@ -64,14 +64,14 @@ fi
 # If $LESS is unset, Git sets it to FRX. I don't want F or X.
 export LESS='R'
 
-# less color
-export LESS_TERMCAP_mb=$'\E[01;31m'    # begin blink
-export LESS_TERMCAP_md=$'\E[01;33m'    # begin bold
-export LESS_TERMCAP_me=$'\E[0m'        # reset bold/blink
-export LESS_TERMCAP_so=$'\E[01;44;33m' # begin reverse video
-export LESS_TERMCAP_se=$'\E[0m'        # reset reverse video
-export LESS_TERMCAP_us=$'\E[01;04;32m' # begin underline
-export LESS_TERMCAP_ue=$'\E[0m'        # reset underline
+# less colour
+export LESS_TERMCAP_so=$(tput bold; tput setaf 6)  # enter standout mode
+export LESS_TERMCAP_se=$(tput rmso; tput sgr0)     # leave standout mode
+export LESS_TERMCAP_mb=$(tput blink; tput setaf 1) # enter blinking mode
+export LESS_TERMCAP_md=$(tput bold; tput setaf 3)  # enter double-bright mode
+export LESS_TERMCAP_me=$(tput sgr0)                # turn off all appearance modes
+export LESS_TERMCAP_us=$(tput sitm; tput setaf 2)  # turn on underline mode
+export LESS_TERMCAP_ue=$(tput ritm; tput sgr0)     # turn off underline mode
 # and so on
 
 # man
