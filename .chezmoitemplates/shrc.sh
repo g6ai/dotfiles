@@ -48,7 +48,7 @@ cls () {
 # Terminal color
 export CLICOLOR=1
 export COLORTERM=truecolor
-export LSCOLORS=GxFxCxDxBxegedabagaced
+#export LSCOLORS=GxFxCxDxBxegedabagaced
 if [[ "$(uname)" == "Darwin" ]]; then
   # If using native BSD utils
   #alias ls='ls -G'
@@ -56,9 +56,9 @@ if [[ "$(uname)" == "Darwin" ]]; then
   # and added
   # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
   # to ~/.bashrc_local per advice after installation
-  alias ls='ls --color'
+  alias ls='ls --color=auto'
 elif [[ "$(uname)" == "Linux" ]]; then
-  alias ls='ls --color'
+  alias ls='ls --color=auto'
 fi
 
 # If $LESS is unset, Git sets it to FRX. I don't want F or X.
