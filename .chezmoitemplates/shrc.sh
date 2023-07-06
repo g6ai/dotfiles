@@ -1,17 +1,21 @@
 if [[ "$(uname)" == "Linux" ]]; then
   if ! command -v nvim &> /dev/null; then
     export EDITOR=/usr/bin/vim
+    export MANPAGER='less -s -M +Gg'
   else
     # If Neovim is installed with package manager:
     export EDITOR=/usr/bin/nvim
     # If Neovim is installed from source:
     #export EDITOR=/usr/local/bin/nvim
+    export MANPAGER='nvim +Man!'
   fi
 elif [[ "$(uname)" == "Darwin" ]]; then
   if ! command -v nvim &> /dev/null; then
     export EDITOR=/opt/homebrew/bin/vim
+    export MANPAGER='less -s -M +Gg'
   else
     export EDITOR=/opt/homebrew/bin/nvim
+    export MANPAGER='nvim +Man!'
   fi
 fi
 export VISUAL="$EDITOR"
@@ -73,9 +77,6 @@ export LESS_TERMCAP_me=$(tput sgr0)                # turn off all appearance mod
 export LESS_TERMCAP_us=$(tput sitm; tput setaf 2)  # turn on underline mode
 export LESS_TERMCAP_ue=$(tput ritm; tput sgr0)     # turn off underline mode
 # and so on
-
-# man
-export MANPAGER='less -s -M +Gg'
 
 {{ if eq .os "darwin" -}}
 alias cafe="caffeinate -disu &"
