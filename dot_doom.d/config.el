@@ -243,25 +243,24 @@
 
   ;; org-journal
   (customize-set-variable 'org-journal-dir (concat org-directory "beorg/journal/"))
-  ;;(customize-set-variable 'org-journal-file-format "%Y%m%dW%V.org")
-  (customize-set-variable 'org-journal-file-format "%Y%m.org")
+  (customize-set-variable 'org-journal-file-format "%Y%m%dW%V.org")
+  ;;(customize-set-variable 'org-journal-file-format "%Y%m.org")
   (customize-set-variable 'org-extend-today-until 05)
-  (customize-set-variable 'org-journal-file-type 'monthly)
-  (customize-set-variable 'org-journal-date-format "%A, %d %B %Y")
+  (customize-set-variable 'org-journal-file-type 'weekly)
+  (customize-set-variable 'org-journal-date-format "%A")
   ;;(customize-set-variable 'org-journal-date-prefix "* ")
-  (customize-set-variable 'org-journal-time-format "TODO %R ")
+  (customize-set-variable 'org-journal-time-format "TODO %d %b %R ")
   ;;(customize-set-variable 'org-journal-time-prefix "** ")
-  ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-  ;;(customize-set-variable 'org-journal-file-header "#+TITLE: Monthly Journal\n#+STARTUP: folded")
-  (defun org-journal-file-header-func (time)
-    "Custom function to create journal header."
-    (concat
-     (pcase org-journal-file-type
-       (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
-       (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
-       (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
-       (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
-  (setq org-journal-file-header 'org-journal-file-header-func)
+  (customize-set-variable 'org-journal-file-header "#+TITLE: %Y W%V Journal\n#+STARTUP: folded")
+  ;;(defun org-journal-file-header-func (time)
+  ;;  "Custom function to create journal header."
+  ;;  (concat
+  ;;   (pcase org-journal-file-type
+  ;;     (`daily "#+TITLE: Daily Journal\n#+STARTUP: showeverything")
+  ;;     (`weekly "#+TITLE: Weekly Journal\n#+STARTUP: folded")
+  ;;     (`monthly "#+TITLE: Monthly Journal\n#+STARTUP: folded")
+  ;;     (`yearly "#+TITLE: Yearly Journal\n#+STARTUP: folded"))))
+  ;;(setq org-journal-file-header 'org-journal-file-header-func)
   (customize-set-variable 'org-journal-enable-agenda-integration t)
 
   ;; Org-roam
