@@ -150,6 +150,46 @@
     (define-key company-active-map (kbd "RET") nil)
     (evil-define-key nil company-active-map (kbd "C-f") #'company-complete-selection)))
 
+;; doom-dashboard
+(defun my/open-portal ()
+  (interactive)
+  (find-file (concat org-directory "beorg/portal.org")))
+(map! :leader
+      "o p" #'my/open-portal)
+(setq +doom-dashboard-menu-sections
+  '(("Open portal.org"
+     :icon (all-the-icons-octicon "telescope" :face 'doom-dashboard-menu-title)
+     :face (:inherit (doom-dashboard-menu-title bold))
+     :action my/open-portal)
+    ("Reload last session"
+     :icon (all-the-icons-octicon "history" :face 'doom-dashboard-menu-title)
+     :when (cond ((modulep! :ui workspaces)
+                  (file-exists-p (expand-file-name persp-auto-save-fname persp-save-dir)))
+                 ((require 'desktop nil t)
+                  (file-exists-p (desktop-full-file-name))))
+     :face (:inherit (doom-dashboard-menu-title bold))
+     :action doom/quickload-session)))
+(defun doom-dashboard-draw-ascii-banner-fn ()
+  (let* ((banner
+          '("        __            __"
+            ".-----.|  |--..---.-.|__|"
+            "|  _  ||  _  ||  _  ||  |"
+            "|___  ||_____||___._||__|"
+            "|_____|"
+            ""
+            "   D O O M   E M A C S"))
+         (longest-line (apply #'max (mapcar #'length banner))))
+    (put-text-property
+     (point)
+     (dolist (line banner (point))
+       (insert (+doom-dashboard--center
+                +doom-dashboard--width
+                (concat
+                 line (make-string (max 0 (- longest-line (length line)))
+                                   32)))
+               "\n"))
+     'face 'doom-dashboard-banner)))
+
 ;; Org-mode
 (after! org
   ;; auto-saving
