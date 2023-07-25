@@ -8,7 +8,7 @@ zmodule environment
 # Provides handy git aliases and functions.
 #zmodule git
 # Applies correct bindkeys for input events.
-#zmodule input
+zmodule input
 # Sets a custom terminal title.
 zmodule termtitle
 # Utility aliases and functions. Adds colour to ls, grep and less.
@@ -39,5 +39,4 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 
 zmodule romkatv/powerlevel10k --use degit
-zmodule jeffreytse/zsh-vi-mode
 # }}} End configuration added by Zim install

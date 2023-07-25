@@ -19,7 +19,23 @@ setopt HIST_IGNORE_ALL_DUPS
 #
 
 # Set editor default keymap to emacs (`-e`) or vi (`-v`)
-#bindkey -e
+bindkey -v
+bindkey -v '^?' backward-delete-char
+
+BLOCK='\e[1 q'
+BEAM='\e[5 q'
+
+function zle-line-init zle-keymap-select {
+  if [[ $KEYMAP == vicmd ]] || [[ $1 = 'block' ]]; then
+    echo -ne $BLOCK
+  elif [[ $KEYMAP == main ]] || [[ $KEYMAP == viins ]] ||
+       [[ $KEYMAP = '' ]] || [[ $1 = 'beam' ]]; then
+    echo -ne $BEAM
+  fi
+}
+
+zle -N zle-line-init
+zle -N zle-keymap-select
 
 # Prompt for spelling correction of commands.
 #setopt CORRECT
@@ -84,7 +100,7 @@ KEYTIMEOUT=1
 
 # Customize the style that the suggestions are shown with.
 # See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
 #
 # zsh-syntax-highlighting
@@ -102,20 +118,6 @@ ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
 # ------
 # Custom
 # ------
-
-#
-# zsh-vi-mode
-#
-
-ZVM_KEYTIMEOUT=0.05
-ZVM_INSERT_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BEAM
-ZVM_NORMAL_MODE_CURSOR=$ZVM_CURSOR_BLINKING_BLOCK
-
-function zvm_after_init() {
-  zvm_bindkey viins '^[[Z' autosuggest-accept
-  zvm_bindkey viins '^F' forward-word
-  zvm_bindkey viins '^B' backward-word
-}
 
 # ------------------
 # Initialize modules
@@ -159,5 +161,13 @@ bindkey '^P' history-substring-search-up
 bindkey '^N' history-substring-search-down
 bindkey -M vicmd 'k' history-substring-search-up
 bindkey -M vicmd 'j' history-substring-search-down
+
+#
+# zsh-autosuggestions
+#
+
+bindkey '^[[Z' autosuggest-accept
+bindkey '^F' forward-word
+bindkey '^B' backward-word
 # }}} End configuration added by Zim install
 
