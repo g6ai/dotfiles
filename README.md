@@ -43,12 +43,12 @@ More screenshots [here](https://github.com/g6ai/dotfiles/wiki/Screenshots).
 
     Such snippets are extensively used in these dotfiles to manage config files of different environments in one place ([`.chezmoitemplates`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates)), keeping the resource-demanding logical operations at the **deployment step** rather than the **runtime**.
 
-### Bash
-* [`shrc.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/shrc.sh) template configures terminal color for *Linux* and *macOS* respectively. It also configures highlighting of *less* pager. It is then sourced by [`bashrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/bashrc) template.
-* [`run_append_motd`](https://github.com/g6ai/dotfiles/blob/main/run_append_motd) is a Bash script to personalise motd, which is run by *chezmoi*.
-
-### Zsh
-* [`dot_zshrc.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_zshrc.tmpl) template contains common settings from Bash, while utilising [*Zim*](https://zimfw.sh/) for fancy features.
+### Shell
+* [`rc.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/rc.sh) template is the [runcom](https://en.wikipedia.org/wiki/RUNCOM) (run commands) file for both *Linux* and *macOS*.
+* [`bashrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/bashrc) template contains the [`rc.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/rc.sh) template plus some Bash-specific configuration.
+* [`zshrc`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/zshrc) template contains the [`rc.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/rc.sh) template, utilizes [*Zim*](https://zimfw.sh/) for fancy features, and also contains other Zsh-specific configuration.
+* [`profile.sh`](https://github.com/g6ai/dotfiles/blob/main/.chezmoitemplates/profile.sh) template is used in both [`dot_bash_profile.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_bash_profile.tmpl) and [`dot_zprofile.tmpl`](https://github.com/g6ai/dotfiles/blob/main/dot_zprofile.tmpl).
+* [`run_append_motd`](https://github.com/g6ai/dotfiles/blob/main/run_append_motd) is a Bash script to personalize motd, which is run by *chezmoi*.
 
 ### Vim/Neovim
 * The configs are located in the [`.chezmoitemplates/vim`](https://github.com/g6ai/dotfiles/tree/main/.chezmoitemplates/vim) directory. They are then deployed to *Vim* and *Neovim*'s runtime path.

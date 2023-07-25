@@ -1,6 +1,7 @@
 {{ if eq .os "darwin" -}}
 eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$(pyenv init --path)"
+
 {{ else if eq .os "linux" -}}
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
@@ -22,4 +23,5 @@ alias vcgencmd='/opt/vc/bin/vcgencmd'
 alias lc='leetcode'
 
 export PATH="$PATH:~/scripts/commands"
+
 {{ end -}}

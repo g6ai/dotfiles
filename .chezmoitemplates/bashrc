@@ -1,4 +1,6 @@
-{{ template "shrc.sh" dict "os" .os -}}
+{{ template "rc.sh" dict "os" .os -}}
+
+# Bash-specific configuration
 
 unset PROMPT_COMMAND
 # Below is a bad example of PS1:
