@@ -81,7 +81,6 @@ export LESS_TERMCAP_ue=$(tput ritm; tput sgr0)     # turn off underline mode
 {{ if eq .os "darwin" -}}
 alias cafe="caffeinate -disu &"
 alias bup="brew update && brew upgrade"
-alias bup_wez="brew upgrade --cask wezterm-nightly --no-quarantine --greedy-latest"
 alias lacie="smartctl -a disk3 | grep Temperature"
 alias yd="noglob ~/scripts/youtube-dl/yd"
 alias cm="chezmoi"
