@@ -12,17 +12,17 @@ zmodule input
 # Sets a custom terminal title.
 zmodule termtitle
 # Utility aliases and functions. Adds colour to ls, grep and less.
-zmodule utility
+#zmodule utility
 
 #
 # Prompt
 #
 # Exposes to prompts how long the last command took to execute, used by asciiship.
-zmodule duration-info
+#zmodule duration-info
 # Exposes git repository status information to prompts, used by asciiship.
-zmodule git-info
+#zmodule git-info
 # A heavily reduced, ASCII-only version of the Spaceship and Starship prompts.
-zmodule asciiship
+#zmodule asciiship
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
