@@ -49,21 +49,23 @@ cls () {
   fi
 }
 
-# Terminal color
+# Terminal colour
 export CLICOLOR=1
 export COLORTERM=truecolor
 #export LSCOLORS=GxFxCxDxBxegedabagaced
-if [[ "$(uname)" == "Darwin" ]]; then
-  # If using native BSD utils
-  #alias ls='ls -G'
-  # If installed "coreutils" with homebrew,
-  # and added
-  # export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  # to ~/.bashrc_local per advice after installation
-  alias ls='ls --color=auto'
-elif [[ "$(uname)" == "Linux" ]]; then
-  alias ls='ls --color=auto'
-fi
+{{ if eq .os "darwin" -}}
+# If using native BSD utils
+#alias ls='ls -G'
+# If installed "coreutils" with homebrew,
+# and added
+# export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# to ~/.bashrc_local per advice after installation
+alias ls='ls --color=auto'
+
+{{ else if eq .os "linux" -}}
+alias ls='ls --color=auto'
+
+{{ end -}}
 
 # If $LESS is unset, Git sets it to FRX. I don't want F or X.
 export LESS='R'
