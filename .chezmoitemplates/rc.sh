@@ -1,23 +1,23 @@
-if [[ "$(uname)" == "Linux" ]]; then
-  if ! command -v nvim &> /dev/null; then
-    export EDITOR=/usr/bin/vim
-    export MANPAGER='less -s -M +Gg'
-  else
-    # If Neovim is installed with package manager:
-    export EDITOR=/usr/bin/nvim
-    # If Neovim is installed from source:
-    #export EDITOR=/usr/local/bin/nvim
-    export MANPAGER='nvim +Man!'
-  fi
-elif [[ "$(uname)" == "Darwin" ]]; then
-  if ! command -v nvim &> /dev/null; then
-    export EDITOR=/opt/homebrew/bin/vim
-    export MANPAGER='less -s -M +Gg'
-  else
-    export EDITOR=/opt/homebrew/bin/nvim
-    export MANPAGER='nvim +Man!'
-  fi
+{{ if eq .os "linux" -}}
+if ! command -v nvim &> /dev/null; then
+  export EDITOR=/usr/bin/vim
+  export MANPAGER='less -s -M +Gg'
+else
+  # If Neovim is installed with package manager:
+  export EDITOR=/usr/bin/nvim
+  # If Neovim is installed from source:
+  #export EDITOR=/usr/local/bin/nvim
+  export MANPAGER='nvim +Man!'
 fi
+{{ else if eq .os "darwin" -}}
+if ! command -v nvim &> /dev/null; then
+  export EDITOR=/opt/homebrew/bin/vim
+  export MANPAGER='less -s -M +Gg'
+else
+  export EDITOR=/opt/homebrew/bin/nvim
+  export MANPAGER='nvim +Man!'
+fi
+{{ end -}}
 export VISUAL="$EDITOR"
 
 alias sudo='sudo '
