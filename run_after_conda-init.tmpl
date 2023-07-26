@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+{{ if eq .chezmoi.os "linux" -}}
+~/miniforge3/bin/conda init
+~/miniforge3/bin/conda init zsh
+
+# https://stackoverflow.com/a/7359879/10039621
+sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' ~/.bashrc
+sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' ~/.zshrc
+{{ end -}}

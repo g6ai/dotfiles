@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+{{ if eq .chezmoi.os "linux" -}}
+# This is slow
+#~/miniforge3/bin/conda init --reverse
+#~/miniforge3/bin/conda init --reverse zsh
+
+# This is faster
+awk -v flag=1 '{if ($0 ~ />>> conda initialize >>>/) flag = 0; if (flag) print $0}' ~/.bashrc > ~/bashrc
+awk -v flag=1 '{if ($0 ~ />>> conda initialize >>>/) flag = 0; if (flag) print $0}' ~/.zshrc > ~/zshrc
+
+mv ~/bashrc ~/.bashrc
+mv ~/zshrc ~/.zshrc
+
+# https://stackoverflow.com/a/7359879/10039621
+sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' ~/.bashrc
+sed -i -e :a -e '/^\n*$/{$d;N;};/\n$/ba' ~/.zshrc
+{{ end -}}
