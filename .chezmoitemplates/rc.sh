@@ -1,3 +1,4 @@
+# Start of rc.sh
 {{ if eq .os "linux" -}}
 if ! command -v nvim &> /dev/null; then
   export EDITOR=/usr/bin/vim
@@ -122,8 +123,8 @@ export PATH="$HOME/.emacs.d/bin:$PATH"
 export PATH="/Library/TeX/Distributions/Programs/texbin:$PATH"
 
 export HOMEBREW_BUNDLE_FILE="$HOME/.config/Brewfile"
-
 {{ else if eq .os "linux" -}}
 alias cm="$HOME/bin/chezmoi"
-
 {{ end -}}
+# End of rc.sh
+

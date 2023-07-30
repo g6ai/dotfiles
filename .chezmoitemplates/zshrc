@@ -145,8 +145,6 @@ bindkey '^B' backward-word
 
 {{ template "rc.sh" dict "os" .os -}}
 
-# Zsh-specific configuration
-
 KEYTIMEOUT=1
 
 bindkey -v '^?' backward-delete-char

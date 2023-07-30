@@ -3,6 +3,7 @@
 {{ if eq .chezmoi.os "darwin" }}
 bind -f $INPUTRC
 
+{{ else }}
 {{ end -}}
 
 {{ template "profile.sh" dict "os" .chezmoi.os -}}
