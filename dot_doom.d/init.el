@@ -14,6 +14,13 @@
 ;;      Alternatively, press 'gd' (or 'C-c c d') on a module to browse its
 ;;      directory (for easy access to its source code).
 
+;; frame
+;;(add-to-list 'default-frame-alist '(undecorated-round . t))
+(add-to-list 'default-frame-alist '(left . 0.5))
+(add-to-list 'default-frame-alist '(top . 0.5))
+(add-to-list 'default-frame-alist '(width . 120))
+(add-to-list 'default-frame-alist '(height . 40))
+
 (doom! :input
 
        :completion

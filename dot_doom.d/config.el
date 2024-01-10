@@ -59,6 +59,7 @@
     ('dark (load-theme 'doom-gruvbox t))))
 (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
 
+(setq ns-use-native-fullscreen t)
 (pixel-scroll-precision-mode t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
@@ -102,10 +103,6 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 
-;; frame
-;;(add-to-list 'initial-frame-alist '(fullscreen . fullboth))
-(setq ns-use-native-fullscreen t)
-(setq initial-frame-alist '((left . 0.5) (top . 0.5) (width . 96) (height . 36)))
 ;; Default fringe-mode value in Doom is 4, too small for fringe indicators.
 (after! git-gutter-fringe
   (fringe-mode 8))
