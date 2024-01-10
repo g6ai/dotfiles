@@ -71,10 +71,13 @@
        ;emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        (org              ; organize your plain life in plain text
+        +dragndrop
+        +gnuplot
+        +hugo
+        +jupyter
         +pretty
-        +journal
-        +roam2
-        +dragndrop)
+        +roam2)
+       (python +pyenv)
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        yaml              ; JSON, but readable
 
