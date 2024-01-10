@@ -59,6 +59,7 @@
     ('dark (load-theme 'doom-gruvbox t))))
 (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
 
+(pixel-scroll-precision-mode t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
