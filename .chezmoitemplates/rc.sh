@@ -118,7 +118,7 @@ if [ -n "$BASH_VERSION" ]; then
   eval "$(thefuck --alias)"
 fi
 
-export PATH="$HOME/.emacs.d/bin:$PATH"
+export PATH="$HOME/.config/emacs/bin:$PATH"
 
 export PATH="/Library/TeX/Distributions/Programs/texbin:$PATH"
 
