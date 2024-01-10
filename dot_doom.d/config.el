@@ -182,11 +182,11 @@
       "o p" #'my/open-portal)
 (setq +doom-dashboard-menu-sections
   '(("Open portal.org"
-     :icon (all-the-icons-octicon "telescope" :face 'doom-dashboard-menu-title)
+     :icon (nerd-icons-octicon "nf-oct-telescope" :face 'doom-dashboard-menu-title)
      :face (:inherit (doom-dashboard-menu-title bold))
      :action my/open-portal)
     ("Reload last session"
-     :icon (all-the-icons-octicon "history" :face 'doom-dashboard-menu-title)
+     :icon (nerd-icons-octicon "nf-oct-history" :face 'doom-dashboard-menu-title)
      :when (cond ((modulep! :ui workspaces)
                   (file-exists-p (expand-file-name persp-auto-save-fname persp-save-dir)))
                  ((require 'desktop nil t)
@@ -366,9 +366,9 @@
            (preview . "${author editor} (${year issued date}) ${title}, ${journal journaltitle publisher container-title collection-title}.\n")
            (note . "${=key=}\n\n${=type=}: =${title}=")))
   (setq! citar-symbols
-         `((file ,(all-the-icons-faicon "file-o" :face 'all-the-icons-green :v-adjust -0.1) . " ")
-           (note ,(all-the-icons-material "speaker_notes" :face 'all-the-icons-blue :v-adjust -0.3) . " ")
-           (link ,(all-the-icons-octicon "link" :face 'all-the-icons-orange :v-adjust 0.01) . " ")))
+         `((file ,(nerd-icons-faicon "nf-fa-file_o" :face 'nerd-icons-green :v-adjust -0.1) . " ")
+           (note ,(nerd-icons-mdicon "nf-md-note_edit" :face 'nerd-icons-blue :v-adjust -0.3) . " ")
+           (link ,(nerd-icons-octicon "nf-oct-link" :face 'nerd-icons-orange :v-adjust 0.01) . " ")))
   (setq! citar-symbol-separator "  ")
   (defun my/org-cite-insert ()
     (interactive)
