@@ -309,8 +309,7 @@
         "m l l" #'my/org-insert-link)
 
   ;; agenda
-  (setq org-agenda-directory org-directory)
-
+  (setq! org-agenda-files '("~/org/beorg" "~/org/beorg/daily"))
 
   ;; Org-roam
   (setq org-roam-directory (concat org-directory "beorg/"))
