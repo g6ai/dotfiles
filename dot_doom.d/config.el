@@ -302,6 +302,11 @@
         "b g" #'org-mark-ring-goto)
   (map! :leader
         "\\" #'org-toggle-pretty-entities)
+  (defun my/org-insert-link ()
+    (interactive)
+    (my/insert-after 'org-insert-link))
+  (map! :leader
+        "m l l" #'my/org-insert-link)
 
   ;; agenda
   (setq org-agenda-directory org-directory)
