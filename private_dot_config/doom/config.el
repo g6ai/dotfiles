@@ -35,6 +35,8 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
+;;(setq doom-theme 'doom-one)
+
 ;; Emacs Mac from Homebrew
 ;;(setq doom-theme 'doom-one-light)
 ;;(defun mac-apply-system-appearance ()
@@ -50,6 +52,7 @@
 ;;           (custom-set-faces '(mode-line ((t (:background "#282828")))))))))
 ;;(add-hook 'after-init-hook 'mac-apply-system-appearance)
 ;;(add-hook 'mac-effective-appearance-change-hook 'mac-apply-system-appearance)
+
 ;; Emacs Plus from Homebrew
 (defun my/apply-theme (appearance)
   "Load theme, taking current system APPEARANCE into consideration."
@@ -294,19 +297,16 @@
   \\usepackage[version=4]{mhchem}")
   (setq org-highlight-latex-and-related '(latex script entities))
 
-  ;; misc
-  (map! :leader
-        "b g" #'org-mark-ring-goto)
-  (map! :leader
-        "\\" #'org-toggle-pretty-entities)
-  (defun my/org-insert-link ()
-    (interactive)
-    (my/insert-after 'org-insert-link))
-  (map! :leader
-        "m l l" #'my/org-insert-link)
-
   ;; agenda
   (setq! org-agenda-files '("~/org/beorg" "~/org/beorg/daily"))
+
+  ;; org-babel
+  ;; active Babel languages
+  (org-babel-do-load-languages
+   'org-babel-load-languages
+   '((yaml . t)
+     (emacs-lisp . nil)
+     (matlab . t)))
 
   ;; Org-roam
   (setq org-roam-directory (concat org-directory "beorg/"))
@@ -361,17 +361,19 @@
     (interactive)
     (my/insert-after 'org-cite-insert))
   (map! :leader
-        "m @" #'my/org-cite-insert))
+        "m @" #'my/org-cite-insert)
 
-;; org-download
-(after! org-download
+  ;; org-download
   (setq org-download-method 'directory)
-  (setq org-download-link-format "#+ATTR_ORG: :width 500\n[[download:%s]]\n"))
+  (setq org-download-link-format "#+ATTR_ORG: :width 500\n[[download:%s]]\n")
 
-;; org-babel
-;; active Babel languages
-(org-babel-do-load-languages
- 'org-babel-load-languages
- '((yaml . t)
-   (emacs-lisp . nil)
-   (matlab . t)))
+  ;; misc
+  (map! :leader
+        "b g" #'org-mark-ring-goto)
+  (map! :leader
+        "\\" #'org-toggle-pretty-entities)
+  (defun my/org-insert-link ()
+    (interactive)
+    (my/insert-after 'org-insert-link))
+  (map! :leader
+        "m l l" #'my/org-insert-link))
