@@ -1,4 +1,5 @@
 README.md
+LICENSE
 
 {{ if ne .chezmoi.os "darwin" }}
 .config/kitty/kitty.conf
