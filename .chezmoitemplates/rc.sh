@@ -23,7 +23,7 @@ export VISUAL="$EDITOR"
 
 alias sudo='sudo '
 alias la='ls -A'
-alias ll='ls -ltAh'
+alias ll='ls -ltAhr'
 alias pd='pushd'
 alias pdw='pushd .'
 alias po='popd'
