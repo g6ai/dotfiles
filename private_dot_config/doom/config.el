@@ -215,6 +215,17 @@
                "\n"))
      'face 'doom-dashboard-banner)))
 
+;; which-key C-h
+(setq which-key-use-C-h-commands t
+      prefix-help-command #'which-key-C-h-dispatch)
+(defadvice! fix-which-key-dispatcher-a (fn &rest args)
+  :around #'which-key-C-h-dispatch
+  (let ((keys (this-command-keys-vector)))
+    (if (equal (elt keys (1- (length keys))) ?\?)
+        (let ((keys (which-key--this-command-keys)))
+          (embark-bindings (seq-take keys (1- (length keys)))))
+      (apply fn args))))
+
 ;; Org-mode
 (after! org
   ;; auto-saving
