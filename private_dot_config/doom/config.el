@@ -64,7 +64,7 @@
 (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
 
 (setq ns-use-native-fullscreen t)
-(pixel-scroll-precision-mode t)
+;;(pixel-scroll-precision-mode t)
 
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
