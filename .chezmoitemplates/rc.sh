@@ -89,6 +89,9 @@ alias bup="brew update && brew upgrade"
 alias lacie="smartctl -a disk3 | grep Temperature"
 alias yd="noglob ~/scripts/youtube-dl/yd"
 alias cm="chezmoi"
+alias mp4muxer="~/gh/dlb_mp4base/bin/mp4muxer_mac"
+alias mp4demuxer="~/gh/dlb_mp4demux/bin/mp4demuxer_mac"
+alias rime-install="plum_dir="$HOME/.config/plum" /Library/Input\ Methods/Squirrel.app/Contents/MacOS/rime-install"
 
 # Add N/Vim spellfiles and snippets to .chezmoitemplates
 cm_add_vim () {
