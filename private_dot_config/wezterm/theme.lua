@@ -21,8 +21,8 @@ wezterm.on(
       overrides.window_background_opacity = 1
       overrides.text_background_opacity = 1
     else
-      overrides.window_background_opacity = 0.6
-      overrides.text_background_opacity = 0.4
+      overrides.window_background_opacity = 0.8
+      overrides.text_background_opacity = 0.6
     end
 
     window:set_config_overrides(overrides)
