@@ -113,6 +113,7 @@ eval "$(pyenv virtualenv-init -)"
 export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
 
 export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnuman:$MANPATH"
 
 if [ -n "$BASH_VERSION" ]; then
   eval "$(thefuck --alias)"
