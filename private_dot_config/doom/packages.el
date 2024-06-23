@@ -65,3 +65,5 @@
 ;; Gruvbox
 (package! gruvbox-theme)
 
+;; ox-chameleon
+(package! ox-chameleon :recipe (:host github :repo "tecosaur/ox-chameleon"))

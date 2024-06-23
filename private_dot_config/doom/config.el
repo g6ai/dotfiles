@@ -231,6 +231,9 @@
 (unless (file-exists-p ispell-personal-dictionary)
   (write-region "" nil ispell-personal-dictionary nil 0))
 
+(setq TeX-engine 'xetex)
+(setq +latex-viewers '(pdf-tools))
+
 ;; Org-mode
 (after! org
   ;; auto-saving
@@ -283,35 +286,47 @@
   (add-to-list 'org-modules 'org-habit)
 
   ;; LaTeX
-  (setq org-latex-create-formula-image-program 'dvisvgm)
-  (setq org-format-latex-options (plist-put org-format-latex-options :scale 1.75))
-  (setq org-format-latex-header "\\documentclass{article}
-  \\usepackage[usenames]{color}
-  \[PACKAGES]
-  \[DEFAULT-PACKAGES]
-  \\pagestyle{empty}             % do not remove
-  % The settings below are copied from fullpage.sty
-  \\setlength{\\textwidth}{\\paperwidth}
-  \\addtolength{\\textwidth}{-3cm}
-  \\setlength{\\oddsidemargin}{1.5cm}
-  \\addtolength{\\oddsidemargin}{-2.54cm}
-  \\setlength{\\evensidemargin}{\\oddsidemargin}
-  \\setlength{\\textheight}{\\paperheight}
-  \\addtolength{\\textheight}{-\\headheight}
-  \\addtolength{\\textheight}{-\\headsep}
-  \\addtolength{\\textheight}{-\\footskip}
-  \\addtolength{\\textheight}{-3cm}
-  \\setlength{\\topmargin}{1.5cm}
-  \\addtolength{\\topmargin}{-2.54cm}
-  % My settings
-  \\usepackage{siunitx}
-  \\sisetup{separate-uncertainty}
-  \\DeclareSIUnit\\angstrom{Å}
-  \\DeclareSIUnit\\bar{bar}
-  \\DeclareSIUnit\\torr{Torr}
-  \\DeclareSIUnit\\cycle{cycle}
-  \\usepackage[version=4]{mhchem}")
-  (setq org-highlight-latex-and-related '(latex script entities))
+  ;;(setq org-preview-latex-default-process 'dvisvgm)
+  ;;(setq org-format-latex-options (plist-put org-format-latex-options :scale 1.75))
+  ;;(setq org-format-latex-header "\\documentclass{article}
+  ;;\\usepackage[usenames]{color}
+  ;;\[PACKAGES]
+  ;;\[DEFAULT-PACKAGES]
+  ;;\\pagestyle{empty}             % do not remove
+  ;;% The settings below are copied from fullpage.sty
+  ;;\\setlength{\\textwidth}{\\paperwidth}
+  ;;\\addtolength{\\textwidth}{-3cm}
+  ;;\\setlength{\\oddsidemargin}{1.5cm}
+  ;;\\addtolength{\\oddsidemargin}{-2.54cm}
+  ;;\\setlength{\\evensidemargin}{\\oddsidemargin}
+  ;;\\setlength{\\textheight}{\\paperheight}
+  ;;\\addtolength{\\textheight}{-\\headheight}
+  ;;\\addtolength{\\textheight}{-\\headsep}
+  ;;\\addtolength{\\textheight}{-\\footskip}
+  ;;\\addtolength{\\textheight}{-3cm}
+  ;;\\setlength{\\topmargin}{1.5cm}
+  ;;\\addtolength{\\topmargin}{-2.54cm}
+  ;;% My settings
+  ;;\\usepackage{siunitx}
+  ;;\\sisetup{separate-uncertainty}
+  ;;\\DeclareSIUnit\\angstrom{Å}
+  ;;\\DeclareSIUnit\\bar{bar}
+  ;;\\DeclareSIUnit\\torr{Torr}
+  ;;\\DeclareSIUnit\\cycle{cycle}
+  ;;\\usepackage[version=4]{mhchem}")
+  ;;(setq org-highlight-latex-and-related '(latex script entities))
+
+  ;;;; ox-chameleon
+  ;;(use-package! ox-chameleon :after ox)
+  ;;(after! ox-latex
+  ;;  (add-to-list 'org-latex-classes
+  ;;               '("chameleon" "\\documentclass[presentation]{beamer}"
+  ;;                 ("\\section{%s}" . "\\section*{%s}")
+  ;;                 ("\\subsection{%s}" . "\\subsection*{%s}")
+  ;;                 ("\\subsubsection{%s}" . "\\subsubsection*{%s}")
+  ;;                 ("\\paragraph{%s}" . "\\paragraph*{%s}")
+  ;;                 ("\\subparagraph{%s}" . "\\subparagraph*{%s}")))
+  ;;  (setq org-latex-default-class "chameleon"))
 
   ;; agenda
   (setq! org-agenda-files '("~/org/roam" "~/org/roam/daily"))

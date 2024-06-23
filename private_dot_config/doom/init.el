@@ -65,6 +65,7 @@
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
        magit             ; a git porcelain for Emacs
+       pdf               ; pdf enhancements
 
        :os
        (:if IS-MAC macos)  ; improve compatibility with macOS
@@ -73,11 +74,16 @@
        :lang
        ;emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
+       (latex            ; writing papers in Emacs has never been so fun
+        +cdlatex
+        +fold
+        +latexmk)
        (org              ; organize your plain life in plain text
         +dragndrop
         +gnuplot
         +hugo
         +jupyter
+        +present
         +pretty
         +roam2)
        (python +pyenv)
