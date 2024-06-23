@@ -21,6 +21,7 @@
 (add-to-list 'default-frame-alist '(width . 120))
 (add-to-list 'default-frame-alist '(height . 40))
 
+;; enabled Doom modules
 (doom! :input
 
        :completion
@@ -34,7 +35,7 @@
        hl-todo           ; highlight TODO/FIXME/NOTE/DEPRECATED/HACK/REVIEW
        modeline          ; snazzy, Atom-inspired modeline, plus API
        ophints           ; highlight the region an operation acts on
-       (popup +defaults)   ; tame sudden yet inevitable temporary windows
+       (popup +defaults) ; tame sudden yet inevitable temporary windows
        vc-gutter         ; vcs diff in the fringe
        vi-tilde-fringe   ; fringe tildes to mark beyond EOB
        workspaces        ; tab emulation, persistence & separate workspaces
@@ -42,8 +43,6 @@
        :editor
        (evil +everywhere); come to the dark side, we have cookies
        fold              ; (nigh) universal code folding
-       ;lispy             ; vim for lisp, for people who don't like vim
-       ;(parinfer +rust)          ; turn lisp into python, sort of
        snippets          ; my elves. They type so I don't have to
 
        :emacs
@@ -55,21 +54,21 @@
        :term
 
        :checkers
-       syntax              ; tasing you for every semicolon you forget
+       syntax            ; tasing you for every semicolon you forget
        (spell            ; tasing you for misspelling mispelling
         +flyspell
         +hunspell)
 
        :tools
        biblio            ; Writes a PhD for you (citation needed)
-       (eval +overlay)     ; run code, run (also, repls)
-       lookup              ; navigate your code and its documentation
        direnv
+       (eval +overlay)   ; run code, run (also, repls)
+       lookup            ; navigate your code and its documentation
        magit             ; a git porcelain for Emacs
        pdf               ; pdf enhancements
 
        :os
-       (:if IS-MAC macos)  ; improve compatibility with macOS
+       (:if IS-MAC macos); improve compatibility with macOS
        tty               ; improve the terminal Emacs experience
 
        :lang
