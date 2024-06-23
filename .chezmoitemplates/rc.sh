@@ -12,10 +12,10 @@ else
 fi
 {{ else if eq .os "darwin" -}}
 if ! command -v nvim &> /dev/null; then
-  export EDITOR=/opt/homebrew/bin/vim
+  export EDITOR=$HOMEBREW_PREFIX/bin/vim
   export MANPAGER='less -s -M +Gg'
 else
-  export EDITOR=/opt/homebrew/bin/nvim
+  export EDITOR=$HOMEBREW_PREFIX/bin/nvim
   export MANPAGER='nvim +Man!'
 fi
 {{ end -}}
@@ -59,7 +59,7 @@ export COLORTERM=truecolor
 #alias ls='ls -G'
 # If installed "coreutils" with homebrew,
 # and added
-# export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+# export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 # to ~/.bashrc_local per advice after installation
 alias ls='ls --color=auto'
 
@@ -100,9 +100,9 @@ cm_add_nvim () {
   cp ~/.config/nvim/UltiSnips/tex.snippets ~/.local/share/chezmoi/.chezmoitemplates/vim/UltiSnips
 }
 
-export PATH="/usr/local/sbin:$PATH"
+#export PATH="$HOMEBREW_PREFIX/sbin:$PATH"
 
-export PATH="/usr/local/opt/jpeg-turbo/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/jpeg-turbo/bin:$PATH"
 
 eval "$(pyenv init - --no-rehash)"
 export PYENV_VIRTUALENV_DISABLE_PROMPT=1
@@ -110,9 +110,9 @@ export PYENV_HOOK_PATH="$HOME/.config/pyenv.d"
 
 eval "$(pyenv virtualenv-init -)"
 
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/openjdk/bin:$PATH"
 
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin:$PATH"
 
 if [ -n "$BASH_VERSION" ]; then
   eval "$(thefuck --alias)"
