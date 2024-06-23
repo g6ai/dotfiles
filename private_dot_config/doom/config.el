@@ -436,6 +436,17 @@
     (face-remap-add-relative 'stripe-highlight 'my/stripe-highlight))
   (advice-add 'turn-on-stripe-table-mode :after #'my/stripe-highlight-face-remap)
 
+  ;; limit the column width in a column view dynamic block
+  ;; https://emacs.stackexchange.com/a/73450/34355
+  (advice-add 'org-dblock-write:columnview :around
+              (defun org-dblock-write:columnview--around
+                  (orig-fun &rest orig-args)
+                (pcase-let*
+                    ((`(,params)
+                      orig-args))
+                  (apply orig-fun orig-args)
+                  (org-table-shrink))))
+
   ;; misc
   (map! :leader
         "b g" #'org-mark-ring-goto)
