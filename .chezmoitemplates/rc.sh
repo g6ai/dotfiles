@@ -81,6 +81,8 @@ export LESS_TERMCAP_us=$(tput sitm; tput setaf 2)  # turn on underline mode
 export LESS_TERMCAP_ue=$(tput ritm; tput sgr0)     # turn off underline mode
 # and so on
 
+export UNISON="$HOME/.config/unison"
+
 {{ if eq .os "darwin" -}}
 alias cafe="caffeinate -disu &"
 alias bup="brew update && brew upgrade"
