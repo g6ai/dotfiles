@@ -226,6 +226,11 @@
           (embark-bindings (seq-take keys (1- (length keys)))))
       (apply fn args))))
 
+(setenv "LANG" "en_GB_oxendict.UTF-8")
+(setq ispell-personal-dictionary "~/.config/hunspell_personal")
+(unless (file-exists-p ispell-personal-dictionary)
+  (write-region "" nil ispell-personal-dictionary nil 0))
+
 ;; Org-mode
 (after! org
   ;; auto-saving
