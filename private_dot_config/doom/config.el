@@ -335,10 +335,32 @@
   ;; active Babel languages
   (org-babel-do-load-languages
    'org-babel-load-languages
-   '((yaml . t)
-     (emacs-lisp . nil)
-     (matlab . t)))
+   '((emacs-lisp . t)
+     (python . t)
+     (jupyter . t)))
+  (with-eval-after-load 'ob-jupyter
+    (org-babel-jupyter-aliases-from-kernelspecs))
 
+  ;; clean up ob-jupyter source block output
+  ;; from Henrik Lissner
+  (defun my/org-babel-jupyter-strip-ansi-escapes-block ()
+    (when (string-match-p "^jupyter-"
+                          (nth 0 (org-babel-get-src-block-info)))
+      (unless (or
+               ;; ...but not while Emacs is exporting an org buffer (where
+               ;; `org-display-inline-images' can be awfully slow).
+               (bound-and-true-p org-export-current-backend)
+               ;; ...and not while tangling org buffers (which happens in a temp
+               ;; buffer where `buffer-file-name' is nil).
+               (string-match-p "^ \\*temp" (buffer-name)))
+        (save-excursion
+          (when-let* ((beg (org-babel-where-is-src-block-result))
+                      (end (progn (goto-char beg)
+                                  (forward-line)
+                                  (org-babel-result-end))))
+            (ansi-color-apply-on-region (min beg end) (max beg end)))))))
+  (add-hook 'org-babel-after-execute-hook
+            #'my/org-babel-jupyter-strip-ansi-escapes-block)
   ;; Org-roam
   (setq org-roam-directory (concat org-directory "roam/"))
   (defun my/org-roam-node-insert ()

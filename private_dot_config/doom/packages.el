@@ -65,5 +65,7 @@
 ;; Gruvbox
 (package! gruvbox-theme)
 
+;;(package! jupyter :pin "16cbda79167b4e2f2c6b61b218658f0f660d97f9")
+
 ;; ox-chameleon
 (package! ox-chameleon :recipe (:host github :repo "tecosaur/ox-chameleon"))

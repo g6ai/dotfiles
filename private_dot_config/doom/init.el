@@ -64,6 +64,7 @@
        biblio            ; Writes a PhD for you (citation needed)
        (eval +overlay)     ; run code, run (also, repls)
        lookup              ; navigate your code and its documentation
+       direnv
        magit             ; a git porcelain for Emacs
        pdf               ; pdf enhancements
 
@@ -86,7 +87,8 @@
         +present
         +pretty
         +roam2)
-       (python +pyenv)
+       ;;(python +pyenv)
+       python
        sh                ; she sells {ba,z,fi}sh shells on the C xor
        yaml              ; JSON, but readable
 
