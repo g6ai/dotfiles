@@ -456,4 +456,5 @@
     (interactive)
     (my/insert-after 'org-insert-link))
   (map! :leader
-        "m l l" #'my/org-insert-link))
+        "m l l" #'my/org-insert-link)
+  (add-to-list 'org-tags-exclude-from-inheritance "exclude"))
