@@ -254,7 +254,7 @@
   ;; M-RET
   (defun org-meta-return (&optional arg)
     (interactive "P")
-    (org-check-before-invisible-edit 'insert)
+    (org-fold-check-before-invisible-edit 'insert)
     (or (run-hook-with-args-until-success 'org-metareturn-hook)
         (call-interactively (cond (arg #'org-insert-heading)
                                   ((org-at-table-p) #'org-table-wrap-region)
