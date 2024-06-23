@@ -73,7 +73,7 @@
        tty               ; improve the terminal Emacs experience
 
        :lang
-       ;emacs-lisp        ; drown in parentheses
+       emacs-lisp        ; drown in parentheses
        markdown          ; writing docs for people to ignore
        (latex            ; writing papers in Emacs has never been so fun
         +cdlatex
