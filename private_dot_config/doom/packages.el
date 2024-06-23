@@ -67,5 +67,11 @@
 
 ;;(package! jupyter :pin "16cbda79167b4e2f2c6b61b218658f0f660d97f9")
 
+;; phscroll
+(package! phscroll :recipe (:host github :repo "misohena/phscroll"))
+
+;; stripe-buffer
+(package! stripe-buffer :recipe (:host github :repo "sabof/stripe-buffer"))
+
 ;; ox-chameleon
 (package! ox-chameleon :recipe (:host github :repo "tecosaur/ox-chameleon"))

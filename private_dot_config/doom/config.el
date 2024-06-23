@@ -420,6 +420,22 @@
   (setq org-download-method 'directory)
   (setq org-download-link-format "#+ATTR_ORG: :width 500\n[[download:%s]]\n")
 
+  ;; phscroll
+  (require 'org-phscroll)
+
+  ;; stripe-buffer for table
+  (add-hook 'org-mode-hook 'turn-on-stripe-table-mode)
+  (defface my/stripe-highlight
+      '((((class color) (background dark))
+         (:background "grey25"))
+        (((class color) (background light))
+         (:background "grey90")))
+    "Face for stripes."
+    :group 'stripe-buffer)
+  (defun my/stripe-highlight-face-remap ()
+    (face-remap-add-relative 'stripe-highlight 'my/stripe-highlight))
+  (advice-add 'turn-on-stripe-table-mode :after #'my/stripe-highlight-face-remap)
+
   ;; misc
   (map! :leader
         "b g" #'org-mark-ring-goto)
