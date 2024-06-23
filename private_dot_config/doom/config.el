@@ -60,7 +60,7 @@
   (mapc #'disable-theme custom-enabled-themes)
   (pcase appearance
     ('light (load-theme 'doom-one-light t))
-    ('dark (load-theme 'doom-gruvbox t))))
+    ('dark (load-theme 'gruvbox-dark-hard t))))
 (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
 
 (setq ns-use-native-fullscreen t)
