@@ -59,8 +59,8 @@
   "Load theme, taking current system APPEARANCE into consideration."
   (mapc #'disable-theme custom-enabled-themes)
   (pcase appearance
-    ('light (load-theme 'doom-one-light t))
-    ('dark (load-theme 'gruvbox-dark-hard t))))
+    ('light (load-theme 'doom-flatwhite t))
+    ('dark (load-theme 'doom-gruvbox t))))
 (add-hook 'ns-system-appearance-change-functions #'my/apply-theme)
 
 (setq ns-use-native-fullscreen t)
