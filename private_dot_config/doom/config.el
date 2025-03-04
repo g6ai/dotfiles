@@ -234,6 +234,9 @@
 (setq TeX-engine 'xetex)
 (setq +latex-viewers '(pdf-tools))
 
+(when (memq window-system '(mac ns x))
+  (exec-path-from-shell-initialize))
+
 ;; Org-mode
 (after! org
   ;; auto-saving

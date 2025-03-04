@@ -78,3 +78,6 @@
 
 ;; ox-chameleon
 (package! ox-chameleon :recipe (:host github :repo "tecosaur/ox-chameleon"))
+
+;; exec-path-from-shell
+(package! exec-path-from-shell :recipe (:host github :repo "purcell/exec-path-from-shell"))
