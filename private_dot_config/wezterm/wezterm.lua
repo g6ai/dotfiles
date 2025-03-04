@@ -22,6 +22,7 @@ return {
   },
   window_decorations = "RESIZE",
   native_macos_fullscreen_mode = true,
+  window_close_confirmation = "NeverPrompt",
   window_background_opacity = 0.6,
   text_background_opacity = 0.4,
   keys = {
